@@ -1,8 +1,7 @@
-"""Prépare les images de fond d'une vidéo « Doc » : vraies vidéos (Pixabay), plans officiels, ou 3D maison.
+"""Prépare les images de fond d'une vidéo « Doc » : vraies vidéos libres de droits (Pixabay), ou 3D maison.
 
 Chaque scène du storyboard liste ses visuels, dans l'ordre où ils doivent apparaître :
   "pixabay:hacker dark room"   -> recherche Pixabay (mots-clés en anglais), clip libre de droits
-  "officiel:t2-037"            -> plan de la bibliothèque des vidéos officielles (bibliotheque/catalogue.json)
   "3d:rue_neon"                -> plan 3D généré par le moteur
 Le moteur coupe toutes les ~1,7 s et alterne ces visuels. Chaque morceau est recadré en 1080×1920,
 étalonné (contraste, couleurs froides dans les ombres, vignette) et coupé à la bonne durée.
@@ -19,9 +18,9 @@ import random
 import shutil
 import subprocess
 import sys
-import urllib.parse
-import urllib.request
 from pathlib import Path
+
+import requests
 
 ICI = Path(__file__).parent
 FPS = 30
@@ -29,6 +28,7 @@ SEG = 1.7  # secondes par plan
 CACHE = ICI / "cache_visuels"
 UTILISES = ICI / "bibliotheque" / "pixabay_utilises.json"
 REPLI_3D = ["rue_neon", "poursuite_nuit", "helico_nuit", "autoroute_nuit", "vue_aerienne", "avenue_coucher"]
+ENTETES = {"User-Agent": "usine-videos/1.0 (generateur de videos courtes; contact via github.com/Sebastien-317)"}
 ETALONNAGE = ("eq=contrast=1.12:saturation=0.8:brightness=-0.035,"
               "colorbalance=rs=-0.04:bs=0.05:rh=0.05:bh=-0.04,vignette=angle=PI/4.6")
 
@@ -67,11 +67,13 @@ class Pixabay:
     def chercher(self, q):
         if not self.cle:
             return []
-        url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode(
-            {"key": self.cle, "q": q[:100], "per_page": 30, "safesearch": "true", "video_type": "film"})
         try:
-            with urllib.request.urlopen(url, timeout=30) as r:
-                return json.loads(r.read()).get("hits", [])
+            r = requests.get("https://pixabay.com/api/videos/", timeout=30, headers=ENTETES,
+                             params={"key": self.cle, "q": q[:100], "per_page": 30, "safesearch": "true", "video_type": "film"})
+            if r.status_code != 200:
+                journal("recherche impossible", q, r.status_code, r.text[:160].replace("\n", " "))
+                return []
+            return r.json().get("hits", [])
         except Exception as e:  # réseau, quota, clé : on se rabat sur la 3D
             journal("recherche impossible", q, e)
             return []
@@ -97,10 +99,14 @@ class Pixabay:
         if not f.exists():
             v = h["videos"]["medium"]
             try:
-                req = urllib.request.Request(v["url"], headers={"User-Agent": "usine-videos"})
-                with urllib.request.urlopen(req, timeout=120) as r, open(f, "wb") as o:
-                    shutil.copyfileobj(r, o)
+                if v["url"].startswith("file://"):
+                    shutil.copy(v["url"][7:], f)
+                else:
+                    with requests.get(v["url"], headers=ENTETES, timeout=120, stream=True) as r, open(f, "wb") as o:
+                        r.raise_for_status()
+                        shutil.copyfileobj(r.raw, o)
             except Exception as e:
+                f.unlink(missing_ok=True)
                 journal("téléchargement impossible", h["id"], e)
                 return None
         return f, h["id"]
@@ -110,18 +116,6 @@ class Pixabay:
             UTILISES.parent.mkdir(exist_ok=True)
             tout = list(self.deja | self.cette_video)[-600:]  # environ 2 semaines de vidéos
             UTILISES.write_text(json.dumps(sorted(tout)))
-
-
-def officiel(pid):
-    cat_f = ICI / "bibliotheque" / "catalogue.json"
-    if not cat_f.exists():
-        return None
-    cat = json.loads(cat_f.read_text())
-    p = next((x for x in cat["plans"] if x["id"] == pid), None)
-    if not p:
-        return None
-    src = ICI / "bibliotheque" / "sources" / f"{p['video']}.mp4"
-    return (src, p) if src.exists() else None
 
 
 def main():
@@ -160,18 +154,6 @@ def main():
                         seg = {"type": "video", "src": f"clips/{nom}/{dest.name}", "duree": d, "source": f"pixabay {hid}"}
                     except subprocess.CalledProcessError as e:
                         journal("recadrage impossible", f, e)
-            elif typ == "officiel":
-                r = officiel(val)
-                if r:
-                    src, p = r
-                    debut = p["debut"] + 0.12
-                    try:
-                        recadrer(src, dest, debut, d / FPS + 0.05, p["fin"])
-                        seg = {"type": "video", "src": f"clips/{nom}/{dest.name}", "duree": d, "source": val}
-                    except subprocess.CalledProcessError as e:
-                        journal("recadrage impossible", val, e)
-                else:
-                    journal("plan officiel introuvable :", val)
             if seg is None:
                 plan = val if typ == "3d" else REPLI_3D[(i + k) % len(REPLI_3D)]
                 seg = {"type": "3d", "plan": plan, "duree": d}

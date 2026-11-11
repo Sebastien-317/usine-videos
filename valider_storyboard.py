@@ -28,11 +28,6 @@ def nombres(t):
     return re.findall(r"\d+(?:[.,]\d+)?", t)
 
 
-def catalogue_ids(pid):
-    f = Path(__file__).parent / "bibliotheque" / "catalogue.json"
-    return f.exists() and any(p["id"] == pid for p in json.loads(f.read_text()).get("plans", []))
-
-
 def valider(b, ch):
     pb, avert = [], []
     doc = ch.get("composition") == "Doc"
@@ -86,14 +81,12 @@ def valider(b, ch):
                 pb.append(f"Scène {i} : « visuels » doit lister 1 à 4 visuels (2 ou 3 conseillés).")
             for x in vis:
                 typ, _, val = str(x).partition(":")
-                if typ not in ("pixabay", "officiel", "3d") or not val.strip():
-                    pb.append(f"Scène {i} : visuel « {x} » invalide (pixabay:mots anglais, officiel:t2-037 ou 3d:rue_neon).")
+                if typ not in ("pixabay", "3d") or not val.strip():
+                    pb.append(f"Scène {i} : visuel « {x} » invalide (pixabay:mots anglais ou 3d:rue_neon).")
                 elif typ == "3d" and val not in ch["plans_autorises"]:
                     pb.append(f"Scène {i} : plan 3D « {val} » inconnu.")
                 elif typ == "pixabay" and len(val) > 60:
                     pb.append(f"Scène {i} : recherche Pixabay trop longue (3 à 5 mots anglais).")
-                elif typ == "officiel" and not catalogue_ids(val):
-                    pb.append(f"Scène {i} : plan officiel « {val} » absent de bibliotheque/catalogue.json.")
             principaux = [k for k in HABILLAGES_DOC if s.get(k)]
             if len(principaux) > 1:
                 pb.append(f"Scène {i} : un seul habillage principal parmi {' / '.join(HABILLAGES_DOC)} ({principaux}).")

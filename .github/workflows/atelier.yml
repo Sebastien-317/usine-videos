@@ -21,7 +21,6 @@ jobs:
     env:
       ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
       PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
-      GH_TOKEN: ${{ github.token }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       TZ: Europe/Paris
@@ -48,10 +47,6 @@ jobs:
           [ -f voices-v1.0.bin ] || wget -q https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
           [ -d sherpa-onnx-whisper-small ] || { wget -q https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-small.tar.bz2 && tar xjf sherpa-onnx-whisper-small.tar.bz2 && rm sherpa-onnx-whisper-small.tar.bz2; }
           cd ../rendu && npm ci
-      - name: Vidéos officielles (si la bibliothèque existe)
-        run: |
-          mkdir -p bibliotheque/sources
-          gh release download bibliotheque -D bibliotheque/sources -p "*.mp4" || echo "pas de bibliothèque officielle : vraies vidéos libres et 3D seulement"
       - name: Fabrication
         env:
           BROUILLON: ${{ inputs.brouillon }}

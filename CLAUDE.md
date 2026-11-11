@@ -15,7 +15,7 @@ Ta mission quotidienne pour une chaîne : produire le nombre de vidéos prévu (
 
 ## Étapes
 
-1. **Contexte.** Lis `chaines/<id>.json`, la fin de `historique.jsonl`, et lance `python3 file_attente.py lister`. Si `bibliotheque/catalogue.json` existe, regarde les planches `bibliotheque/planches/*.jpg` (vignettes numérotées des vidéos officielles).
+1. **Contexte.** Lis `chaines/<id>.json`, la fin de `historique.jsonl`, et lance `python3 file_attente.py lister`.
 2. **Chasse aux histoires.** Fais au moins 6 recherches WebSearch, en partant de l'actualité du jour puis des pistes ci-dessous. Ouvre avec WebFetch 3 à 6 articles solides et vérifie chaque fait que tu comptes utiliser. Garde une histoire qui a : un personnage ou un enjeu humain, un détail incroyable mais vrai, un retournement, et si possible un lien avec la sortie de GTA 6.
 3. **Choix.** Deux histoires différentes par jour, de deux familles différentes. Teste chacune : « est-ce qu'un joueur de 20 ans qui scrolle s'arrête dès la 1re phrase, et a-t-il besoin de connaître la fin ? » Si ce n'est pas un oui évident, cherche mieux.
 4. **Brouillon.** Écris `brouillons/AAAA-MM-JJ-<id>-<n>.json` au format ci-dessous.
@@ -75,8 +75,8 @@ Exemple complet : `brouillons/demo-v3-hacker.json`.
 ### Visuels (chaque phrase doit avoir une image qui la montre)
 Chaque scène liste 2 ou 3 visuels ; le moteur coupe toutes les 1,7 s et les enchaîne dans l'ordre.
 - `pixabay:<3 à 5 mots anglais>` : vraie vidéo libre de droits. Des choses filmables et concrètes : « hacker hoodie dark », « police lights night », « courtroom gavel », « prison bars », « money counting », « server room », « hotel corridor night », « miami skyline night », « palm trees sunset », « game controller dark », « newspaper printing », « office night empty ». Ajoute « dark » ou « night » pour l'ambiance. Jamais de marque, de célébrité ni de concept abstrait.
-- `officiel:t2-037` : un plan des vidéos officielles de GTA 6, uniquement s'il figure dans `bibliotheque/catalogue.json` (regarde les planches pour choisir). Au plus un par scène et au plus un tiers des visuels de la vidéo. Idéal pour les scènes qui parlent du jeu lui-même.
 - `3d:<plan>` : plan 3D maison (`rue_neon`, `poursuite_nuit`, `helico_nuit`, `calendrier`, `vue_aerienne`, `autoroute_nuit`…), en secours seulement.
+- Jamais d'image officielle de GTA ou de Rockstar : pour évoquer le jeu, filme son univers (« miami beach night », « palm trees neon », « sports car night », « police chase night »).
 
 ### Habillages (un principal par scène, plus `lieu` et `tampon` en option)
 - `gros` : texte choc, `|` = retour à la ligne, 14 caractères par ligne, la 2e ligne sur bandeau rouge. Obligatoire en scène 1 (24 caractères max).
