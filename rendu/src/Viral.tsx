@@ -17,7 +17,7 @@ if (typeof window !== 'undefined') {
 const contour = (px: number) => ({WebkitTextStroke: `${px}px #000`, paintOrder: 'stroke fill', textShadow: `0 ${px * 0.9}px 0 #000`} as any);
 
 // ---------- 3D pixelisée ----------
-const Plan3D: React.FC<{plan: string; seed: number; dur: number; decal?: number; zoom?: number; incl?: number}> = ({plan, seed, dur, decal = 0, zoom = 1, incl = 0}) => {
+export const Plan3D: React.FC<{plan: string; seed: number; dur: number; decal?: number; zoom?: number; incl?: number}> = ({plan, seed, dur, decal = 0, zoom = 1, incl = 0}) => {
   const f = useCurrentFrame();
   const out = useRef<HTMLCanvasElement>(null);
   useLayoutEffect(() => {

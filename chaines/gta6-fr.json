@@ -1,10 +1,10 @@
 {
   "id": "gta6-fr",
   "nom": "DOSSIER JEU",
-  "theme": "Actualité, chiffres et coulisses de GTA 6 (sortie le 19 novembre 2026), puis du jeu vidéo en général. Ton : créateur TikTok enthousiaste, phrases courtes, un fait fort par vidéo.",
+  "theme": "Histoires vraies, sombres ou intrigantes autour de GTA 6 (sortie le 19 novembre 2026) et de Rockstar : coulisses, procès, fuites, records, scandales, faits réels qui ont inspiré le jeu. Ton : conteur captivant, tension, phrases courtes, une histoire par vidéo.",
   "public": "Joueurs francophones 15-35 ans",
   "langue": "fr-fr",
-  "composition": "Viral",
+  "composition": "Doc",
   "moteur_voix": "elevenlabs",
   "voix_elevenlabs": "3Tp5mYhT9wrfnry9pzvV",
   "modele_elevenlabs": "eleven_v4",
@@ -31,8 +31,9 @@
     "https://www.reddit.com/r/GTA6/"
   ],
   "interdits": [
-    "Aucune image, logo, personnage ou capture officielle : les visuels sont 100 % générés par le moteur.",
-    "Aucune fuite (leak), rumeur non confirmée ou fausse info présentée comme vraie.",
-    "Aucun chiffre sans source vérifiée dans la journée."
+    "Extraits officiels (trailers Rockstar) : seulement des plans courts de la bibliothèque (3 secondes max chacun, jamais plus du tiers de la vidéo), toujours commentés. Aucune image générée par IA imitant GTA.",
+    "Aucun contenu issu d'une fuite (images, vidéos, code) : raconter l'histoire d'une fuite d'après la presse, oui ; montrer ce qui a fuité, non.",
+    "Aucune rumeur ou fausse info présentée comme vraie, aucun chiffre sans source vérifiée dans la journée.",
+    "Personnes réelles : seulement des faits publiés par des médias reconnus ; pas de nom de mineur, pas de détail de santé."
   ]
 }

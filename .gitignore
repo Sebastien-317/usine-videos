@@ -10,3 +10,5 @@ stills*/
 __pycache__/
 models
 rendu/node_modules
+cache_visuels/
+rendu/public/clips/

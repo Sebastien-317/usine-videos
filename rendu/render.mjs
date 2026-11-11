@@ -27,7 +27,7 @@ if (flag === '--stills') {
 } else {
   const t0 = Date.now();
   await renderMedia({
-    composition, serveUrl, inputProps, browserExecutable, chromiumOptions, codec: 'h264', crf: inputProps.story.composition === 'Viral' ? 21 : 18, x264Preset: 'veryfast',
+    composition, serveUrl, inputProps, browserExecutable, chromiumOptions, codec: 'h264', crf: inputProps.story.composition === 'Video' ? 18 : 20, x264Preset: 'veryfast',
     outputLocation: out, concurrency: 2, muted: true,
     onProgress: ({progress}) => { if (Math.round(progress * 100) % 20 === 0) process.stdout.write(`${Math.round(progress * 100)}% `); },
   });

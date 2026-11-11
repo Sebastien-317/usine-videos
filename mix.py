@@ -124,6 +124,29 @@ def alarme():
     return norm(np.concatenate(morceaux))
 
 
+def clic():
+    n = int(0.014 * SR)
+    b = rng.standard_normal(n)
+    return norm((b - passe_bas(b, 2500)) * env(n, 0.0003, 0.004))
+
+
+def nappe_sombre(duree, fin_pulse):
+    """Ambiance « enquête » : drone grave qui respire + battement de cœur lent + tic discret."""
+    n = int(duree * SR) + SR
+    t = np.arange(n) / SR
+    drone = sum(((f * t) % 1) * 2 - 1 for f in (55.0, 55.35, 82.4, 110.2))
+    drone = passe_bas(drone, 260 + 120 * np.sin(2 * np.pi * t / 7) ** 2) * (0.55 + 0.25 * np.sin(2 * np.pi * t / 5.3))
+    piste = 0.5 * norm(drone)
+    periode = 60 / 72
+    b = 0.0
+    while b < fin_pulse:
+        poser(piste, kick(), b, 0.75)
+        poser(piste, kick(), b + 0.24, 0.4)
+        poser(piste, hat(), b + periode / 2, 0.05)
+        b += periode
+    return piste
+
+
 def nm(m):
     import unicodedata
     m = unicodedata.normalize("NFD", m.lower())
@@ -168,7 +191,11 @@ def main():
     debuts = [0.0] + [round(s["debut"] * FPS) / FPS for s in timing["scenes"][1:]]
     fin_beat = debuts[-1]  # le beat coupe sur la question finale
 
+    sombre = story.get("composition") == "Doc"
     temps = 60 / BPM
+    if sombre:
+        beat = nappe_sombre(duree, fin_beat)[:n]
+        fin_beat = -1  # pas de beat dansant
     notes = [55.0, 43.65, 65.41, 49.0]  # La, Fa, Do, Sol (graves)
     k, b = 0, 0.0
     while b < fin_beat:
@@ -193,10 +220,33 @@ def main():
             for j in range(10):
                 poser(sfx, tic(), t0 + (2 + j * 18 / 10) / FPS, 0.3)
             poser(sfx, pop(), t0 + 20 / FPS, 0.45)
-        if sc.get("tampon"):
-            poser(sfx, impact(0.7), t0 + round(sc.get("tamponA", 1) * FPS) / FPS, 0.8)
         fin_sc = debuts[i + 1] if i + 1 < len(debuts) else duree
         mots = timing["scenes"][i].get("mots", [])
+        if sc.get("tampon"):
+            if sc.get("tamponMot"):
+                ta = caler(mots, t0, [sc["tamponMot"]], fin_sc - t0, 0.6, True)[0]
+            elif sombre:
+                ta = t0 + sc.get("tamponA", (fin_sc - t0) * 0.6)
+            else:
+                ta = t0 + round(sc.get("tamponA", 1) * FPS) / FPS
+            poser(sfx, riser(0.5), ta - 0.5, 0.3)
+            poser(sfx, impact(0.9), ta, 0.9)
+        if sc.get("lieu"):
+            for k, c in enumerate(sc["lieu"]):
+                if c != " ":
+                    poser(sfx, clic(), t0 + (3 + k * 1.1) / FPS, 0.28)
+        if sc.get("document"):
+            lignes = sc["document"].get("lignes", [])
+            pas = max(6, int((fin_sc - t0) * FPS * 0.55 / max(1, len(lignes))))
+            poser(sfx, whoosh(0.4), t0, 0.4)
+            for k in range(len(lignes)):
+                for j in range(9):
+                    poser(sfx, clic(), t0 + (8 + k * pas + j * 1.5) / FPS, 0.22)
+            if sc["document"].get("tampon"):
+                poser(sfx, impact(0.8), t0 + round((fin_sc - t0) * FPS * 0.62) / FPS, 0.85)
+        if sc.get("coupure"):
+            poser(sfx, whoosh(0.35), t0 - 0.05, 0.5)
+            poser(sfx, pop(), t0 + 0.2, 0.25)
         if sc.get("vrai_faux"):
             r = caler(mots, t0, [sc["vrai_faux"]["verdict"]], fin_sc - t0, 0.62, True)[0]
             poser(sfx, riser(0.7), r - 0.7, 0.35)

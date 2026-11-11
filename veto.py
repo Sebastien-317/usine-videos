@@ -21,6 +21,10 @@ from file_attente import FILE, PAUSE, charger, changer_etat, elements, sauver
 TEST = "--test" in sys.argv
 
 
+# Dimensions déclarées à Telegram, sinon l'aperçu peut s'afficher à l'horizontale
+FORMAT = {"width": "1080", "height": "1920"}
+
+
 def chat():
     return "TEST" if TEST else env("TELEGRAM_CHAT_ID")
 OFFSET = FILE / ".telegram_offset"
@@ -56,7 +60,7 @@ def envoyer_manuel():
         quand = datetime.fromisoformat(st["heure_publication"])
         fichier = version_publication(d)
         with open(fichier, "rb") as f:
-            api("sendVideo", data={"chat_id": chat(), "supports_streaming": "true",
+            api("sendVideo", data={"chat_id": chat(), "supports_streaming": "true", **FORMAT,
                                    "caption": f"📲 À publier le {quand:%d/%m} vers {quand:%H:%M} : {st['titre']}"}, files={"video": f})
         message(st["legende"])
         message("Avant de publier :\n"
@@ -80,7 +84,7 @@ def envoyer():
                    f"Sans réponse de ta part, elle part toute seule.\n\nLégende : {st['legende'][:700]}")
         clavier = {"inline_keyboard": [[{"text": "❌ Annuler cette vidéo", "callback_data": f"annuler:{st['id']}"}]]}
         with open(d / "apercu.mp4", "rb") as f:
-            api("sendVideo", data={"chat_id": chat(), "caption": legende, "supports_streaming": "true",
+            api("sendVideo", data={"chat_id": chat(), "caption": legende, "supports_streaming": "true", **FORMAT,
                                    "reply_markup": json.dumps(clavier)}, files={"video": f})
         st["veto_envoye"] = True
         sauver(d, st)
@@ -127,7 +131,7 @@ def atelier(d, legende):
     """Atelier : envoie une vidéo de test sur Telegram (sans la mettre en file d'attente)."""
     fichier = version_publication(Path(d))
     with open(fichier, "rb") as f:
-        api("sendVideo", data={"chat_id": chat(), "supports_streaming": "true", "caption": legende}, files={"video": f})
+        api("sendVideo", data={"chat_id": chat(), "supports_streaming": "true", **FORMAT, "caption": legende}, files={"video": f})
 
 
 if __name__ == "__main__":

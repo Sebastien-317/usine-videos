@@ -16,13 +16,20 @@ else
   echo "1/5 voix off Kokoro";        python3 tts.py "$STORY" "$OUT"
 fi
 echo "2/5 contrôle de la voix";  python3 verif_voix.py "$OUT/voix.wav" "$OUT/timing.json" "$STORY" | grep -E "^(ATTENDU|ENTENDU)" > "$OUT/controle_voix.txt" || true
-echo "3/5 habillage sonore";     python3 mix.py "$STORY" "$OUT"
+RENDU="$STORY"
+COMPO=$(python3 -c "import json;print(json.load(open('$STORY')).get('composition',''))")
+if [ "$COMPO" = "Doc" ]; then                    # vraies images : recherche, téléchargement, recadrage, étalonnage
+  echo "2b/5 images de fond";    python3 visuels.py "$STORY" "$OUT"
+  RENDU="$OUT/storyboard_rendu.json"
+fi
+echo "3/5 habillage sonore";     python3 mix.py "$RENDU" "$OUT"
 D=$(python3 -c "import json;print(json.load(open('$OUT/timing.json'))['duree'])")
 VOIX="$OUT/voix.wav"; [ -f "$OUT/voix_hd.wav" ] && VOIX="$OUT/voix_hd.wav"
 ffmpeg -y -loglevel error -i "$VOIX" -i "$OUT/nappe.wav" -i "$OUT/bruitages.wav" -filter_complex \
   "[0:a]aresample=48000,apad,asplit=2[v][vk];[1:a]volume=0.42[n];[n][vk]sidechaincompress=threshold=0.02:ratio=6:attack=10:release=250[nd];[2:a]volume=0.55[s];[v][nd][s]amix=inputs=3:normalize=0:duration=longest,atrim=0:$D,loudnorm=I=-14:TP=-1.5:LRA=11[out]" \
   -map "[out]" -ar 48000 "$OUT/mix.wav"
-echo "4/5 rendu image";          (cd rendu && node render.mjs "$STORY" "$OUT/timing.json" "$OUT/video_muette.tmp.mp4")
+echo "4/5 rendu image";          (cd rendu && node render.mjs "$RENDU" "$OUT/timing.json" "$OUT/video_muette.tmp.mp4")
+rm -rf "rendu/public/clips/$(basename "$OUT")"
 mv "$OUT/video_muette.tmp.mp4" "$OUT/video_muette.mp4"
 echo "5/5 assemblage";           ffmpeg -y -loglevel error -i "$OUT/video_muette.mp4" -i "$OUT/mix.wav" -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest -movflags +faststart "$OUT/video.tmp.mp4"
 mv "$OUT/video.tmp.mp4" "$OUT/video.mp4"

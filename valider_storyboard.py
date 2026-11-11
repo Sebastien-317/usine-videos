@@ -19,14 +19,23 @@ def norm(t):
 
 
 HABILLAGES = ("gros", "compteur", "question", "vrai_faux", "duel", "frise", "quiz", "alerte", "liste")
+# Composition « Doc » (vraies images) : un habillage principal par scène, plus « lieu » et « tampon » en option
+HABILLAGES_DOC = ("gros", "compteur", "document", "coupure", "question")
+EN_PLUS_DOC = ("lieu", "tampon")
 
 
 def nombres(t):
     return re.findall(r"\d+(?:[.,]\d+)?", t)
 
 
+def catalogue_ids(pid):
+    f = Path(__file__).parent / "bibliotheque" / "catalogue.json"
+    return f.exists() and any(p["id"] == pid for p in json.loads(f.read_text()).get("plans", []))
+
+
 def valider(b, ch):
     pb, avert = [], []
+    doc = ch.get("composition") == "Doc"
     sc = b.get("scenes", [])
     if not 6 <= len(sc) <= 10:
         pb.append(f"{len(sc)} scènes : il en faut entre 6 et 10.")
@@ -64,14 +73,6 @@ def valider(b, ch):
                 pb.append(f"Scène {i} : « voix_jeu » ne dit pas les mêmes mots que « voix » (seules les réécritures phonétiques sont permises).")
             else:
                 avert.append(f"Scène {i} : « voix_jeu » réécrit des mots en phonétique, vérifie que le sens est identique.")
-        plans = s.get("plans", [])
-        if not plans or any(p not in ch["plans_autorises"] for p in plans):
-            pb.append(f"Scène {i} : plans invalides {plans} (autorisés : {', '.join(ch['plans_autorises'])}).")
-        habillages = [k for k in HABILLAGES if s.get(k)]
-        if len(habillages) > 1:
-            pb.append(f"Scène {i} : un seul habillage parmi {' / '.join(HABILLAGES)} ({habillages}).")
-        if not habillages:
-            avert.append(f"Scène {i} : aucun habillage, la scène risque d'être plate.")
         vn = v.replace(" ", "").replace("\u202f", "")
         def dit(n):
             return n in v or n.replace(",", ".") in v or n in vn
@@ -79,6 +80,53 @@ def valider(b, ch):
             for n in nombres(str(texte)):
                 if not dit(n):
                     pb.append(f"Scène {i} : le chiffre « {n} » ({quoi}) n'est pas dit dans la voix.")
+        if doc:
+            vis = s.get("visuels") or []
+            if not 1 <= len(vis) <= 4:
+                pb.append(f"Scène {i} : « visuels » doit lister 1 à 4 visuels (2 ou 3 conseillés).")
+            for x in vis:
+                typ, _, val = str(x).partition(":")
+                if typ not in ("pixabay", "officiel", "3d") or not val.strip():
+                    pb.append(f"Scène {i} : visuel « {x} » invalide (pixabay:mots anglais, officiel:t2-037 ou 3d:rue_neon).")
+                elif typ == "3d" and val not in ch["plans_autorises"]:
+                    pb.append(f"Scène {i} : plan 3D « {val} » inconnu.")
+                elif typ == "pixabay" and len(val) > 60:
+                    pb.append(f"Scène {i} : recherche Pixabay trop longue (3 à 5 mots anglais).")
+                elif typ == "officiel" and not catalogue_ids(val):
+                    pb.append(f"Scène {i} : plan officiel « {val} » absent de bibliotheque/catalogue.json.")
+            principaux = [k for k in HABILLAGES_DOC if s.get(k)]
+            if len(principaux) > 1:
+                pb.append(f"Scène {i} : un seul habillage principal parmi {' / '.join(HABILLAGES_DOC)} ({principaux}).")
+            if not principaux and not any(s.get(k) for k in EN_PLUS_DOC):
+                avert.append(f"Scène {i} : aucun habillage : seuls les sous-titres et l'image porteront la scène.")
+            if s.get("lieu"):
+                if len(s["lieu"]) > 32:
+                    pb.append(f"Scène {i} : lieu trop long (32 caractères max).")
+                verifier(s["lieu"], "lieu")
+            if s.get("document"):
+                d = s["document"]
+                if not d.get("titre") or not 1 <= len(d.get("lignes", [])) <= 4 or any(len(l) > 34 for l in d.get("lignes", [])):
+                    pb.append(f"Scène {i} : document = un titre et 1 à 4 lignes de 34 caractères max.")
+                for l in d.get("lignes", []):
+                    verifier(l, "document")
+            if s.get("coupure"):
+                c = s["coupure"]
+                if not c.get("source") or not c.get("titre") or len(c["titre"]) > 70:
+                    pb.append(f"Scène {i} : coupure = une source (nom du média) et un titre réécrit de 70 caractères max.")
+                verifier(c.get("titre", ""), "coupure")
+            if s.get("tampon"):
+                verifier(s["tampon"], "tampon")
+                if s.get("tamponMot") and str(s["tamponMot"]).lower() not in v.lower():
+                    pb.append(f"Scène {i} : tamponMot « {s['tamponMot']} » doit être un mot de la voix.")
+        else:
+            plans = s.get("plans", [])
+            if not plans or any(p not in ch["plans_autorises"] for p in plans):
+                pb.append(f"Scène {i} : plans invalides {plans} (autorisés : {', '.join(ch['plans_autorises'])}).")
+            habillages = [k for k in HABILLAGES if s.get(k)]
+            if len(habillages) > 1:
+                pb.append(f"Scène {i} : un seul habillage parmi {' / '.join(HABILLAGES)} ({habillages}).")
+            if not habillages:
+                avert.append(f"Scène {i} : aucun habillage, la scène risque d'être plate.")
         if s.get("vrai_faux"):
             vf = s["vrai_faux"]
             if str(vf.get("verdict", "")).upper() not in ("VRAI", "FAUX"):
@@ -141,7 +189,7 @@ def valider(b, ch):
         if s.get("tampon") and len(s["tampon"]) > 18:
             pb.append(f"Scène {i} : tampon trop long (18 caractères max).")
 
-    types = {k for s in sc for k in HABILLAGES if s.get(k)}
+    types = {k for s in sc for k in (HABILLAGES_DOC + EN_PLUS_DOC if doc else HABILLAGES) if s.get(k)}
     if sc and len(types) < 3:
         pb.append(f"Seulement {len(types)} type(s) d'habillage ({', '.join(sorted(types))}) : il en faut au moins 3 différents pour que la vidéo reste vivante.")
 
