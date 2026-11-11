@@ -18,6 +18,9 @@ def norm(t):
     return re.sub(r"[^a-z0-9]+", "", t)
 
 
+HABILLAGES = ("gros", "compteur", "question", "vrai_faux", "duel", "frise", "quiz", "alerte", "liste")
+
+
 def nombres(t):
     return re.findall(r"\d+(?:[.,]\d+)?", t)
 
@@ -64,9 +67,61 @@ def valider(b, ch):
         plans = s.get("plans", [])
         if not plans or any(p not in ch["plans_autorises"] for p in plans):
             pb.append(f"Scène {i} : plans invalides {plans} (autorisés : {', '.join(ch['plans_autorises'])}).")
-        habillages = [k for k in ("gros", "compteur", "question") if s.get(k)]
+        habillages = [k for k in HABILLAGES if s.get(k)]
         if len(habillages) > 1:
-            pb.append(f"Scène {i} : un seul habillage parmi gros / compteur / question ({habillages}).")
+            pb.append(f"Scène {i} : un seul habillage parmi {' / '.join(HABILLAGES)} ({habillages}).")
+        if not habillages:
+            avert.append(f"Scène {i} : aucun habillage, la scène risque d'être plate.")
+        vn = v.replace(" ", "").replace("\u202f", "")
+        def dit(n):
+            return n in v or n.replace(",", ".") in v or n in vn
+        def verifier(texte, quoi):
+            for n in nombres(str(texte)):
+                if not dit(n):
+                    pb.append(f"Scène {i} : le chiffre « {n} » ({quoi}) n'est pas dit dans la voix.")
+        if s.get("vrai_faux"):
+            vf = s["vrai_faux"]
+            if str(vf.get("verdict", "")).upper() not in ("VRAI", "FAUX"):
+                pb.append(f"Scène {i} : vrai_faux.verdict doit valoir VRAI ou FAUX.")
+            elif str(vf["verdict"]).lower() not in v.lower():
+                pb.append(f"Scène {i} : la voix doit prononcer le verdict « {vf['verdict']} » (c'est lui qui déclenche le tampon).")
+            if not vf.get("affirmation") or len(vf["affirmation"]) > 60:
+                pb.append(f"Scène {i} : vrai_faux.affirmation obligatoire, 60 caractères max.")
+            verifier(vf.get("affirmation", ""), "affirmation")
+        if s.get("duel"):
+            d = s["duel"]
+            for cote in ("gauche", "droite"):
+                c = d.get(cote) or {}
+                if not isinstance(c.get("valeur"), (int, float)) or not c.get("label"):
+                    pb.append(f"Scène {i} : duel.{cote} doit avoir une valeur numérique et un label.")
+                else:
+                    verifier(str(c["valeur"]).replace(".", ","), f"duel {cote}")
+                    if len(c["label"]) > 24:
+                        pb.append(f"Scène {i} : label du duel trop long (24 caractères max).")
+        if s.get("frise"):
+            et = s["frise"].get("etapes") or []
+            if not 2 <= len(et) <= 4 or any(not e.get("date") or len(e["date"]) > 16 for e in et):
+                pb.append(f"Scène {i} : frise = 2 à 4 étapes avec une « date » de 16 caractères max.")
+            for e in et:
+                verifier(e.get("date", ""), "frise")
+        if s.get("quiz"):
+            q = s["quiz"]
+            choix = q.get("choix") or []
+            if not 2 <= len(choix) <= 4 or not isinstance(q.get("bonne"), int) or not 0 <= q["bonne"] < len(choix):
+                pb.append(f"Scène {i} : quiz = 2 à 4 choix et « bonne » = index (0 = premier) de la bonne réponse.")
+            if any(len(c) > 14 for c in choix) or len(q.get("question", "")) > 50:
+                pb.append(f"Scène {i} : quiz trop long (choix 14 caractères, question 50 max).")
+            for c in choix:
+                verifier(c, "choix du quiz")
+        if s.get("alerte"):
+            if not s["alerte"].get("texte") or len(s["alerte"]["texte"]) > 50:
+                pb.append(f"Scène {i} : alerte.texte obligatoire, 50 caractères max.")
+            verifier(s["alerte"].get("texte", ""), "alerte")
+        if s.get("liste"):
+            if not isinstance(s["liste"].get("numero"), int):
+                pb.append(f"Scène {i} : liste.numero doit être un entier.")
+            if s["liste"].get("texte") and max(len(l) for l in s["liste"]["texte"].split("|")) > 14:
+                avert.append(f"Scène {i} : texte de liste long (> 14 caractères par ligne).")
         if s.get("gros"):
             for n in nombres(s["gros"]):
                 if n not in v and n.replace(",", ".") not in v:
@@ -85,6 +140,10 @@ def valider(b, ch):
                 pb.append(f"Scène {i} : label du compteur trop long (32 caractères max).")
         if s.get("tampon") and len(s["tampon"]) > 18:
             pb.append(f"Scène {i} : tampon trop long (18 caractères max).")
+
+    types = {k for s in sc for k in HABILLAGES if s.get(k)}
+    if sc and len(types) < 3:
+        pb.append(f"Seulement {len(types)} type(s) d'habillage ({', '.join(sorted(types))}) : il en faut au moins 3 différents pour que la vidéo reste vivante.")
 
     src = b.get("sources", [])
     ok = [x for x in src if str(x.get("url", "")).startswith("http") and x.get("fait")]
@@ -111,7 +170,7 @@ def main():
         s.setdefault("seed", 11 + i * 13)
     final = {
         "composition": ch["composition"],
-        "chaine": {k: ch[k] for k in ("id", "nom", "langue", "voix", "vitesse", "prononciation", "moteur_voix", "voix_elevenlabs", "modele_elevenlabs")},
+        "chaine": {k: ch[k] for k in ("id", "nom", "langue", "voix", "vitesse", "prononciation", "prononciation_elevenlabs", "moteur_voix", "voix_elevenlabs", "modele_elevenlabs") if k in ch},
         **{k: b[k] for k in ("titre", "legende", "sources", "scenes")},
     }
     out = Path(sys.argv[3])

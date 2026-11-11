@@ -123,5 +123,15 @@ def message(texte):
     api("sendMessage", data={"chat_id": chat(), "text": texte})
 
 
+def atelier(d, legende):
+    """Atelier : envoie une vidéo de test sur Telegram (sans la mettre en file d'attente)."""
+    fichier = version_publication(Path(d))
+    with open(fichier, "rb") as f:
+        api("sendVideo", data={"chat_id": chat(), "supports_streaming": "true", "caption": legende}, files={"video": f})
+
+
 if __name__ == "__main__":
-    {"envoyer": envoyer, "lire": lire}.get(sys.argv[1], lambda: message(sys.argv[2]))()
+    if sys.argv[1] == "atelier":
+        atelier(sys.argv[2], sys.argv[3])
+    else:
+        {"envoyer": envoyer, "lire": lire}.get(sys.argv[1], lambda: message(sys.argv[2]))()

@@ -18,6 +18,7 @@ export function rng(seed: number) {
 type Amb = {haut: string; milieu: string; horizon: string; brume: string; soleil: string | null; lumiere: string; cielLum: string; solLum: string; fenetres: number; nuit: boolean; sol: string};
 const AMB: Record<string, Amb> = {
   coucher: {haut: '#2A1D5C', milieu: '#E2604A', horizon: '#FFC266', brume: '#F09A5A', soleil: '#FFE9A8', lumiere: '#FFC890', cielLum: '#FFB27A', solLum: '#4A3466', fenetres: 0.18, nuit: false, sol: '#6B5650'},
+  neon: {haut: '#0A0418', milieu: '#3A0F4F', horizon: '#C2306E', brume: '#2A0C3A', soleil: null, lumiere: '#FF5FA2', cielLum: '#7A3CC8', solLum: '#0A0410', fenetres: 0.9, nuit: true, sol: '#191220'},
   nuit: {haut: '#03040B', milieu: '#0E1533', horizon: '#26306A', brume: '#10183A', soleil: null, lumiere: '#5A68B8', cielLum: '#2A3570', solLum: '#05060A', fenetres: 1.1, nuit: true, sol: '#1A1B22'},
 };
 const MURS = ['#E8D7B8', '#F2B8A2', '#9FC6C0', '#F4EDE1', '#C9B8A6', '#D9967A', '#A7B6C9', '#EAD49B', '#B9D3A8'];
@@ -324,6 +325,125 @@ function eau(scene: THREE.Scene, a: Amb, x0: number, taille: number, axeZ = fals
   };
 }
 
+
+// ---------- Ambiance « nuit néon » et poursuites (génériques, aucun élément officiel) ----------
+const NEONS = ['#FF2E88', '#2EF2FF', '#B44CFF', '#FFE14D', '#39FF8A'];
+function enseignes(scene: THREE.Scene, seed: number, longueur = 420) {
+  const r = rng(seed + 21);
+  const clign: {m: THREE.Mesh; h: THREE.Mesh; f: number}[] = [];
+  for (const cote of [-1, 1])
+    for (let z = 25; z > -longueur; z -= 6 + r() * 8) {
+      const c = NEONS[Math.floor(r() * NEONS.length)];
+      const vertical = r() < 0.4;
+      const w = vertical ? 0.7 : 2.5 + r() * 4, h = vertical ? 3 + r() * 5 : 0.5 + r() * 0.8;
+      const m = new THREE.Mesh(new THREE.BoxGeometry(0.15, h, w), basic(c));
+      m.position.set(cote * (13.3 + r() * 0.3), 3.5 + r() * 9, z);
+      scene.add(m);
+      const halo = new THREE.Mesh(new THREE.PlaneGeometry(w * 1.8 + 1.2, h * 1.8 + 1.2), basic(c, {transparent: true, opacity: 0.22, depthWrite: false}));
+      halo.rotation.y = Math.PI / 2;
+      halo.position.copy(m.position).add(new THREE.Vector3(-cote * 0.2, 0, 0));
+      scene.add(halo);
+      if (r() < 0.25) clign.push({m, h: halo, f: 2 + r() * 6});
+    }
+  // reflets de néon sur la route mouillée
+  for (let z = 20; z > -longueur; z -= 9) {
+    const c = NEONS[Math.floor(r() * NEONS.length)];
+    const ref = new THREE.Mesh(new THREE.PlaneGeometry(1.2 + r() * 2, 5 + r() * 6), basic(c, {transparent: true, opacity: 0.16, depthWrite: false}));
+    ref.rotation.x = -Math.PI / 2;
+    ref.position.set((r() < 0.5 ? -1 : 1) * (2 + r() * 5), 0.06, z);
+    scene.add(ref);
+  }
+  return (t: number) => {
+    for (const c of clign) {
+      const on = Math.sin(t * c.f * 3.1 + c.f) > -0.6;
+      c.m.visible = on;
+      c.h.visible = on;
+    }
+  };
+}
+
+function voiturePolice() {
+  const g = voiture('#16171C');
+  const portes = new THREE.Mesh(new THREE.BoxGeometry(1.84, 0.34, 1.9), lam('#F2F2F2'));
+  portes.position.set(0, 0.62, 0.1);
+  g.add(portes);
+  const rouge = basic('#FF1E1E'), bleu = basic('#1E5BFF'), eteint = basic('#2A2A30');
+  const gauche = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.2, 0.36), rouge);
+  const droite = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.2, 0.36), bleu);
+  gauche.position.set(-0.36, 1.5, 0.2);
+  droite.position.set(0.36, 1.5, 0.2);
+  g.add(gauche, droite);
+  const halo = (c: string) => new THREE.Mesh(new THREE.SphereGeometry(1.1, 8, 6), basic(c, {transparent: true, opacity: 0.35, depthWrite: false}));
+  const hr = halo('#FF2A2A'), hb = halo('#2A6BFF');
+  hr.position.set(-0.4, 1.5, 0.2);
+  hb.position.set(0.4, 1.5, 0.2);
+  g.add(hr, hb);
+  const lr = new THREE.PointLight('#FF2020', 0, 18, 1.4), lb = new THREE.PointLight('#2050FF', 0, 18, 1.4);
+  lr.position.set(-1.2, 2.2, 0);
+  lb.position.set(1.2, 2.2, 0);
+  g.add(lr, lb);
+  return {g, gyro(t: number, phase: number) {
+    const k = Math.floor(t * 9 + phase) % 2 === 0;
+    gauche.material = k ? rouge : eteint;
+    droite.material = k ? eteint : bleu;
+    lr.intensity = k ? 14 : 0;
+    lb.intensity = k ? 0 : 14;
+    hr.visible = k;
+    hb.visible = !k;
+  }};
+}
+
+function helico() {
+  const g = new THREE.Group();
+  const corps = new THREE.Mesh(new THREE.SphereGeometry(1.6, 7, 5), lam('#3A4152', {emissive: new THREE.Color('#1C2232')}));
+  corps.scale.set(1, 0.85, 1.7);
+  g.add(corps);
+  const vitre = new THREE.Mesh(new THREE.SphereGeometry(1.1, 6, 4), basic('#7FB8FF'));
+  vitre.scale.set(1, 0.7, 0.9);
+  vitre.position.set(0, 0.25, -1.6);
+  g.add(vitre);
+  const queue = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.4, 5), lam('#3A4152', {emissive: new THREE.Color('#1C2232')}));
+  queue.position.set(0, 0.3, 3.6);
+  g.add(queue);
+  const derive = new THREE.Mesh(new THREE.BoxGeometry(0.15, 1.3, 0.8), lam('#C8302E'));
+  derive.position.set(0, 0.9, 5.9);
+  g.add(derive);
+  for (const x of [-0.9, 0.9]) {
+    const patin = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.12, 3.6), lam('#111111'));
+    patin.position.set(x, -1.55, 0);
+    g.add(patin);
+  }
+  const rotor = new THREE.Group();
+  for (const a of [0, Math.PI / 2]) {
+    const pale = new THREE.Mesh(new THREE.BoxGeometry(9, 0.06, 0.35), lam('#0E0F14'));
+    pale.rotation.y = a;
+    rotor.add(pale);
+  }
+  rotor.position.y = 1.55;
+  g.add(rotor);
+  const feu = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.25, 0.25), basic('#FF2A2A'));
+  feu.position.set(0, -1.2, 0);
+  g.add(feu);
+  return {g, rotor, feu};
+}
+
+function calendrierTex(seed: number) {
+  const r = rng(seed);
+  return canvasTex(48, 56, (x) => {
+    x.fillStyle = '#F4EFE6';
+    x.fillRect(0, 0, 48, 56);
+    x.fillStyle = '#D9322F';
+    x.fillRect(0, 0, 48, 13);
+    x.fillStyle = '#ffffff';
+    x.fillRect(6, 4, 36, 5);
+    for (let i = 0; i < 7; i++)
+      for (let j = 0; j < 5; j++) {
+        x.fillStyle = r() < 0.12 ? '#D9322F' : '#9A938A';
+        x.fillRect(3 + i * 6.3, 17 + j * 7.6, 4, 4);
+      }
+  });
+}
+
 // ---------- Plans (décor + mouvement de caméra) ----------
 type Monde = {scene: THREE.Scene; camera: THREE.PerspectiveCamera; maj: (t: number) => void};
 
@@ -584,6 +704,124 @@ const PLANS: Record<string, (seed: number, dur: number) => Monde> = {
       w.maj(t + 3);
       w.camera.position.set(-12 + t * 2.2, 1.4, 22);
       w.camera.lookAt(-6 + t * 2.2, 5, -40);
+    }};
+  },
+
+  rue_neon(seed) {
+    const scene = new THREE.Scene();
+    const a = AMB.neon;
+    ambiance(scene, a, new THREE.Vector3(0, 1, 0), [25, 260]);
+    const anim = avenue(scene, a, seed);
+    const neon = enseignes(scene, seed);
+    const camera = new THREE.PerspectiveCamera(74, RW / RH, 0.1, 1200);
+    return {scene, camera, maj(t) {
+      anim(t);
+      neon(t);
+      const z = 14 - 11 * t;
+      camera.position.set(-4.2 + Math.sin(t * 0.6) * 1.2, 1.5 + Math.sin(t * 1.1) * 0.15, z);
+      camera.lookAt(1.5, 4.5, z - 30);
+      camera.rotation.z += 0.06 + Math.sin(t * 0.8) * 0.03;
+    }};
+  },
+  poursuite_nuit(seed) {
+    const scene = new THREE.Scene();
+    const a = AMB.neon;
+    ambiance(scene, a, new THREE.Vector3(0, 1, 0), [25, 240]);
+    avenue(scene, a, seed, 700);
+    const neon = enseignes(scene, seed, 700);
+    const fuyard = voiture('#FF8A1E');
+    fuyard.scale.set(1.05, 0.85, 1.1);
+    scene.add(fuyard);
+    const flics = [voiturePolice(), voiturePolice()];
+    flics.forEach((f) => scene.add(f.g));
+    const camera = new THREE.PerspectiveCamera(72, RW / RH, 0.1, 1200);
+    const V = 30;
+    return {scene, camera, maj(t) {
+      neon(t);
+      const zf = 10 - V * t;
+      fuyard.position.set(1.6 + Math.sin(t * 2.3) * 1.3, 0, zf);
+      fuyard.rotation.y = Math.sin(t * 2.3 + 1.2) * 0.12;
+      flics.forEach((f, i) => {
+        f.g.position.set((i ? 2.4 : -2.0) + Math.sin(t * 2 + i) * 0.7, 0, zf + 6.5 + i * 4.5);
+        f.g.rotation.y = Math.sin(t * 2 + i + 1) * 0.08;
+        f.gyro(t, i);
+      });
+      const sec = Math.sin(t * 37) * 0.05;
+      camera.position.set(-3.4 + Math.sin(t * 0.7) * 0.8, 2.3 + sec, zf + 15.5);
+      camera.lookAt(0.4, 0.9, zf - 3);
+      camera.rotation.z += -0.08 + sec * 0.5;
+    }};
+  },
+  helico_nuit(seed) {
+    const scene = new THREE.Scene();
+    const a = AMB.nuit;
+    ambiance(scene, a, new THREE.Vector3(0, 1, 0), [60, 420]);
+    villeGrille(scene, a, seed, false);
+    const h = helico();
+    scene.add(h.g);
+    const cone = new THREE.Mesh(new THREE.ConeGeometry(7, 40, 14, 1, true), basic('#FFF7D6', {transparent: true, opacity: 0.3, depthWrite: false, side: THREE.DoubleSide}));
+    cone.geometry.translate(0, -20, 0);
+    scene.add(cone);
+    const tache = new THREE.Mesh(new THREE.CircleGeometry(7.5, 16), basic('#FFF4C8', {transparent: true, opacity: 0.4, depthWrite: false}));
+    tache.rotation.x = -Math.PI / 2;
+    scene.add(tache);
+    const camera = new THREE.PerspectiveCamera(66, RW / RH, 0.1, 1500);
+    return {scene, camera, maj(t) {
+      const hp = new THREE.Vector3(Math.sin(t * 0.4) * 6, 104 + Math.sin(t * 1.3) * 0.8, Math.cos(t * 0.3) * 4);
+      h.g.position.copy(hp);
+      h.g.rotation.set(0.12, 0.6 + t * 0.15, Math.sin(t * 0.9) * 0.06);
+      h.rotor.rotation.y = t * 31;
+      h.feu.visible = Math.floor(t * 2.5) % 2 === 0;
+      const cible = new THREE.Vector3(Math.sin(t * 0.9) * 22, 0.4, -10 + Math.cos(t * 0.7) * 16);
+      cone.position.copy(hp).add(new THREE.Vector3(0, -1.5, 0));
+      cone.lookAt(cible);
+      cone.rotateX(-Math.PI / 2);
+      cone.scale.y = hp.distanceTo(cible) / 40;
+      tache.position.copy(cible);
+      tache.scale.setScalar(cone.scale.y);
+      camera.position.set(hp.x - 17 + t * 1.1, hp.y + 1.5, hp.z + 17);
+      camera.lookAt(hp.x + 1, hp.y - 9, hp.z - 5);
+    }};
+  },
+  calendrier(seed) {
+    const scene = new THREE.Scene();
+    const a = AMB.coucher;
+    ambiance(scene, a, new THREE.Vector3(0, 0.07, -1), [40, 320]);
+    const anim = avenue(scene, a, seed);
+    const r = rng(seed + 4);
+    const bloc = new THREE.Group();
+    const socle = new THREE.Mesh(new THREE.BoxGeometry(12.4, 14.4, 2.2), lam('#2B2E38'));
+    socle.position.z = -1.2;
+    bloc.add(socle);
+    const anneaux = basic('#C9CED8');
+    for (const x of [-4, -1.3, 1.3, 4]) {
+      const an = new THREE.Mesh(new THREE.TorusGeometry(0.45, 0.12, 4, 8), anneaux);
+      an.position.set(x, 7.2, 0.2);
+      bloc.add(an);
+    }
+    const pages: {m: THREE.Mesh; d: number; dx: number; rz: number}[] = [];
+    for (let i = 0; i < 9; i++) {
+      const g = new THREE.PlaneGeometry(12, 14);
+      g.translate(0, -7, 0);
+      const m = new THREE.Mesh(g, new THREE.MeshLambertMaterial({map: calendrierTex(seed + i * 7), side: THREE.DoubleSide}));
+      m.position.set(0, 7, 0.05 + (9 - i) * 0.02);
+      bloc.add(m);
+      pages.push({m, d: 0.35 + i * 0.55, dx: (r() - 0.5) * 30, rz: (r() - 0.5) * 3});
+    }
+    bloc.position.set(0, 9, -14);
+    scene.add(bloc);
+    const camera = new THREE.PerspectiveCamera(68, RW / RH, 0.1, 1200);
+    return {scene, camera, maj(t) {
+      anim(t);
+      for (const p of pages) {
+        const k = Math.max(0, t - p.d);
+        p.m.rotation.x = -Math.min(Math.PI * 0.9, k * 7);
+        p.m.position.set(k * p.dx * 0.4, 7 + k * 6 - k * k * 9, 0.05 + k * 8);
+        p.m.rotation.z = k * p.rz;
+        p.m.visible = k < 2.2;
+      }
+      camera.position.set(Math.sin(t * 0.5) * 3, 7.5, 16 - t * 1.4);
+      camera.lookAt(0, 8.5, -14);
     }};
   },
 };

@@ -1,0 +1,70 @@
+# Atelier : fabrique UNE vidéo à partir d'un brouillon précis, avec la vraie voix, sans passer par le pilote.
+# Sert à tester un nouveau style ou un nouveau format. La vidéo arrive sur Telegram et reste téléchargeable
+# dans l'onglet « Artifacts » du lancement. Rien n'est mis en file d'attente ni publié.
+name: Atelier (vidéo de test)
+on:
+  workflow_dispatch:
+    inputs:
+      brouillon:
+        description: "Brouillon à fabriquer (chemin dans le dépôt)"
+        default: "brouillons/demo-v2-vrai-faux.json"
+      chaine:
+        description: "Chaîne"
+        default: "gta6-fr"
+permissions:
+  contents: read
+concurrency: atelier
+jobs:
+  fabriquer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      TZ: Europe/Paris
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Outils système
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-inter bzip2
+      - name: Cache des modèles et du moteur de rendu
+        uses: actions/cache@v4
+        with:
+          path: |
+            models
+            rendu/node_modules
+          key: usine-${{ hashFiles('rendu/package-lock.json') }}-v1
+      - name: Installation
+        run: |
+          pip install kokoro-onnx soundfile sherpa-onnx requests numpy
+          mkdir -p models && cd models
+          [ -f kokoro-v1.0.onnx ] || wget -q https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          [ -f voices-v1.0.bin ] || wget -q https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+          [ -d sherpa-onnx-whisper-small ] || { wget -q https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-small.tar.bz2 && tar xjf sherpa-onnx-whisper-small.tar.bz2 && rm sherpa-onnx-whisper-small.tar.bz2; }
+          cd ../rendu && npm ci
+      - name: Fabrication
+        env:
+          BROUILLON: ${{ inputs.brouillon }}
+          CHAINE: ${{ inputs.chaine }}
+        run: |
+          chmod +x fabriquer.sh
+          python3 valider_storyboard.py "$BROUILLON" "chaines/$CHAINE.json" sortie/atelier/storyboard.json
+          ./fabriquer.sh sortie/atelier/storyboard.json sortie/atelier/
+          cat sortie/atelier/controle_voix.txt || true
+          TITRE=$(python3 -c "import json;print(json.load(open('sortie/atelier/storyboard.json'))['titre'])")
+          python3 veto.py atelier sortie/atelier "🧪 Atelier : $TITRE"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: atelier
+          retention-days: 7
+          path: |
+            sortie/atelier/video.mp4
+            sortie/atelier/storyboard.json
+            sortie/atelier/timing.json
+            sortie/atelier/controle_voix.txt
+            sortie/atelier/voix_elevenlabs.mp3

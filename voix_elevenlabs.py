@@ -9,6 +9,7 @@ Réglages dans storyboard["chaine"] : "voix_elevenlabs" (voice_id), "modele_elev
 Non testé dans l'espace de travail de Claude (pas d'accès réseau à ElevenLabs) : à valider au premier lancement.
 """
 import json
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -23,6 +24,9 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     ch = story["chaine"]
     texte = " ".join(sc.get("voix_jeu", sc["voix"]) for sc in story["scenes"])
+    # Sigles que la voix lit à l'anglaise (« dji-té-a ») : on les écrit comme ils se disent en français.
+    for mot, dit in sorted(ch.get("prononciation_elevenlabs", {}).items(), key=lambda kv: -len(kv[0])):
+        texte = re.sub(rf"(?<![\w-]){re.escape(mot)}(?![\w-])", dit, texte)
     voice_id = ch.get("voix_elevenlabs", "3Tp5mYhT9wrfnry9pzvV")  # Hugo – Punchy French Creator
     modeles = [ch.get("modele_elevenlabs", "eleven_v4"), "eleven_v3"]  # repli si le modèle n'est pas ouvert à l'API
     for modele in dict.fromkeys(modeles):

@@ -95,6 +95,60 @@ def pop():
     return np.sin(2 * np.pi * np.cumsum(f) / SR) * env(n, 0.002, 0.06)
 
 
+def ding():
+    n = int(0.6 * SR)
+    t = np.arange(n) / SR
+    return norm((np.sin(2 * np.pi * 1320 * t) + 0.5 * np.sin(2 * np.pi * 1980 * t)) * env(n, 0.002, 0.18))
+
+
+def buzz():
+    n = int(0.45 * SR)
+    t = np.arange(n) / SR
+    onde = np.sign(np.sin(2 * np.pi * 110 * t)) + 0.6 * np.sign(np.sin(2 * np.pi * 167 * t))
+    return norm(passe_bas(onde, 2200) * env(n, 0.005, 0.3))
+
+
+def riser(duree=0.7):
+    n = int(duree * SR)
+    fc = 300 + 7000 * np.linspace(0, 1, n) ** 2
+    return norm(passe_bas(rng.standard_normal(n), fc) * np.linspace(0, 1, n) ** 2)
+
+
+def alarme():
+    morceaux = []
+    for f in (880, 660, 880, 660):
+        n = int(0.14 * SR)
+        t = np.arange(n) / SR
+        morceaux.append(np.sin(2 * np.pi * f * t) * env(n, 0.003, 0.2))
+        morceaux.append(np.zeros(int(0.03 * SR)))
+    return norm(np.concatenate(morceaux))
+
+
+def nm(m):
+    import unicodedata
+    m = unicodedata.normalize("NFD", m.lower())
+    return "".join(c for c in m if c.isalnum() and unicodedata.category(c) != "Mn")
+
+
+def caler(mots, debut, textes, dur, frac=0.7, dernier=False):
+    """Même calcul que caler() dans Viral.tsx : instants (en s, absolus) où la voix dit chaque texte."""
+    res, i0 = [], 0
+    for k, tx in enumerate(textes):
+        cle = nm(str(tx).split()[0]) if str(tx).split() else ""
+        trouve = -1
+        idx = range(len(mots) - 1, i0 - 1, -1) if dernier else range(i0, len(mots))
+        for j in idx:
+            if cle and nm(mots[j]["mot"]) == cle:
+                trouve = j
+                break
+        if trouve >= 0:
+            i0 = trouve + 1
+            res.append(max(debut, round(mots[trouve]["debut"] * FPS - 2) / FPS))
+        else:
+            res.append(debut + dur * frac * (k + (1 if len(textes) == 1 else 0)) / max(1, len(textes)))
+    return res
+
+
 def poser(piste, son, t, gain):
     i = int(t * SR)
     if i >= len(piste) or i + len(son) <= 0:
@@ -141,6 +195,39 @@ def main():
             poser(sfx, pop(), t0 + 20 / FPS, 0.45)
         if sc.get("tampon"):
             poser(sfx, impact(0.7), t0 + round(sc.get("tamponA", 1) * FPS) / FPS, 0.8)
+        fin_sc = debuts[i + 1] if i + 1 < len(debuts) else duree
+        mots = timing["scenes"][i].get("mots", [])
+        if sc.get("vrai_faux"):
+            r = caler(mots, t0, [sc["vrai_faux"]["verdict"]], fin_sc - t0, 0.62, True)[0]
+            poser(sfx, riser(0.7), r - 0.7, 0.35)
+            poser(sfx, impact(0.8), r, 0.8)
+            poser(sfx, ding() if str(sc["vrai_faux"]["verdict"]).upper() == "VRAI" else buzz(), r, 0.55)
+        if sc.get("duel"):
+            for j in range(10):
+                poser(sfx, tic(), t0 + (8 + j * 26 / 10) / FPS, 0.3)
+            poser(sfx, impact(0.8), t0 + 36 / FPS, 0.75)
+            poser(sfx, ding(), t0 + 36 / FPS, 0.35)
+        if sc.get("frise"):
+            et = sc["frise"].get("etapes", [])
+            for e, r in zip(et, caler(mots, t0, [e.get("date", "") for e in et], fin_sc - t0, 0.75)):
+                poser(sfx, whoosh(0.3), r - 0.1, 0.4)
+                poser(sfx, pop(), r + 0.05, 0.35)
+                if e.get("barre"):
+                    poser(sfx, impact(0.4), r + 12 / FPS, 0.5)
+            if et and not et[-1].get("barre"):
+                poser(sfx, ding(), caler(mots, t0, [et[-1].get("date", "")], fin_sc - t0, 0.75)[0] + 0.1, 0.4)
+        if sc.get("quiz"):
+            rev = fin_sc - 14 / FPS
+            tt = t0 + 0.3
+            while tt < rev - 0.2:
+                poser(sfx, tic(), tt, 0.25)
+                tt += 0.5
+            poser(sfx, ding(), rev, 0.6)
+            poser(sfx, impact(0.5), rev, 0.4)
+        if sc.get("alerte"):
+            poser(sfx, alarme(), t0 + 0.05, 0.45)
+        if sc.get("liste"):
+            poser(sfx, impact(0.6), t0 + 0.12, 0.6)
         if sc.get("question"):
             fin = debuts[i + 1] if i + 1 < len(debuts) else duree
             poser(sfx, impact(), t0, 0.7)

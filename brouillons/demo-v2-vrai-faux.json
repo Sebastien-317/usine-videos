@@ -1,0 +1,19 @@
+{
+  "titre": "Vrai ou faux : 4 trucs sur GTA 6",
+  "legende": "La boîte de GTA 6 ne contient même pas le jeu. T'as eu combien de bonnes réponses ? #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {"fait": "Sortie le 19 novembre 2026 uniquement sur PS5 et Xbox Series, pas de version PC au lancement", "url": "https://tbreak.com/gta-6-pc-release-delayed-console-first/"},
+    {"fait": "Édition Standard à 79,99 €, Ultimate à 99,99 €", "url": "https://www.goclecd.fr/?p=1122738"},
+    {"fait": "Préchargement à partir du 12 novembre", "url": "https://www.goclecd.fr/?p=1122738"},
+    {"fait": "La version physique contient un code de téléchargement dans la boîte, pas de disque jouable", "url": "https://www.techradar.com/gaming/we-finally-know-the-official-gta-6-price-its-expensive-but-not-too-bad"}
+  ],
+  "scenes": [
+    {"voix": "Vrai ou faux : 4 trucs que tu crois savoir sur GTA 6.", "voix_jeu": "[excited] Vrai ou faux : 4 trucs que tu crois savoir sur GTA 6.", "plans": ["rue_neon", "poursuite_nuit"], "gros": "VRAI|OU FAUX ?"},
+    {"voix": "Un : il sort aussi sur PC. FAUX. Seulement sur PS5 et Xbox Series.", "voix_jeu": "Un : il sort aussi sur PC. [dramatically] FAUX. Seulement sur PS5 et Xbox Series.", "plans": ["autoroute_nuit", "rue_neon"], "vrai_faux": {"numero": 1, "affirmation": "Il sort aussi sur PC", "verdict": "FAUX"}},
+    {"voix": "Deux : il coûte 79,99 euros. VRAI. Pour l'édition standard.", "voix_jeu": "Deux : il coûte 79 euros 99. [surprised] VRAI. Pour l'édition standard.", "plans": ["piece_or", "pluie_billets"], "vrai_faux": {"numero": 2, "affirmation": "Il coûte 79,99 €", "verdict": "VRAI"}},
+    {"voix": "Trois : tu peux le télécharger avant la sortie. VRAI. Dès le 12 novembre.", "voix_jeu": "Trois : tu peux le télécharger avant la sortie. [excited] VRAI. Dès le 12 novembre.", "plans": ["calendrier", "autoroute_nuit"], "vrai_faux": {"numero": 3, "affirmation": "Tu peux le télécharger avant la sortie", "verdict": "VRAI"}},
+    {"voix": "Mais le quatrième… va faire mal aux collectionneurs.", "voix_jeu": "[whispers] Mais le quatrième… va faire mal aux collectionneurs.", "plans": ["helico_nuit", "poursuite_nuit"], "gros": "LE DERNIER|FAIT MAL"},
+    {"voix": "Quatre : la boîte contient le jeu. FAUX. Pas de disque dedans. Juste un code.", "voix_jeu": "Quatre : la boîte contient le jeu. [dramatically] FAUX. Pas de disque dedans. Juste un code.", "plans": ["tour_boites", "mur_ecrans"], "vrai_faux": {"numero": 4, "affirmation": "La boîte contient le jeu", "verdict": "FAUX"}},
+    {"voix": "Alors, t'en avais combien de bons ? Ton score sur 4 en commentaire.", "voix_jeu": "[curious] Alors, t'en avais combien de bons ? Ton score sur 4 en commentaire.", "plans": ["rue_neon", "plage_coucher"], "question": {"texte": "TON SCORE ?", "bulle": "Ton score /4 en commentaire"}}
+  ]
+}

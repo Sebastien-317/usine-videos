@@ -8,3 +8,5 @@ stills*/
 *.wav
 *.mp3
 __pycache__/
+models
+rendu/node_modules
