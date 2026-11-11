@@ -828,6 +828,39 @@ const PLANS: Record<string, (seed: number, dur: number) => Monde> = {
 
 export type MondeRendu = {render: (t: number) => void; dispose: () => void};
 
+// Rendu partagé : UN seul contexte WebGL par onglet (les shaders ne sont compilés qu'une fois)
+// et des mondes construits une seule fois puis réutilisés à chaque coupe. Gros gain de temps de rendu.
+let PARTAGE: THREE.WebGLRenderer | null = null;
+const CACHE = new Map<string, Monde>();
+export function rendreMonde(plan: string, seed: number, dur: number, t: number): HTMLCanvasElement {
+  if (!PARTAGE) {
+    const c = document.createElement('canvas');
+    c.width = RW;
+    c.height = RH;
+    PARTAGE = new THREE.WebGLRenderer({canvas: c, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power'});
+    PARTAGE.setPixelRatio(1);
+    PARTAGE.setSize(RW, RH, false);
+  }
+  const nom = PLANS[plan] ? plan : 'avenue_coucher';
+  const cle = nom === 'tour_boites' ? `${nom}|${seed}|${Math.round(dur)}` : `${nom}|${seed}`;
+  let m = CACHE.get(cle);
+  if (!m) {
+    m = PLANS[nom](seed, dur);
+    CACHE.set(cle, m);
+    if (CACHE.size > 24) {
+      const vieux = CACHE.keys().next().value as string;
+      CACHE.get(vieux)!.scene.traverse((o: any) => {
+        o.geometry?.dispose?.();
+        (Array.isArray(o.material) ? o.material : [o.material]).forEach((mm: any) => { mm?.map?.dispose?.(); mm?.emissiveMap?.dispose?.(); mm?.dispose?.(); });
+      });
+      CACHE.delete(vieux);
+    }
+  }
+  m.maj(t);
+  PARTAGE.render(m.scene, m.camera);
+  return PARTAGE.domElement;
+}
+
 export function creerMonde(plan: string, seed: number, dur: number, canvas: HTMLCanvasElement): MondeRendu {
   const renderer = new THREE.WebGLRenderer({canvas, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power'});
   renderer.setPixelRatio(1);

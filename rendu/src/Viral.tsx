@@ -1,6 +1,6 @@
 import React, {useLayoutEffect, useRef} from 'react';
 import {AbsoluteFill, Sequence, useCurrentFrame, useVideoConfig, interpolate, spring, Easing, staticFile, delayRender, continueRender} from 'remotion';
-import {creerMonde, tramer, RW, RH, MondeRendu} from './monde';
+import {rendreMonde, tramer, RW, RH} from './monde';
 
 export const FPS = 30;
 const CL = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
@@ -19,19 +19,13 @@ const contour = (px: number) => ({WebkitTextStroke: `${px}px #000`, paintOrder: 
 // ---------- 3D pixelisée ----------
 const Plan3D: React.FC<{plan: string; seed: number; dur: number; decal?: number; zoom?: number; incl?: number}> = ({plan, seed, dur, decal = 0, zoom = 1, incl = 0}) => {
   const f = useCurrentFrame();
-  const gl = useRef<HTMLCanvasElement>(null);
   const out = useRef<HTMLCanvasElement>(null);
-  const monde = useRef<MondeRendu | null>(null);
-  useLayoutEffect(() => () => { monde.current?.dispose(); monde.current = null; }, []);
   useLayoutEffect(() => {
-    if (!monde.current) monde.current = creerMonde(plan, seed, dur / FPS + decal, gl.current!);
-    monde.current.render(f / FPS + decal);
-    tramer(gl.current!, out.current!, 12);
+    tramer(rendreMonde(plan, seed, dur / FPS + decal, f / FPS + decal), out.current!, 12);
   }, [f]);
   const punch = interpolate(f, [0, 5], [zoom * 1.12, zoom], {...CL, easing: Easing.out(Easing.cubic)});
   return (
     <AbsoluteFill style={{transform: `scale(${punch}) rotate(${incl}deg)`}}>
-      <canvas ref={gl} width={RW} height={RH} style={{display: 'none'}} />
       <canvas ref={out} width={RW} height={RH} style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, imageRendering: 'pixelated'}} />
     </AbsoluteFill>
   );

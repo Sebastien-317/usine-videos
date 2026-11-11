@@ -31,6 +31,71 @@ def poids_phonetique(texte, tok, ch):
     return len(re.sub(r"\([a-z]{2}\)|[ˈˌ\s]", "", tok.phonemize(dit, ch["langue"]))) + 1
 
 
+def nmot(m):
+    import unicodedata
+    m = unicodedata.normalize("NFD", m.lower())
+    return "".join(c for c in m if c.isalnum() and unicodedata.category(c) != "Mn")
+
+
+def caler_par_alignement(al, story, duree_audio):
+    """Calage exact : ElevenLabs donne l'instant de chaque caractère du texte envoyé (balises et phonétique compris).
+    On retrouve chaque mot de « voix » dans ce texte, scène par scène. Renvoie None si le résultat n'est pas fiable."""
+    import difflib
+    texte, morceaux, a = al["texte"], al["morceaux"], al["alignment"]
+    chars, deb, fin = a["characters"], a["character_start_times_seconds"], a["character_end_times_seconds"]
+    recu = "".join(chars)
+    # position (dans le texte envoyé) -> index de caractère horodaté
+    if recu == texte:
+        corresp = list(range(len(texte)))
+    else:
+        corresp = [None] * len(texte)
+        for bl in difflib.SequenceMatcher(None, texte, recu, autojunk=False).get_matching_blocks():
+            for k in range(bl.size):
+                corresp[bl.a + k] = bl.b + k
+    # mots du texte envoyé (hors balises [..]) avec leurs instants, et leur scène
+    mots_env, pos = [], 0
+    for si, mc in enumerate(morceaux):
+        base = texte.index(mc, pos)
+        pos = base + len(mc)
+        propre = re.sub(r"\[[^\]]*\]", lambda m: " " * len(m.group()), mc)
+        for m in re.finditer(r"\S+", propre):
+            idx = [corresp[base + k] for k in range(m.start(), m.end()) if corresp[base + k] is not None]
+            if idx:
+                mots_env.append({"scene": si, "n": nmot(m.group()), "debut": deb[min(idx)], "fin": fin[max(idx)]})
+    scenes, trouves, total = [], 0, 0
+    for si, sc in enumerate(story["scenes"]):
+        V = sc["voix"].split()
+        E = [m for m in mots_env if m["scene"] == si]
+        total += len(V)
+        t = [None] * len(V)
+        sm = difflib.SequenceMatcher(None, [nmot(v) for v in V], [e["n"] for e in E], autojunk=False)
+        for op, i1, i2, j1, j2 in sm.get_opcodes():
+            if op == "equal":
+                for k in range(i2 - i1):
+                    t[i1 + k] = (E[j1 + k]["debut"], E[j1 + k]["fin"])
+                    trouves += 1
+            elif op == "replace":  # réécriture phonétique : on répartit la durée du bloc
+                d0, d1 = E[j1]["debut"], E[j2 - 1]["fin"]
+                n = i2 - i1
+                for k in range(n):
+                    t[i1 + k] = (d0 + (d1 - d0) * k / n, d0 + (d1 - d0) * (k + 1) / n)
+                trouves += n
+        # mots sans correspondance : on les place entre leurs voisins
+        for k in range(len(V)):
+            if t[k] is None:
+                avant = next((t[j][1] for j in range(k - 1, -1, -1) if t[j]), E[0]["debut"] if E else 0.0)
+                apres = next((t[j][0] for j in range(k + 1, len(V)) if t[j]), avant + 0.2)
+                t[k] = (avant, max(avant + 0.02, apres))
+        scenes.append({"index": si, "mots": [{"mot": v, "debut": round(a, 3), "fin": round(b, 3)} for v, (a, b) in zip(V, t)]})
+    debuts = [s["mots"][0]["debut"] for s in scenes if s["mots"]]
+    if total == 0 or trouves / total < 0.75 or debuts != sorted(debuts):
+        return None
+    for k, s in enumerate(scenes):
+        s["debut"] = round(max(0.0, s["mots"][0]["debut"] - 0.06), 3)
+        s["fin"] = round(scenes[k + 1]["mots"][0]["debut"] - 0.06 if k + 1 < len(scenes) else s["mots"][-1]["fin"], 3)
+    return {"duree": round(duree_audio + 0.4, 3), "scenes": scenes}
+
+
 def main():
     src, story_path, out = sys.argv[1], Path(sys.argv[2]), Path(sys.argv[3])
     out.mkdir(parents=True, exist_ok=True)
@@ -43,6 +108,17 @@ def main():
     # copie haute qualité pour le mixage final (l'analyse se fait en 24 kHz)
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-ac", "1", "-ar", "48000", str(out / "voix_hd.wav")], check=True)
     audio, _ = sf.read(wav, dtype="float32")
+
+    al = Path(src).with_name("alignement_elevenlabs.json")
+    if al.exists():
+        timing = caler_par_alignement(json.loads(al.read_text()), story, len(audio) / SR)
+        if timing:
+            (out / "timing.json").write_text(json.dumps(timing, ensure_ascii=False, indent=1))
+            for s in timing["scenes"]:
+                print(f"scène {s['index']}: {s['debut']:6.2f}s → {s['fin']:6.2f}s")
+            print(f"durée {timing['duree']}s — calage exact par l'horodatage ElevenLabs")
+            return
+        print("horodatage ElevenLabs peu fiable : calage par les silences")
 
     # enveloppe d'énergie et zones de parole
     h = int(HOP * SR)
