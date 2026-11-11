@@ -3,6 +3,7 @@
 Usage : python valider_storyboard.py brouillon.json chaines/gta6-fr.json sortie/storyboard.json
 Code retour 0 = validé (storyboard final écrit), 1 = refusé (liste des problèmes affichée, rien n'est écrit).
 """
+import difflib
 import json
 import re
 import sys
@@ -55,7 +56,11 @@ def valider(b, ch):
         if "[" in v:
             pb.append(f"Scène {i} : pas de balise [..] dans « voix » (les mettre dans « voix_jeu »).")
         if s.get("voix_jeu") and norm(s["voix_jeu"]) != norm(v):
-            pb.append(f"Scène {i} : « voix_jeu » ne dit pas exactement les mêmes mots que « voix ».")
+            # Une réécriture phonétique d'un nom propre (« Dèdpoul ») est permise, pas un autre texte.
+            if difflib.SequenceMatcher(None, norm(s["voix_jeu"]), norm(v)).ratio() < 0.75:
+                pb.append(f"Scène {i} : « voix_jeu » ne dit pas les mêmes mots que « voix » (seules les réécritures phonétiques sont permises).")
+            else:
+                avert.append(f"Scène {i} : « voix_jeu » réécrit des mots en phonétique, vérifie que le sens est identique.")
         plans = s.get("plans", [])
         if not plans or any(p not in ch["plans_autorises"] for p in plans):
             pb.append(f"Scène {i} : plans invalides {plans} (autorisés : {', '.join(ch['plans_autorises'])}).")
