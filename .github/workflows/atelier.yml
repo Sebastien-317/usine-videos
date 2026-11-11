@@ -12,7 +12,7 @@ on:
         description: "Chaîne"
         default: "gta6-fr"
 permissions:
-  contents: read
+  contents: write
 concurrency: atelier
 jobs:
   fabriquer:
@@ -58,6 +58,15 @@ jobs:
           cat sortie/atelier/controle_voix.txt || true
           TITRE=$(python3 -c "import json;print(json.load(open('sortie/atelier/storyboard.json'))['titre'])")
           python3 veto.py atelier sortie/atelier "🧪 Atelier : $TITRE"
+      - name: Planche de contrôle (pour que Claude voie le résultat)
+        if: success()
+        run: |
+          mkdir -p controle
+          ffmpeg -loglevel error -y -i sortie/atelier/video.mp4 -vf "fps=1/2,scale=270:480,tile=8x2:padding=4" -frames:v 1 controle/planche.jpg
+          cp sortie/atelier/controle_voix.txt controle/ || true
+          git config user.name "usine-bot" && git config user.email "usine-bot@users.noreply.github.com"
+          git checkout --orphan atelier-controle && git rm -rq --cached . && git add controle && git commit -qm "Contrôle atelier $(date +%F-%H%M)"
+          git push -f origin atelier-controle
       - uses: actions/upload-artifact@v4
         if: always()
         with:
