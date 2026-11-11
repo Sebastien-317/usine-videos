@@ -1,0 +1,18 @@
+{
+  "titre": "GTA 6 a déjà rapporté 750 millions avant sa sortie",
+  "legende": "Pas encore sorti… et déjà environ 750 millions de dollars de précommandes numériques selon Sensor Tower. Tu l'as réservé ? #gta6 #gtavi #jeuxvideo #ps5",
+  "sources": [
+    {"fait": "Sensor Tower (via Frandroid, 4/11/2026) : environ 751 M$ et plus de 7 millions de copies précommandées, estimation, 75 % PS5", "url": "https://tech-insider.org/fr/gta-6-precommandes-751-millions-sensor-tower-2026/"},
+    {"fait": "Le chiffre ne compte que les précommandes numériques", "url": "https://gamewave.fr/gta-6/gta-6-aurait-deja-vendu-7-millions-de-copies-grace-aux-precommandes-et-engendre-750-millions-de-dollars/"},
+    {"fait": "Prix standard 79,99 $, sortie le 19/11/2026 (confirmé Rockstar)", "url": "https://tech-insider.org/fr/gta-6-precommandes-751-millions-sensor-tower-2026/"}
+  ],
+  "scenes": [
+    {"voix": "Ce jeu n'est même pas sorti…", "voix_jeu": "[surprised] Ce jeu n'est même pas sorti…", "plans": ["avenue_coucher"], "gros": "PAS ENCORE|SORTI"},
+    {"voix": "et il a déjà rapporté 750 millions de dollars.", "voix_jeu": "[excited] et il a DÉJÀ rapporté 750 millions de dollars.", "plans": ["pluie_billets"], "compteur": {"valeur": 750, "suffixe": " M$", "label": "EN PRÉCOMMANDES"}},
+    {"voix": "C'est GTA 6. Plus de 7 millions de copies réservées, selon Sensor Tower.", "plans": ["tour_boites"], "compteur": {"valeur": 7, "prefixe": "+", "suffixe": " M", "label": "COPIES RÉSERVÉES"}},
+    {"voix": "Et le plus fou ? Ça ne compte que le numérique.", "voix_jeu": "[dramatically] Et le plus fou ? Ça ne compte QUE le numérique.", "plans": ["mur_ecrans"], "gros": "QUE LE|NUMÉRIQUE"},
+    {"voix": "3 précommandes sur 4 se font sur PS5.", "plans": ["vue_aerienne"], "gros": "3 SUR 4|SUR PS5"},
+    {"voix": "Le jeu coûte 80 dollars… et sort dans 8 jours.", "voix_jeu": "[short pause] Le jeu coûte 80 dollars… et sort dans 8 jours.", "plans": ["autoroute_nuit"], "gros": "J-8"},
+    {"voix": "Toi, tu l'as déjà réservé ? Dis-le en commentaire.", "voix_jeu": "[curious] Toi, tu l'as déjà réservé ? Dis-le en commentaire.", "plans": ["plage_proche"], "question": {"texte": "RÉSERVÉ ?", "bulle": "Dis-le en commentaire"}}
+  ]
+}

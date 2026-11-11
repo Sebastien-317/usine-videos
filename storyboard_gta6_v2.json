@@ -1,0 +1,116 @@
+{
+  "composition": "Viral",
+  "chaine": {
+    "id": "gta6-fr",
+    "nom": "DOSSIER JEU",
+    "langue": "fr-fr",
+    "voix": "ff_siwis",
+    "vitesse": 1.12,
+    "prononciation": {
+      "GTA 6": "gé-té-a sisse",
+      "GTA 5": "gé-té-a cinq",
+      "GTA": "gé-té-a",
+      "Take-Two": "Tèk-Tou",
+      "Xbox": "Ixe-bosse",
+      "Series": "Siriz"
+    }
+  },
+  "titre": "Ce jeu a 13 ans et il se vend encore",
+  "legende": "Un jeu de 2013 vend encore 5 millions d'exemplaires par trimestre… et son successeur sort dans 8 jours. Tu le prends day one ? #gta6 #gtavi #jeuxvideo",
+  "scenes": [
+    {
+      "voix": "Ce jeu a 13 ans…",
+      "plans": [
+        "avenue_coucher"
+      ],
+      "seed": 11,
+      "gros": "CE JEU A|13 ANS"
+    },
+    {
+      "voix": "et il se vend encore à 5 millions d'exemplaires tous les trois mois.",
+      "plans": [
+        "vue_aerienne"
+      ],
+      "seed": 23,
+      "compteur": {
+        "valeur": 5,
+        "prefixe": "+",
+        "suffixe": " M",
+        "label": "TOUS LES 3 MOIS"
+      }
+    },
+    {
+      "voix": "C'est GTA 5. 230 millions de copies vendues.",
+      "plans": [
+        "tour_boites"
+      ],
+      "seed": 31,
+      "compteur": {
+        "valeur": 230,
+        "suffixe": " M",
+        "label": "COPIES DE GTA V"
+      }
+    },
+    {
+      "voix": "Et dans 8 jours… son successeur débarque.",
+      "plans": [
+        "autoroute_nuit"
+      ],
+      "seed": 41,
+      "gros": "J-8"
+    },
+    {
+      "voix": "Sa première bande-annonce ? 90 millions de vues en 24 heures. Record du monde.",
+      "plans": [
+        "mur_ecrans"
+      ],
+      "seed": 53,
+      "compteur": {
+        "valeur": 90,
+        "suffixe": " M",
+        "label": "DE VUES EN 24 H"
+      },
+      "tampon": "RECORD DU MONDE",
+      "tamponA": 3.3
+    },
+    {
+      "voix": "Son éditeur vise 8 milliards de dollars de ventes sur douze mois.",
+      "plans": [
+        "pluie_billets"
+      ],
+      "seed": 61,
+      "compteur": {
+        "valeur": 8,
+        "suffixe": " MILLIARDS",
+        "label": "DE $ VISÉS PAR TAKE-TWO"
+      }
+    },
+    {
+      "voix": "Et le jeu coûtera 80 dollars aux États-Unis.",
+      "plans": [
+        "piece_or"
+      ],
+      "seed": 71,
+      "gros": "80 $"
+    },
+    {
+      "voix": "Sortie le 19 novembre, sur PS5 et Xbox.",
+      "plans": [
+        "plage_coucher"
+      ],
+      "seed": 83,
+      "gros": "19 NOV.|PS5 · XBOX"
+    },
+    {
+      "voix": "Alors… toi, tu le prends le jour de la sortie ? Dis-le en commentaire.",
+      "plans": [
+        "plage_proche"
+      ],
+      "seed": 97,
+      "question": {
+        "texte": "DAY ONE ?",
+        "bulle": "Dis-le en commentaire"
+      }
+    }
+  ]
+}

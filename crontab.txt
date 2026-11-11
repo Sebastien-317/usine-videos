@@ -1,0 +1,9 @@
+# Usine à vidéos — à installer avec : crontab crontab.txt   (heure de Paris)
+CRON_TZ=Europe/Paris
+USINE=/home/usine/usine
+
+# 07:12 : le pilote (Claude Code) produit les vidéos du jour et envoie les aperçus sur Telegram
+12 7 * * *   cd $USINE && ./produire.sh gta6-fr
+
+# toutes les 5 minutes : lire les vetos (bouton Annuler) puis publier ce qui est arrivé à échéance
+*/5 * * * *  cd $USINE && python3 veto.py lire >> journaux/veto.log 2>&1 && python3 publier.py >> journaux/publication.log 2>&1

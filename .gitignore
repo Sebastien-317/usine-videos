@@ -1,0 +1,10 @@
+.env
+models/
+rendu/node_modules/
+sortie/
+sortie_*/
+stills*/
+*.mp4
+*.wav
+*.mp3
+__pycache__/

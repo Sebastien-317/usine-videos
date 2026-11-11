@@ -1,0 +1,55 @@
+# Chaque matin : Claude (Claude Code, connecté à l'abonnement de Sébastien) produit les vidéos du jour,
+# les programme chez Upload-Post (12 h 30 et 19 h) et envoie les aperçus sur Telegram. Aucun serveur à payer.
+name: Production quotidienne
+on:
+  schedule:
+    - cron: "12 6 * * *"     # 6 h 12 UTC = 7 h 12 à Paris en hiver (8 h 12 en été)
+  workflow_dispatch:          # bouton « Run workflow » pour lancer à la main
+permissions:
+  contents: write
+concurrency: usine
+jobs:
+  produire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      MODE_PUBLICATION: manuel      # « manuel » : tu publies toi-même depuis Telegram ; « programmer » : Upload-Post publie seul
+      TZ: Europe/Paris
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Outils système
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-inter bzip2
+      - name: Cache des modèles et du moteur de rendu
+        uses: actions/cache@v4
+        with:
+          path: |
+            models
+            rendu/node_modules
+          key: usine-${{ hashFiles('rendu/package-lock.json') }}-v1
+      - name: Installation
+        run: |
+          pip install kokoro-onnx soundfile sherpa-onnx requests numpy
+          mkdir -p models && cd models
+          [ -f kokoro-v1.0.onnx ] || wget -q https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          [ -f voices-v1.0.bin ] || wget -q https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+          [ -d sherpa-onnx-whisper-small ] || { wget -q https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-small.tar.bz2 && tar xjf sherpa-onnx-whisper-small.tar.bz2 && rm sherpa-onnx-whisper-small.tar.bz2; }
+          cd ../rendu && npm ci
+          npm install -g @anthropic-ai/claude-code
+      - name: Production (pilote Claude)
+        run: chmod +x produire.sh fabriquer.sh && ./produire.sh gta6-fr
+      - name: Mémoire (sujets traités, file d'attente, journaux)
+        if: always()
+        run: |
+          git config user.name "usine-bot" && git config user.email "usine-bot@users.noreply.github.com"
+          git add historique.jsonl file_attente journaux brouillons 2>/dev/null || true
+          git commit -m "Production du $(date +%F)" || echo "rien à enregistrer"
+          git push

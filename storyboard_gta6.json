@@ -1,0 +1,76 @@
+{
+  "chaine": {
+    "id": "gta6-fr",
+    "nom": "DOSSIER JEU",
+    "langue": "fr-fr",
+    "voix": "ff_siwis",
+    "vitesse": 1.03,
+    "couleurs": {
+      "fond": "#0B0D10",
+      "texte": "#F4F1EA",
+      "accent": "#C6FF3D",
+      "secondaire": "#7A8290"
+    },
+    "prononciation": {
+      "GTA 6": "gé-té-a sisse",
+      "GTA": "gé-té-a",
+      "Take-Two": "Tèk-Tou",
+      "Xbox": "Ixe-bosse",
+      "Series": "Siriz"
+    }
+  },
+  "titre": "GTA 6 : la sortie en chiffres",
+  "legende": "GTA 6 sort le 19 novembre. Et il doit battre un monstre : son grand frère. #gta6 #gtavi #jeuxvideo",
+  "scenes": [
+    {
+      "type": "accroche",
+      "voix": "Dans 8 jours, GTA 6 débarque enfin. Et il doit battre un monstre.",
+      "grand": "J-8",
+      "texte": "GTA 6 doit battre un *monstre*"
+    },
+    {
+      "type": "chiffre",
+      "voix": "Ce monstre, c'est GTA 5. Plus de 230 millions d'exemplaires vendus.",
+      "valeur": 230,
+      "suffixe": " M",
+      "texte": "exemplaires de *GTA V* vendus",
+      "source": "Take-Two, août 2026"
+    },
+    {
+      "type": "frise",
+      "voix": "En 13 ans. Le jeu est sorti en septembre 2013.",
+      "debut": "2013",
+      "fin": "2026",
+      "grand": "13 ans",
+      "texte": "et il se vend encore"
+    },
+    {
+      "type": "chiffre",
+      "voix": "Et l'attente est déjà historique. La première bande-annonce a fait 90 millions de vues en 24 heures. Record du monde.",
+      "valeur": 90,
+      "suffixe": " M",
+      "texte": "de vues en 24 h pour la 1re bande-annonce",
+      "badge": "RECORD GUINNESS",
+      "source": "Guinness World Records, déc. 2023"
+    },
+    {
+      "type": "chiffre",
+      "voix": "Son éditeur, Take-Two, vise au moins 8 milliards de dollars de ventes sur douze mois.",
+      "valeur": 8,
+      "suffixe": " Md$",
+      "texte": "de ventes visées par Take-Two",
+      "source": "Take-Two, 9 nov. 2026 (exercice avril 2026 – mars 2027)"
+    },
+    {
+      "type": "relance",
+      "voix": "Rendez-vous le 19 novembre, sur PS5 et Xbox Series. La version PC, elle, n'est toujours pas annoncée. Abonne-toi : on suit la sortie jour par jour.",
+      "grand": "19.11",
+      "lignes": [
+        "PS5 · Xbox Series X|S",
+        "PC : pas encore annoncé"
+      ],
+      "texte": "Abonne-toi : on suit la sortie jour par jour"
+    }
+  ],
+  "rubrique": "GTA 6 · J-8"
+}
