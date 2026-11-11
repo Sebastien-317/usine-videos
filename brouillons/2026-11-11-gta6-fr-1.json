@@ -1,0 +1,17 @@
+{
+  "titre": "Le trailer de GTA 6 a battu Deadpool",
+  "legende": "475 millions de vues en 24 h pour le trailer 2 de GTA 6, contre 365 millions pour Deadpool & Wolverine. Record ou simple hype ? #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {"fait": "Trailer 2 : plus de 475 millions de vues sur toutes les plateformes en 24 h, annoncé comme plus gros lancement vidéo de tous les temps ; Deadpool & Wolverine : 365 millions", "url": "https://www.videogameschronicle.com/news/at-nearly-half-a-billion-views-rockstar-says-gta-6s-new-trailer-is-the-biggest-video-launch-of-all-time"},
+    {"fait": "Sortie le jeudi 19 novembre 2026", "url": "https://www.gtabase.com/articles/gta-6/gta-6-delayed-again-now-releasing-november-19-2026"}
+  ],
+  "scenes": [
+    {"voix": "Un trailer a battu Deadpool.", "voix_jeu": "[dramatically] Un trailer a battu Deadpool.", "plans": ["avenue_coucher"], "gros": "BATTU PAR|UN TRAILER"},
+    {"voix": "Le trailer 2 de GTA 6 : 475 millions de vues en 24 heures.", "voix_jeu": "[excited] Le trailer 2 de GTA 6 : 475 millions de vues en 24 heures.", "plans": ["mur_ecrans"], "compteur": {"valeur": 475, "suffixe": " M", "label": "DE VUES EN 24 H"}},
+    {"voix": "Deadpool et Wolverine tenait le record avec 365 millions.", "plans": ["vue_aerienne"], "compteur": {"valeur": 365, "suffixe": " M", "label": "LE RECORD PRÉCÉDENT"}},
+    {"voix": "Et le plus fou ? Ce chiffre cumule toutes les plateformes, pas seulement YouTube.", "voix_jeu": "[curious] Et le plus fou ? Ce chiffre cumule toutes les plateformes, pas seulement YouTube.", "plans": ["tour_boites"], "gros": "TOUTES LES|PLATEFORMES"},
+    {"voix": "Rockstar parle du plus gros lancement de vidéo de tous les temps.", "plans": ["autoroute_nuit"], "gros": "PLUS GROS|LANCEMENT"},
+    {"voix": "Et le jeu sort le 19 novembre. Dans 8 jours.", "voix_jeu": "[short pause] Et le jeu sort le 19 novembre. Dans 8 jours.", "plans": ["plage_coucher"], "gros": "SORTIE|DANS 8 JOURS"},
+    {"voix": "Alors, ce record, c'est de la hype ou juste du marketing ? Dis-le en commentaire.", "voix_jeu": "[curious] Alors, ce record, c'est de la hype ou juste du marketing ? Dis-le en commentaire.", "plans": ["plage_proche"], "question": {"texte": "HYPE OU PAS ?", "bulle": "Dis-le en commentaire"}}
+  ]
+}

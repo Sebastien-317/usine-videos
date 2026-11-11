@@ -1,0 +1,10 @@
+Les deux vidéos sont fabriquées et dans la file d'attente, pour publication le 12/11 à 12:30 et à 19:00.
+
+- **Vidéo 1, 12:30 :** le trailer 2 de GTA 6 a fait 475 M de vues en 24 h, contre 365 M pour Deadpool & Wolverine, et le jeu sort dans 8 jours. Sources : VGC et GTABase.
+- **Vidéo 2, 19:00 :** GTA 5 a 13 ans et 230 M de copies vendues, GTA 6 a été repoussé deux fois et sort le 19 novembre sur PS5 et Xbox Series, sans PC annoncé. Sources : PC Gamer, GTABase et Journal du Geek.
+- **Problèmes :**
+  - Dans la vidéo 1, la voix a mal prononcé « Deadpool » (entendu « des… ») et « GTA 6 » (entendu « Geetay A6 »). Je n'ai pas refabriqué, car le validateur exige les mêmes mots entre `voix` et `voix_jeu`. À écouter avant publication.
+  - Je n'ai pas pu vérifier un prix en euros : le seul article qui le donnait l'indique en dollars. Je n'ai donc pas utilisé de prix.
+  - Le fichier `historique.jsonl` n'existe pas, donc je n'ai pas pu contrôler les doublons sur 14 jours.
+vidéo envoyée pour publication manuelle : 20261112-1230-gta6-fr (30.5 Mo)
+vidéo envoyée pour publication manuelle : 20261112-1900-gta6-fr (30.2 Mo)
