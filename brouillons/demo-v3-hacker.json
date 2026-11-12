@@ -2,28 +2,110 @@
   "titre": "Il a piraté GTA 6 avec une clé télé",
   "legende": "Enfermé dans un hôtel, sans ordinateur… et il a quand même piraté Rockstar. Génie ou criminel ? #gta6 #gtavi #jeuxvideo #gaming",
   "sources": [
-    {"fait": "Hack de Rockstar depuis un hôtel Travelodge, sous protection policière, avec une clé Amazon Fire TV, un smartphone, un clavier et une souris ; Rockstar chiffre le coût à 5 millions de dollars ; internement à durée indéfinie (21/12/2023)", "url": "https://www.engadget.com/gta-6-hacker-is-sentenced-to-an-indefinite-hospitalization-194251395.html"},
-    {"fait": "Ordinateur portable confisqué ; clé Fire TV, télévision de l'hôtel et téléphone", "url": "https://cbsnews.com/newyork/news/grand-theft-auto-leak-teen-hacker-hospitalized"},
-    {"fait": "90 vidéos de GTA 6 publiées ; en 2026, transféré de l'hôpital vers une prison, nouveau procès prévu en novembre", "url": "https://www.pcgamer.com/games/grand-theft-auto/grand-theft-auto-6-leaker-who-was-given-an-indefinite-sentence-in-2023-because-he-wouldnt-stop-hacking-is-now-out-of-hospital-and-awaiting-retrial/"}
+    {
+      "fait": "Hack de Rockstar depuis un hôtel Travelodge, sous protection policière, avec une clé Amazon Fire TV, un smartphone, un clavier et une souris ; Rockstar chiffre le coût à 5 millions de dollars ; internement à durée indéfinie (21/12/2023)",
+      "url": "https://www.engadget.com/gta-6-hacker-is-sentenced-to-an-indefinite-hospitalization-194251395.html"
+    },
+    {
+      "fait": "Ordinateur portable confisqué ; clé Fire TV, télévision de l'hôtel et téléphone",
+      "url": "https://cbsnews.com/newyork/news/grand-theft-auto-leak-teen-hacker-hospitalized"
+    },
+    {
+      "fait": "90 vidéos de GTA 6 publiées ; en 2026, transféré de l'hôpital vers une prison, nouveau procès prévu en novembre",
+      "url": "https://www.pcgamer.com/games/grand-theft-auto/grand-theft-auto-6-leaker-who-was-given-an-indefinite-sentence-in-2023-because-he-wouldnt-stop-hacking-is-now-out-of-hospital-and-awaiting-retrial/"
+    }
   ],
   "scenes": [
-    {"voix": "Ce gamin a piraté GTA 6… avec une clé télé.", "voix_jeu": "[whispers] Ce gamin a piraté GTA 6… [dramatically] avec une clé télé.",
-     "visuels": ["pixabay:hacker hoodie dark", "pixabay:typing keyboard night"], "gros": "IL A PIRATÉ|GTA 6"},
-    {"voix": "2022. Un ado anglais vit dans un hôtel, sous protection policière.", "voix_jeu": "[short pause] 2022. Un ado anglais vit dans un hôtel, sous protection policière.",
-     "visuels": ["pixabay:hotel corridor night", "pixabay:police car lights night"], "lieu": "ANGLETERRE · 2022"},
-    {"voix": "Son ordi ? Confisqué. Il lui reste une clé Amazon branchée sur la télé.", "voix_jeu": "[curious] Son ordi ? Confisqué. Il lui reste une clé Amazon branchée sur la télé.",
-     "visuels": ["pixabay:tv remote dark room", "pixabay:smartphone screen dark"],
-     "document": {"entete": "SURVEILLANCE POLICIÈRE", "titre": "CE QU'IL LUI RESTE", "lignes": ["Ordinateur : [[confisqué]]", "Logement : hôtel surveillé", "Matériel : une clé télé"]}},
-    {"voix": "Avec ça, il entre chez Rockstar. Et il vole 90 vidéos de GTA 6.", "voix_jeu": "[dramatically] Avec ça, il entre chez Rockstar. Et il vole 90 vidéos de GTA 6.",
-     "visuels": ["pixabay:server room", "pixabay:code screen green"], "compteur": {"valeur": 90, "label": "VIDÉOS DE GTA 6 VOLÉES"}},
-    {"voix": "La facture pour Rockstar : 5 millions de dollars.", "voix_jeu": "[surprised] La facture pour Rockstar : 5 millions de dollars.",
-     "visuels": ["pixabay:money counting", "pixabay:burning money"], "gros": "5 MILLIONS $|DE DÉGÂTS"},
-    {"voix": "Décembre 2023. Verdict : hôpital sécurisé, durée indéfinie.", "voix_jeu": "Décembre 2023. [dramatically] Verdict : hôpital sécurisé, durée indéfinie.",
-     "visuels": ["pixabay:courtroom", "pixabay:hospital corridor"],
-     "coupure": {"source": "Engadget", "date": "21 DÉC. 2023", "titre": "Le pirate de Rockstar interné pour une durée indéfinie"}},
-    {"voix": "Mais en 2026, il quitte l'hôpital pour la prison. Nouveau procès : novembre.", "voix_jeu": "[whispers] Mais en 2026, il quitte l'hôpital pour la prison. [dramatically] Nouveau procès : novembre.",
-     "visuels": ["pixabay:prison bars", "pixabay:prison corridor"], "tampon": "NOUVEAU PROCÈS", "tamponMot": "procès"},
-    {"voix": "Le même mois que la sortie du jeu. Tout ça parce que…", "voix_jeu": "[whispers] Le même mois que la sortie du jeu. [dramatically] Tout ça parce que…",
-     "visuels": ["pixabay:city night aerial", "pixabay:hacker hoodie dark"]}
+    {
+      "voix": "Ce gamin a piraté GTA 6… avec une clé télé.",
+      "voix_jeu": "[whispers] Ce gamin a piraté GTA 6… [dramatically] avec une clé télé.",
+      "visuels": [
+        "pixabay:#289001",
+        "pixabay:#180776",
+        "pixabay:#4733"
+      ],
+      "gros": "IL A PIRATÉ|GTA 6"
+    },
+    {
+      "voix": "2022. Un ado anglais vit dans un hôtel, sous protection policière.",
+      "voix_jeu": "[short pause] 2022. Un ado anglais vit dans un hôtel, sous protection policière.",
+      "visuels": [
+        "pixabay:#20837",
+        "pixabay:police siren night"
+      ],
+      "lieu": "ANGLETERRE · 2022"
+    },
+    {
+      "voix": "Son ordi ? Confisqué. Il lui reste une clé Amazon branchée sur la télé.",
+      "voix_jeu": "[curious] Son ordi ? Confisqué. Il lui reste une clé Amazon branchée sur la télé.",
+      "visuels": [
+        "pixabay:#88738",
+        "pixabay:#169445"
+      ],
+      "document": {
+        "entete": "SURVEILLANCE POLICIÈRE",
+        "titre": "CE QU'IL LUI RESTE",
+        "lignes": [
+          "Ordinateur : [[confisqué]]",
+          "Logement : hôtel surveillé",
+          "Matériel : une clé télé"
+        ]
+      }
+    },
+    {
+      "voix": "Avec ça, il entre chez Rockstar. Et il vole 90 vidéos de GTA 6.",
+      "voix_jeu": "[dramatically] Avec ça, il entre chez Rockstar. Et il vole 90 vidéos de GTA 6.",
+      "visuels": [
+        "pixabay:#377885",
+        "pixabay:#14900",
+        "pixabay:#377882"
+      ],
+      "compteur": {
+        "valeur": 90,
+        "label": "VIDÉOS DE GTA 6 VOLÉES"
+      }
+    },
+    {
+      "voix": "La facture pour Rockstar : 5 millions de dollars.",
+      "voix_jeu": "[surprised] La facture pour Rockstar : 5 millions de dollars.",
+      "visuels": [
+        "pixabay:#50622",
+        "pixabay:#59138"
+      ],
+      "gros": "5 MILLIONS $|DE DÉGÂTS"
+    },
+    {
+      "voix": "Décembre 2023. Verdict : hôpital sécurisé, durée indéfinie.",
+      "voix_jeu": "Décembre 2023. [dramatically] Verdict : hôpital sécurisé, durée indéfinie.",
+      "visuels": [
+        "pixabay:judge gavel",
+        "pixabay:hospital hallway night",
+        "pixabay:#72883"
+      ],
+      "coupure": {
+        "source": "Engadget",
+        "date": "21 DÉC. 2023",
+        "titre": "Le pirate de Rockstar interné pour une durée indéfinie"
+      }
+    },
+    {
+      "voix": "Mais en 2026, il quitte l'hôpital pour la prison. Nouveau procès : novembre.",
+      "voix_jeu": "[whispers] Mais en 2026, il quitte l'hôpital pour la prison. [dramatically] Nouveau procès : novembre.",
+      "visuels": [
+        "pixabay:handcuffs",
+        "pixabay:jail cell",
+        "pixabay:#131258"
+      ],
+      "tampon": "NOUVEAU PROCÈS",
+      "tamponMot": "procès"
+    },
+    {
+      "voix": "Le même mois que la sortie du jeu. Tout ça parce que…",
+      "voix_jeu": "[whispers] Le même mois que la sortie du jeu. [dramatically] Tout ça parce que…",
+      "visuels": [
+        "pixabay:#336755",
+        "pixabay:#289001"
+      ]
+    }
   ]
 }
