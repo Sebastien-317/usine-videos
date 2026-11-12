@@ -2,6 +2,7 @@
 
 Chaque scène du storyboard liste ses visuels, dans l'ordre où ils doivent apparaître :
   "pixabay:hacker dark room"   -> recherche Pixabay (mots-clés en anglais), clip libre de droits
+  "pixabay:#250395"            -> un clip Pixabay précis, choisi sur la planche candidats.jpg
   "3d:rue_neon"                -> plan 3D généré par le moteur
 Le moteur coupe toutes les ~1,7 s et alterne ces visuels. Chaque morceau est recadré en 1080×1920,
 étalonné (contraste, couleurs froides dans les ombres, vignette) et coupé à la bonne durée.
@@ -70,42 +71,63 @@ class Pixabay:
         self.cette_video = set()
 
     def chercher(self, q):
+        """Recherche Pixabay (« #123456 » = un clip précis), mise en cache 24 h comme le demande Pixabay."""
         if not self.cle:
             return []
+        import time
+        params = {"key": self.cle, "safesearch": "true"}
+        if q.startswith("#"):
+            params["id"] = q[1:].split()[0]
+        else:
+            params.update({"q": q[:100], "per_page": 30, "video_type": "film"})
+        dossier = CACHE / "recherches"
+        dossier.mkdir(parents=True, exist_ok=True)
+        cf = dossier / (hashlib.md5(json.dumps(sorted((k, v) for k, v in params.items() if k != "key")).encode()).hexdigest() + ".json")
+        if cf.exists() and time.time() - cf.stat().st_mtime < 86400:
+            return json.loads(cf.read_text())
         try:
-            r = requests.get("https://pixabay.com/api/videos/", timeout=30, headers=ENTETES,
-                             params={"key": self.cle, "q": q[:100], "per_page": 30, "safesearch": "true", "video_type": "film"})
+            r = requests.get("https://pixabay.com/api/videos/", timeout=30, headers=ENTETES, params=params)
             if r.status_code != 200:
                 journal("recherche impossible", q, r.status_code, r.text[:160].replace("\n", " "))
                 return []
-            return r.json().get("hits", [])
+            hits = r.json().get("hits", [])
+            cf.write_text(json.dumps(hits))
+            return hits
         except Exception as e:  # réseau, quota, clé : on se rabat sur la 3D
             journal("recherche impossible", q, e)
             return []
 
-    def clip(self, q, duree):
-        """Renvoie (fichier, durée dispo) pour une recherche, en évitant les clips déjà vus récemment."""
+    def pertinents(self, q, n=15):
+        """Les clips d'une recherche, classés : les mots qui portent le sens (« prison ») doivent être dans les étiquettes."""
         hits = self.chercher(q)
-        if not hits and " " in q:
+        if not hits and " " in q and not q.startswith("#"):
             hits = self.chercher(" ".join(q.split()[:2]))
-        # Les mots qui portent le sens (« prison », « courtroom ») doivent figurer dans les étiquettes du clip ;
-        # les mots d'ambiance (« dark », « night ») départagent seulement.
+        if q.startswith("#"):
+            return [(0, h, 1.0) for h in hits]
         ambiance = {"dark", "night", "the", "a", "of", "in", "and", "close", "up", "view", "black"}
-        sens = [w for w in q.lower().split() if w not in ambiance] or q.lower().split()
-        def pertinence(h):
+        mots = q.lower().split()
+        sens = [w for w in mots if w not in ambiance] or mots
+        res = []
+        for r, h in enumerate(hits[:n]):
+            if not (h["videos"].get("medium") or {}).get("url"):
+                continue
             tags = h.get("tags", "").lower()
-            return sum(1 for w in sens if w in tags) / len(sens) + 0.25 * sum(1 for w in q.lower().split() if w in ambiance and w in tags)
-        def score(rang, h):
+            pert = sum(1 for w in sens if w in tags) / len(sens) + 0.25 * sum(1 for w in mots if w in ambiance and w in tags)
+            res.append((r, h, pert))
+        return [x for x in res if x[2] > 0] or res[:3]
+
+    def clip(self, q, duree):
+        """Renvoie (fichier, id) pour une recherche ou un identifiant « #123456 », en évitant les clips déjà vus récemment."""
+        def score(rang, h, pert):
             v = h["videos"].get("medium") or {}
             vertical = 1 if v.get("height", 0) > v.get("width", 1) else 0
             neuf = 0 if h["id"] in self.deja else 1.5
             assez = 0.5 if h.get("duration", 0) >= duree + 0.5 else 0
-            return 4 * pertinence(h) + 2 * (15 - rang) / 15 + vertical + neuf + assez + self.rng.random() * 0.4
-        hits = [(r, h) for r, h in enumerate(hits[:15]) if h["id"] not in self.cette_video and (h["videos"].get("medium") or {}).get("url")]
-        hits = [(r, h) for r, h in hits if pertinence(h) > 0] or hits[:3]
+            return 4 * pert + 2 * (15 - rang) / 15 + vertical + neuf + assez + self.rng.random() * 0.4
+        hits = [x for x in self.pertinents(q) if x[1]["id"] not in self.cette_video or q.startswith("#")]
         if not hits:
             return None
-        h = max(hits, key=lambda rh: score(*rh))[1]
+        h = max(hits, key=lambda x: score(*x))[1]
         self.cette_video.add(h["id"])
         CACHE.mkdir(exist_ok=True)
         f = CACHE / f"pixabay-{h['id']}.mp4"
@@ -133,18 +155,68 @@ class Pixabay:
             UTILISES.write_text(json.dumps(reg, indent=0))
 
 
+def candidats(story, px, out):
+    """Pour chaque recherche du storyboard : les 8 meilleurs clips (vignette + identifiant), pour choisir « pixabay:#id »."""
+    try:
+        from PIL import Image, ImageDraw
+    except ImportError:
+        return
+    police = police_planche()
+    lignes = []
+    for i, sc in enumerate(story["scenes"]):
+        for v in dict.fromkeys(sc.get("visuels") or []):
+            typ, _, q = v.partition(":")
+            if typ == "pixabay" and not q.startswith("#"):
+                lignes.append((i, q, px.pertinents(q)[:8]))
+    if not lignes:
+        return
+    W, H = 200, 113
+    pl = Image.new("RGB", (8 * (W + 4) + 4, len(lignes) * (H + 26) + 4), (0, 0, 0))
+    d = ImageDraw.Draw(pl)
+    dossier = CACHE / "vignettes"
+    dossier.mkdir(parents=True, exist_ok=True)
+    for li, (i, q, hits) in enumerate(lignes):
+        y = 4 + li * (H + 26)
+        d.text((6, y), f"SCÈNE {i + 1} · {q}", fill=(255, 210, 63), font=police)
+        for k, (_, h, _) in enumerate(hits):
+            f = dossier / f"{h['id']}.jpg"
+            url = (h["videos"].get("tiny") or {}).get("thumbnail") or (h["videos"].get("medium") or {}).get("thumbnail")
+            if not f.exists() and url:
+                try:
+                    r = requests.get(url, headers=ENTETES, timeout=30)
+                    if r.ok:
+                        f.write_bytes(r.content)
+                except Exception:
+                    pass
+            x = 4 + k * (W + 4)
+            if f.exists():
+                try:
+                    pl.paste(Image.open(f).convert("RGB").resize((W, H)), (x, y + 20))
+                except Exception:
+                    pass
+            vert = (h["videos"].get("medium") or {}).get("height", 0) > (h["videos"].get("medium") or {}).get("width", 1)
+            d.rectangle([x, y + 20, x + 96, y + 36], fill=(0, 0, 0))
+            d.text((x + 3, y + 21), f"#{h['id']}{' V' if vert else ''}", fill=(255, 255, 255), font=police)
+    pl.save(out / "candidats.jpg", quality=85)
+    journal("candidats :", out / "candidats.jpg")
+
+
+def police_planche():
+    from PIL import ImageFont
+    for chemin in ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/usr/share/fonts/opentype/inter/Inter-Regular.otf",
+                   "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"):
+        if Path(chemin).exists():
+            return ImageFont.truetype(chemin, 13)
+    return ImageFont.load_default()
+
+
 def planche(story, pub, out):
     """Une vignette par plan, légendée « scène N · recherche », pour que le pilote vérifie que l'image colle au texte."""
     try:
         from PIL import Image, ImageDraw, ImageFont
     except ImportError:
         return
-    police = ImageFont.load_default()
-    for chemin in ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-                   "/usr/share/fonts/opentype/inter/Inter-Regular.otf", "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"):
-        if Path(chemin).exists():
-            police = ImageFont.truetype(chemin, 13)
-            break
+    police = police_planche()
     vignettes = []
     for i, sc in enumerate(story["scenes"]):
         vis = sc.get("visuels") or []
@@ -240,6 +312,7 @@ def main():
         journal(f"scène {i + 1} :", ", ".join(s.get("source", "3d " + s.get("plan", "")) for s in segs))
     px.memoriser()
     planche(story, pub, out)
+    candidats(story, px, out)
     story["clips"] = nom
     (out / "storyboard_rendu.json").write_text(json.dumps(story, ensure_ascii=False, indent=1))
     journal("prêt :", out / "storyboard_rendu.json")

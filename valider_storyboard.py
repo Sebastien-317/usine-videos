@@ -95,6 +95,8 @@ def valider(b, ch):
                     pb.append(f"Scène {i} : visuel « {x} » invalide (pixabay:mots anglais ou 3d:rue_neon).")
                 elif typ == "3d" and val not in ch["plans_autorises"]:
                     pb.append(f"Scène {i} : plan 3D « {val} » inconnu.")
+                elif typ == "pixabay" and val.startswith("#") and not val[1:].split()[0].isdigit():
+                    pb.append(f"Scène {i} : « {x} » : après # il faut l'identifiant numérique du clip (ex. pixabay:#250395).")
                 elif typ == "pixabay" and len(val) > 60:
                     pb.append(f"Scène {i} : recherche Pixabay trop longue (3 à 5 mots anglais).")
             principaux = [k for k in HABILLAGES_DOC if s.get(k)]
