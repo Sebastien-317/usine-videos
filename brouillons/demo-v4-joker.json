@@ -10,42 +10,145 @@
   ],
   "legende": "Il a réclamé 10 millions de dollars à Rockstar pour un plan de trailer… et la justice avait déjà tranché bien avant lui. #gta6 #gtavi #jeuxvideo #gaming",
   "sources": [
-    {"fait": "Lawrence Sullivan, « Florida Joker », réclame jusqu'à 2 M$ à Rockstar (TikTok, déc. 2023) ; le trailer montre brièvement dans un flash info un détenu aux cheveux violets, tatoué autour des yeux et de la bouche", "url": "https://videogameschronicle.com/news/florida-man-claims-joker-like-character-from-gta-6-trailer-is-based-on-his-likeness"},
-    {"fait": "29/12/2023 : il exige 5 M$ avant le 11 janvier (son anniversaire), parle de « dernier avertissement », dit avoir consulté deux avocats", "url": "https://ggrecon.com/articles/florida-joker-demands-5-million-from-rockstar-over-gta-trailer-cameo"},
-    {"fait": "Il s'est teint les cheveux en violet, a menacé de libérer le pirate de GTA 6, a monté sa demande à 10 M$, puis (février 2024) renonce aux poursuites et demande un rôle de doublage du personnage ; Rockstar et Take-Two ne l'ont jamais contacté", "url": "https://www.gamesradar.com/florida-joker-says-hes-giving-up-on-his-dollar10-million-gta-6-lawsuit-threat-because-he-now-wants-to-voice-the-character"},
-    {"fait": "Lohan attaque Take-Two en 2014 pour le personnage Lacey Jonas de GTA 5", "url": "https://cinemablend.com/games/2396552/lindsay-lohans-grand-theft-auto-lawsuit-loses-appeal"},
-    {"fait": "Cour d'appel de New York, vote 6-0 : « rien de plus qu'un commentaire culturel », aucun dommage dû à Lohan ; plainte de Karen Gravano rejetée aussi (Reuters, 30/03/2018)", "url": "https://archives.lincolndailynews.com/2018/Mar/30/NEWS/ent_e.shtml"},
-    {"fait": "Décision unanime, personnage jugé générique ; plainte de Karen Gravano (Mob Wives) rejetée", "url": "https://www.engadget.com/2018/03/29/lindsay-lohans-grand-theft-auto-suit-is-on-the-road-to-nowher/"}
+    {
+      "fait": "Lawrence Sullivan, « Florida Joker », réclame jusqu'à 2 M$ à Rockstar (TikTok, déc. 2023) ; le trailer montre brièvement dans un flash info un détenu aux cheveux violets, tatoué autour des yeux et de la bouche",
+      "url": "https://videogameschronicle.com/news/florida-man-claims-joker-like-character-from-gta-6-trailer-is-based-on-his-likeness"
+    },
+    {
+      "fait": "29/12/2023 : il exige 5 M$ avant le 11 janvier (son anniversaire), parle de « dernier avertissement », dit avoir consulté deux avocats",
+      "url": "https://ggrecon.com/articles/florida-joker-demands-5-million-from-rockstar-over-gta-trailer-cameo"
+    },
+    {
+      "fait": "Il s'est teint les cheveux en violet, a menacé de libérer le pirate de GTA 6, a monté sa demande à 10 M$, puis (février 2024) renonce aux poursuites et demande un rôle de doublage du personnage ; Rockstar et Take-Two ne l'ont jamais contacté",
+      "url": "https://www.gamesradar.com/florida-joker-says-hes-giving-up-on-his-dollar10-million-gta-6-lawsuit-threat-because-he-now-wants-to-voice-the-character"
+    },
+    {
+      "fait": "Lohan attaque Take-Two en 2014 pour le personnage Lacey Jonas de GTA 5",
+      "url": "https://cinemablend.com/games/2396552/lindsay-lohans-grand-theft-auto-lawsuit-loses-appeal"
+    },
+    {
+      "fait": "Cour d'appel de New York, vote 6-0 : « rien de plus qu'un commentaire culturel », aucun dommage dû à Lohan ; plainte de Karen Gravano rejetée aussi (Reuters, 30/03/2018)",
+      "url": "https://archives.lincolndailynews.com/2018/Mar/30/NEWS/ent_e.shtml"
+    },
+    {
+      "fait": "Décision unanime, personnage jugé générique ; plainte de Karen Gravano (Mob Wives) rejetée",
+      "url": "https://www.engadget.com/2018/03/29/lindsay-lohans-grand-theft-auto-suit-is-on-the-road-to-nowher/"
+    }
   ],
   "scenes": [
-    {"voix": "Décembre 2023. Un tatoué se reconnaît dans GTA 6.",
-     "voix_jeu": "[dramatically] Décembre 2023. [short pause] Un tatoué se reconnaît dans GTA 6.",
-     "visuels": ["pixabay:tattoo artist dark", "pixabay:miami night neon"], "gros": "IL SE VOIT|DANS GTA 6"},
-    {"voix": "Le Joker de Floride, visage couvert de tatouages.",
-     "visuels": ["pixabay:palm trees neon night", "pixabay:tattoo closeup"], "lieu": "FLORIDE · USA"},
-    {"voix": "Dans le trailer, un flash info : un détenu aux cheveux violets.",
-     "voix_jeu": "[curious] Dans le trailer, un flash info : un détenu aux cheveux violets.",
-     "visuels": ["pixabay:tv news broadcast", "pixabay:prison corridor"],
-     "document": {"entete": "FLASH INFO · TRAILER", "titre": "LE DÉTENU", "lignes": ["Tenue : prisonnier", "Cheveux : violets", "Tatouages : yeux et bouche"]}},
-    {"voix": "Il exige 2 millions de dollars. Puis 5. Puis 10.",
-     "voix_jeu": "[surprised] Il exige 2 millions de dollars. [short pause] Puis 5. Puis 10.",
-     "visuels": ["pixabay:money counting", "pixabay:dollar bills"],
-     "frise": {"etapes": [{"date": "2 M$", "texte": "« Vous avez pris ma vie »"}, {"date": "5 M$", "texte": "« Dernier avertissement »"}, {"date": "10 M$", "texte": "Il hausse encore le ton"}]}},
-    {"voix": "Il se teint en violet. Et menace de libérer le pirate de GTA 6.",
-     "visuels": ["pixabay:purple neon light", "pixabay:jail cell door"], "gros": "LIBÉRER|LE PIRATE"},
-    {"voix": "Mais Rockstar ne répond jamais.",
-     "voix_jeu": "[dramatically] Mais Rockstar ne répond jamais.",
-     "visuels": ["pixabay:phone ringing dark"], "tampon": "AUCUNE RÉPONSE", "tamponMot": "jamais"},
-    {"voix": "En 2014, Lindsay Lohan a essayé avec GTA 5.",
-     "voix_jeu": "En 2014, Lindsé Lôhane a essayé avec GTA 5.",
-     "visuels": ["pixabay:paparazzi camera flash", "pixabay:courthouse"],
-     "coupure": {"source": "Reuters", "date": "30 MARS 2018", "titre": "Lindsay Lohan contre GTA 5 : la justice dit non"}},
-    {"voix": "Verdict : 6 juges contre 0. Pas un dollar.",
-     "voix_jeu": "[short pause] Verdict : 6 juges contre 0. Pas un dollar.",
-     "visuels": ["pixabay:courtroom gavel", "pixabay:judge gavel"],
-     "duel": {"gauche": {"label": "JUGES POUR ROCKSTAR", "valeur": 6}, "droite": {"label": "JUGES POUR LOHAN", "valeur": 0}}},
-    {"voix": "Le Joker renonce : il veut doubler son sosie. Tout ça pour un clin d'œil de trailer, en…",
-     "voix_jeu": "[laughs] Le Joker renonce : il veut doubler son sosie. Tout ça pour un clin d'œil de trailer, en…",
-     "visuels": ["pixabay:microphone recording studio", "pixabay:neon sign night"]}
+    {
+      "voix": "Décembre 2023. Un tatoué se reconnaît dans GTA 6.",
+      "voix_jeu": "[dramatically] Décembre 2023. [short pause] Un tatoué se reconnaît dans GTA 6.",
+      "visuels": [
+        "pixabay:#172488",
+        "pixabay:#153299"
+      ],
+      "gros": "IL SE VOIT|DANS GTA 6"
+    },
+    {
+      "voix": "Le Joker de Floride, visage couvert de tatouages.",
+      "visuels": [
+        "pixabay:#173725",
+        "pixabay:tattooed man portrait"
+      ],
+      "lieu": "FLORIDE · USA"
+    },
+    {
+      "voix": "Dans le trailer, un flash info : un détenu aux cheveux violets.",
+      "voix_jeu": "[curious] Dans le trailer, un flash info : un détenu aux cheveux violets.",
+      "visuels": [
+        "pixabay:#29483",
+        "pixabay:#20837"
+      ],
+      "document": {
+        "entete": "FLASH INFO · TRAILER",
+        "titre": "LE DÉTENU",
+        "lignes": [
+          "Tenue : prisonnier",
+          "Cheveux : violets",
+          "Tatouages : yeux et bouche"
+        ]
+      }
+    },
+    {
+      "voix": "Il exige 2 millions de dollars. Puis 5. Puis 10.",
+      "voix_jeu": "[surprised] Il exige 2 millions de dollars. [short pause] Puis 5. Puis 10.",
+      "visuels": [
+        "pixabay:#50628",
+        "pixabay:#59138"
+      ],
+      "frise": {
+        "etapes": [
+          {
+            "date": "2 M$",
+            "texte": "« Vous avez pris ma vie »"
+          },
+          {
+            "date": "5 M$",
+            "texte": "« Dernier avertissement »"
+          },
+          {
+            "date": "10 M$",
+            "texte": "Il hausse encore le ton"
+          }
+        ]
+      }
+    },
+    {
+      "voix": "Il se teint en violet. Et menace de libérer le pirate de GTA 6.",
+      "visuels": [
+        "pixabay:#315486",
+        "pixabay:prison cell dark"
+      ],
+      "gros": "LIBÉRER|LE PIRATE"
+    },
+    {
+      "voix": "Mais Rockstar ne répond jamais.",
+      "voix_jeu": "[dramatically] Mais Rockstar ne répond jamais.",
+      "visuels": [
+        "pixabay:#202987"
+      ],
+      "tampon": "AUCUNE RÉPONSE",
+      "tamponMot": "jamais"
+    },
+    {
+      "voix": "En 2014, Lindsay Lohan a essayé avec GTA 5.",
+      "voix_jeu": "En 2014, Lindsé Lôhane a essayé avec GTA 5.",
+      "visuels": [
+        "pixabay:#205468",
+        "pixabay:#72883"
+      ],
+      "coupure": {
+        "source": "Reuters",
+        "date": "30 MARS 2018",
+        "titre": "Lindsay Lohan contre GTA 5 : la justice dit non"
+      }
+    },
+    {
+      "voix": "Verdict : 6 juges contre 0. Pas un dollar.",
+      "voix_jeu": "[short pause] Verdict : 6 juges contre 0. Pas un dollar.",
+      "visuels": [
+        "pixabay:#162047",
+        "pixabay:#198896"
+      ],
+      "duel": {
+        "gauche": {
+          "label": "JUGES POUR ROCKSTAR",
+          "valeur": 6
+        },
+        "droite": {
+          "label": "JUGES POUR LOHAN",
+          "valeur": 0
+        }
+      }
+    },
+    {
+      "voix": "Le Joker renonce : il veut doubler son sosie. Tout ça pour un clin d'œil de trailer, en…",
+      "voix_jeu": "[laughs] Le Joker renonce : il veut doubler son sosie. Tout ça pour un clin d'œil de trailer, en…",
+      "visuels": [
+        "pixabay:#121113",
+        "pixabay:#155699"
+      ]
+    }
   ]
 }
