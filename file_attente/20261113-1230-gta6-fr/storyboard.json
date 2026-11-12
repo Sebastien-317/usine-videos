@@ -1,0 +1,126 @@
+{
+  "composition": "Doc",
+  "boucle": true,
+  "chaine": {
+    "id": "gta6-fr",
+    "nom": "DOSSIER JEU",
+    "langue": "fr-fr",
+    "voix": "ff_siwis",
+    "vitesse": 1.12,
+    "prononciation": {
+      "GTA 6": "gé-té-a sisse",
+      "GTA 5": "gé-té-a cinq",
+      "GTA": "gé-té-a",
+      "Take-Two": "Tèk-Tou",
+      "Xbox": "Ixe-bosse",
+      "Series": "Siriz"
+    },
+    "prononciation_elevenlabs": {
+      "GTA": "Gé-Té-A"
+    },
+    "moteur_voix": "elevenlabs",
+    "voix_elevenlabs": "3Tp5mYhT9wrfnry9pzvV",
+    "modele_elevenlabs": "eleven_v4"
+  },
+  "titre": "Il a piraté GTA 6 avec une clé télé",
+  "legende": "Enfermé dans un hôtel, sans ordinateur… et il a quand même piraté Rockstar. Génie ou criminel ? #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {
+      "fait": "Hack depuis un hôtel Travelodge sous protection policière, clé Amazon Fire TV, téléphone, clavier, souris ; coût 5 millions de dollars selon Rockstar ; internement à durée indéfinie le 21/12/2023",
+      "url": "https://www.engadget.com/gta-6-hacker-is-sentenced-to-an-indefinite-hospitalization-194251395.html"
+    },
+    {
+      "fait": "Ordinateur confisqué ; clé Fire TV, télévision d'hôtel, téléphone ; 90 clips publiés ; menace de publier le code source si Rockstar ne le contacte pas sous 24 h ; juge : risque élevé pour le public",
+      "url": "https://cbsnews.com/newyork/news/grand-theft-auto-leak-teen-hacker-hospitalized"
+    }
+  ],
+  "scenes": [
+    {
+      "voix": "Ce gamin a piraté GTA 6… avec une clé télé.",
+      "voix_jeu": "[whispers] Ce gamin a piraté GTA 6… [dramatically] avec une clé télé.",
+      "visuels": [
+        "pixabay:#289001",
+        "pixabay:#180776"
+      ],
+      "gros": "IL A PIRATÉ|GTA 6",
+      "seed": 11
+    },
+    {
+      "voix": "2022. Un ado anglais vit dans un hôtel, sous protection policière.",
+      "voix_jeu": "[short pause] 2022. Un ado anglais vit dans un hôtel, sous protection policière.",
+      "visuels": [
+        "pixabay:#846",
+        "pixabay:#180386"
+      ],
+      "lieu": "ANGLETERRE · 2022",
+      "seed": 24
+    },
+    {
+      "voix": "Son ordi ? Confisqué. Il lui reste une clé Amazon branchée sur la télé.",
+      "voix_jeu": "[curious] Son ordi ? Confisqué. Il lui reste une clé Amazon branchée sur la télé.",
+      "visuels": [
+        "pixabay:#88738",
+        "pixabay:#29552"
+      ],
+      "document": {
+        "entete": "SURVEILLANCE POLICIÈRE",
+        "titre": "CE QU'IL LUI RESTE",
+        "lignes": [
+          "Ordinateur : [[confisqué]]",
+          "Logement : hôtel surveillé",
+          "Matériel : une clé télé"
+        ]
+      },
+      "seed": 37
+    },
+    {
+      "voix": "Avec ça, il entre chez Rockstar. Et il publie 90 vidéos de GTA 6.",
+      "voix_jeu": "[dramatically] Avec ça, il entre chez Rockstar. Et il publie 90 vidéos de GTA 6.",
+      "visuels": [
+        "pixabay:server room",
+        "pixabay:hacker code screen dark"
+      ],
+      "compteur": {
+        "valeur": 90,
+        "prefixe": "",
+        "suffixe": "",
+        "label": "VIDÉOS PUBLIÉES"
+      },
+      "seed": 50
+    },
+    {
+      "voix": "Il menace même de publier le code source en 24 heures.",
+      "voix_jeu": "[whispers] Il menace même de publier le code source en 24 heures.",
+      "visuels": [
+        "pixabay:#26452",
+        "pixabay:#202987"
+      ],
+      "seed": 63
+    },
+    {
+      "voix": "Mais… décembre 2023. Le juge l'enferme dans un hôpital sécurisé, sans date de sortie.",
+      "voix_jeu": "[short pause] Mais… [dramatically] décembre 2023. Le juge l'enferme dans un hôpital sécurisé, sans date de sortie.",
+      "visuels": [
+        "pixabay:#72883",
+        "pixabay:#846"
+      ],
+      "coupure": {
+        "source": "Engadget",
+        "date": "21 DÉC. 2023",
+        "titre": "Le pirate de Rockstar interné pour une durée indéfinie"
+      },
+      "tampon": "INTERNÉ",
+      "tamponMot": "enferme",
+      "seed": 76
+    },
+    {
+      "voix": "Rockstar chiffre les dégâts : 5 millions de dollars. Tout ça parce que…",
+      "voix_jeu": "[whispers] Rockstar chiffre les dégâts : 5 millions de dollars. [short pause] Tout ça parce que…",
+      "visuels": [
+        "pixabay:money counting",
+        "pixabay:miami skyline night"
+      ],
+      "seed": 89
+    }
+  ]
+}

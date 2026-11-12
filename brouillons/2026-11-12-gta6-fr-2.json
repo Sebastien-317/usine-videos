@@ -1,0 +1,27 @@
+{
+  "titre": "34 employés de Rockstar virés pour un salon Discord",
+  "legende": "Un salon privé, 34 renvois, et un procès à l'approche de GTA 6. Faute grave ou représailles ? #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {"fait": "34 licenciés en novembre 2025 dont 31 membres de l'IWGB et 3 au Canada ; Rockstar invoque une faute grave (informations confidentielles partagées sur un Discord privé) et nie toute répression syndicale ; audience ouverte le 10 septembre 2026 à Glasgow", "url": "https://www.gamedeveloper.com/production/-justice-at-last-feels-within-reach-fired-rockstar-workers-rally-in-glasgow-as-union-busting-tribunal-begins"},
+    {"fait": "Le juge refuse le paiement provisoire en janvier 2026", "url": "https://www.thesixthaxis.com/2026/01/14/fired-rockstar-employees-fail-to-get-interim-pay-at-uk-tribunal/"}
+  ],
+  "scenes": [
+    {"voix": "Un salon Discord privé. Et 34 employés virés.", "voix_jeu": "[whispers] Un salon Discord privé. [dramatically] Et 34 employés virés.",
+     "visuels": ["pixabay:#202987", "pixabay:#215751"], "gros": "34 VIRÉS|ROCKSTAR"},
+    {"voix": "Novembre 2025. Rockstar renvoie ces employés en plein développement de GTA 6.", "voix_jeu": "[short pause] Novembre 2025. Rockstar renvoie ces employés en plein développement de GTA 6.",
+     "visuels": ["pixabay:#50353", "pixabay:#138495"], "lieu": "ROCKSTAR · NOV. 2025"},
+    {"voix": "31 d'entre eux sont membres d'un syndicat.", "voix_jeu": "[curious] 31 d'entre eux sont membres d'un syndicat.",
+     "visuels": ["pixabay:#36510", "pixabay:#4757"],
+     "compteur": {"valeur": 31, "prefixe": "", "suffixe": "", "label": "SYNDIQUÉS"}},
+    {"voix": "Rockstar parle de faute grave : des infos confidentielles auraient circulé.", "voix_jeu": "[whispers] Rockstar parle de faute grave : des infos confidentielles auraient circulé.",
+     "visuels": ["pixabay:#10822", "pixabay:#1383"],
+     "document": {"entete": "MOTIF OFFICIEL", "titre": "FAUTE GRAVE", "lignes": ["Lieu : un salon Discord privé", "Accusation : [[infos secrètes]]"]}},
+    {"voix": "Les employés répondent : ils sont punis pour leur syndicat. Rockstar le nie.", "voix_jeu": "[dramatically] Les employés répondent : ils sont punis pour leur syndicat. [short pause] Rockstar le nie.",
+     "visuels": ["pixabay:#202753", "pixabay:#282995"]},
+    {"voix": "Mais… en septembre 2026, le procès s'ouvre à Glasgow.", "voix_jeu": "[short pause] Mais… [dramatically] en septembre 2026, le procès s'ouvre à Glasgow.",
+     "visuels": ["pixabay:#72883", "pixabay:#138500"],
+     "tampon": "PROCÈS", "tamponMot": "procès"},
+    {"voix": "Le jeu sort le 19 novembre. Tout a commencé par…", "voix_jeu": "[whispers] Le jeu sort le 19 novembre. [short pause] Tout a commencé par…",
+     "visuels": ["pixabay:#3134", "pixabay:#173725"]}
+  ]
+}

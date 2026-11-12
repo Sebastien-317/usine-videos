@@ -1,5 +1,6 @@
 {
-  "composition": "Viral",
+  "composition": "Doc",
+  "boucle": true,
   "chaine": {
     "id": "gta6-fr",
     "nom": "DOSSIER JEU",
@@ -14,93 +15,105 @@
       "Xbox": "Ixe-bosse",
       "Series": "Siriz"
     },
+    "prononciation_elevenlabs": {
+      "GTA": "Gé-Té-A"
+    },
     "moteur_voix": "elevenlabs",
     "voix_elevenlabs": "3Tp5mYhT9wrfnry9pzvV",
     "modele_elevenlabs": "eleven_v4"
   },
-  "titre": "GTA 5 a 13 ans et se vend encore",
-  "legende": "GTA 5 : 230 millions de copies vendues depuis 2013, et GTA 6 sort le 19 novembre. Tu le prends day one ? #gta6 #gtavi #jeuxvideo #gaming",
+  "titre": "34 employés de Rockstar virés pour un salon Discord",
+  "legende": "Un salon privé, 34 renvois, et un procès à l'approche de GTA 6. Faute grave ou représailles ? #gta6 #gtavi #jeuxvideo #gaming",
   "sources": [
     {
-      "fait": "GTA 5 : 230 millions de copies vendues depuis 2013",
-      "url": "https://www.pcgamer.com/gaming-industry/grand-theft-auto-5-averages-more-copies-sold-per-year-than-most-megahits-manage-in-their-entire-lifetime-with-a-total-of-230-million-since-2013/"
+      "fait": "34 licenciés en novembre 2025 dont 31 membres de l'IWGB et 3 au Canada ; Rockstar invoque une faute grave (informations confidentielles partagées sur un Discord privé) et nie toute répression syndicale ; audience ouverte le 10 septembre 2026 à Glasgow",
+      "url": "https://www.gamedeveloper.com/production/-justice-at-last-feels-within-reach-fired-rockstar-workers-rally-in-glasgow-as-union-busting-tribunal-begins"
     },
     {
-      "fait": "Report de mai 2026 à novembre 2026, annoncé le 6 novembre 2025 ; sortie le 19 novembre 2026",
-      "url": "https://www.gtabase.com/articles/gta-6/gta-6-delayed-again-now-releasing-november-19-2026"
-    },
-    {
-      "fait": "PS5 et Xbox Series X/S, pas de version PC annoncée",
-      "url": "https://www.journaldugeek.com/2026/06/18/gta-6-les-precommandes-ont-enfin-une-date-douverture/"
+      "fait": "Le juge refuse le paiement provisoire en janvier 2026",
+      "url": "https://www.thesixthaxis.com/2026/01/14/fired-rockstar-employees-fail-to-get-interim-pay-at-uk-tribunal/"
     }
   ],
   "scenes": [
     {
-      "voix": "Ce jeu a 13 ans et il cartonne encore.",
-      "voix_jeu": "[excited] Ce jeu a 13 ans et il cartonne encore.",
-      "plans": [
-        "avenue_coucher"
+      "voix": "Un salon Discord privé. Et 34 employés virés.",
+      "voix_jeu": "[whispers] Un salon Discord privé. [dramatically] Et 34 employés virés.",
+      "visuels": [
+        "pixabay:#202987",
+        "pixabay:#215751"
       ],
-      "gros": "13 ANS ET|TOUJOURS LÀ",
+      "gros": "34 VIRÉS|ROCKSTAR",
       "seed": 11
     },
     {
-      "voix": "C'est GTA 5. 230 millions de copies vendues.",
-      "voix_jeu": "[short pause] C'est GTA 5. 230 millions de copies vendues.",
-      "plans": [
-        "tour_boites"
+      "voix": "Novembre 2025. Rockstar renvoie ces employés en plein développement de GTA 6.",
+      "voix_jeu": "[short pause] Novembre 2025. Rockstar renvoie ces employés en plein développement de GTA 6.",
+      "visuels": [
+        "pixabay:#50353",
+        "pixabay:#138495"
       ],
-      "compteur": {
-        "valeur": 230,
-        "suffixe": " M",
-        "label": "COPIES DE GTA 5"
-      },
+      "lieu": "ROCKSTAR · NOV. 2025",
       "seed": 24
     },
     {
-      "voix": "Chaque année, il se vend plus que la plupart des hits sur toute leur vie.",
-      "voix_jeu": "[surprised] Chaque année, il se vend plus que la plupart des hits sur toute leur vie.",
-      "plans": [
-        "pluie_billets"
+      "voix": "31 d'entre eux sont membres d'un syndicat.",
+      "voix_jeu": "[curious] 31 d'entre eux sont membres d'un syndicat.",
+      "visuels": [
+        "pixabay:#36510",
+        "pixabay:#4757"
       ],
-      "gros": "SUCCÈS|SANS FIN",
+      "compteur": {
+        "valeur": 31,
+        "prefixe": "",
+        "suffixe": "",
+        "label": "SYNDIQUÉS"
+      },
       "seed": 37
     },
     {
-      "voix": "Et maintenant, son successeur arrive. Rockstar l'a repoussé deux fois.",
-      "voix_jeu": "[curious] Et maintenant, son successeur arrive. Rockstar l'a repoussé DEUX fois.",
-      "plans": [
-        "autoroute_nuit"
+      "voix": "Rockstar parle de faute grave : des infos confidentielles auraient circulé.",
+      "voix_jeu": "[whispers] Rockstar parle de faute grave : des infos confidentielles auraient circulé.",
+      "visuels": [
+        "pixabay:#10822",
+        "pixabay:#1383"
       ],
-      "gros": "REPOUSSÉ|DEUX FOIS",
+      "document": {
+        "entete": "MOTIF OFFICIEL",
+        "titre": "FAUTE GRAVE",
+        "lignes": [
+          "Lieu : un salon Discord privé",
+          "Accusation : [[infos secrètes]]"
+        ]
+      },
       "seed": 50
     },
     {
-      "voix": "Rockstar veut plus de finition. Nouvelle date : le 19 novembre.",
-      "plans": [
-        "plage_coucher"
+      "voix": "Les employés répondent : ils sont punis pour leur syndicat. Rockstar le nie.",
+      "voix_jeu": "[dramatically] Les employés répondent : ils sont punis pour leur syndicat. [short pause] Rockstar le nie.",
+      "visuels": [
+        "pixabay:#202753",
+        "pixabay:#282995"
       ],
-      "gros": "19|NOVEMBRE",
       "seed": 63
     },
     {
-      "voix": "Il sortira sur PS5 et Xbox Series. Pas de version PC annoncée pour l'instant.",
-      "plans": [
-        "vue_aerienne"
+      "voix": "Mais… en septembre 2026, le procès s'ouvre à Glasgow.",
+      "voix_jeu": "[short pause] Mais… [dramatically] en septembre 2026, le procès s'ouvre à Glasgow.",
+      "visuels": [
+        "pixabay:#72883",
+        "pixabay:#138500"
       ],
-      "gros": "PAS DE PC|POUR L'INSTANT",
+      "tampon": "PROCÈS",
+      "tamponMot": "procès",
       "seed": 76
     },
     {
-      "voix": "Alors toi, tu le prends day one ou tu attends ? Dis-le en commentaire.",
-      "voix_jeu": "[curious] Alors toi, tu le prends day one ou tu attends ? Dis-le en commentaire.",
-      "plans": [
-        "plage_proche"
+      "voix": "Le jeu sort le 19 novembre. Tout a commencé par…",
+      "voix_jeu": "[whispers] Le jeu sort le 19 novembre. [short pause] Tout a commencé par…",
+      "visuels": [
+        "pixabay:#3134",
+        "pixabay:#173725"
       ],
-      "question": {
-        "texte": "DAY ONE ?",
-        "bulle": "Dis-le en commentaire"
-      },
       "seed": 89
     }
   ]

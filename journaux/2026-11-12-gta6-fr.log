@@ -1,0 +1,8 @@
+Les deux vidéos sont rendues et ajoutées à la file, mais l'ajout de la vidéo 2 a écrasé une vidéo déjà en attente.
+
+- **Vidéo 1 : « Il a piraté GTA 6 avec une clé télé »** (fuites). Elle est prévue le 13/11 à 12:30, parce que le créneau du 12/11 à 12:30 était déjà pris. Sources : Engadget et CBS News, lus aujourd'hui. Je n'ai gardé aucun détail de santé.
+- **Vidéo 2 : « 34 employés de Rockstar virés pour un salon Discord »** (coulisses). Elle est prévue le 12/11 à 19:00. Sources : Game Developer et The Sixth Axis, lus aujourd'hui. Je n'ai trouvé aucun verdict du procès, donc la vidéo n'en annonce pas.
+- **Problème :** `file_attente.py` a reconstruit l'identifiant `20261112-1900-gta6-fr` pour la vidéo 2. C'était déjà celui de « GTA 5 a 13 ans et se vend encore », et cette entrée a disparu de la liste. Sa vidéo reste dans `sortie/`, mais elle n'est plus programmée : à remettre en file ou à republier à la main. Je n'ai pas touché au moteur.
+- **Images :** quelques plans restent faibles (bruit de télé, deux plans très sombres dans la vidéo 2). Je n'ai pas fait la seconde relance d'aperçu. La voix est correcte dans les deux vidéos.
+vidéo envoyée pour publication manuelle : 20261112-1900-gta6-fr (34.2 Mo)
+vidéo envoyée pour publication manuelle : 20261113-1230-gta6-fr (37.4 Mo)
