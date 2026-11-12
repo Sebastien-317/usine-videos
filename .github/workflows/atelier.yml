@@ -41,7 +41,7 @@ jobs:
           key: usine-${{ hashFiles('rendu/package-lock.json') }}-v1
       - name: Installation
         run: |
-          pip install kokoro-onnx soundfile sherpa-onnx requests numpy
+          pip install kokoro-onnx soundfile sherpa-onnx requests numpy pillow
           mkdir -p models && cd models
           [ -f kokoro-v1.0.onnx ] || wget -q https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
           [ -f voices-v1.0.bin ] || wget -q https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
@@ -63,7 +63,7 @@ jobs:
         run: |
           mkdir -p controle
           ffmpeg -loglevel error -y -i sortie/atelier/video.mp4 -vf "fps=1/2,scale=270:480,tile=8x2:padding=4" -frames:v 1 controle/planche.jpg
-          cp sortie/atelier/controle_voix.txt controle/ || true
+          cp sortie/atelier/controle_voix.txt sortie/atelier/planche_visuels.jpg controle/ || true
           git config user.name "usine-bot" && git config user.email "usine-bot@users.noreply.github.com"
           git checkout --orphan atelier-controle && git rm -rq --cached . && git add controle && git commit -qm "Contrôle atelier $(date +%F-%H%M)"
           git push -f origin atelier-controle

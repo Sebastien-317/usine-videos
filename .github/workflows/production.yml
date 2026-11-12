@@ -12,7 +12,7 @@ concurrency: usine
 jobs:
   produire:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 180
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
@@ -39,7 +39,7 @@ jobs:
           key: usine-${{ hashFiles('rendu/package-lock.json') }}-v1
       - name: Installation
         run: |
-          pip install kokoro-onnx soundfile sherpa-onnx requests numpy
+          pip install kokoro-onnx soundfile sherpa-onnx requests numpy pillow
           mkdir -p models && cd models
           [ -f kokoro-v1.0.onnx ] || wget -q https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
           [ -f voices-v1.0.bin ] || wget -q https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin

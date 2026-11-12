@@ -7,7 +7,7 @@ CHAINE="${1:-gta6-fr}"
 JOUR=$(date +%F)
 mkdir -p journaux brouillons sortie
 set -a; [ -f .env ] && . ./.env; set +a      # clés (ElevenLabs, Upload-Post, Telegram, jeton Claude)
-export BASH_DEFAULT_TIMEOUT_MS=1500000 BASH_MAX_TIMEOUT_MS=2400000   # le rendu d'une vidéo prend plusieurs minutes
+export BASH_DEFAULT_TIMEOUT_MS=900000 BASH_MAX_TIMEOUT_MS=3000000   # le rendu d'une vidéo prend plusieurs minutes
 unset ANTHROPIC_API_KEY                       # garantit l'usage de l'abonnement Claude, pas d'une facture API
 N=$(python3 -c "import json;print(json.load(open('chaines/$CHAINE.json'))['videos_par_jour'])")
 

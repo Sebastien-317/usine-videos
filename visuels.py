@@ -58,10 +58,15 @@ def recadrer(src, dest, debut, duree, dispo):
 
 
 class Pixabay:
-    def __init__(self, graine):
+    def __init__(self, graine, nom):
         self.cle = os.environ.get("PIXABAY_API_KEY", "")
         self.rng = random.Random(graine)
-        self.deja = set(json.loads(UTILISES.read_text())) if UTILISES.exists() else set()
+        self.nom = nom
+        # {id du clip: vidéo qui l'a utilisé} ; les clips de CETTE vidéo ne comptent pas (aperçu puis fabrication = mêmes choix)
+        self.registre = json.loads(UTILISES.read_text()) if UTILISES.exists() else {}
+        if isinstance(self.registre, list):
+            self.registre = {str(i): "?" for i in self.registre}
+        self.deja = {int(i) for i, v in self.registre.items() if v != nom}
         self.cette_video = set()
 
     def chercher(self, q):
@@ -83,16 +88,24 @@ class Pixabay:
         hits = self.chercher(q)
         if not hits and " " in q:
             hits = self.chercher(" ".join(q.split()[:2]))
-        def score(h):
+        # Les mots qui portent le sens (« prison », « courtroom ») doivent figurer dans les étiquettes du clip ;
+        # les mots d'ambiance (« dark », « night ») départagent seulement.
+        ambiance = {"dark", "night", "the", "a", "of", "in", "and", "close", "up", "view", "black"}
+        sens = [w for w in q.lower().split() if w not in ambiance] or q.lower().split()
+        def pertinence(h):
+            tags = h.get("tags", "").lower()
+            return sum(1 for w in sens if w in tags) / len(sens) + 0.25 * sum(1 for w in q.lower().split() if w in ambiance and w in tags)
+        def score(rang, h):
             v = h["videos"].get("medium") or {}
-            vertical = 2 if v.get("height", 0) > v.get("width", 1) else 0
-            neuf = 0 if h["id"] in self.deja else 3
-            assez = 1 if h.get("duration", 0) >= duree + 0.5 else 0
-            return vertical + neuf + assez + self.rng.random() * 1.5
-        hits = [h for h in hits if h["id"] not in self.cette_video and (h["videos"].get("medium") or {}).get("url")]
+            vertical = 1 if v.get("height", 0) > v.get("width", 1) else 0
+            neuf = 0 if h["id"] in self.deja else 1.5
+            assez = 0.5 if h.get("duration", 0) >= duree + 0.5 else 0
+            return 4 * pertinence(h) + 2 * (15 - rang) / 15 + vertical + neuf + assez + self.rng.random() * 0.4
+        hits = [(r, h) for r, h in enumerate(hits[:15]) if h["id"] not in self.cette_video and (h["videos"].get("medium") or {}).get("url")]
+        hits = [(r, h) for r, h in hits if pertinence(h) > 0] or hits[:3]
         if not hits:
             return None
-        h = max(hits[:20], key=score)
+        h = max(hits, key=lambda rh: score(*rh))[1]
         self.cette_video.add(h["id"])
         CACHE.mkdir(exist_ok=True)
         f = CACHE / f"pixabay-{h['id']}.mp4"
@@ -114,8 +127,54 @@ class Pixabay:
     def memoriser(self):
         if self.cette_video:
             UTILISES.parent.mkdir(exist_ok=True)
-            tout = list(self.deja | self.cette_video)[-600:]  # environ 2 semaines de vidéos
-            UTILISES.write_text(json.dumps(sorted(tout)))
+            reg = {i: v for i, v in self.registre.items() if v != self.nom}
+            reg.update({str(i): self.nom for i in self.cette_video})
+            reg = dict(list(reg.items())[-600:])  # environ 2 semaines de vidéos
+            UTILISES.write_text(json.dumps(reg, indent=0))
+
+
+def planche(story, pub, out):
+    """Une vignette par plan, légendée « scène N · recherche », pour que le pilote vérifie que l'image colle au texte."""
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        return
+    police = ImageFont.load_default()
+    for chemin in ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+                   "/usr/share/fonts/opentype/inter/Inter-Regular.otf", "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"):
+        if Path(chemin).exists():
+            police = ImageFont.truetype(chemin, 13)
+            break
+    vignettes = []
+    for i, sc in enumerate(story["scenes"]):
+        vis = sc.get("visuels") or []
+        for k, seg in enumerate(sc.get("segments", [])):
+            im = Image.new("RGB", (216, 384), (40, 40, 40))
+            if seg["type"] == "video":
+                f = ICI / "rendu" / "public" / seg["src"]
+                tmp = out / "_vignette.jpg"
+                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{seg['duree'] / FPS / 2:.2f}", "-i", str(f), "-frames:v", "1",
+                                "-vf", "scale=216:384", str(tmp)])
+                if tmp.exists():
+                    im = Image.open(tmp).convert("RGB")
+                    tmp.unlink()
+            d = ImageDraw.Draw(im)
+            etiquette = seg.get("source", "") if seg.get("raccord") else (vis[k % len(vis)] if vis else seg.get("plan", ""))
+            if seg["type"] == "3d":
+                etiquette = f"3D {seg.get('plan')} (rien trouvé)" if not str(etiquette).startswith("3d:") else etiquette
+            d.rectangle([0, 0, 216, 58], fill=(0, 0, 0))
+            d.text((6, 4), f"SCÈNE {i + 1}", fill=(255, 210, 63), font=police)
+            d.text((6, 22), str(etiquette)[:30], fill=(255, 255, 255), font=police)
+            d.text((6, 38), sc["voix"][:30], fill=(170, 170, 170), font=police)
+            vignettes.append(im)
+    if not vignettes:
+        return
+    col = 8
+    pl = Image.new("RGB", (col * 220, ((len(vignettes) + col - 1) // col) * 388), (0, 0, 0))
+    for k, im in enumerate(vignettes):
+        pl.paste(im, ((k % col) * 220, (k // col) * 388))
+    pl.save(out / "planche_visuels.jpg", quality=85)
+    journal("planche :", out / "planche_visuels.jpg")
 
 
 def main():
@@ -128,7 +187,7 @@ def main():
     shutil.rmtree(pub, ignore_errors=True)
     pub.mkdir(parents=True)
     graine = int(hashlib.md5(nom.encode()).hexdigest()[:8], 16)
-    px = Pixabay(graine)
+    px = Pixabay(graine, nom)
     rng = random.Random(graine)
     debuts = [0] + [round(s["debut"] * FPS) for s in timing["scenes"][1:]]
     premier = None  # (fichier, début, id) du tout premier plan, pour boucler la fin dessus
@@ -180,6 +239,7 @@ def main():
         sc["segments"] = segs
         journal(f"scène {i + 1} :", ", ".join(s.get("source", "3d " + s.get("plan", "")) for s in segs))
     px.memoriser()
+    planche(story, pub, out)
     story["clips"] = nom
     (out / "storyboard_rendu.json").write_text(json.dumps(story, ensure_ascii=False, indent=1))
     journal("prêt :", out / "storyboard_rendu.json")
