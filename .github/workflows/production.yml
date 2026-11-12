@@ -2,9 +2,8 @@
 # les programme chez Upload-Post (12 h 30 et 19 h) et envoie les aperçus sur Telegram. Aucun serveur à payer.
 name: Production quotidienne
 on:
-  # EN PAUSE pendant la refonte v3 (vraies images + histoires) : remettre ces deux lignes pour relancer chaque matin.
-  # schedule:
-  #   - cron: "12 6 * * *"     # 6 h 12 UTC = 7 h 12 à Paris en hiver (8 h 12 en été)
+  schedule:
+    - cron: "12 6 * * *"     # 6 h 12 UTC = 7 h 12 à Paris en hiver (8 h 12 en été)
   workflow_dispatch:          # bouton « Run workflow » pour lancer à la main
 permissions:
   contents: write
