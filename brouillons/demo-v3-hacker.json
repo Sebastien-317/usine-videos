@@ -22,7 +22,7 @@
       "visuels": [
         "pixabay:#289001",
         "pixabay:#180776",
-        "pixabay:#4733"
+        "pixabay:#14214"
       ],
       "gros": "IL A PIRATÉ|GTA 6"
     },
@@ -31,7 +31,7 @@
       "voix_jeu": "[short pause] 2022. Un ado anglais vit dans un hôtel, sous protection policière.",
       "visuels": [
         "pixabay:#20837",
-        "pixabay:police siren night"
+        "pixabay:#172350"
       ],
       "lieu": "ANGLETERRE · 2022"
     },
@@ -78,8 +78,8 @@
       "voix": "Décembre 2023. Verdict : hôpital sécurisé, durée indéfinie.",
       "voix_jeu": "Décembre 2023. [dramatically] Verdict : hôpital sécurisé, durée indéfinie.",
       "visuels": [
-        "pixabay:judge gavel",
-        "pixabay:hospital hallway night",
+        "pixabay:#162047",
+        "pixabay:#198896",
         "pixabay:#72883"
       ],
       "coupure": {
@@ -92,9 +92,9 @@
       "voix": "Mais en 2026, il quitte l'hôpital pour la prison. Nouveau procès : novembre.",
       "voix_jeu": "[whispers] Mais en 2026, il quitte l'hôpital pour la prison. [dramatically] Nouveau procès : novembre.",
       "visuels": [
-        "pixabay:handcuffs",
-        "pixabay:jail cell",
-        "pixabay:#131258"
+        "pixabay:#9369",
+        "pixabay:#131258",
+        "pixabay:#162047"
       ],
       "tampon": "NOUVEAU PROCÈS",
       "tamponMot": "procès"
