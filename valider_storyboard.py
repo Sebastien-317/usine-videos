@@ -20,7 +20,7 @@ def norm(t):
 
 HABILLAGES = ("gros", "compteur", "question", "vrai_faux", "duel", "frise", "quiz", "alerte", "liste")
 # Composition « Doc » (vraies images) : un habillage principal par scène, plus « lieu » et « tampon » en option
-HABILLAGES_DOC = ("gros", "compteur", "document", "coupure", "question")
+HABILLAGES_DOC = ("gros", "compteur", "document", "coupure")
 EN_PLUS_DOC = ("lieu", "tampon")
 
 
@@ -52,7 +52,17 @@ def valider(b, ch):
         pb.append("Scène 1 : accroche trop longue (24 caractères max).")
     if len(sc[0].get("voix", "")) > 60:
         avert.append("Scène 1 : la phrase d'accroche dépasse 60 caractères, elle risque d'être trop lente.")
-    if not sc[-1].get("question"):
+    if doc:
+        fin = sc[-1]["voix"].strip() if sc else ""
+        if sc and sc[-1].get("question"):
+            pb.append("Dernière scène : pas de carte question. La vidéo se termine en boucle : la dernière phrase s'enchaîne avec la première.")
+        if sc and not fin.endswith(("…", "...")):
+            pb.append("Dernière scène : la voix doit finir en suspens par « … » (ex. « Tout ça parce que… ») pour s'enchaîner avec la phrase d'accroche.")
+        if any("commentaire" in s["voix"].lower() for s in sc):
+            pb.append("La voix ne doit jamais dire « commentaire » : pas d'appel à commenter, la fin boucle sur le début.")
+        if sc:
+            avert.append(f"Boucle à relire à voix haute : « {fin} {sc[0]['voix']} »")
+    elif not sc[-1].get("question"):
         pb.append("Dernière scène : il faut une question finale (champ « question ») pour faire réagir en commentaire.")
 
     for i, s in enumerate(sc, 1):
@@ -211,6 +221,7 @@ def main():
         s.setdefault("seed", 11 + i * 13)
     final = {
         "composition": ch["composition"],
+        "boucle": ch["composition"] == "Doc",
         "chaine": {k: ch[k] for k in ("id", "nom", "langue", "voix", "vitesse", "prononciation", "prononciation_elevenlabs", "moteur_voix", "voix_elevenlabs", "modele_elevenlabs") if k in ch},
         **{k: b[k] for k in ("titre", "legende", "sources", "scenes")},
     }

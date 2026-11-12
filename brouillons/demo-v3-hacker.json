@@ -23,7 +23,7 @@
      "coupure": {"source": "Engadget", "date": "21 DÉC. 2023", "titre": "Le pirate de Rockstar interné pour une durée indéfinie"}},
     {"voix": "Mais en 2026, il quitte l'hôpital pour la prison. Nouveau procès : novembre.", "voix_jeu": "[whispers] Mais en 2026, il quitte l'hôpital pour la prison. [dramatically] Nouveau procès : novembre.",
      "visuels": ["pixabay:prison bars", "pixabay:prison corridor"], "tampon": "NOUVEAU PROCÈS", "tamponMot": "procès"},
-    {"voix": "Le même mois que GTA 6. Alors, génie ou criminel ?", "voix_jeu": "[curious] Le même mois que GTA 6. Alors, génie ou criminel ?",
-     "visuels": ["pixabay:city night aerial", "pixabay:game controller dark"], "question": {"texte": "GÉNIE OU|CRIMINEL ?", "bulle": "Dis-le en commentaire"}}
+    {"voix": "Le même mois que la sortie du jeu. Tout ça parce que…", "voix_jeu": "[whispers] Le même mois que la sortie du jeu. [dramatically] Tout ça parce que…",
+     "visuels": ["pixabay:city night aerial", "pixabay:hacker hoodie dark"]}
   ]
 }

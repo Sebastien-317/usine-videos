@@ -26,12 +26,13 @@ const ombre = (px: number) => ({textShadow: `0 ${px}px ${px * 2}px rgba(0,0,0,0.
 const contour = (px: number) => ({WebkitTextStroke: `${px}px #000`, paintOrder: 'stroke fill'} as any);
 
 // ---------- Fond : un morceau de vraie vidéo (ou de 3D) par coupe ----------
-const Morceau: React.FC<{seg: any; seed: number; k: number}> = ({seg, seed, k}) => {
+const Morceau: React.FC<{seg: any; seed: number; k: number; tout1er: boolean}> = ({seg, seed, k, tout1er}) => {
   const f = useCurrentFrame();
   const d = seg.duree;
-  const zoom = interpolate(f, [0, d], k % 2 ? [1.1, 1.0] : [1.0, 1.09]);
-  const punch = interpolate(f, [0, 5], [1.1, 1], {...CL, easing: Easing.out(Easing.cubic)});
-  const dx = interpolate(f, [0, d], k % 3 === 0 ? [-18, 18] : k % 3 === 1 ? [16, -16] : [0, 0]);
+  // Le plan de raccord (fin de vidéo) finit exactement dans le cadrage où commence le tout premier plan : la boucle est invisible.
+  const zoom = interpolate(f, [0, d], seg.raccord ? [1.09, 1.0] : k % 2 ? [1.1, 1.0] : [1.0, 1.09]);
+  const punch = tout1er || seg.raccord ? 1 : interpolate(f, [0, 5], [1.1, 1], {...CL, easing: Easing.out(Easing.cubic)});
+  const dx = interpolate(f, [0, d], seg.raccord ? [-40, -18] : k % 3 === 0 ? [-18, 18] : k % 3 === 1 ? [16, -16] : [0, 0]);
   if (seg.type === 'video') {
     return (
       <AbsoluteFill style={{transform: `translateX(${dx}px) scale(${zoom * punch})`}}>
@@ -46,7 +47,7 @@ const Morceau: React.FC<{seg: any; seed: number; k: number}> = ({seg, seed, k}) 
   );
 };
 
-const Fond: React.FC<{segs: any[]; seed: number}> = ({segs, seed}) => {
+const Fond: React.FC<{segs: any[]; seed: number; idx: number}> = ({segs, seed, idx}) => {
   let t = 0;
   return (
     <>
@@ -55,7 +56,7 @@ const Fond: React.FC<{segs: any[]; seed: number}> = ({segs, seed}) => {
         t += s.duree;
         return (
           <Sequence key={k} from={from} durationInFrames={s.duree} layout="none">
-            <Morceau seg={s} seed={seed} k={k} />
+            <Morceau seg={s} seed={seed} k={k} tout1er={idx === 0 && k === 0} />
             {k > 0 ? <Flash /> : null}
           </Sequence>
         );
@@ -265,7 +266,7 @@ const Scene: React.FC<{s: any; dur: number; idx: number; from: number}> = ({s, d
   const voile = s.document || s.coupure ? 0.45 : s.gros || s.compteur || s.question || s.tampon ? 0.22 : 0;
   return (
     <AbsoluteFill style={{transform: `translate(${sec + choc}px, ${-(sec + choc) * 0.4}px)`}}>
-      <Fond segs={s.segments || [{type: '3d', plan: 'rue_neon', duree: dur}]} seed={s.seed || 11} />
+      <Fond segs={s.segments || [{type: '3d', plan: 'rue_neon', duree: dur}]} seed={s.seed || 11} idx={idx} />
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.7) 100%)'}} />
       {voile ? <AbsoluteFill style={{background: `rgba(0,0,0,${voile})`}} /> : null}
       {s.lieu ? <Lieu texte={s.lieu} /> : null}
@@ -284,7 +285,6 @@ export const Doc: React.FC<{story: any; timing: any}> = ({story, timing}) => {
   const {durationInFrames} = useVideoConfig();
   if (!story || !timing) return null;
   const scenes = story.scenes.map((s: any, i: number) => ({...s, mots: timing.scenes[i].mots, t0: timing.scenes[i].debut}));
-  const nom = story.chaine?.nom || '';
   return (
     <AbsoluteFill style={{background: '#000', overflow: 'hidden'}}>
       {scenes.map((s: any, i: number) => {
@@ -299,11 +299,6 @@ export const Doc: React.FC<{story: any; timing: any}> = ({story, timing}) => {
       <AbsoluteFill style={{background: 'radial-gradient(ellipse 78% 62% at 50% 48%, transparent 55%, rgba(0,0,0,0.6) 100%)'}} />
       <Grain />
       <SousTitres scenes={scenes} t={frame / FPS} />
-      {nom ? (
-        <div style={{position: 'absolute', top: 236, left: 70, display: 'flex', alignItems: 'center', fontFamily: 'Bebas', fontSize: 44, letterSpacing: 4, color: '#fff', opacity: 0.9}}>
-          <span style={{display: 'inline-block', width: 18, height: 18, background: ROUGE, marginRight: 12}} />{nom}
-        </div>
-      ) : null}
     </AbsoluteFill>
   );
 };

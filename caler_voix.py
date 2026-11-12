@@ -93,7 +93,8 @@ def caler_par_alignement(al, story, duree_audio):
     for k, s in enumerate(scenes):
         s["debut"] = round(max(0.0, s["mots"][0]["debut"] - 0.06), 3)
         s["fin"] = round(scenes[k + 1]["mots"][0]["debut"] - 0.06 if k + 1 < len(scenes) else s["mots"][-1]["fin"], 3)
-    return {"duree": round(duree_audio + 0.4, 3), "scenes": scenes}
+    fin = scenes[-1]["mots"][-1]["fin"] + 0.12 if story.get("boucle") and scenes[-1]["mots"] else duree_audio + 0.4
+    return {"duree": round(min(fin, duree_audio + 0.4), 3), "scenes": scenes}
 
 
 def main():
@@ -182,6 +183,8 @@ def main():
         sc["fin"] = round(b, 3)
 
     duree = round(len(audio) / SR + 0.4, 3)
+    if story.get("boucle") and scenes:
+        duree = round(min(duree, scenes[-1]["fin"] + 0.12), 3)
     (out / "timing.json").write_text(json.dumps({"duree": duree, "scenes": scenes}, ensure_ascii=False, indent=1))
     for s in scenes:
         print(f"scène {s['index']}: {s['debut']:6.2f}s → {s['fin']:6.2f}s")

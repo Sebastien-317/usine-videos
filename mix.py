@@ -189,7 +189,7 @@ def main():
     beat = np.zeros(n)
     sfx = np.zeros(n)
     debuts = [0.0] + [round(s["debut"] * FPS) / FPS for s in timing["scenes"][1:]]
-    fin_beat = debuts[-1]  # le beat coupe sur la question finale
+    fin_beat = duree if story.get("boucle") else debuts[-1]  # en boucle : pas de coupure ; sinon le beat coupe sur la question
 
     sombre = story.get("composition") == "Doc"
     temps = 60 / BPM

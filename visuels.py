@@ -131,6 +131,7 @@ def main():
     px = Pixabay(graine)
     rng = random.Random(graine)
     debuts = [0] + [round(s["debut"] * FPS) for s in timing["scenes"][1:]]
+    premier = None  # (fichier, début, id) du tout premier plan, pour boucler la fin dessus
     for i, sc in enumerate(story["scenes"]):
         dur = (debuts[i + 1] if i + 1 < len(debuts) else total) - debuts[i]
         n = max(1, round(dur / (SEG * FPS)))
@@ -143,12 +144,28 @@ def main():
             typ, _, val = v.partition(":")
             seg = None
             dest = pub / f"s{i:02d}_{k}.mp4"
+            dernier = story.get("boucle") and i == len(story["scenes"]) - 1 and k == n - 1
+            if dernier and premier:
+                # Boucle : on montre les secondes qui PRÉCÈDENT le tout premier plan, pour que l'image s'y raccorde
+                f0, debut0, hid0 = premier
+                dispo, _, _ = ffprobe(f0)
+                try:
+                    recadrer(f0, dest, max(0.0, debut0 - d / FPS), d / FPS + 0.05, dispo)
+                    segs.append({"type": "video", "src": f"clips/{nom}/{dest.name}", "duree": d, "source": f"pixabay {hid0} (raccord boucle)", "raccord": True})
+                    continue
+                except subprocess.CalledProcessError as e:
+                    journal("raccord de boucle impossible", e)
             if typ == "pixabay":
                 r = px.clip(val, d / FPS)
                 if r:
                     f, hid = r
                     dispo, _, _ = ffprobe(f)
                     debut = rng.uniform(0, max(0.0, dispo - d / FPS - 0.3))
+                    if story.get("boucle") and i == 0 and k == 0:
+                        # on garde de la marge avant le premier plan pour le raccord de fin
+                        reste = dispo - d / FPS - 0.3
+                        debut = rng.uniform(min(2.5, max(0.0, reste)), max(0.0, reste))
+                        premier = (f, debut, hid)
                     try:
                         recadrer(f, dest, debut, d / FPS + 0.05, dispo)
                         seg = {"type": "video", "src": f"clips/{nom}/{dest.name}", "duree": d, "source": f"pixabay {hid}"}
