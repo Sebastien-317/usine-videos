@@ -8,7 +8,10 @@ import json
 import re
 import sys
 import unicodedata
+from datetime import date, timedelta
 from pathlib import Path
+
+ICI = Path(__file__).parent
 
 
 def norm(t):
@@ -20,15 +23,121 @@ def norm(t):
 
 HABILLAGES = ("gros", "compteur", "question", "vrai_faux", "duel", "frise", "quiz", "alerte", "liste")
 # Composition « Doc » (vraies images) : un habillage principal par scène, plus « lieu » et « tampon » en option
-HABILLAGES_DOC = ("gros", "compteur", "document", "coupure")
+HABILLAGES_DOC = ("gros", "compteur", "document", "coupure", "liste", "duel", "frise")
 EN_PLUS_DOC = ("lieu", "tampon")
+# Six formats d'histoire et cinq thèmes visuels : deux vidéos qui se suivent ne partagent ni l'un ni l'autre
+FORMATS = {
+    "enquete": "une histoire vraie racontée comme un polar, l'accroche donne la fin choquante",
+    "decryptage": "comment ou pourquoi c'est arrivé : le mécanisme expliqué pas à pas, l'accroche est une question",
+    "top3": "trois faits classés du moins fort au plus fort (liste 3, 2, 1)",
+    "mythe": "une croyance répandue confrontée aux faits, verdict au tampon",
+    "saga": "une chronologie (frise) qui mène à un dénouement",
+    "chiffre": "un seul chiffre fou, décortiqué et mis en perspective (compteur, duel)",
+}
+THEMES_DOC = ("dossier", "neon", "presse", "data", "terminal")
 
 
 def nombres(t):
     return re.findall(r"\d+(?:[.,]\d+)?", t)
 
 
-def valider(b, ch):
+def fin_mots(t, n=3):
+    return " ".join(re.findall(r"[a-zà-ÿ0-9']+", t.lower())[-n:])
+
+
+def precedentes(ch, sortie):
+    """Vidéos à ne pas imiter : l'historique de la chaîne (30 jours) et les autres vidéos préparées le même jour."""
+    vues, jour_, h = [], [], ICI / "historique.jsonl"
+    limite = (date.today() - timedelta(days=30)).isoformat()
+    if h.exists():
+        for l in h.read_text().splitlines():
+            try:
+                x = json.loads(l)
+            except Exception:
+                continue
+            if x.get("chaine") == ch["id"] and x.get("date", "") >= limite:
+                vues.append(x)
+    if sortie:
+        jour = sortie.parent.name[:10]
+        for f in sorted(sortie.parent.parent.glob(f"{jour}-{ch['id']}-*/storyboard.json")):
+            if f.parent.resolve() == sortie.parent.resolve():
+                continue
+            try:
+                x = json.loads(f.read_text())
+                jour_.append({"titre": x.get("titre", ""), "format": x.get("format"), "theme": x.get("theme"),
+                              "accroche": x["scenes"][0]["voix"], "fin": x["scenes"][-1]["voix"]})
+            except Exception:
+                pass
+    return vues, jour_
+
+
+def regles_doc(b, sc, ch, sortie):
+    """Variété (format, thème, ton, boucle) et densité (faits appris, sources) des vidéos « Doc »."""
+    pb = []
+    fmt, th = b.get("format"), b.get("theme")
+    if fmt not in FORMATS:
+        pb.append(f"Champ « format » obligatoire, parmi : {', '.join(FORMATS)}.")
+    if th not in THEMES_DOC:
+        pb.append(f"Champ « theme » obligatoire, parmi : {', '.join(THEMES_DOC)}.")
+    v1 = sc[0].get("voix", "")
+    if fmt == "top3":
+        nums = [s["liste"].get("numero") for s in sc if s.get("liste")]
+        if nums != [3, 2, 1]:
+            pb.append(f"Format top3 : trois scènes « liste » numérotées 3, puis 2, puis 1 (trouvé : {nums}).")
+        if "3" not in v1 and "trois" not in v1.lower():
+            pb.append("Format top3 : l'accroche annonce les 3 (« 3 secrets que… »).")
+    if fmt == "mythe" and not any(s.get("tampon") for s in sc):
+        pb.append("Format mythe : un « tampon » donne le verdict (VRAI, FAUX, EXAGÉRÉ…).")
+    if fmt == "saga" and not any(s.get("frise") for s in sc):
+        pb.append("Format saga : il faut une « frise » (2 à 4 dates).")
+    if fmt == "chiffre":
+        if not re.search(r"\d", v1):
+            pb.append("Format chiffre : l'accroche contient LE chiffre.")
+        if not any(s.get("compteur") for s in sc[:3]):
+            pb.append("Format chiffre : un « compteur » dans les 3 premières scènes.")
+    if fmt == "decryptage":
+        if "?" not in v1 and not re.match(r"(?i)(comment|pourquoi)", v1):
+            pb.append("Format décryptage : l'accroche est une question (« Comment… ? », « Pourquoi… ? »).")
+        if not any(s.get("document") or s.get("frise") for s in sc):
+            pb.append("Format décryptage : un « document » ou une « frise » montre le mécanisme.")
+
+    # Densité : ce que le spectateur apprend, appuyé sur des faits sourcés
+    app = [a for a in b.get("apprend", []) if isinstance(a, str) and len(a.strip()) >= 20]
+    if len(app) < 3:
+        pb.append("Champ « apprend » : au moins 3 choses précises que le spectateur ne savait pas (une phrase chacune, 20 caractères min).")
+    src = [x for x in b.get("sources", []) if str(x.get("url", "")).startswith("http") and x.get("fait")]
+    if len(src) < 4:
+        pb.append(f"Densité : {len(src)} fait(s) sourcé(s), il en faut au moins 4 (un par élément de « sources »).")
+    if len({re.sub(r"^https?://(www\.)?", "", x["url"]).split("/")[0] for x in src}) < 2:
+        pb.append("Sources : au moins 2 médias différents.")
+
+    # Ton de voix varié : le chuchotement est un effet, pas un style
+    tags = [t.lower() for s in sc for t in re.findall(r"\[([^\]]+)\]", s.get("voix_jeu", ""))]
+    if tags.count("whispers") > 1:
+        pb.append(f"[whispers] utilisé {tags.count('whispers')} fois : une fois au maximum par vidéo (varie : [curious], [excited], [surprised], [dramatically]…).")
+    for t in set(tags):
+        if tags.count(t) > 3:
+            pb.append(f"Balise [{t}] utilisée {tags.count(t)} fois : 3 au maximum, varie le ton.")
+
+    # Variété : ni le même format ni le même thème que la vidéo précédente ou celle du même jour ; pas de redite
+    hist, jour = precedentes(ch, sortie)
+    vues = hist + jour
+    for x in jour + hist[-1:]:
+        if fmt and x.get("format") == fmt:
+            pb.append(f"Format « {fmt} » déjà utilisé par « {x.get('titre')} » (vidéo précédente ou du même jour) : choisis-en un autre.")
+        if th and x.get("theme") == th:
+            pb.append(f"Thème « {th} » déjà utilisé par « {x.get('titre')} » (vidéo précédente ou du même jour) : choisis-en un autre.")
+    for x in vues:
+        for a, c, quoi in ((b.get("titre", ""), x.get("titre", ""), "titre"), (v1, x.get("accroche", ""), "accroche")):
+            if a and c and difflib.SequenceMatcher(None, norm(a), norm(c)).ratio() > 0.6:
+                pb.append(f"{quoi.capitalize()} trop proche d'une vidéo déjà faite (« {c} ») : histoire différente exigée.")
+    fins = {fin_mots(x.get("fin", "")) for x in vues[-8:] if x.get("fin")}
+    if sc and fin_mots(sc[-1].get("voix", "")) in fins:
+        pb.append(f"Formule de fin « …{fin_mots(sc[-1]['voix'])}… » déjà utilisée récemment : invente une autre chute en boucle.")
+    return list(dict.fromkeys(pb))
+
+
+def valider(b, ch, sortie=None):
     pb, avert = [], []
     doc = ch.get("composition") == "Doc"
     sc = b.get("scenes", [])
@@ -62,6 +171,7 @@ def valider(b, ch):
             pb.append("La voix ne doit jamais dire « commentaire » : pas d'appel à commenter, la fin boucle sur le début.")
         if sc:
             avert.append(f"Boucle à relire à voix haute : « {fin} {sc[0]['voix']} »")
+        pb += regles_doc(b, sc, ch, sortie)
     elif not sc[-1].get("question"):
         pb.append("Dernière scène : il faut une question finale (champ « question ») pour faire réagir en commentaire.")
 
@@ -200,7 +310,7 @@ def valider(b, ch):
 
     src = b.get("sources", [])
     ok = [x for x in src if str(x.get("url", "")).startswith("http") and x.get("fait")]
-    if len(ok) < 2:
+    if len(ok) < 2 and not doc:
         pb.append("Il faut au moins 2 sources (fait + url) vérifiées le jour même.")
     leg = b.get("legende", "")
     if len(leg) > 2200 or "#" not in leg:
@@ -211,7 +321,7 @@ def valider(b, ch):
 def main():
     b = json.loads(Path(sys.argv[1]).read_text())
     ch = json.loads(Path(sys.argv[2]).read_text())
-    pb, avert = valider(b, ch)
+    pb, avert = valider(b, ch, Path(sys.argv[3]))
     for a in avert:
         print("AVERTISSEMENT :", a)
     if pb:
@@ -225,7 +335,7 @@ def main():
         "composition": ch["composition"],
         "boucle": ch["composition"] == "Doc",
         "chaine": {k: ch[k] for k in ("id", "nom", "langue", "voix", "vitesse", "prononciation", "prononciation_elevenlabs", "moteur_voix", "voix_elevenlabs", "modele_elevenlabs") if k in ch},
-        **{k: b[k] for k in ("titre", "legende", "sources", "scenes")},
+        **{k: b[k] for k in ("titre", "legende", "sources", "scenes", "format", "theme", "apprend") if k in b},
     }
     out = Path(sys.argv[3])
     out.parent.mkdir(parents=True, exist_ok=True)

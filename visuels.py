@@ -30,8 +30,15 @@ CACHE = ICI / "cache_visuels"
 UTILISES = ICI / "bibliotheque" / "pixabay_utilises.json"
 REPLI_3D = ["rue_neon", "poursuite_nuit", "helico_nuit", "autoroute_nuit", "vue_aerienne", "avenue_coucher"]
 ENTETES = {"User-Agent": "usine-videos/1.0 (generateur de videos courtes; contact via github.com/Sebastien-317)"}
-ETALONNAGE = ("eq=contrast=1.12:saturation=0.8:brightness=-0.035,"
-              "colorbalance=rs=-0.04:bs=0.05:rh=0.05:bh=-0.04,vignette=angle=PI/4.6")
+# Un étalonnage par thème (story["theme"]) : deux vidéos de thèmes différents n'ont pas la même couleur
+ETALONNAGES = {
+    "dossier": "eq=contrast=1.12:saturation=0.8:brightness=-0.035,colorbalance=rs=-0.04:bs=0.05:rh=0.05:bh=-0.04,vignette=angle=PI/4.6",
+    "neon": "eq=contrast=1.16:saturation=1.3:brightness=-0.06,colorbalance=rs=0.07:gs=-0.06:bs=0.12:rh=0.08:gh=-0.04:bh=0.06,vignette=angle=PI/4.4",
+    "presse": "eq=contrast=1.2:saturation=0.32:brightness=-0.02,colorbalance=rs=0.06:gs=0.03:bs=-0.07:rh=0.05:bh=-0.05,vignette=angle=PI/4",
+    "data": "eq=contrast=1.08:saturation=0.95:brightness=-0.07,vignette=angle=PI/5",
+    "terminal": "eq=contrast=1.22:saturation=0.25:brightness=-0.07,colorbalance=rs=-0.06:gs=0.1:bs=-0.04:rm=-0.04:gm=0.08:bm=-0.04,vignette=angle=PI/4.2",
+}
+ETALONNAGE = ETALONNAGES["dossier"]
 
 
 def journal(*a):
@@ -46,10 +53,10 @@ def ffprobe(f):
     return float(d.get("format", {}).get("duration", 0) or 0), s.get("width", 0), s.get("height", 0)
 
 
-def recadrer(src, dest, debut, duree, dispo):
+def recadrer(src, dest, debut, duree, dispo, etal=None):
     """Recadre en 1080×1920, étalonne, coupe ; prolonge la dernière image si la source est trop courte."""
     manque = max(0.0, duree - max(0.0, dispo - debut))
-    vf = f"scale=w=1080:h=1920:force_original_aspect_ratio=increase,crop=1080:1920,fps={FPS},{ETALONNAGE}"
+    vf = f"scale=w=1080:h=1920:force_original_aspect_ratio=increase,crop=1080:1920,fps={FPS},{etal or ETALONNAGE}"
     if manque > 0.02:
         vf += f",tpad=stop_mode=clone:stop_duration={manque + 0.1:.2f}"
     tmp = dest.with_suffix(".tmp.mp4")
@@ -263,6 +270,7 @@ def main():
     rng = random.Random(graine)
     debuts = [0] + [round(s["debut"] * FPS) for s in timing["scenes"][1:]]
     premier = None  # (fichier, début, id) du tout premier plan, pour boucler la fin dessus
+    etal = ETALONNAGES.get(story.get("theme") or "dossier", ETALONNAGE)
     for i, sc in enumerate(story["scenes"]):
         dur = (debuts[i + 1] if i + 1 < len(debuts) else total) - debuts[i]
         n = max(1, round(dur / (SEG * FPS)))
@@ -281,7 +289,7 @@ def main():
                 f0, debut0, hid0 = premier
                 dispo, _, _ = ffprobe(f0)
                 try:
-                    recadrer(f0, dest, max(0.0, debut0 - d / FPS), d / FPS + 0.05, dispo)
+                    recadrer(f0, dest, max(0.0, debut0 - d / FPS), d / FPS + 0.05, dispo, etal)
                     segs.append({"type": "video", "src": f"clips/{nom}/{dest.name}", "duree": d, "source": f"pixabay {hid0} (raccord boucle)", "raccord": True})
                     continue
                 except subprocess.CalledProcessError as e:
@@ -298,7 +306,7 @@ def main():
                         debut = rng.uniform(min(2.5, max(0.0, reste)), max(0.0, reste))
                         premier = (f, debut, hid)
                     try:
-                        recadrer(f, dest, debut, d / FPS + 0.05, dispo)
+                        recadrer(f, dest, debut, d / FPS + 0.05, dispo, etal)
                         seg = {"type": "video", "src": f"clips/{nom}/{dest.name}", "duree": d, "source": f"pixabay {hid}"}
                     except subprocess.CalledProcessError as e:
                         journal("recadrage impossible", f, e)

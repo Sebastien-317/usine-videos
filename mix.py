@@ -147,6 +147,96 @@ def nappe_sombre(duree, fin_pulse):
     return piste
 
 
+def bip(freq, duree=0.05):
+    n = int(duree * SR)
+    t = np.arange(n) / SR
+    return np.sign(np.sin(2 * np.pi * freq * t)) * env(n, 0.0005, duree * 0.4)
+
+
+def drone(duree, freqs, fc, respire=6.0):
+    n = int(duree * SR) + SR
+    t = np.arange(n) / SR
+    d = sum(((f * t) % 1) * 2 - 1 for f in freqs)
+    return norm(passe_bas(d, fc + 0.4 * fc * np.sin(2 * np.pi * t / respire) ** 2) * (0.6 + 0.25 * np.sin(2 * np.pi * t / (respire * 0.8))))
+
+
+def nappe_tension(duree, fin):
+    """Thème « presse » : drone grave + horloge qui tique (une seconde), coup sourd toutes les 4 s."""
+    piste = 0.7 * drone(duree, (41.2, 41.5, 61.7, 82.4), 170, 8.0)
+    b = 0.0
+    while b < fin:
+        poser(piste, tic(), b, 0.28)
+        poser(piste, tic(), b + 0.5, 0.1)
+        if round(b) % 4 == 0:
+            poser(piste, kick(), b, 0.55)
+        b += 1.0
+    return piste
+
+
+def nappe_synthwave(duree, fin, bpm=96):
+    """Thème « néon » : nappe synthé mineure, kick régulier, arpège en doubles croches."""
+    temps = 60 / bpm
+    accords = [(55.0, 65.41, 82.41), (43.65, 55.0, 65.41), (65.41, 82.41, 98.0), (49.0, 61.74, 73.42)]  # Lam Fa Do Sol
+    n = int(duree * SR) + SR
+    piste = np.zeros(n)
+    b, k = 0.0, 0
+    while b < fin:
+        ac = accords[(k // 8) % 4]
+        if k % 8 == 0:
+            m = int(8 * temps * SR)
+            t = np.arange(m) / SR
+            pad = sum(((f * 2 * t) % 1) * 2 - 1 for f in ac)
+            poser(piste, passe_bas(pad, 700) * np.minimum(1, t / 0.4) * np.minimum(1, (8 * temps - t) / 0.3), b, 0.22)
+        poser(piste, kick(), b, 0.7)
+        if k % 2 == 1:
+            poser(piste, clap(), b, 0.25)
+        poser(piste, hat(), b + temps / 2, 0.1)
+        for j in range(4):
+            poser(piste, basse(ac[j % 3] * 4, temps / 4), b + j * temps / 4, 0.16)
+        poser(piste, basse(ac[0], temps * 0.9), b, 0.3)
+        b += temps
+        k += 1
+    return piste
+
+
+def nappe_pulse(duree, fin, bpm=112):
+    """Thème « data » : pulsation propre et légère, basse sur les temps, charleston."""
+    temps = 60 / bpm
+    notes = [55.0, 55.0, 65.41, 49.0]
+    n = int(duree * SR) + SR
+    piste = np.zeros(n)
+    b, k = 0.0, 0
+    while b < fin:
+        poser(piste, kick(), b, 0.6)
+        poser(piste, hat(), b + temps / 2, 0.14)
+        if k % 4 == 3:
+            poser(piste, hat(True), b + temps / 2, 0.1)
+        poser(piste, basse(notes[(k // 4) % 4] * 2, temps * 0.45), b + temps / 2, 0.28)
+        b += temps
+        k += 1
+    return piste
+
+
+def nappe_glitch(duree, fin, bpm=88):
+    """Thème « terminal » : drone froid, bips numériques épars, kick tous les deux temps."""
+    temps = 60 / bpm
+    piste = 0.35 * drone(duree, (73.4, 73.9, 146.8), 420, 5.0)
+    b, k = 0.0, 0
+    alea = np.random.default_rng(3)
+    while b < fin:
+        if k % 2 == 0:
+            poser(piste, kick(), b, 0.6)
+        poser(piste, hat(), b + temps / 2, 0.06)
+        for _ in range(alea.integers(0, 3)):
+            poser(piste, bip(float(alea.choice([880, 1320, 1760, 2640])), 0.04), b + float(alea.uniform(0, temps)), 0.08)
+        b += temps
+        k += 1
+    return piste
+
+
+AMBIANCES = {"dossier": nappe_sombre, "presse": nappe_tension, "neon": nappe_synthwave, "data": nappe_pulse, "terminal": nappe_glitch}
+
+
 def nm(m):
     import unicodedata
     m = unicodedata.normalize("NFD", m.lower())
@@ -194,7 +284,7 @@ def main():
     sombre = story.get("composition") == "Doc"
     temps = 60 / BPM
     if sombre:
-        beat = nappe_sombre(duree, fin_beat)[:n]
+        beat = AMBIANCES.get(story.get("theme") or "dossier", nappe_sombre)(duree, fin_beat)[:n]
         fin_beat = -1  # pas de beat dansant
     notes = [55.0, 43.65, 65.41, 49.0]  # La, Fa, Do, Sol (graves)
     k, b = 0, 0.0
@@ -283,7 +373,11 @@ def main():
             poser(sfx, impact(), t0, 0.7)
             poser(sfx, pop(), t0 + round((fin - t0) * FPS * 0.35) / FPS, 0.6)
 
-    sf.write(out / "nappe.wav", (norm(beat) * 0.8).astype(np.float32), SR)
+    if sombre:  # les ambiances n'ont pas la même densité : on les égalise en énergie, sans dépasser 0,8 en crête
+        beat = beat * min(0.8 / (np.max(np.abs(beat)) + 1e-9), 0.2 / (np.sqrt(np.mean(beat ** 2)) + 1e-9))
+    else:
+        beat = norm(beat) * 0.8
+    sf.write(out / "nappe.wav", beat.astype(np.float32), SR)
     sf.write(out / "bruitages.wav", (norm(sfx) * 0.9).astype(np.float32), SR)
     print("habillage prêt")
 

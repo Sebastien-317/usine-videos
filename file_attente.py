@@ -40,7 +40,23 @@ def ajouter(sortie, chaine_path, creneau):
     quand = maintenant.replace(hour=h, minute=m, second=0, microsecond=0)
     if quand <= maintenant + timedelta(minutes=20):  # créneau trop proche : le lendemain
         quand += timedelta(days=1)
+    # Créneau déjà pris par une vidéo en attente : on prend le même horaire le jour suivant (jamais d'écrasement)
+    pris = set()
+    for st in FILE.glob("*/statut.json"):
+        try:
+            x = json.loads(st.read_text())
+            futur = x.get("heure_publication", "") and datetime.fromisoformat(x["heure_publication"]) > maintenant
+            if x.get("chaine") == ch["id"] and x.get("etat") in ("en_attente", "programme") and futur:
+                pris.add(x.get("heure_publication", "")[:16])
+        except Exception:
+            pass
+    while quand.isoformat()[:16] in pris:
+        quand += timedelta(days=1)
     vid = f"{quand:%Y%m%d-%H%M}-{ch['id']}"
+    n = 2
+    while (FILE / vid).exists():  # garde-fou : un identifiant n'est jamais réutilisé
+        vid = f"{quand:%Y%m%d-%H%M}-{ch['id']}-{n}"
+        n += 1
     d = FILE / vid
     d.mkdir(parents=True, exist_ok=True)
     shutil.copy(sortie / "video.mp4", d / "video.mp4")
@@ -55,6 +71,8 @@ def ajouter(sortie, chaine_path, creneau):
     })
     with open(ICI / "historique.jsonl", "a") as h:  # mémoire des sujets traités, relue chaque matin par le pilote
         h.write(json.dumps({"date": f"{maintenant:%Y-%m-%d}", "chaine": ch["id"], "id": vid, "titre": story["titre"],
+                            "format": story.get("format"), "theme": story.get("theme"), "accroche": story["scenes"][0]["voix"],
+                            "fin": story["scenes"][-1]["voix"],
                             "sources": [s.get("fait") for s in story.get("sources", [])]}, ensure_ascii=False) + "\n")
     print(f"AJOUTÉE : {vid} — publication prévue le {quand:%d/%m à %H:%M}")
     return vid
