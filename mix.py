@@ -3,6 +3,7 @@
 Usage : python mix.py storyboard.json sortie/  -> sortie/nappe.wav + sortie/bruitages.wav (48 kHz)
 Le mixage final (voix + habillage, ducking, -14 LUFS) se fait ensuite avec ffmpeg (voir fabriquer.sh).
 """
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -284,7 +285,11 @@ def main():
     sombre = story.get("composition") == "Doc"
     temps = 60 / BPM
     if sombre:
-        beat = AMBIANCES.get(story.get("theme") or "dossier", nappe_sombre)(duree, fin_beat)[:n]
+        # Même thème ≠ même son : chaque vidéo joue son ambiance un peu plus grave/lente ou aiguë/rapide
+        # (de -8 % à +8 %, tiré du titre). TikTok écarte des fils les vidéos trop semblables, au son près.
+        r = 0.92 + 0.16 * (int(hashlib.md5(story.get("titre", "").encode()).hexdigest()[:8], 16) % 1000) / 999
+        brut = AMBIANCES.get(story.get("theme") or "dossier", nappe_sombre)(duree * r + 1, fin_beat * r)
+        beat = np.interp(np.arange(n) * r, np.arange(len(brut)), brut)
         fin_beat = -1  # pas de beat dansant
     notes = [55.0, 43.65, 65.41, 49.0]  # La, Fa, Do, Sol (graves)
     k, b = 0, 0.0

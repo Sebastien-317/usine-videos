@@ -10,17 +10,58 @@
   "modele_elevenlabs": "eleven_v4",
   "voix": "ff_siwis",
   "vitesse": 1.12,
-  "prononciation_elevenlabs": {"GTA": "Gé-Té-A"},
-  "prononciation": {"GTA 6": "gé-té-a sisse", "GTA 5": "gé-té-a cinq", "GTA": "gé-té-a", "Take-Two": "Tèk-Tou", "Xbox": "Ixe-bosse", "Series": "Siriz"},
+  "prononciation_elevenlabs": {
+    "GTA": "Gé-Té-A"
+  },
+  "prononciation": {
+    "GTA 6": "gé-té-a sisse",
+    "GTA 5": "gé-té-a cinq",
+    "GTA": "gé-té-a",
+    "Take-Two": "Tèk-Tou",
+    "Xbox": "Ixe-bosse",
+    "Series": "Siriz"
+  },
   "videos_par_jour": 2,
-  "horaires": ["12:30", "19:00"],
+  "horaires": [
+    "12:30",
+    "19:00"
+  ],
   "fuseau": "Europe/Paris",
-  "plateformes": ["tiktok", "instagram"],
+  "plateformes": [
+    "tiktok",
+    "instagram"
+  ],
   "upload_post_user": "gta6-fr",
-  "hashtags": ["#gta6", "#gtavi", "#jeuxvideo", "#gaming"],
+  "hashtags": [
+    "#gta6",
+    "#gtavi",
+    "#jeuxvideo",
+    "#gaming"
+  ],
+  "mots_cles_recherche": [
+    "GTA",
+    "Rockstar",
+    "Vice City",
+    "Take-Two",
+    "Leonida"
+  ],
   "max_caracteres_voix": 480,
   "min_caracteres_voix": 250,
-  "plans_autorises": ["rue_neon", "poursuite_nuit", "helico_nuit", "calendrier", "avenue_coucher", "vue_aerienne", "tour_boites", "autoroute_nuit", "mur_ecrans", "pluie_billets", "piece_or", "plage_coucher", "plage_proche"],
+  "plans_autorises": [
+    "rue_neon",
+    "poursuite_nuit",
+    "helico_nuit",
+    "calendrier",
+    "avenue_coucher",
+    "vue_aerienne",
+    "tour_boites",
+    "autoroute_nuit",
+    "mur_ecrans",
+    "pluie_billets",
+    "piece_or",
+    "plage_coucher",
+    "plage_proche"
+  ],
   "sources_veille": [
     "https://www.rockstargames.com/newswire",
     "https://www.gtaboom.com",

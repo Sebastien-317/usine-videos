@@ -12,7 +12,7 @@ Ta mission quotidienne pour une chaîne : produire le nombre de vidéos prévu (
 - **Zéro invention.** Chaque chiffre, date, nom ou fait doit venir d'une page que tu as lue aujourd'hui avec WebFetch, dans un média reconnu. Au moindre doute, laisse tomber le fait. Une comparaison (« plus que… », « record ») est un fait : sans source, supprime-la.
 - **Les interdits de la chaîne** (`chaines/<id>.json` → `interdits`) priment sur tout le reste.
 - **Ne modifie jamais** le code du moteur (`rendu/`, `*.py`, `*.sh`). Tu écris seulement dans `brouillons/` et `sortie/`.
-- **Pas de redite.** Ne raconte pas une histoire déjà traitée dans les 30 derniers jours (`historique.jsonl`, champs `titre`, `accroche`, `fin`), ni celles des démos (`brouillons/demo-*`) : le piratage de Rockstar par l'ado à la clé télé et les 34 employés licenciés pour le Discord sont déjà publiés. Ne réutilise ni leur structure, ni leurs phrases.
+- **Pas de redite.** Ne raconte pas une histoire déjà traitée dans les 30 derniers jours (`historique.jsonl`, champs `titre`, `accroche`, `fin`), ni celles des démos (`brouillons/demo-*`) : le piratage de Rockstar par l'ado à la clé télé, les 34 employés licenciés pour le Discord et le « Joker de Floride » contre Rockstar sont déjà faits. Ne réutilise ni leur structure, ni leurs phrases.
 - **En cas d'échec** d'une vidéo après 3 tentatives, passe à la suivante et explique pourquoi dans le résumé.
 
 ## Étapes
@@ -24,7 +24,7 @@ Ta mission quotidienne pour une chaîne : produire le nombre de vidéos prévu (
    - « Qu'aura-t-il appris ? » : écris les 3 réponses (champ `apprend`). Si ce sont des choses qu'il a pu lire dans n'importe quel titre d'actu, cherche plus profond.
    Si ce n'est pas un oui évident, cherche mieux.
 4. **Brouillon.** Écris `brouillons/AAAA-MM-JJ-<id>-<n>.json` au format ci-dessous, en suivant la structure **du format choisi** (pas celle d'une vidéo précédente).
-5. **Auto-critique.** Note ton brouillon sur 10 : accroche (stoppe le scroll dès la 1re seconde, même sans le son ?), densité (un fait nouveau et précis à chaque scène ? 3 choses apprises ?), tension (envie de la suite à chaque phrase ?), retournement (vraie surprise ?), boucle (la dernière phrase + la première forment une phrase naturelle, lue à voix haute ?), différence (relis la dernière vidéo de l'historique : structure, accroche, ton et fin sont-ils vraiment autres ?), visuels, exactitude. Sous 8 quelque part : réécris.
+5. **Auto-critique.** Note ton brouillon sur 10 : accroche (stoppe le scroll dès la 1re seconde, même sans le son ?), densité (un fait nouveau et précis à chaque scène ? 3 choses apprises ?), tension (envie de la suite à chaque phrase ?), relance (à mi-parcours, une 2e question s'ouvre-t-elle ?), retournement (vraie surprise ?), envie d'envoyer (y a-t-il un détail qu'on a envie d'envoyer à un pote ?), 2e visionnage (un détail du dernier tiers prend-il son sens en revoyant le début ?), boucle (la dernière phrase + la première forment une phrase naturelle, lue à voix haute ?), différence (relis la dernière vidéo de l'historique : structure, accroche, ton et fin sont-ils vraiment autres ?), visuels, exactitude. Sous 8 quelque part : réécris.
 6. **Validation.** `python3 valider_storyboard.py brouillons/<fichier>.json chaines/<id>.json sortie/<id-video>/storyboard.json`, corrige jusqu'à « VALIDÉ » (3 essais maximum). `<id-video>` vaut `AAAA-MM-JJ-<id>-<n>`. Le validateur refuse : format ou thème identiques à la vidéo précédente ou à l'autre vidéo du jour, histoire ou accroche trop proches d'une vidéo déjà faite, formule de fin déjà utilisée, plus d'un [whispers], moins de 4 faits sourcés ou de 3 choses apprises.
 7. **Aperçu et contrôle des images.** `./fabriquer.sh sortie/<id-video>/storyboard.json sortie/<id-video>/ --apercu` (voix + images de fond, 3 à 5 minutes, `timeout` 900000 ms). Puis :
    - Ouvre `sortie/<id-video>/planche_visuels.jpg` avec Read : une vignette par plan, légendée par la scène, la recherche et le début de la phrase. Sois exigeant : chaque image doit montrer clairement ce que dit la phrase. Sont à remplacer : le hors-sujet (un oiseau pour « prison »), les gens souriants ou les couleurs gaies dans une histoire sombre, les images floues, vides, presque noires ou banales, les plans 3D de secours.
@@ -58,6 +58,11 @@ Change de format à chaque vidéo. Chaque format a sa propre accroche, sa propre
 
 Le format `top3` demande 3 histoires courtes vérifiées : il vaut mieux 3 faits solides que 3 faits moyens.
 
+**Trois règles valables pour tous les formats** (le milieu de la vidéo est là où les spectateurs décrochent) :
+- **Relance à mi-parcours** (scène 4 ou 5) : une phrase qui ouvre une 2e question avec un fait nouveau (« Sauf qu'en 2014, quelqu'un a déjà essayé. »). Jamais une formule creuse du type « et ce n'est pas tout ».
+- **Un détail pour le 2e visionnage** dans le dernier tiers : un nom, une date ou une image qui prend tout son sens quand la vidéo recommence (il répond à l'accroche, ou on l'avait aperçu au début).
+- **Un fait qu'on a envie d'envoyer** à un ami : sur Instagram, l'envoi en message privé est le signal qui fait découvrir la vidéo aux non-abonnés. Jamais d'appel à partager : c'est le fait lui-même qui doit donner envie.
+
 ## Les 5 thèmes visuels (champ `theme`)
 Le thème change la police, les couleurs, les sous-titres, l'étalonnage des images et la musique. Prends le thème qui sert l'histoire, mais jamais celui de la vidéo précédente ni de l'autre vidéo du jour.
 
@@ -78,7 +83,8 @@ Le thème change la police, les couleurs, les sous-titres, l'étalonnage des ima
 - **Longueur** : voix totale de 250 à 480 caractères ; vise 400 à 470 pour être dense.
 - **Texte dit.** `voix` = le texte exact, chiffres en chiffres. `voix_jeu` (facultatif) = les mêmes mots (seule exception : un nom propre réécrit en phonétique, ex. « Dèdpoul » ; « GTA » est corrigé automatiquement), plus des balises d'intention placées avant les mots qu'elles colorent : [dramatically], [curious], [excited], [surprised], [short pause], [laughs], [whispers]. Suis le ton du format. **[whispers] une fois au maximum par vidéo**, aucune balise plus de 3 fois.
 - **Chute en boucle** : la dernière scène finit en suspens par « … » et la phrase d'accroche la complète quand la vidéo recommence. Écris l'accroche ET la fin ensemble et relis l'enchaînement à voix haute : il doit sonner comme une seule phrase. Varie la formule : jamais celle d'une des 8 dernières vidéos (champ `fin` de l'historique). Quelques mécanismes possibles, à adapter : une cause (« …et tout ça à cause de… »), une révélation (« …le plus fou, c'est que… »), un compte à rebours (« …il restait alors… »), une personne (« …l'homme qui a tout déclenché, c'est… »), une question qui revient (« …alors pourquoi… »), une date (« …et c'était le… »). Pas de question au spectateur, pas de « dis-le en commentaire ».
-- **Légende** : la phrase la plus intrigante de l'histoire, éventuellement une question courte, puis 3 à 5 hashtags de la chaîne. Jamais « dis-le en commentaire ».
+- **Recherche TikTok** : TikTok lit ce qui est dit, écrit à l'écran et écrit dans la légende. Le sujet doit être dit dès les 2 premières scènes avec un mot que les gens tapent (`mots_cles_recherche` de la chaîne : « GTA », « Rockstar », « Vice City »…), et apparaître à l'écran tôt (titre `gros` ou `lieu`).
+- **Légende** : elle commence par les mots qu'on chercherait (« GTA 6 : <le sujet en mots simples>… »), puis la phrase la plus intrigante, puis 3 à 5 hashtags précis de la chaîne. Jamais « dis-le en commentaire », jamais #fyp, #pourtoi, #viral, #trending (refusés par le validateur).
 
 ## Format du brouillon
 
@@ -110,6 +116,8 @@ Les valeurs ci-dessous sont des gabarits, pas une histoire : n'en recopie aucune
 Champs obligatoires pour la composition « Doc » : `format`, `theme`, `apprend` (3 phrases minimum), `sources` (4 faits minimum, 2 médias différents minimum).
 
 ### Visuels (chaque phrase doit avoir une image qui la montre)
+**Le tout premier plan décide si on reste** : choisis un plan déjà en mouvement, avec une présence humaine (visage, mains, geste) ou un objet frappant en gros plan. Jamais un décor vide, un paysage ou une façade.
+
 Chaque scène liste 2 ou 3 visuels ; le moteur coupe toutes les 1,7 s et les enchaîne dans l'ordre. Le tout dernier plan est fabriqué automatiquement à partir du premier plan de la vidéo (les secondes qui le précèdent), pour que l'image se raccorde quand la vidéo boucle. Les images sont étalonnées selon le thème.
 - `pixabay:#<identifiant>` : un clip précis choisi sur la planche `candidats.jpg` (le plus sûr après l'aperçu).
 - `pixabay:<3 à 5 mots anglais>` : vraie vidéo libre de droits. Des choses filmables et concrètes : « hacker hoodie dark », « police lights night », « courtroom gavel », « prison bars », « money counting », « server room », « hotel corridor night », « miami skyline night », « palm trees sunset », « game controller dark », « newspaper printing », « office night empty », « stock market screen », « film crew set ». Adapte l'ambiance au thème (« night », « neon », « dark », « office »). Jamais de marque, de célébrité ni de concept abstrait.

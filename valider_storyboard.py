@@ -68,6 +68,13 @@ def precedentes(ch, sortie):
                               "accroche": x["scenes"][0]["voix"], "fin": x["scenes"][-1]["voix"]})
             except Exception:
                 pass
+    # Les démos de l'atelier sont des histoires déjà racontées : on ne les refait pas (comparées au titre et à l'accroche)
+    for f in sorted((ICI / "brouillons").glob("demo-*.json")):
+        try:
+            x = json.loads(f.read_text())
+            vues.insert(0, {"titre": x.get("titre", ""), "accroche": x["scenes"][0]["voix"], "fin": x["scenes"][-1]["voix"]})
+        except Exception:
+            pass
     return vues, jour_
 
 
@@ -315,6 +322,16 @@ def valider(b, ch, sortie=None):
     leg = b.get("legende", "")
     if len(leg) > 2200 or "#" not in leg:
         pb.append("Légende : 2200 caractères max et au moins un hashtag.")
+    vides = [h for h in re.findall(r"#\w+", leg.lower()) if h in ("#fyp", "#foryou", "#foryoupage", "#pourtoi", "#viral", "#trending", "#xyzbca", "#fy")]
+    if vides:
+        pb.append(f"Hashtags inutiles (TikTok les ignore, ils font même moins bien) : {', '.join(vides)}.")
+    # Recherche TikTok : le sujet doit être dit tôt et écrit au début de la légende, avec les mots que les gens tapent
+    cles = [c.lower() for c in ch.get("mots_cles_recherche", [])]
+    if cles and doc:
+        if not any(c in re.sub(r"#\w+", "", leg)[:80].lower() for c in cles):
+            pb.append(f"Légende : les 80 premiers caractères doivent contenir un mot que les gens cherchent ({', '.join(ch['mots_cles_recherche'])}), pas seulement les hashtags.")
+        if sc and not any(c in " ".join(x.get("voix", "") for x in sc[:2]).lower() for c in cles):
+            pb.append(f"La voix des 2 premières scènes doit dire le sujet avec un mot cherché ({', '.join(ch['mots_cles_recherche'])}).")
     return pb, avert
 
 
