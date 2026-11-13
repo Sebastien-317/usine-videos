@@ -1,0 +1,3 @@
+historique refusé (401) : b'{"detail":{"type":"authentication_error","code":"unauthorized","message":"The API key you used is missing the permission speech_history_read to execute this operation.","status":"missing_permissions","request_id":"0888633b47c237dfb6454b251c756f92"}}'
+delphine : introuvable dans l'historique
+hugo : introuvable dans l'historique
