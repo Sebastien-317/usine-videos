@@ -1,0 +1,29 @@
+# Voix off des vidéos The First Door (hors usine) : se lance quand demande.json change sur la branche tfd-voix,
+# génère chaque voix ElevenLabs avec horodatage et repousse les MP3 sur la même branche.
+name: Voix The First Door
+on:
+  push:
+    branches: [tfd-voix]
+    paths: ["tfd_voix/demande.json"]
+permissions:
+  contents: write
+jobs:
+  voix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Générer les voix
+        run: python3 tfd_voix/generer.py tfd_voix/demande.json tfd_voix/resultat
+      - name: Renvoyer les fichiers sur la branche
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tfd_voix/resultat || true
+          git commit -m "chore: voix The First Door générées" || echo "rien à commiter"
+          git push origin HEAD:tfd-voix

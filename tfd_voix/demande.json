@@ -1,0 +1,17 @@
+{
+ "projet": "The First Door – les offres d'alternance traduites en vrai",
+ "voix": [
+  {
+   "nom": "delphine",
+   "voice_id": "7VoxpuBC4ZIcnW14yi9m",
+   "modele": "eleven_v4",
+   "texte": "Junior, 3 ans d'expérience minimum.\n[pause]\nRémunération attractive.\n[pause]\nPoste à pourvoir rapidement.\n[pause]\nEsprit start-up.\n[pause]\nMaîtrise de Python, SQL, Power BI, SAP…\n[pause]\nEnvironnement stimulant.\n[pause]\nCandidature simple en 2 clics.\n[pause]\nRéponse sous 48 heures."
+  },
+  {
+   "nom": "hugo",
+   "voice_id": "3Tp5mYhT9wrfnry9pzvV",
+   "modele": "eleven_v4",
+   "texte": "[excited] Les offres d'alternance… traduites en vrai.\n[pause]\n[sarcastic] Junior… mais t'as déjà trois carrières.\n[pause]\nUn pourcentage du SMIC.\n[pause]\nDepuis 183 jours. Rapidement.\n[pause]\nTrois jobs, un salaire.\n[pause]\n[laughs] Un alternant, ou toute la DSI ?\n[pause]\nÇa crie dans l'open space.\n[pause]\nPlus 45 minutes de formulaire.\n[pause]\n[dramatically] Ghosté.\n[pause]\n[excited] Au moins ici, on te dit ce qui coince. Lien en bio."
+  }
+ ]
+}
