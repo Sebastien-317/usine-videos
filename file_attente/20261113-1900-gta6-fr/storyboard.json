@@ -1,0 +1,151 @@
+{
+  "composition": "Doc",
+  "boucle": true,
+  "chaine": {
+    "id": "gta6-fr",
+    "nom": "DOSSIER JEU",
+    "langue": "fr-fr",
+    "voix": "ff_siwis",
+    "vitesse": 1.12,
+    "prononciation": {
+      "GTA 6": "gé-té-a sisse",
+      "GTA 5": "gé-té-a cinq",
+      "GTA": "gé-té-a",
+      "Take-Two": "Tèk-Tou",
+      "Xbox": "Ixe-bosse",
+      "Series": "Siriz"
+    },
+    "prononciation_elevenlabs": {
+      "GTA": "Gé-Té-A"
+    },
+    "moteur_voix": "elevenlabs",
+    "voix_elevenlabs": "3Tp5mYhT9wrfnry9pzvV",
+    "modele_elevenlabs": "eleven_v4"
+  },
+  "titre": "La fausse copie de GTA 6 qui vide les portefeuilles",
+  "legende": "GTA 6 : une fausse copie qui vide ton portefeuille crypto. Le prix affiché ne compte même pas. #gta6 #gtavi #jeuxvideo #arnaque",
+  "sources": [
+    {
+      "fait": "Faux site de copie leakée GTA 6 : 50 $ ou 1 SOL ; le script cible tout le solde, 7 réseaux, prix affiché non utilisé dans le calcul ; compte à rebours avec la vraie date du 19 novembre",
+      "url": "https://www.malwarebytes.com/?p=459210"
+    },
+    {
+      "fait": "Blocage de 10 pays dont la Russie, réglage CIS_Protection",
+      "url": "https://www.malwarebytes.com/?p=459210"
+    },
+    {
+      "fait": "212 domaines GTA 6 en 31 jours, 57 (environ 1 sur 4) conçus pour arnaquer, 10 confirmés malveillants",
+      "url": "https://surfshark.com/research/chart/gta-6-scam-wave"
+    },
+    {
+      "fait": "Domaines dormants enregistrés à l'avance et activés près du lancement ; projection de plus de 750 domaines",
+      "url": "https://surfshark.com/research/chart/gta-6-scam-wave"
+    }
+  ],
+  "scenes": [
+    {
+      "voix": "Comment un faux GTA 6 vide ton portefeuille crypto ?",
+      "voix_jeu": "[curious] Comment un faux GTA 6 vide ton portefeuille crypto ?",
+      "visuels": [
+        "pixabay:#289001",
+        "pixabay:#10822"
+      ],
+      "gros": "FAUX GTA 6|PORTEFEUILLE",
+      "seed": 11
+    },
+    {
+      "voix": "212 sites GTA 6 repérés en 31 jours. Un sur quatre sent l'arnaque.",
+      "voix_jeu": "[excited] 212 sites GTA 6 repérés en 31 jours. [short pause] Un sur quatre sent l'arnaque.",
+      "visuels": [
+        "pixabay:#1625",
+        "pixabay:#14900"
+      ],
+      "compteur": {
+        "valeur": 212,
+        "prefixe": "",
+        "suffixe": "",
+        "label": "SITES GTA 6 REPÉRÉS"
+      },
+      "seed": 24
+    },
+    {
+      "voix": "Un compte à rebours affiche la vraie date : le 19 novembre.",
+      "voix_jeu": "[curious] Un compte à rebours affiche la vraie date : le 19 novembre.",
+      "visuels": [
+        "pixabay:#15604",
+        "pixabay:#7243"
+      ],
+      "document": {
+        "entete": "ÉTAPE 1",
+        "titre": "LA MISE EN CONFIANCE",
+        "lignes": [
+          "Compte à rebours : vraie date",
+          "Offre : copie [[volée]]"
+        ]
+      },
+      "seed": 37
+    },
+    {
+      "voix": "Il vend la copie 50 dollars. Mais ce prix ne compte pas dans le calcul.",
+      "voix_jeu": "[surprised] Il vend la copie 50 dollars. [short pause] Mais ce prix ne compte pas dans le calcul.",
+      "visuels": [
+        "pixabay:#50622",
+        "pixabay:#2988"
+      ],
+      "compteur": {
+        "valeur": 50,
+        "prefixe": "",
+        "suffixe": " $",
+        "label": "PRIX AFFICHÉ"
+      },
+      "seed": 50
+    },
+    {
+      "voix": "Il vise 7 réseaux et peut vider tout le solde.",
+      "voix_jeu": "[excited] Il vise 7 réseaux et peut vider tout le solde.",
+      "visuels": [
+        "pixabay:#38069",
+        "pixabay:#6378"
+      ],
+      "document": {
+        "entete": "ÉTAPE 2",
+        "titre": "LE SCRIPT",
+        "lignes": [
+          "Réseaux visés : [[7]]",
+          "Cible : tout le solde"
+        ]
+      },
+      "seed": 63
+    },
+    {
+      "voix": "Il bloque dix pays, dont la Russie : réglage « CIS Protection ».",
+      "voix_jeu": "[curious] Il bloque dix pays, dont la Russie : réglage « CIS Protection ».",
+      "visuels": [
+        "pixabay:#4733",
+        "pixabay:#9536"
+      ],
+      "coupure": {
+        "source": "Malwarebytes",
+        "date": "1 SEPT. 2026",
+        "titre": "Un faux compte à rebours cache un vide-portefeuille"
+      },
+      "seed": 76
+    },
+    {
+      "voix": "Des sites dorment encore, activés au lancement. Reste à savoir…",
+      "voix_jeu": "[short pause] Des sites dorment encore, activés au lancement. [dramatically] Reste à savoir…",
+      "visuels": [
+        "pixabay:#238449",
+        "pixabay:#3134"
+      ],
+      "seed": 89
+    }
+  ],
+  "format": "decryptage",
+  "theme": "terminal",
+  "apprend": [
+    "212 sites liés à GTA 6 ont été repérés en 31 jours, dont environ un quart conçus pour arnaquer les fans.",
+    "Sur un faux site de copie volée, le prix affiché (50 dollars) ne sert pas au calcul : le script vise tout le solde du portefeuille, sur sept réseaux.",
+    "Le script bloque dix pays, Russie comprise, grâce à un réglage nommé CIS_Protection."
+  ]
+}

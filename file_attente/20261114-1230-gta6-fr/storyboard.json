@@ -1,0 +1,141 @@
+{
+  "composition": "Doc",
+  "boucle": true,
+  "chaine": {
+    "id": "gta6-fr",
+    "nom": "DOSSIER JEU",
+    "langue": "fr-fr",
+    "voix": "ff_siwis",
+    "vitesse": 1.12,
+    "prononciation": {
+      "GTA 6": "gé-té-a sisse",
+      "GTA 5": "gé-té-a cinq",
+      "GTA": "gé-té-a",
+      "Take-Two": "Tèk-Tou",
+      "Xbox": "Ixe-bosse",
+      "Series": "Siriz"
+    },
+    "prononciation_elevenlabs": {
+      "GTA": "Gé-Té-A"
+    },
+    "moteur_voix": "elevenlabs",
+    "voix_elevenlabs": "3Tp5mYhT9wrfnry9pzvV",
+    "modele_elevenlabs": "eleven_v4"
+  },
+  "titre": "Tricher dans GTA Online : le mythe du risque zéro",
+  "legende": "GTA Online : tricher ne coûte rien ? Un vendeur de cheat à 10 dollars a reçu une facture de 150 000. #gta6 #gtaonline #rockstar #jeuxvideo",
+  "sources": [
+    {
+      "fait": "Perez, cheat Elusive vendu 10 à 30 dollars, jugement par défaut, 150 000 dollars de dommages, Take-Two évoquait 500 000 dollars de pertes",
+      "url": "https://gamedeveloper.com/business/federal-court-orders-i-grand-theft-auto-v-i-cheat-creator-to-pay-150-000"
+    },
+    {
+      "fait": "Cour fédérale d'Australie : avoirs gelés, cryptomonnaies comprises, ordonnances de perquisition (octobre 2018)",
+      "url": "https://gamedeveloper.com/business/-i-gta-v-i-cheaters-assets-frozen-following-australian-court-ruling"
+    },
+    {
+      "fait": "Cheat Infamous : accord sur 140 000 dollars australiens, mod rendu inopérant, code source détruit",
+      "url": "https://mein-mmo.de/en/mod-developer-caused-a-money-rain-for-cheaters-in-gta-online-now-has-to-pay-88000-e-in-the-real-world,928202"
+    },
+    {
+      "fait": "Epsilon : juge Falk, avertissement = mere window dressing ; l'accès public aux moyens d'enfreindre n'est pas une défense ; cinq hommes dont trois ont transigé",
+      "url": "https://torrentfreak.com/british-court-finds-gta-v-cheat-makers-guilty-of-copyright-infringement-200213/"
+    }
+  ],
+  "scenes": [
+    {
+      "voix": "Tricher dans GTA Online ne risque rien ? Tout le monde le croit.",
+      "voix_jeu": "[curious] Tricher dans GTA Online ne risque rien ? [short pause] Tout le monde le croit.",
+      "visuels": [
+        "pixabay:#180776",
+        "pixabay:#10822"
+      ],
+      "gros": "TRICHER|ÇA COÛTE",
+      "seed": 11
+    },
+    {
+      "voix": "Floride, 2018. Un cheat dès 10 dollars. Take-Two porte plainte.",
+      "voix_jeu": "Floride, 2018. Un cheat dès 10 dollars. Take-Two porte plainte.",
+      "visuels": [
+        "pixabay:#86866",
+        "pixabay:#50622"
+      ],
+      "lieu": "FLORIDE · 2018",
+      "seed": 24
+    },
+    {
+      "voix": "Le vendeur ne vient pas au procès. Le juge : 150 000 dollars.",
+      "voix_jeu": "[dramatically] Le vendeur ne vient pas au procès. [short pause] Le juge : 150 000 dollars.",
+      "visuels": [
+        "pixabay:#198901",
+        "pixabay:#72883"
+      ],
+      "compteur": {
+        "valeur": 150,
+        "prefixe": "",
+        "suffixe": " 000 $",
+        "label": "DOMMAGES AU VENDEUR"
+      },
+      "seed": 37
+    },
+    {
+      "voix": "Mais en Australie, les avoirs des accusés sont gelés, cryptos comprises.",
+      "voix_jeu": "[curious] Mais en Australie, les avoirs des accusés sont gelés, cryptos comprises.",
+      "visuels": [
+        "pixabay:#27453",
+        "pixabay:#349087"
+      ],
+      "document": {
+        "entete": "COUR FÉDÉRALE",
+        "titre": "ORDONNANCE",
+        "lignes": [
+          "Avoirs : [[gelés]]",
+          "Cryptomonnaies : incluses",
+          "Perquisition : autorisée"
+        ]
+      },
+      "seed": 50
+    },
+    {
+      "voix": "En Angleterre, deux hommes brandissent un avertissement. Le juge : de la façade.",
+      "voix_jeu": "[laughs] En Angleterre, deux hommes brandissent un avertissement. [dramatically] Le juge : de la façade.",
+      "visuels": [
+        "pixabay:#143809",
+        "pixabay:#198887"
+      ],
+      "coupure": {
+        "source": "TorrentFreak",
+        "date": "13 FÉV. 2020",
+        "titre": "Un simple avertissement n'a pas sauvé les créateurs d'Epsilon"
+      },
+      "seed": 63
+    },
+    {
+      "voix": "Verdict : faux. L'auteur d'Infamous efface son code et paie 140 000 dollars australiens.",
+      "voix_jeu": "[dramatically] Verdict : faux. L'auteur d'Infamous efface son code et paie 140 000 dollars australiens.",
+      "visuels": [
+        "pixabay:#1655",
+        "pixabay:#24527"
+      ],
+      "tampon": "FAUX",
+      "tamponMot": "Verdict",
+      "seed": 76
+    },
+    {
+      "voix": "Voilà pourquoi il faut arrêter de croire que…",
+      "voix_jeu": "Voilà pourquoi il faut arrêter de croire que…",
+      "visuels": [
+        "pixabay:#152728",
+        "pixabay:#1335"
+      ],
+      "seed": 89
+    }
+  ],
+  "format": "mythe",
+  "theme": "presse",
+  "apprend": [
+    "Un vendeur de cheat GTA Online de Floride, absent à son procès, a écopé de 150 000 dollars de dommages, le maximum en copyright, alors que son cheat se vendait entre 10 et 30 dollars.",
+    "En Australie, la justice a gelé les avoirs des accusés, cryptomonnaies comprises, et autorisé des perquisitions.",
+    "En Angleterre, un juge a qualifié l'avertissement affiché aux utilisateurs de simple façade, et jugé que l'accès public aux moyens de tricher n'est pas une défense."
+  ]
+}
