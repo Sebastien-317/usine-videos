@@ -24,6 +24,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tfd_voix/resultat || true
+          git add -f tfd_voix/resultat || true
           git commit -m "chore: voix The First Door générées" || echo "rien à commiter"
           git push origin HEAD:tfd-voix

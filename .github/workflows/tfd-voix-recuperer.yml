@@ -1,0 +1,26 @@
+# Récupère les MP3 déjà générés depuis l'historique ElevenLabs (aucun crédit) et les pousse sur la branche tfd-voix.
+name: Voix The First Door (récupération)
+on:
+  push:
+    branches: [tfd-voix]
+    paths: ["tfd_voix/recuperer.txt"]
+permissions:
+  contents: write
+jobs:
+  recuperer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python3 tfd_voix/recuperer.py tfd_voix/demande.json tfd_voix/resultat
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f tfd_voix/resultat
+          git commit -m "chore: MP3 The First Door récupérés" || echo "rien à commiter"
+          git push origin HEAD:tfd-voix
