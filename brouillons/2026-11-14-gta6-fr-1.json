@@ -1,0 +1,33 @@
+{
+  "titre": "Rockstar a roulé avec des gangs pour GTA 6",
+  "format": "enquete",
+  "theme": "neon",
+  "apprend": [
+    "Pour GTA 6, une petite équipe de Rockstar est partie de Miami en voiture jusqu'à Key West, puis d'autres développeurs ont suivi",
+    "Les équipes voyageaient avec des policiers et des membres de gangs, selon Aaron Garbut, directeur du développement",
+    "Un soir de repérage, l'équipe a survolé un stade en plein concert de Beyoncé, et Garbut pense qu'elle a fait les infos locales le lendemain"
+  ],
+  "legende": "GTA 6 : Rockstar a envoyé ses développeurs rouler avec des membres de gangs en Floride… Leur verdict va vous surprendre. #gta6 #gtavi #rockstar #jeuxvideo",
+  "sources": [
+    {"fait": "Garbut (Love Magazine) : départ de Miami, route par les villes voisines et les Keys jusqu'à Key West, ajout de développeurs ensuite ; « We travel around with cops and with gang members » ; survol d'un stade pendant un concert de Beyoncé ; « we made the local news the next day »", "url": "https://www.dexerto.com/gta/rockstar-joined-gang-members-and-cops-for-gta-6-research-trips-in-florida-3415508/"},
+    {"fait": "Garbut : « Everyone is lovely » ; « a world that is believable and varied, with depth » ; voyage en voiture pendant des jours", "url": "https://gamingbolt.com/gta-6-team-traveled-with-cops-and-gang-members-to-research-florida-everyone-is-lovely"},
+    {"fait": "Humphries (Game Informer) : virées nocturnes avec d'anciens policiers, Everglades, Keys ; plusieurs voyages sur plusieurs années", "url": "https://www.journaldugeek.com/2026/10/01/les-devs-de-gta-6-sont-alles-au-strip-club-mais-cetait-pour-le-boulot-promis/"},
+    {"fait": "Garbut : les histoires, les lieux, les détails pourraient être terrifiants ; certaines personnes rencontrées étaient très accueillantes", "url": "https://gaminghq.eu/2026/10/06/gta-6-rockstar-south-florida-research/"}
+  ],
+  "scenes": [
+    {"voix": "Rockstar envoie ses développeurs rouler avec des membres de gangs.", "voix_jeu": "[dramatically] Rockstar envoie ses développeurs rouler avec des membres de gangs.",
+     "visuels": ["pixabay:#5278", "pixabay:#50495"], "gros": "ROCKSTAR|ET LES GANGS"},
+    {"voix": "Pour GTA 6, ils partent de Miami en voiture, direction Key West.", "visuels": ["pixabay:#2165", "pixabay:#199208"], "lieu": "FLORIDE · MIAMI → KEY WEST"},
+    {"voix": "Ils patrouillent la nuit avec d'anciens policiers.", "voix_jeu": "[short pause] Ils patrouillent la nuit avec d'anciens policiers.",
+     "visuels": ["pixabay:#19627", "pixabay:#132058"],
+     "document": {"entete": "CARNET DE ROUTE", "titre": "LEUR MÉTHODE", "lignes": ["Départ : Miami", "Arrivée : Key West", "Nuit : patrouille, [[ex-flics]]"], "tampon": "REPÉRAGE"}},
+    {"voix": "Un soir, ils survolent un stade en plein concert de Beyoncé.", "visuels": ["pixabay:#1630", "pixabay:#170300"],
+     "coupure": {"source": "DEXERTO", "date": "5 OCT. 2026", "titre": "Les équipes de Rockstar survolent un concert pour leurs repérages"}},
+    {"voix": "Mais leur verdict surprend : « Tout le monde est adorable. »", "voix_jeu": "[surprised] Mais leur verdict surprend : « Tout le monde est adorable. »",
+     "visuels": ["pixabay:#1643", "pixabay:#23258"], "tampon": "ADORABLE", "tamponMot": "adorable"},
+    {"voix": "Seuls quelques endroits pourraient être « terrifiants ».", "voix_jeu": "[whispers] Seuls quelques endroits pourraient être « terrifiants ».",
+     "visuels": ["pixabay:#20837", "pixabay:#251083"]},
+    {"voix": "Leur but : un monde crédible, avec de la profondeur.", "visuels": ["pixabay:miami beach night", "pixabay:sports car night neon"]},
+    {"voix": "Leur méthode pour inventer Vice City tient en une phrase :…", "visuels": ["pixabay:miami skyline night", "pixabay:man hoodie night street"]}
+  ]
+}

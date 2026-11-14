@@ -1,0 +1,12 @@
+Les deux rendus sont lancés. Je reprends à leur fin pour mettre les vidéos en file d'attente.
+
+Les deux vidéos du 14 novembre sont rendues et dans la file d'attente.
+
+- **Vidéo 1, « Rockstar a roulé avec des gangs pour GTA 6 »** : format `enquete`, thème `neon`, publication le 15/11 à 12:30. Les développeurs partent de Miami jusqu'à Key West avec des policiers et des membres de gangs. Sources : Dexerto, GamingBolt, Journal du Geek, GamingHQ (interviews d'Aaron Garbut et de Rupert Humphries).
+- **Vidéo 2, « Le prix secret de GTA 6 »** : format `chiffre`, thème `data`, publication le 14/11 à 19:00. Le prix de 1 à 1,5 milliard de dollars n'est qu'une estimation. Zelnick promet des ressources illimitées et plaisante sur le mariage de son fils. Sources : Vice, GamingBible, TIKR, Destructoid.
+- **Problème de rendu** : mes brouillons avaient `tampon` en objet au lieu d'une chaîne, ce qui a fait planter les deux premiers rendus. Corrigé, revalidé, puis rendu.
+- **Horaire** : la vidéo 1 a reçu 15/11 à 12:30 car le créneau du 14/11 à 12:30 était déjà pris par la vidéo « mythe » faite hier. Le créneau de 19:00 du 14 était libre.
+- **Sources secondaires** : les faits viennent de médias qui relaient les interviews, pas des interviews originales (Love Magazine, Game Informer, Bloomberg). Les pages de PC Gamer, GamesRadar et TweakTown n'étaient pas lisibles. Les comparaisons de budget non attribuées (par exemple GTA 5 à 265 M$) ont été écartées.
+- **Contrôle de voix** : « Take-Two » est transcrit « Tech2 » par le contrôle, même avec la graphie phonétique « Tèk-Tou ». Je n'ai pas pu vérifier à l'oreille si la voix le prononce bien.
+vidéo envoyée pour publication manuelle : 20261114-1900-gta6-fr (35.8 Mo)
+vidéo envoyée pour publication manuelle : 20261115-1230-gta6-fr (31.1 Mo)

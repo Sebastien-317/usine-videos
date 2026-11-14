@@ -1,0 +1,145 @@
+{
+  "composition": "Doc",
+  "boucle": true,
+  "chaine": {
+    "id": "gta6-fr",
+    "nom": "DOSSIER JEU",
+    "langue": "fr-fr",
+    "voix": "ff_siwis",
+    "vitesse": 1.12,
+    "prononciation": {
+      "GTA 6": "gé-té-a sisse",
+      "GTA 5": "gé-té-a cinq",
+      "GTA": "gé-té-a",
+      "Take-Two": "Tèk-Tou",
+      "Xbox": "Ixe-bosse",
+      "Series": "Siriz"
+    },
+    "prononciation_elevenlabs": {
+      "GTA": "Gé-Té-A"
+    },
+    "moteur_voix": "elevenlabs",
+    "voix_elevenlabs": "3Tp5mYhT9wrfnry9pzvV",
+    "modele_elevenlabs": "eleven_v4"
+  },
+  "titre": "Le prix secret de GTA 6",
+  "legende": "GTA 6 : le prix du jeu n'a jamais été confirmé… et le patron de Take-Two plaisante sur son budget illimité. #gta6 #gtavi #rockstar #taketwo #jeuxvideo",
+  "sources": [
+    {
+      "fait": "Zelnick (Bloomberg) : « We try to give them unlimited financial, creative, human resources » ; l'IA n'a pas réduit les coûts : « We haven't seen those costs decline yet » ; aucun chiffre officiel, 1 à 1,5 milliard de dollars selon divers rapports",
+      "url": "https://www.vice.com/en/article/take-two-ceo-reveals-why-ai-didnt-help-gta-6-development/"
+    },
+    {
+      "fait": "Pressé sur un budget vraiment illimité, Zelnick plaisante sur le mariage de son fils : « we gave him an unlimited budget and he exceeded it » ; budget jamais confirmé officiellement",
+      "url": "https://www.gamingbible.com/news/gta-6-infinite-budget-622432-20260507"
+    },
+    {
+      "fait": "Prévision Take-Two FY2027 : 8,0 à 8,2 milliards de dollars de net bookings, contre 6,72 milliards en FY2026",
+      "url": "https://www.tikr.com/blog/take-two-interactive-stocks-2027-net-bookings-target-is-8-billion-and-gta-vi-is-all-of-it"
+    },
+    {
+      "fait": "Zelnick (CNBC) n'a pas révélé le coût de GTA 6, qu'il juge élevé ; Take-Two n'a pas publié de chiffre exact ; sortie confirmée le 19 novembre",
+      "url": "https://destructoid.com/take-two-ceo-avoids-revealing-gta-6-budget/"
+    }
+  ],
+  "scenes": [
+    {
+      "voix": "Entre 1 et 1,5 milliard de dollars, estiment les analystes.",
+      "voix_jeu": "[surprised] Entre 1 et 1,5 milliard de dollars, estiment les analystes.",
+      "visuels": [
+        "pixabay:#59139",
+        "pixabay:#172891"
+      ],
+      "gros": "1,5 MILLIARD|DE DOLLARS",
+      "seed": 11
+    },
+    {
+      "voix": "Jusqu'à 1,5 milliard pour GTA 6, jamais confirmé par Take-Two.",
+      "voix_jeu": "[curious] Jusqu'à 1,5 milliard pour GTA 6, jamais confirmé par Tèk-Tou.",
+      "visuels": [
+        "pixabay:#215751",
+        "pixabay:#349089"
+      ],
+      "compteur": {
+        "valeur": 1.5,
+        "prefixe": "",
+        "suffixe": " Md$",
+        "label": "COÛT ESTIMÉ"
+      },
+      "seed": 24
+    },
+    {
+      "voix": "Son patron, Strauss Zelnick, promet à Rockstar des ressources « illimitées ».",
+      "voix_jeu": "[curious] Son patron, Strauss Zelnick, promet à Rockstar des ressources « illimitées ».",
+      "visuels": [
+        "pixabay:#199623",
+        "pixabay:#215188"
+      ],
+      "document": {
+        "entete": "BLOOMBERG",
+        "titre": "LA PROMESSE",
+        "lignes": [
+          "Argent : [[illimité]]",
+          "Création : [[illimitée]]",
+          "Humain : [[illimité]]"
+        ]
+      },
+      "seed": 37
+    },
+    {
+      "voix": "Il plaisante : pour le mariage de son fils, budget illimité… « et il l'a dépassé ».",
+      "voix_jeu": "[excited] Il plaisante : pour le mariage de son fils, budget illimité… [short pause] « et il l'a dépassé ».",
+      "visuels": [
+        "pixabay:#3261",
+        "pixabay:#189020"
+      ],
+      "tampon": "DÉPASSÉ",
+      "tamponMot": "dépassé",
+      "seed": 50
+    },
+    {
+      "voix": "Même l'IA n'a pas fait baisser la facture.",
+      "voix_jeu": "Même l'I-A n'a pas fait baisser la facture.",
+      "visuels": [
+        "pixabay:#3372",
+        "pixabay:#377880"
+      ],
+      "seed": 63
+    },
+    {
+      "voix": "Take-Two vise 8,2 milliards de dollars cette année, contre 6,72 l'an dernier.",
+      "voix_jeu": "[surprised] Tèk-Tou vise 8,2 milliards de dollars cette année, contre 6,72 l'an dernier.",
+      "visuels": [
+        "pixabay:#349089",
+        "pixabay:#59138"
+      ],
+      "duel": {
+        "gauche": {
+          "label": "L'AN DERNIER",
+          "valeur": 6.72
+        },
+        "droite": {
+          "label": "CETTE ANNÉE",
+          "valeur": 8.2
+        },
+        "suffixe": " Md$"
+      },
+      "seed": 76
+    },
+    {
+      "voix": "Le vrai prix reste secret. Selon la presse, GTA 6 a coûté…",
+      "visuels": [
+        "pixabay:#19600",
+        "pixabay:#20857"
+      ],
+      "seed": 89
+    }
+  ],
+  "format": "chiffre",
+  "theme": "data",
+  "apprend": [
+    "Le prix de GTA 6 n'a jamais été confirmé : 1 à 1,5 milliard de dollars est une estimation d'analystes",
+    "Le patron de Take-Two a dit à Bloomberg donner à Rockstar des ressources illimitées, et a plaisanté qu'il avait dépassé le budget illimité du mariage de son fils",
+    "L'IA n'a pas fait baisser la facture : ses coûts n'ont pas encore diminué, selon lui"
+  ]
+}
