@@ -1,0 +1,61 @@
+# Clip : récupère un passage d'une interview sous licence libre (PeerTube de Thinkerview par défaut)
+# pour que Claude monte un extrait vertical. Le résultat est poussé sur la branche « clip-controle ».
+# Rien n'est mis en file d'attente ni publié.
+name: Clip (source libre)
+on:
+  workflow_dispatch:
+    inputs:
+      etape:
+        description: "lister | transcrire | extraire"
+        default: "lister"
+      video:
+        description: "Identifiant PeerTube (shortUUID) — transcrire / extraire"
+        default: ""
+      recherche:
+        description: "Mots-clés — lister"
+        default: ""
+      debut:
+        description: "Début en secondes — extraire"
+        default: "0"
+      fin:
+        description: "Fin en secondes — extraire"
+        default: "60"
+permissions:
+  contents: write
+concurrency: clip
+jobs:
+  clip:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Outils
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q requests faster-whisper
+      - name: Modèles Whisper
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-fr-v1
+      - name: Récupération
+        env:
+          ETAPE: ${{ inputs.etape }}
+          VIDEO: ${{ inputs.video }}
+          RECHERCHE: ${{ inputs.recherche }}
+          DEBUT: ${{ inputs.debut }}
+          FIN: ${{ inputs.fin }}
+        run: |
+          case "$ETAPE" in
+            lister) python3 outils/clip_source.py lister "$RECHERCHE" ;;
+            transcrire) python3 outils/clip_source.py transcrire "$VIDEO" ;;
+            extraire) python3 outils/clip_source.py extraire "$VIDEO" "$DEBUT" "$FIN" ;;
+            *) echo "Étape inconnue : $ETAPE" && exit 1 ;;
+          esac
+      - name: Envoi vers la branche clip-controle
+        run: |
+          git config user.name "usine-bot" && git config user.email "usine-bot@users.noreply.github.com"
+          git checkout --orphan clip-controle && git rm -rqf --cached . && git add controle && git commit -qm "Clip ${{ inputs.etape }} $(date +%F-%H%M)"
+          git push -f origin clip-controle

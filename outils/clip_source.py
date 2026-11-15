@@ -1,0 +1,101 @@
+#!/usr/bin/env python3
+"""Récupère des passages d'interviews publiées sous licence libre sur une instance PeerTube (Thinkerview par défaut).
+
+Utilisé par .github/workflows/clip.yml (le bac à sable de Claude ne peut pas joindre ces sites, GitHub Actions oui).
+  lister   [recherche]          -> controle/videos.json      (vidéos de l'instance, les plus vues d'abord)
+  transcrire <video>            -> controle/transcription.txt (horodatée, pour repérer les meilleurs passages)
+  extraire <video> <debut> <fin> -> controle/segment.mp4 + controle/mots.json (sous-titres mot à mot)
+Seules les vidéos de l'instance elle-même sont utilisées : la licence de Thinkerview (CC BY-NC-SA 4.0) ne couvre que les siennes.
+"""
+import json
+import os
+import subprocess
+import sys
+
+import requests
+
+INSTANCE = os.environ.get("INSTANCE", "https://thinkerview.video").rstrip("/")
+OUT = "controle"
+
+
+def hms(s):
+    s = int(s)
+    return f"{s // 3600:d}:{s % 3600 // 60:02d}:{s % 60:02d}"
+
+
+def lister(recherche=""):
+    vus, vids = set(), []
+    for start in range(0, 300, 100):
+        if recherche:
+            url, params = f"{INSTANCE}/api/v1/search/videos", {"search": recherche, "searchTarget": "local", "count": 100, "start": start}
+        else:
+            url, params = f"{INSTANCE}/api/v1/videos", {"sort": "-views", "count": 100, "start": start, "isLocal": "true"}
+        r = requests.get(url, params=params, timeout=30)
+        r.raise_for_status()
+        data = r.json().get("data", [])
+        for v in data:
+            if v["uuid"] in vus or not v.get("isLocal", True):
+                continue
+            vus.add(v["uuid"])
+            vids.append({"nom": v["name"], "id": v.get("shortUUID") or v["uuid"], "duree": hms(v.get("duration", 0)),
+                         "vues": v.get("views"), "date": (v.get("publishedAt") or "")[:10], "url": v.get("url")})
+        if len(data) < 100:
+            break
+    json.dump(vids, open(f"{OUT}/videos.json", "w"), ensure_ascii=False, indent=1)
+    print(f"{len(vids)} vidéos listées")
+
+
+def details(video):
+    r = requests.get(f"{INSTANCE}/api/v1/videos/{video}", timeout=30)
+    r.raise_for_status()
+    v = r.json()
+    fichiers = list(v.get("files") or [])
+    for p in v.get("streamingPlaylists") or []:
+        fichiers += p.get("files") or []
+    fichiers = [f for f in fichiers if (f.get("resolution") or {}).get("id", 0) > 0 and f.get("fileUrl")]
+    if not fichiers:
+        sys.exit("Aucun fichier vidéo téléchargeable sur cette vidéo")
+    fichiers.sort(key=lambda f: f["resolution"]["id"])
+    info = {"nom": v["name"], "url": v.get("url"), "licence": (v.get("licence") or {}).get("label"),
+            "duree": v.get("duration"), "description": (v.get("description") or "")[:600]}
+    json.dump(info, open(f"{OUT}/video.json", "w"), ensure_ascii=False, indent=1)
+    return v, fichiers
+
+
+def modele(nom):
+    from faster_whisper import WhisperModel
+    return WhisperModel(nom, device="cpu", compute_type="int8", cpu_threads=os.cpu_count() or 4)
+
+
+def transcrire(video):
+    _, fichiers = details(video)
+    src = fichiers[0]["fileUrl"]  # la plus petite résolution suffit pour le son
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", src, "-vn", "-ac", "1", "-ar", "16000", "audio.wav"], check=True)
+    segs, _ = modele(os.environ.get("MODELE", "base")).transcribe("audio.wav", language="fr", vad_filter=True, beam_size=1)
+    with open(f"{OUT}/transcription.txt", "w") as f:
+        for s in segs:
+            f.write(f"[{hms(s.start)}|{s.start:.1f}] {s.text.strip()}\n")
+    print("Transcription écrite")
+
+
+def extraire(video, debut, fin):
+    debut, fin = float(debut), float(fin)
+    _, fichiers = details(video)
+    hd = [f for f in fichiers if f["resolution"]["id"] <= 1080] or fichiers
+    src = hd[-1]["fileUrl"]
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{debut:.2f}", "-i", src, "-t", f"{fin - debut:.2f}",
+                    "-c:v", "libx264", "-crf", "18", "-preset", "veryfast", "-c:a", "aac", "-b:a", "192k",
+                    f"{OUT}/segment.mp4"], check=True)
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", f"{OUT}/segment.mp4", "-vn", "-ac", "1", "-ar", "16000",
+                    "segment.wav"], check=True)
+    segs, _ = modele(os.environ.get("MODELE_MOTS", "small")).transcribe("segment.wav", language="fr", beam_size=5,
+                                                                        word_timestamps=True)
+    mots = [{"mot": w.word.strip(), "debut": round(w.start, 2), "fin": round(w.end, 2)} for s in segs for w in s.words]
+    json.dump(mots, open(f"{OUT}/mots.json", "w"), ensure_ascii=False, indent=0)
+    print(f"Segment de {fin - debut:.0f} s extrait, {len(mots)} mots")
+
+
+if __name__ == "__main__":
+    os.makedirs(OUT, exist_ok=True)
+    etape, args = sys.argv[1], [a for a in sys.argv[2:] if a != ""]
+    {"lister": lister, "transcrire": transcrire, "extraire": extraire}[etape](*args)
