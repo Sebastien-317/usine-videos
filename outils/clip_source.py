@@ -161,7 +161,7 @@ def extraire(video, debut, fin):
                     f"{OUT}/segment.mp4"], check=True)
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", f"{OUT}/segment.mp4", "-vn", "-ac", "1", "-ar", "16000",
                     "segment.wav"], check=True)
-    segs, _ = modele(os.environ.get("MODELE_MOTS", "small")).transcribe(lire_wav("segment.wav"), language="fr", beam_size=5,
+    segs, _ = modele(os.environ.get("MODELE_MOTS", "small")).transcribe(lire_wav("segment.wav"), language=os.environ.get("LANGUE") or None, beam_size=5,
                                                                         word_timestamps=True)
     mots = [{"mot": w.word.strip(), "debut": round(w.start, 2), "fin": round(w.end, 2)} for s in segs for w in s.words]
     json.dump(mots, open(f"{OUT}/mots.json", "w"), ensure_ascii=False, indent=0)
