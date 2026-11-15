@@ -114,6 +114,17 @@ def details(video):
     return v, fichiers
 
 
+def telecharger(url, dest="source.bin"):
+    """Téléchargement local d'abord : Wikimedia refuse l'agent par défaut de ffmpeg."""
+    with requests.get(url, stream=True, timeout=60, headers={"User-Agent": "usine-videos/1.0 (clips sous licence libre; github.com/Sebastien-317)"}) as r:
+        r.raise_for_status()
+        with open(dest, "wb") as f:
+            for bloc in r.iter_content(1 << 20):
+                f.write(bloc)
+    print(f"Téléchargé : {os.path.getsize(dest) / 1e6:.0f} Mo")
+    return dest
+
+
 def modele(nom):
     from faster_whisper import WhisperModel
     return WhisperModel(nom, device="cpu", compute_type="int8", cpu_threads=os.cpu_count() or 4)
@@ -121,7 +132,7 @@ def modele(nom):
 
 def transcrire(video):
     _, fichiers = details(video)
-    src = fichiers[0]["fileUrl"]  # la plus petite résolution suffit pour le son
+    src = telecharger(fichiers[0]["fileUrl"])  # la plus petite résolution suffit pour le son
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", src, "-vn", "-ac", "1", "-ar", "16000", "audio.wav"], check=True)
     segs, _ = modele(os.environ.get("MODELE", "base")).transcribe("audio.wav", language="fr", vad_filter=True, beam_size=1)
     with open(f"{OUT}/transcription.txt", "w") as f:
@@ -134,7 +145,7 @@ def extraire(video, debut, fin):
     debut, fin = float(debut), float(fin)
     _, fichiers = details(video)
     hd = [f for f in fichiers if f["resolution"]["id"] <= 1080] or fichiers
-    src = hd[-1]["fileUrl"]
+    src = telecharger(hd[-1]["fileUrl"])
     long = fin - debut > 120  # film entier : en 720p pour rester sous la limite de taille de git
     qualite = ["-vf", "scale=-2:'min(720,ih)'", "-crf", "23"] if long else ["-crf", "18"]
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{debut:.2f}", "-i", src, "-t", f"{fin - debut:.2f}",
