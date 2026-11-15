@@ -1,0 +1,39 @@
+{
+  "titre": "Finir Vice City en 8 minutes : comment ?",
+  "format": "decryptage",
+  "theme": "terminal",
+  "apprend": [
+    "Dans Vice City, le jeu garde une liste de tâches de mission : la vider ne fait pas planter le jeu, elle l'embrouille.",
+    "Les speedrunners truquent un minuteur pour que le jeu croie que la mission finale est due : la catégorie s'appelle « any% SSU ».",
+    "En 2018, un recordman de Vice City a été démasqué par de la fumée derrière ses véhicules, signe d'un code truqué ; sa triche remontait à août 2017."
+  ],
+  "legende": "GTA Vice City : finir le jeu en 8 minutes, c'est possible. Le bug expliqué, et le recordman démasqué par de la fumée. #gta6 #vicecity #speedrun #jeuxvideo",
+  "sources": [
+    {"fait": "Un joueur finit Vice City en 8 minutes ; Obbe Vermeij, ancien de Rockstar, est interpellé sur Twitter et dit avoir cru les redémarrages interdits ; mai 2024", "url": "https://www.gtaboom.com/speedrunner-completes-gta-vice-city-in-8-minutes-ex-developer-weighs-in-a91e"},
+    {"fait": "Mission lancée puis annulée d'une façon précise pour déclencher la mission finale ; la pile est une liste de tâches, vide le jeu s'embrouille au lieu de planter ; minuteur manipulé ; catégorie any% SSU (Script Stack Underflow)", "url": "https://www.gtaboom.com/speedrunner-completes-gta-vice-city-in-8-minutes-ex-developer-weighs-in-a91e"},
+    {"fait": "Août 2018 : RoK_24 remarque de la fumée derrière des véhicules (motos, voitures) dans le record de Vice City d'Anti_ ; accélération truquée", "url": "https://www.svg.com/707986/the-worst-cheating-incident-in-gtas-entire-history/"},
+    {"fait": "Aveu sur Pastebin ; suspension d'un an par les modérateurs de Speedrun.com puis bannissement définitif ; la triche remontait à août 2017, un an plus tôt que son aveu", "url": "https://www.svg.com/707986/the-worst-cheating-incident-in-gtas-entire-history/"}
+  ],
+  "scenes": [
+    {"voix": "Comment finir GTA Vice City en 8 minutes ?", "voix_jeu": "[curious] Comment finir GTA Vice City en 8 minutes ?",
+     "visuels": ["pixabay:#26619", "pixabay:#289001"], "gros": "VICE CITY|EN 8 MIN"},
+    {"voix": "Un ancien de Rockstar, Obbe Vermeij, est bluffé.", "voix_jeu": "[surprised] Un ancien de Rockstar, Obbe Vermaï, est bluffé.",
+     "visuels": ["pixabay:#3576", "pixabay:#169445"], "lieu": "SUR TWITTER"},
+    {"voix": "Étape 1 : annuler des missions au bon moment.", "voix_jeu": "[excited] Étape 1 : annuler des missions au bon moment.",
+     "visuels": ["pixabay:#4733", "pixabay:#41263"],
+     "document": {"entete": "ÉTAPE 1", "titre": "MISSIONS ANNULÉES", "lignes": ["Mission lancée", "Annulée : [[au bon moment]]"]}},
+    {"voix": "Sauf qu'une liste vide ne plante pas le jeu. Elle l'embrouille.", "voix_jeu": "[curious] Sauf qu'une liste vide ne plante pas le jeu. [short pause] Elle l'embrouille.",
+     "visuels": ["pixabay:#14214", "pixabay:#4733"],
+     "document": {"entete": "ÉTAPE 2", "titre": "LISTE DE TÂCHES", "lignes": ["Liste : [[vide]]", "Le jeu ne plante pas"]}},
+    {"voix": "Troisième étape : un minuteur truqué annonce la mission finale.", "voix_jeu": "[excited] Troisième étape : un minuteur truqué annonce la mission finale.",
+     "visuels": ["pixabay:#15615", "pixabay:#14900"],
+     "document": {"entete": "ÉTAPE 3", "titre": "MINUTEUR TRUQUÉ", "lignes": ["Minuteur : [[truqué]]", "Mission finale : [[lancée]]"]}},
+    {"voix": "En 2018, un recordman est démasqué : de la fumée derrière ses véhicules.", "voix_jeu": "[dramatically] En 2018, un recordman est démasqué : de la fumée derrière ses véhicules.",
+     "visuels": ["pixabay:#21115", "pixabay:#3068"],
+     "coupure": {"source": "Looper", "date": "AOÛT 2018", "titre": "Un record de Vice City mis en doute par une vidéo"}},
+    {"voix": "Il avait modifié le code. Suspendu un an, puis banni du classement.", "voix_jeu": "[short pause] Il avait modifié le code. Suspendu un an, puis banni du classement.",
+     "visuels": ["pixabay:#289001", "pixabay:#36702"], "tampon": "BANNI", "tamponMot": "banni"},
+    {"voix": "Exploiter un bug est permis. Modifier le code, non. La question reste :…", "voix_jeu": "[dramatically] Exploiter un bug est permis. Modifier le code, non. [short pause] La question reste :…",
+     "visuels": ["pixabay:#26619", "pixabay:#180776"]}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "titre": "Le producteur de GTA 5 renvoyé du bureau",
+  "format": "saga",
+  "theme": "presse",
+  "apprend": [
+    "Leslie Benzies, producteur de GTA 5, dit avoir trouvé sa messagerie verrouillée pendant un congé payé de six mois, avant d'être prié de quitter le bureau le 1er avril 2015.",
+    "Il réclame 150 millions de dollars à Take-Two et Rockstar ; Rockstar parle d'une plainte sans fondement.",
+    "Dans la plainte, un e-mail de Sam Houser en 2009 : Red Dead Redemption est un « cauchemar récurrent » et il a besoin de « The Benz ».",
+    "En 2018, un tribunal écarte l'égalité de profits avec les frères Houser mais garde d'autres plaintes."
+  ],
+  "legende": "GTA 5 : le producteur qui a voulu 150 millions de dollars à Rockstar. Son patron l'appelait « The Benz »… #gta6 #rockstar #gtav #jeuxvideo",
+  "sources": [
+    {"fait": "Benzies revient d'un congé sabbatique le 1er avril 2015 ; le responsable du bureau lui ordonne de partir (selon sa plainte) ; congé payé du 1er septembre 2014 au 1er mars 2015 ; messagerie coupée et boîte mail verrouillée ; en décembre 2014 le comité attribue des parts aux Houser et rien à Benzies", "url": "https://gamesbeat.com/the-timeline-of-grand-theft-autos-director-vs-rockstar-games/"},
+    {"fait": "Benzies poursuit Rockstar et Take-Two pour 150 millions de dollars de redevances impayées (12 avril 2016) ; Rockstar : plainte « entirely without merit »", "url": "https://shacknews.com/article/94088/take-twoleslie-benzies-lawsuit-reveals-gta-5-financials-red-dead-redemption-development-details"},
+    {"fait": "Octobre 2009 : Sam Houser écrit à Benzies à propos d'un « (recurring) nightmare » sur Red Dead Redemption et dit avoir besoin de « The Benz! »", "url": "https://shacknews.com/article/94088/take-twoleslie-benzies-lawsuit-reveals-gta-5-financials-red-dead-redemption-development-details"},
+    {"fait": "Le tribunal rejette la demande d'égalité de paiement avec les Houser (accord 2009 sans langage imposant des paiements égaux) mais laisse d'autres plaintes avancer (avril 2018)", "url": "https://pcgamesn.com/grand-theft-auto-v/gta5-leslie-benzies-take-two-lawsuit-royalties"}
+  ],
+  "scenes": [
+    {"voix": "1er avril 2015. Le producteur de GTA 5 revient au bureau.", "voix_jeu": "[dramatically] 1er avril 2015. Le producteur de GTA 5 revient au bureau.",
+     "visuels": ["pixabay:#199623", "pixabay:#73531"], "gros": "1ER AVRIL|2015"},
+    {"voix": "Selon sa plainte, on lui dit de partir.", "voix_jeu": "[short pause] Selon sa plainte, on lui dit de partir.",
+     "visuels": ["pixabay:#215751", "pixabay:#3190"], "lieu": "ROCKSTAR NORTH"},
+    {"voix": "Congé payé dès septembre 2014. Procès en 2016.", "voix_jeu": "Congé payé dès septembre 2014. Procès en 2016.",
+     "visuels": ["pixabay:#137186", "pixabay:#1191"],
+     "frise": {"etapes": [{"date": "2014", "texte": "CONGÉ PAYÉ"}, {"date": "2016", "texte": "PROCÈS"}]}},
+    {"voix": "Selon lui, en décembre 2014, les Houser reçoivent des parts. Lui, rien.", "voix_jeu": "[surprised] Selon lui, en décembre 2014, les Haouzeur reçoivent des parts. Lui, rien.",
+     "visuels": ["pixabay:#137265", "pixabay:#198901"],
+     "document": {"entete": "COMITÉ DES PROFITS", "titre": "DÉCEMBRE 2014", "lignes": ["Frères Houser : [[des parts]]", "Benzies : [[rien]]"]}},
+    {"voix": "Il réclame 150 millions de dollars.", "voix_jeu": "[dramatically] Il réclame 150 millions de dollars.",
+     "visuels": ["pixabay:#50622", "pixabay:#50628"],
+     "compteur": {"valeur": 150, "prefixe": "", "suffixe": " M$", "label": "RÉCLAMÉS À ROCKSTAR"}},
+    {"voix": "Rockstar dénonce une plainte sans fondement.", "voix_jeu": "Rockstar dénonce une plainte sans fondement.",
+     "visuels": ["pixabay:#198886", "pixabay:#198890"], "tampon": "SANS FONDEMENT", "tamponMot": "fondement"},
+    {"voix": "Dans la plainte, un e-mail de 2009 : Red Dead Redemption est « un cauchemar », Sam Houser veut « The Benz ».", "voix_jeu": "[curious] Dans la plainte, un e-mail de 2009 : Red Dead Redemption est « un cauchemar », [short pause] Sam Haouzeur veut « The Benz ».",
+     "visuels": ["pixabay:#3145", "pixabay:#83875"],
+     "coupure": {"source": "Shacknews", "date": "12 AVR. 2016", "titre": "Un e-mail de 2009 dévoile l'appel au secours du patron"}},
+    {"voix": "En 2018, un tribunal écarte l'égalité avec les Houser. Tout a basculé le…", "voix_jeu": "[dramatically] En 2018, un tribunal écarte l'égalité avec les Haouzeur. [short pause] Tout a basculé le…",
+     "visuels": ["pixabay:#198887", "pixabay:#282995"]}
+  ]
+}
