@@ -135,8 +135,10 @@ def extraire(video, debut, fin):
     _, fichiers = details(video)
     hd = [f for f in fichiers if f["resolution"]["id"] <= 1080] or fichiers
     src = hd[-1]["fileUrl"]
+    long = fin - debut > 120  # film entier : en 720p pour rester sous la limite de taille de git
+    qualite = ["-vf", "scale=-2:'min(720,ih)'", "-crf", "23"] if long else ["-crf", "18"]
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{debut:.2f}", "-i", src, "-t", f"{fin - debut:.2f}",
-                    "-c:v", "libx264", "-crf", "18", "-preset", "veryfast", "-c:a", "aac", "-b:a", "192k",
+                    "-c:v", "libx264", *qualite, "-preset", "veryfast", "-c:a", "aac", "-b:a", "192k",
                     f"{OUT}/segment.mp4"], check=True)
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", f"{OUT}/segment.mp4", "-vn", "-ac", "1", "-ar", "16000",
                     "segment.wav"], check=True)
