@@ -38,6 +38,34 @@ def sonder(*_):
                 f.write(f"== {u}\nERREUR {e}\n\n")
 
 
+def chercher(recherche="Thinkerview"):
+    """Copies sous licence libre hébergées par Wikimedia Commons et Internet Archive (téléchargement direct autorisé)."""
+    res = {"commons": [], "archive": []}
+    ua = {"User-Agent": "usine-videos/1.0 (clips sous licence libre)"}
+    r = requests.get("https://commons.wikimedia.org/w/api.php", headers=ua, timeout=30, params={
+        "action": "query", "format": "json", "generator": "search", "gsrsearch": f"{recherche} filetype:video",
+        "gsrnamespace": 6, "gsrlimit": 50, "prop": "imageinfo", "iiprop": "url|size|mime|extmetadata"})
+    for page in (r.json().get("query") or {}).get("pages", {}).values():
+        ii = (page.get("imageinfo") or [{}])[0]
+        meta = ii.get("extmetadata") or {}
+        res["commons"].append({"titre": page["title"], "url": ii.get("url"), "taille_mo": round(ii.get("size", 0) / 1e6),
+                               "licence": (meta.get("LicenseShortName") or {}).get("value"),
+                               "auteur": (meta.get("Artist") or {}).get("value", "")[:120]})
+    r = requests.get("https://archive.org/advancedsearch.php", headers=ua, timeout=30, params={
+        "q": f"{recherche} AND mediatype:movies", "fl[]": ["identifier", "title", "downloads", "licenseurl", "date"],
+        "rows": 200, "output": "json", "sort[]": "downloads desc"})
+    res["archive"] = r.json().get("response", {}).get("docs", [])
+    json.dump(res, open(f"{OUT}/recherche.json", "w"), ensure_ascii=False, indent=1)
+    print(len(res["commons"]), "sur Commons,", len(res["archive"]), "sur Archive")
+
+
+def fichiers_archive(identifiant):
+    r = requests.get(f"https://archive.org/metadata/{identifiant}", timeout=30).json()
+    vids = [f for f in r.get("files", []) if f.get("name", "").lower().endswith((".mp4", ".webm", ".mkv", ".ogv"))]
+    vids.sort(key=lambda f: int(f.get("size", 0)))
+    return [f"https://archive.org/download/{identifiant}/{f['name']}" for f in vids], r.get("metadata", {})
+
+
 def lister(recherche=""):
     vus, vids = set(), []
     for start in range(0, 300, 100):
@@ -62,6 +90,14 @@ def lister(recherche=""):
 
 
 def details(video):
+    if video.startswith("http") or video.startswith("archive:"):
+        if video.startswith("archive:"):
+            urls, meta = fichiers_archive(video[8:])
+            json.dump({"nom": meta.get("title"), "licence": meta.get("licenseurl"), "source": f"https://archive.org/details/{video[8:]}",
+                       "fichiers": urls}, open(f"{OUT}/video.json", "w"), ensure_ascii=False, indent=1)
+        else:
+            urls = [video]
+        return None, [{"fileUrl": u, "resolution": {"id": i + 1}} for i, u in enumerate(urls)]
     r = requests.get(f"{INSTANCE}/api/v1/videos/{video}", timeout=30)
     r.raise_for_status()
     v = r.json()
@@ -114,4 +150,4 @@ def extraire(video, debut, fin):
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     etape, args = sys.argv[1], [a for a in sys.argv[2:] if a != ""]
-    {"sonder": sonder, "lister": lister, "transcrire": transcrire, "extraire": extraire}[etape](*args)
+    {"chercher": chercher, "sonder": sonder, "lister": lister, "transcrire": transcrire, "extraire": extraire}[etape](*args)
