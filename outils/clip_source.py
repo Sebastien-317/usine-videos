@@ -125,6 +125,14 @@ def telecharger(url, dest="source.bin"):
     return dest
 
 
+def lire_wav(chemin):
+    """Audio 16 kHz mono en tableau : évite le décodeur PyAV de faster-whisper (incompatible avec certaines versions)."""
+    import wave
+    import numpy as np
+    with wave.open(chemin) as w:
+        return np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768.0
+
+
 def modele(nom):
     from faster_whisper import WhisperModel
     return WhisperModel(nom, device="cpu", compute_type="int8", cpu_threads=os.cpu_count() or 4)
@@ -134,7 +142,7 @@ def transcrire(video):
     _, fichiers = details(video)
     src = telecharger(fichiers[0]["fileUrl"])  # la plus petite résolution suffit pour le son
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", src, "-vn", "-ac", "1", "-ar", "16000", "audio.wav"], check=True)
-    segs, _ = modele(os.environ.get("MODELE", "base")).transcribe("audio.wav", language="fr", vad_filter=True, beam_size=1)
+    segs, _ = modele(os.environ.get("MODELE", "base")).transcribe(lire_wav("audio.wav"), language="fr", vad_filter=True, beam_size=1)
     with open(f"{OUT}/transcription.txt", "w") as f:
         for s in segs:
             f.write(f"[{hms(s.start)}|{s.start:.1f}] {s.text.strip()}\n")
@@ -153,7 +161,7 @@ def extraire(video, debut, fin):
                     f"{OUT}/segment.mp4"], check=True)
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", f"{OUT}/segment.mp4", "-vn", "-ac", "1", "-ar", "16000",
                     "segment.wav"], check=True)
-    segs, _ = modele(os.environ.get("MODELE_MOTS", "small")).transcribe("segment.wav", language="fr", beam_size=5,
+    segs, _ = modele(os.environ.get("MODELE_MOTS", "small")).transcribe(lire_wav("segment.wav"), language="fr", beam_size=5,
                                                                         word_timestamps=True)
     mots = [{"mot": w.word.strip(), "debut": round(w.start, 2), "fin": round(w.end, 2)} for s in segs for w in s.words]
     json.dump(mots, open(f"{OUT}/mots.json", "w"), ensure_ascii=False, indent=0)
