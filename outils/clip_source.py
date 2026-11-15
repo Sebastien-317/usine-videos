@@ -154,10 +154,20 @@ def extraire(video, debut, fin):
     _, fichiers = details(video)
     hd = [f for f in fichiers if f["resolution"]["id"] <= 1080] or fichiers
     src = telecharger(hd[-1]["fileUrl"])
-    long = fin - debut > 120  # film entier : en 720p pour rester sous la limite de taille de git
-    qualite = ["-vf", "scale=-2:'min(720,ih)'", "-crf", "23"] if long else ["-crf", "18"]
+    long = fin - debut > 120
+    if long:
+        # film entier : morceaux de 200 s (limite de 100 Mo par fichier sur GitHub) + planche d'images pour choisir le passage
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{debut:.2f}", "-i", src, "-t", f"{fin - debut:.2f}",
+                        "-vf", "scale=-2:'min(720,ih)'", "-c:v", "libx264", "-crf", "22", "-preset", "veryfast",
+                        "-c:a", "aac", "-b:a", "192k", "-f", "segment", "-segment_time", "200", "-reset_timestamps", "1",
+                        f"{OUT}/morceau_%02d.mp4"], check=True)
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{debut:.2f}", "-i", src, "-t", f"{fin - debut:.2f}",
+                        "-vf", "fps=1/4,scale=240:-2,drawtext=text='%{pts\\:hms}':x=4:y=4:fontsize=18:fontcolor=yellow:box=1:boxcolor=black,tile=10x13",
+                        "-frames:v", "1", f"{OUT}/planche.jpg"], check=True)
+        print("Film découpé en morceaux de 200 s")
+        return
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{debut:.2f}", "-i", src, "-t", f"{fin - debut:.2f}",
-                    "-c:v", "libx264", *qualite, "-preset", "veryfast", "-c:a", "aac", "-b:a", "192k",
+                    "-c:v", "libx264", "-crf", "18", "-preset", "veryfast", "-c:a", "aac", "-b:a", "192k",
                     f"{OUT}/segment.mp4"], check=True)
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", f"{OUT}/segment.mp4", "-vn", "-ac", "1", "-ar", "16000",
                     "segment.wav"], check=True)
