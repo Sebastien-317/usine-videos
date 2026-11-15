@@ -23,6 +23,21 @@ def hms(s):
     return f"{s // 3600:d}:{s % 3600 // 60:02d}:{s % 60:02d}"
 
 
+def sonder(*_):
+    urls = ["https://thinkerview.video/api/v1/config", "https://thinkerview.video/api/v1/videos?count=2",
+            "https://videos.thinkerview.com/api/v1/config", "https://videos.thinkerview.com/feeds/podcast/videos.xml?videoChannelId=2",
+            "https://videos.thinkerview.com/feeds/videos.xml?videoChannelId=2", "https://thinkerview.video/feeds/videos.xml"]
+    with open(f"{OUT}/sonde.txt", "w") as f:
+        for u in urls:
+            try:
+                r = requests.get(u, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
+                f.write(f"== {u}\n{r.status_code} {r.url} {r.headers.get('content-type')}\n{r.text[:1500]}\n\n")
+                if "xml" in r.headers.get("content-type", "") and r.status_code == 200:
+                    open(f"{OUT}/flux_{len(r.text)}.xml", "w").write(r.text)
+            except Exception as e:
+                f.write(f"== {u}\nERREUR {e}\n\n")
+
+
 def lister(recherche=""):
     vus, vids = set(), []
     for start in range(0, 300, 100):
@@ -99,4 +114,4 @@ def extraire(video, debut, fin):
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     etape, args = sys.argv[1], [a for a in sys.argv[2:] if a != ""]
-    {"lister": lister, "transcrire": transcrire, "extraire": extraire}[etape](*args)
+    {"sonder": sonder, "lister": lister, "transcrire": transcrire, "extraire": extraire}[etape](*args)

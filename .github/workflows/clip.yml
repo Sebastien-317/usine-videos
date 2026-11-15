@@ -49,6 +49,7 @@ jobs:
           FIN: ${{ inputs.fin }}
         run: |
           case "$ETAPE" in
+            sonder) python3 outils/clip_source.py sonder ;;
             lister) python3 outils/clip_source.py lister "$RECHERCHE" ;;
             transcrire) python3 outils/clip_source.py transcrire "$VIDEO" ;;
             extraire) python3 outils/clip_source.py extraire "$VIDEO" "$DEBUT" "$FIN" ;;
