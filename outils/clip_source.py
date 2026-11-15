@@ -14,7 +14,7 @@ import sys
 
 import requests
 
-INSTANCE = os.environ.get("INSTANCE", "https://thinkerview.video").rstrip("/")
+INSTANCE = os.environ.get("INSTANCE", "https://videos.thinkerview.com").rstrip("/")
 OUT = "controle"
 
 
@@ -30,8 +30,9 @@ def lister(recherche=""):
             url, params = f"{INSTANCE}/api/v1/search/videos", {"search": recherche, "searchTarget": "local", "count": 100, "start": start}
         else:
             url, params = f"{INSTANCE}/api/v1/videos", {"sort": "-views", "count": 100, "start": start, "isLocal": "true"}
-        r = requests.get(url, params=params, timeout=30)
-        r.raise_for_status()
+        r = requests.get(url, params=params, timeout=30, headers={"Accept": "application/json"})
+        if r.status_code != 200 or "json" not in r.headers.get("content-type", ""):
+            sys.exit(f"Réponse inattendue {r.status_code} {r.url} : {r.text[:300]}")
         data = r.json().get("data", [])
         for v in data:
             if v["uuid"] in vus or not v.get("isLocal", True):
