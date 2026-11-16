@@ -1,0 +1,16 @@
+Les deux vidéos sont validées, rendues et ajoutées à la file d'attente.
+
+1. **« Hot Coffee : la scène cachée sur le disque »** : format `enquete`, thème `dossier`, publication prévue le 17/11 à 12:30 (id `20261117-1230-gta6-fr`).
+   - Elle raconte que Rockstar a d'abord accusé des pirates, puis admis que le contenu venait de ses développeurs. Elle donne aussi les 24,5 M$ de retours et les 35 $ versés aux acheteurs « offensés ».
+   - Sources : NBC/AP, Game Developer (accord avec la FTC), Engadget.
+2. **« Vice City : excuses en 2003, panneau en 2026 »** : format `saga`, thème `neon`, publication prévue le 16/11 à 19:00 (id `20261116-1900-gta6-fr`).
+   - Elle oppose les excuses de Rockstar aux Haïtiens et le procès de 2004 au panneau « Welcome to Vice City » signé en 2026 sans vote du conseil de Miami-Dade.
+   - Sources : WLRN (deux articles), WorthPlaying, Game Developer.
+
+**Problèmes :**
+- La voix prononce mal « Haïtiens » (« Aïtiens ») dans la vidéo 2, et « Néerlandais » est mal reconnu. Pour la vidéo 1, j'ai remplacé « Néerlandais » par « programmeur ». J'ai aussi remplacé « avoue » par « admet » dans la scène 7 de la vidéo 1, car « avoue » était mal compris.
+- Quelques plans restent moyens : un crayon sur fond blanc en scène 5 de la vidéo 1 et des visuels de Las Vegas écartés, remplacés par d'autres clips. Je n'ai pas fait de seconde relance.
+- Le 2e rendu de la vidéo 2 a dû être refait après le changement des clips ; la voix n'a pas été refaite.
+- Mes deux premiers essais de correction du brouillon par script Python ont été bloqués par les permissions. J'ai fait les corrections par éditions directes des fichiers.
+vidéo envoyée pour publication manuelle : 20261116-1900-gta6-fr (37.5 Mo)
+vidéo envoyée pour publication manuelle : 20261117-1230-gta6-fr (37.2 Mo)

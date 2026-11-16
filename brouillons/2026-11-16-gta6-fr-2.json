@@ -1,0 +1,38 @@
+{
+  "titre": "Vice City : excuses en 2003, panneau en 2026",
+  "format": "saga",
+  "theme": "neon",
+  "apprend": [
+    "En décembre 2003, Take-Two et Rockstar ont présenté leurs excuses au peuple haïtien pour des phrases de GTA Vice City, et promis de les retirer des futures copies.",
+    "En 2004, des associations haïtiennes de Floride ont attaqué Rockstar, Take-Two, Wal-Mart, Sony et Microsoft ; l'affaire s'est fermée quand Rockstar a changé le dialogue.",
+    "En septembre 2026, le comté de Miami-Dade a signé sans vote du conseil un contrat juste sous le million de dollars pour un panneau « Welcome to Vice City » sur le toit du Kaseya Center.",
+    "L'annonce a été faite à 1 h 30 du matin, en pleine réunion budgétaire, malgré l'opposition publique du shérif."
+  ],
+  "legende": "GTA Vice City : Rockstar s'excusait auprès des Haïtiens en 2003. En 2026, Miami lui construit un panneau sur un toit… #gta6 #vicecity #rockstar #jeuxvideo",
+  "sources": [
+    {"fait": "Vice City sorti en 2002 ; un personnage dit « I'm gonna kill me a Haitian » ; des coalitions haïtiennes attaquent Rockstar, Take-Two, Wal-Mart, Sony et Microsoft ; demandent le retrait ou un avertissement géant ; affaire close après changement du dialogue", "url": "https://www.wlrn.org/arts-culture/2026-09-24/grand-theft-auto-miami-haitians-florida-lawsuit"},
+    {"fait": "Décembre 2003 : Take-Two et Rockstar s'excusent auprès du peuple haïtien et du gouvernement d'Haïti et promettent de retirer les propos des futures copies", "url": "http://worthplaying.com/article/2003/12/10/news/14139-take-two-cleans-up-grand-theft-auto-vice-city/"},
+    {"fait": "Panneau « Welcome to Vice City » sur le toit du Kaseya Center ; contrat sous 1 million de dollars signé par la maire sans vote du conseil ; annoncé vers 1 h 30 pendant la réunion budgétaire ; la shérif et un commissaire rejettent un partenariat", "url": "https://www.wlrn.org/government-politics/2026-09-18/miami-dade-welcome-to-vice-city-gta-kaseya"},
+    {"fait": "12 décembre 2003 : des groupes demandent le retrait de toutes les copies en rayon ; Haitian-American Grassroots Coalition : le jeu est « a clear and present danger » pour les Haïtiens", "url": "https://gamedeveloper.com/game-platforms/-i-vice-city-i-protests-continue"}
+  ],
+  "scenes": [
+    {"voix": "Décembre 2003. Rockstar s'excuse auprès du peuple haïtien.", "voix_jeu": "[dramatically] Décembre 2003. Rockstar s'excuse auprès du peuple haïtien.",
+     "visuels": ["pixabay:#79158", "pixabay:#21846"], "gros": "DÉCEMBRE|2003"},
+    {"voix": "Dans Vice City, un personnage veut tuer des Haïtiens.", "voix_jeu": "[short pause] Dans Vice City, un personnage veut tuer des A-ï-tiens.",
+     "visuels": ["pixabay:#21116", "pixabay:#24603"], "lieu": "FLORIDE · VICE CITY"},
+    {"voix": "Excuses en 2003, procès en 2004 : des associations visent Rockstar et Sony.", "voix_jeu": "[surprised] Excuses en 2003. Procès en 2004 : des associations visent Rockstar et Sony.",
+     "visuels": ["pixabay:#198901", "pixabay:#198890"],
+     "frise": {"etapes": [{"date": "2003", "texte": "EXCUSES"}, {"date": "2004", "texte": "PROCÈS"}]}},
+    {"voix": "Rockstar change le dialogue, l'affaire se ferme.", "voix_jeu": "Rockstar change le dialogue, l'affaire se ferme.",
+     "visuels": ["pixabay:#107240", "pixabay:#198890"], "tampon": "AFFAIRE CLOSE", "tamponMot": "ferme"},
+    {"voix": "Sauf que vingt ans plus tard, Miami lui ouvre les bras.", "voix_jeu": "[curious] Sauf que vingt ans plus tard, Miami lui ouvre les bras.",
+     "visuels": ["pixabay:#42410", "pixabay:#154197"]},
+    {"voix": "Septembre 2026 : « Welcome to Vice City » sur le toit d'une arène.", "voix_jeu": "[dramatically] Septembre 2026 : « Welcome to Vice City » sur le toit d'une arène.",
+     "visuels": ["pixabay:#7405", "pixabay:#212404"], "lieu": "MIAMI · 2026"},
+    {"voix": "Contrat sous le million : aucun vote. Annoncé à 1 h 30 du matin.", "voix_jeu": "[surprised] Contrat sous le million : aucun vote. [short pause] Annoncé à 1 h 30 du matin.",
+     "visuels": ["pixabay:#215751", "pixabay:#2340"],
+     "coupure": {"source": "WLRN", "date": "18 SEPT. 2026", "titre": "Vice City : le comté signe en pleine nuit, sans vote"}},
+    {"voix": "Le panneau n'est pas le premier scandale. Le premier date de…", "voix_jeu": "[dramatically] Le panneau n'est pas le premier scandale. [short pause] Le premier date de…",
+     "visuels": ["pixabay:#152397", "pixabay:#263305"]}
+  ]
+}
