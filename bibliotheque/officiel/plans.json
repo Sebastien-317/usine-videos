@@ -1,0 +1,9045 @@
+{
+"origine": "https://www.rockstargames.com/VI/media",
+"vocabulaire": [
+"a woman",
+"a man",
+"a couple",
+"a woman holding a gun",
+"a man holding a gun",
+"a couple holding guns",
+"a woman driving a car",
+"a man driving a car",
+"a couple in a car",
+"a kiss",
+"a woman on her phone",
+"a man on his phone",
+"a selfie video on a phone",
+"a social media video",
+"people dancing at a party",
+"a nightclub",
+"a pool party",
+"a crowd at the beach",
+"a woman in a bikini",
+"a bodybuilder at the gym",
+"people lifting weights",
+"a tattooed man",
+"a police officer",
+"police officers arresting someone",
+"handcuffs",
+"a prison",
+"an inmate in a prison jumpsuit",
+"a prison yard",
+"a robbery with masks",
+"a store robbery",
+"a cashier in a convenience store",
+"a gas station",
+"a stack of cash",
+"a man counting money",
+"a bank",
+"a jewelry store",
+"a pawn shop",
+"a gun store",
+"a gun",
+"a rifle",
+"a shootout",
+"an explosion",
+"a car on fire",
+"fire",
+"a car crash",
+"a police car",
+"a police chase",
+"a police helicopter",
+"a helicopter",
+"a small airplane",
+"a sports car",
+"a muscle car",
+"a pickup truck",
+"a motorcycle",
+"a speedboat",
+"a yacht",
+"a jet ski",
+"a boat at sea",
+"a dock with boats",
+"a highway",
+"a bridge",
+"a city street at night",
+"a city street during the day",
+"neon lights at night",
+"a city skyline at night",
+"a city skyline at sunset",
+"aerial view of a city",
+"aerial view of islands",
+"palm trees",
+"a sunset over the ocean",
+"a beach",
+"the ocean",
+"a swamp",
+"an alligator",
+"a flamingo",
+"wild animals",
+"a rural town",
+"a trailer park",
+"a farm",
+"a motel",
+"a mansion",
+"a luxury hotel",
+"a strip mall",
+"a shopping mall",
+"a parking lot",
+"a construction site",
+"a bar",
+"a restaurant",
+"a diner",
+"a barber shop",
+"a car dealership",
+"a garage",
+"an office",
+"a TV news broadcast",
+"a stadium",
+"a basketball court",
+"a golf course",
+"fireworks",
+"a storm with rain",
+"a hurricane",
+"a sunrise",
+"a rap music video",
+"a recording studio",
+"a hospital",
+"an ambulance",
+"a fire truck",
+"a truck",
+"a bus",
+"a dog",
+"a fight",
+"a man running",
+"a woman running",
+"a map",
+"white text on a black background",
+"a video game logo"
+],
+"sources": {
+"T1": {
+"nom": "Bande-annonce 1",
+"url": "https://media-rockstargames-com.akamaized.net/VI/downloads/videos/GTAVI_Trailer_1/GTAVI_Trailer_1.mp4"
+},
+"T2": {
+"nom": "Bande-annonce 2",
+"url": "https://media-rockstargames-com.akamaized.net/VI/downloads/videos/GTAVI_Trailer_2/GTAVI_Trailer_2.mp4"
+},
+"LT": {
+"nom": "Bande-annonce de lancement",
+"url": "https://media-rockstargames-com.akamaized.net/VI/downloads/videos/GTAVI_Launch_Trailer/GTAVI_Launch_Trailer.mp4"
+},
+"XL": {
+"nom": "Un large aperçu (gameplay)",
+"url": "https://media-rockstargames-com.akamaized.net/VI/downloads/videos/GTAVI_An_Extended_Look/GTAVI_An_Extended_Look.mp4"
+},
+"PL": {
+"nom": "Préchargez maintenant",
+"url": "https://media-rockstargames-com.akamaized.net/VI/downloads/videos/GTAVI_Pre-Load_Now/GTAVI_Pre-Load_Now.mp4"
+},
+"C-BoobieIke": {
+"nom": "Boobie Ike Video Clip",
+"url": "zip:Boobie_Ike_Video_Clip.mp4"
+},
+"C-BrianHeder": {
+"nom": "Brian Heder Video Clip",
+"url": "zip:Brian_Heder_Video_Clip.mp4"
+},
+"C-CalHampton": {
+"nom": "Cal Hampton Video Clip",
+"url": "zip:Cal_Hampton_Video_Clip.mp4"
+},
+"C-DreQuanPries": {
+"nom": "DreQuan Priest Video Clip",
+"url": "zip:DreQuan_Priest_Video_Clip.mp4"
+},
+"C-OfficialCove": {
+"nom": "GTAVI Official Cover Art Landscape",
+"url": "zip:GTAVI_Official_Cover_Art_Landscape.mp4"
+},
+"C-JasonDuval": {
+"nom": "Jason Duval Video Clip",
+"url": "zip:Jason_Duval_Video_Clip.mp4"
+},
+"C-LuciaCaminos": {
+"nom": "Lucia Caminos Video Clip",
+"url": "zip:Lucia_Caminos_Video_Clip.mp4"
+},
+"C-RaulBautista": {
+"nom": "Raul Bautista Video Clip",
+"url": "zip:Raul_Bautista_Video_Clip.mp4"
+},
+"C-RealDimez": {
+"nom": "Real Dimez Video Clip",
+"url": "zip:Real_Dimez_Video_Clip.mp4"
+}
+},
+"plans": [
+{
+"id": "T1-000",
+"v": "T1",
+"debut": 0.0,
+"fin": 2.67,
+"lum": 0.303,
+"tags": [
+"white text on a black background",
+"a video game logo",
+"a social media video",
+"a TV news broadcast",
+"a rap music video"
+],
+"texte": true
+},
+{
+"id": "T1-001",
+"v": "T1",
+"debut": 2.67,
+"fin": 5.0,
+"lum": 0.518,
+"tags": [
+"a city skyline at sunset",
+"a sunrise",
+"a sunset over the ocean",
+"palm trees",
+"aerial view of a city"
+],
+"texte": false
+},
+{
+"id": "T1-002",
+"v": "T1",
+"debut": 5.0,
+"fin": 6.53,
+"lum": 0.471,
+"tags": [
+"a prison yard",
+"a sunrise",
+"a prison",
+"a city skyline at sunset",
+"a sunset over the ocean"
+],
+"texte": false
+},
+{
+"id": "T1-003",
+"v": "T1",
+"debut": 6.53,
+"fin": 8.47,
+"lum": 0.57,
+"tags": [
+"a sunrise",
+"a woman",
+"a prison yard",
+"a city skyline at sunset",
+"a prison"
+],
+"texte": false
+},
+{
+"id": "T1-004",
+"v": "T1",
+"debut": 8.47,
+"fin": 9.63,
+"lum": 0.369,
+"tags": [
+"a woman",
+"a woman on her phone",
+"an office",
+"a rap music video",
+"a woman running"
+],
+"texte": false
+},
+{
+"id": "T1-005",
+"v": "T1",
+"debut": 9.63,
+"fin": 10.93,
+"lum": 0.332,
+"tags": [
+"a woman",
+"a woman on her phone",
+"an inmate in a prison jumpsuit",
+"a woman running",
+"a woman holding a gun"
+],
+"texte": false
+},
+{
+"id": "T1-006",
+"v": "T1",
+"debut": 10.93,
+"fin": 14.65,
+"lum": 0.531,
+"tags": [
+"a beach",
+"a crowd at the beach",
+"aerial view of islands",
+"the ocean",
+"aerial view of a city"
+],
+"texte": false
+},
+{
+"id": "T1-007",
+"v": "T1",
+"debut": 14.65,
+"fin": 18.37,
+"lum": 0.398,
+"tags": [
+"a rap music video",
+"aerial view of a city",
+"a social media video",
+"a video game logo",
+"a city skyline at sunset"
+],
+"texte": false
+},
+{
+"id": "T1-008",
+"v": "T1",
+"debut": 18.37,
+"fin": 19.17,
+"lum": 0.413,
+"tags": [
+"palm trees",
+"a luxury hotel",
+"a city street during the day",
+"a beach",
+"a motel"
+],
+"texte": false
+},
+{
+"id": "T1-009",
+"v": "T1",
+"debut": 19.17,
+"fin": 21.73,
+"lum": 0.623,
+"tags": [
+"a swamp",
+"a sunrise",
+"fire",
+"a shootout",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "T1-010",
+"v": "T1",
+"debut": 21.73,
+"fin": 23.27,
+"lum": 0.624,
+"tags": [
+"a crowd at the beach",
+"a beach",
+"a pool party",
+"a woman in a bikini",
+"the ocean"
+],
+"texte": false
+},
+{
+"id": "T1-011",
+"v": "T1",
+"debut": 23.27,
+"fin": 24.83,
+"lum": 0.572,
+"tags": [
+"a speedboat",
+"a boat at sea",
+"a hurricane",
+"a yacht",
+"the ocean"
+],
+"texte": false
+},
+{
+"id": "T1-012",
+"v": "T1",
+"debut": 24.83,
+"fin": 27.43,
+"lum": 0.219,
+"tags": [
+"neon lights at night",
+"a rap music video",
+"a couple in a car",
+"a woman driving a car",
+"a city skyline at night"
+],
+"texte": false
+},
+{
+"id": "T1-013",
+"v": "T1",
+"debut": 27.43,
+"fin": 28.97,
+"lum": 0.429,
+"tags": [
+"a city street during the day",
+"a pickup truck",
+"a muscle car",
+"a car dealership",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "T1-014",
+"v": "T1",
+"debut": 28.97,
+"fin": 30.0,
+"lum": 0.177,
+"tags": [
+"a nightclub",
+"people dancing at a party",
+"a pool party",
+"a rap music video",
+"a woman in a bikini"
+],
+"texte": false
+},
+{
+"id": "T1-015",
+"v": "T1",
+"debut": 30.0,
+"fin": 32.57,
+"lum": 0.278,
+"tags": [
+"a city street at night",
+"a city skyline at night",
+"aerial view of a city",
+"a highway",
+"a police chase"
+],
+"texte": false
+},
+{
+"id": "T1-016",
+"v": "T1",
+"debut": 32.57,
+"fin": 34.13,
+"lum": 0.301,
+"tags": [
+"a city street at night",
+"a rap music video",
+"palm trees",
+"a nightclub",
+"neon lights at night"
+],
+"texte": false
+},
+{
+"id": "T1-017",
+"v": "T1",
+"debut": 34.13,
+"fin": 35.67,
+"lum": 0.187,
+"tags": [
+"a nightclub",
+"people dancing at a party",
+"a rap music video",
+"a kiss",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "T1-018",
+"v": "T1",
+"debut": 35.67,
+"fin": 37.43,
+"lum": 0.487,
+"tags": [
+"a bridge",
+"a highway",
+"aerial view of islands",
+"a map",
+"the ocean"
+],
+"texte": false
+},
+{
+"id": "T1-019",
+"v": "T1",
+"debut": 37.43,
+"fin": 39.8,
+"lum": 0.554,
+"tags": [
+"a woman in a bikini",
+"a woman",
+"a beach",
+"a woman on her phone",
+"a luxury hotel"
+],
+"texte": false
+},
+{
+"id": "T1-020",
+"v": "T1",
+"debut": 39.8,
+"fin": 41.33,
+"lum": 0.557,
+"tags": [
+"a sunrise",
+"a bridge",
+"a city skyline at sunset",
+"a prison",
+"fire"
+],
+"texte": false
+},
+{
+"id": "T1-021",
+"v": "T1",
+"debut": 41.33,
+"fin": 42.4,
+"lum": 0.591,
+"tags": [
+"a pool party",
+"a crowd at the beach",
+"a woman in a bikini",
+"a yacht",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "T1-022",
+"v": "T1",
+"debut": 42.4,
+"fin": 43.9,
+"lum": 0.384,
+"tags": [
+"a pool party",
+"palm trees",
+"a flamingo",
+"an alligator",
+"a hurricane"
+],
+"texte": false
+},
+{
+"id": "T1-023",
+"v": "T1",
+"debut": 43.9,
+"fin": 45.47,
+"lum": 0.441,
+"tags": [
+"a couple in a car",
+"a woman driving a car",
+"a man driving a car",
+"a woman in a bikini",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "T1-024",
+"v": "T1",
+"debut": 45.47,
+"fin": 46.53,
+"lum": 0.37,
+"tags": [
+"a police helicopter",
+"an explosion",
+"a helicopter",
+"aerial view of a city",
+"a shootout"
+],
+"texte": false
+},
+{
+"id": "T1-025",
+"v": "T1",
+"debut": 46.53,
+"fin": 47.53,
+"lum": 0.237,
+"tags": [
+"a rap music video",
+"a nightclub",
+"a social media video",
+"people dancing at a party",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "T1-026",
+"v": "T1",
+"debut": 47.53,
+"fin": 48.6,
+"lum": 0.582,
+"tags": [
+"a diner",
+"a store robbery",
+"a dog",
+"a cashier in a convenience store",
+"a barber shop"
+],
+"texte": false
+},
+{
+"id": "T1-027",
+"v": "T1",
+"debut": 48.6,
+"fin": 49.9,
+"lum": 0.253,
+"tags": [
+"a police officer",
+"police officers arresting someone",
+"handcuffs",
+"a police car",
+"a police helicopter"
+],
+"texte": false
+},
+{
+"id": "T1-028",
+"v": "T1",
+"debut": 49.9,
+"fin": 51.13,
+"lum": 0.509,
+"tags": [
+"a gas station",
+"a storm with rain",
+"a parking lot",
+"a strip mall",
+"a car dealership"
+],
+"texte": false
+},
+{
+"id": "T1-029",
+"v": "T1",
+"debut": 51.13,
+"fin": 52.17,
+"lum": 0.481,
+"tags": [
+"a tattooed man",
+"a pickup truck",
+"a gas station",
+"a trailer park",
+"a truck"
+],
+"texte": false
+},
+{
+"id": "T1-030",
+"v": "T1",
+"debut": 52.17,
+"fin": 53.97,
+"lum": 0.448,
+"tags": [
+"a woman in a bikini",
+"a couple in a car",
+"a woman driving a car",
+"palm trees",
+"a man driving a car"
+],
+"texte": false
+},
+{
+"id": "T1-031",
+"v": "T1",
+"debut": 53.97,
+"fin": 57.33,
+"lum": 0.441,
+"tags": [
+"a fight",
+"a woman in a bikini",
+"a couple holding guns",
+"a couple",
+"a trailer park"
+],
+"texte": false
+},
+{
+"id": "T1-032",
+"v": "T1",
+"debut": 57.33,
+"fin": 59.53,
+"lum": 0.585,
+"tags": [
+"a woman",
+"a woman on her phone",
+"a woman running",
+"a flamingo",
+"a woman holding a gun"
+],
+"texte": false
+},
+{
+"id": "T1-033",
+"v": "T1",
+"debut": 59.53,
+"fin": 60.47,
+"lum": 0.1,
+"tags": [
+"handcuffs",
+"a fight",
+"a rap music video",
+"neon lights at night",
+"a nightclub"
+],
+"texte": false
+},
+{
+"id": "T1-034",
+"v": "T1",
+"debut": 60.47,
+"fin": 62.53,
+"lum": 0.205,
+"tags": [
+"a woman driving a car",
+"a man driving a car",
+"a couple in a car",
+"a bus",
+"an ambulance"
+],
+"texte": false
+},
+{
+"id": "T1-035",
+"v": "T1",
+"debut": 62.53,
+"fin": 63.57,
+"lum": 0.308,
+"tags": [
+"a woman in a bikini",
+"a woman",
+"a woman driving a car",
+"a woman on her phone",
+"a woman holding a gun"
+],
+"texte": false
+},
+{
+"id": "T1-036",
+"v": "T1",
+"debut": 63.57,
+"fin": 64.57,
+"lum": 0.492,
+"tags": [
+"a car crash",
+"a police chase",
+"an ambulance",
+"a car on fire",
+"a truck"
+],
+"texte": false
+},
+{
+"id": "T1-037",
+"v": "T1",
+"debut": 64.57,
+"fin": 65.63,
+"lum": 0.574,
+"tags": [
+"handcuffs",
+"a police officer",
+"an office",
+"a video game logo",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "T1-038",
+"v": "T1",
+"debut": 65.63,
+"fin": 66.67,
+"lum": 0.537,
+"tags": [
+"a motorcycle",
+"a car crash",
+"a fight",
+"police officers arresting someone",
+"a man"
+],
+"texte": false
+},
+{
+"id": "T1-039",
+"v": "T1",
+"debut": 66.67,
+"fin": 67.67,
+"lum": 0.397,
+"tags": [
+"a police chase",
+"a car crash",
+"police officers arresting someone",
+"a motorcycle",
+"an ambulance"
+],
+"texte": false
+},
+{
+"id": "T1-040",
+"v": "T1",
+"debut": 67.67,
+"fin": 68.67,
+"lum": 0.416,
+"tags": [
+"a rap music video",
+"a couple in a car",
+"a woman driving a car",
+"a man driving a car",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "T1-041",
+"v": "T1",
+"debut": 68.67,
+"fin": 70.27,
+"lum": 0.367,
+"tags": [
+"a robbery with masks",
+"a couple",
+"a rap music video",
+"a couple in a car",
+"a couple holding guns"
+],
+"texte": false
+},
+{
+"id": "T1-042",
+"v": "T1",
+"debut": 70.27,
+"fin": 72.83,
+"lum": 0.453,
+"tags": [
+"a woman driving a car",
+"a couple in a car",
+"a man driving a car",
+"a sports car",
+"a muscle car"
+],
+"texte": false
+},
+{
+"id": "T1-043",
+"v": "T1",
+"debut": 72.83,
+"fin": 76.5,
+"lum": 0.363,
+"tags": [
+"a man counting money",
+"a luxury hotel",
+"a woman on her phone",
+"a man on his phone",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "T1-044",
+"v": "T1",
+"debut": 76.5,
+"fin": 80.28,
+"lum": 0.302,
+"tags": [
+"a robbery with masks",
+"a couple",
+"a couple in a car",
+"a couple holding guns",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "T1-045",
+"v": "T1",
+"debut": 80.28,
+"fin": 84.05,
+"lum": 0.188,
+"tags": [
+"a video game logo",
+"a flamingo",
+"palm trees",
+"neon lights at night",
+"a sunrise"
+],
+"texte": true
+},
+{
+"id": "T1-046",
+"v": "T1",
+"debut": 84.05,
+"fin": 87.83,
+"lum": 0.326,
+"tags": [
+"a video game logo",
+"a car dealership",
+"a garage",
+"a gas station",
+"a rap music video"
+],
+"texte": true
+},
+{
+"id": "T1-047",
+"v": "T1",
+"debut": 87.83,
+"fin": 90.03,
+"lum": 0.014,
+"tags": [
+"a video game logo",
+"neon lights at night",
+"a rap music video",
+"a social media video",
+"white text on a black background"
+],
+"texte": true
+},
+{
+"id": "T2-000",
+"v": "T2",
+"debut": 0.0,
+"fin": 4.07,
+"lum": 0.304,
+"tags": [
+"white text on a black background",
+"a video game logo",
+"a social media video",
+"a TV news broadcast",
+"a rap music video"
+],
+"texte": true
+},
+{
+"id": "T2-001",
+"v": "T2",
+"debut": 4.07,
+"fin": 8.13,
+"lum": 0.001,
+"tags": [
+"white text on a black background",
+"a video game logo",
+"an ambulance",
+"a highway",
+"a couple"
+],
+"texte": true
+},
+{
+"id": "T2-002",
+"v": "T2",
+"debut": 8.13,
+"fin": 9.8,
+"lum": 0.353,
+"tags": [
+"a bridge",
+"a motel",
+"a mansion",
+"a rural town",
+"a trailer park"
+],
+"texte": false
+},
+{
+"id": "T2-003",
+"v": "T2",
+"debut": 9.8,
+"fin": 11.47,
+"lum": 0.255,
+"tags": [
+"a pickup truck",
+"a truck",
+"a man",
+"a man driving a car",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "T2-004",
+"v": "T2",
+"debut": 11.47,
+"fin": 13.67,
+"lum": 0.366,
+"tags": [
+"a man",
+"a man on his phone",
+"a man running",
+"a construction site",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "T2-005",
+"v": "T2",
+"debut": 13.67,
+"fin": 18.83,
+"lum": 0.403,
+"tags": [
+"a man driving a car",
+"a trailer park",
+"a man",
+"palm trees",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "T2-006",
+"v": "T2",
+"debut": 18.83,
+"fin": 20.47,
+"lum": 0.297,
+"tags": [
+"a bodybuilder at the gym",
+"a man",
+"a tattooed man",
+"a man running",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "T2-007",
+"v": "T2",
+"debut": 20.47,
+"fin": 23.27,
+"lum": 0.309,
+"tags": [
+"a pickup truck",
+"a couple in a car",
+"a truck",
+"a parking lot",
+"a garage"
+],
+"texte": false
+},
+{
+"id": "T2-008",
+"v": "T2",
+"debut": 23.27,
+"fin": 28.23,
+"lum": 0.245,
+"tags": [
+"a bodybuilder at the gym",
+"a tattooed man",
+"a man",
+"a man on his phone",
+"a man running"
+],
+"texte": false
+},
+{
+"id": "T2-009",
+"v": "T2",
+"debut": 28.23,
+"fin": 33.2,
+"lum": 0.176,
+"tags": [
+"a woman driving a car",
+"a couple in a car",
+"a man driving a car",
+"a car dealership",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "T2-010",
+"v": "T2",
+"debut": 33.2,
+"fin": 34.6,
+"lum": 0.232,
+"tags": [
+"handcuffs",
+"a man counting money",
+"a man on his phone",
+"a man",
+"an office"
+],
+"texte": false
+},
+{
+"id": "T2-011",
+"v": "T2",
+"debut": 34.6,
+"fin": 38.37,
+"lum": 0.484,
+"tags": [
+"a highway",
+"a city street during the day",
+"a parking lot",
+"a bridge",
+"a bus"
+],
+"texte": false
+},
+{
+"id": "T2-012",
+"v": "T2",
+"debut": 38.37,
+"fin": 41.6,
+"lum": 0.374,
+"tags": [
+"a bodybuilder at the gym",
+"people lifting weights",
+"a woman in a bikini",
+"a beach",
+"a man"
+],
+"texte": false
+},
+{
+"id": "T2-013",
+"v": "T2",
+"debut": 41.6,
+"fin": 45.72,
+"lum": 0.207,
+"tags": [
+"a trailer park",
+"a gas station",
+"a man counting money",
+"a man on his phone",
+"a bank"
+],
+"texte": false
+},
+{
+"id": "T2-014",
+"v": "T2",
+"debut": 45.72,
+"fin": 49.83,
+"lum": 0.102,
+"tags": [
+"a police car",
+"a police chase",
+"a police officer",
+"police officers arresting someone",
+"an ambulance"
+],
+"texte": false
+},
+{
+"id": "T2-015",
+"v": "T2",
+"debut": 49.83,
+"fin": 51.87,
+"lum": 0.353,
+"tags": [
+"a prison",
+"a prison yard",
+"an inmate in a prison jumpsuit",
+"a police helicopter",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "T2-016",
+"v": "T2",
+"debut": 51.87,
+"fin": 56.22,
+"lum": 0.116,
+"tags": [
+"a recording studio",
+"handcuffs",
+"a prison",
+"police officers arresting someone",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "T2-017",
+"v": "T2",
+"debut": 56.22,
+"fin": 60.57,
+"lum": 0.151,
+"tags": [
+"handcuffs",
+"an inmate in a prison jumpsuit",
+"a recording studio",
+"a rap music video",
+"a prison"
+],
+"texte": false
+},
+{
+"id": "T2-018",
+"v": "T2",
+"debut": 60.57,
+"fin": 66.2,
+"lum": 0.122,
+"tags": [
+"a tattooed man",
+"a man",
+"a man on his phone",
+"a woman",
+"an inmate in a prison jumpsuit"
+],
+"texte": false
+},
+{
+"id": "T2-019",
+"v": "T2",
+"debut": 66.2,
+"fin": 71.05,
+"lum": 0.299,
+"tags": [
+"a man driving a car",
+"a muscle car",
+"a couple in a car",
+"a man",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "T2-020",
+"v": "T2",
+"debut": 71.05,
+"fin": 75.9,
+"lum": 0.44,
+"tags": [
+"a rap music video",
+"a social media video",
+"a video game logo",
+"a kiss",
+"a recording studio"
+],
+"texte": false
+},
+{
+"id": "T2-021",
+"v": "T2",
+"debut": 76.67,
+"fin": 79.5,
+"lum": 0.071,
+"tags": [
+"handcuffs",
+"a man on his phone",
+"a man",
+"police officers arresting someone",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "T2-022",
+"v": "T2",
+"debut": 79.5,
+"fin": 80.5,
+"lum": 0.208,
+"tags": [
+"a woman in a bikini",
+"a woman",
+"a dog",
+"a couple",
+"a couple in a car"
+],
+"texte": false
+},
+{
+"id": "T2-023",
+"v": "T2",
+"debut": 80.5,
+"fin": 81.4,
+"lum": 0.148,
+"tags": [
+"a rap music video",
+"a woman on her phone",
+"a bar",
+"a woman",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "T2-024",
+"v": "T2",
+"debut": 81.4,
+"fin": 83.1,
+"lum": 0.244,
+"tags": [
+"a couple in a car",
+"a crowd at the beach",
+"a couple",
+"a couple holding guns",
+"a dock with boats"
+],
+"texte": false
+},
+{
+"id": "T2-025",
+"v": "T2",
+"debut": 83.1,
+"fin": 85.1,
+"lum": 0.389,
+"tags": [
+"a dock with boats",
+"a sunrise",
+"a sunset over the ocean",
+"a city skyline at sunset",
+"a boat at sea"
+],
+"texte": false
+},
+{
+"id": "T2-026",
+"v": "T2",
+"debut": 85.1,
+"fin": 86.0,
+"lum": 0.211,
+"tags": [
+"a prison yard",
+"a robbery with masks",
+"police officers arresting someone",
+"a garage",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "T2-027",
+"v": "T2",
+"debut": 86.0,
+"fin": 88.23,
+"lum": 0.113,
+"tags": [
+"police officers arresting someone",
+"a police officer",
+"handcuffs",
+"an inmate in a prison jumpsuit",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "T2-028",
+"v": "T2",
+"debut": 88.23,
+"fin": 89.5,
+"lum": 0.337,
+"tags": [
+"a couple",
+"handcuffs",
+"a rap music video",
+"a woman",
+"a couple in a car"
+],
+"texte": false
+},
+{
+"id": "T2-029",
+"v": "T2",
+"debut": 89.5,
+"fin": 90.37,
+"lum": 0.223,
+"tags": [
+"a rap music video",
+"a man on his phone",
+"a man",
+"a tattooed man",
+"a man counting money"
+],
+"texte": false
+},
+{
+"id": "T2-030",
+"v": "T2",
+"debut": 90.37,
+"fin": 92.0,
+"lum": 0.269,
+"tags": [
+"a bar",
+"a diner",
+"a trailer park",
+"a bus",
+"a restaurant"
+],
+"texte": false
+},
+{
+"id": "T2-031",
+"v": "T2",
+"debut": 92.0,
+"fin": 96.13,
+"lum": 0.216,
+"tags": [
+"a bodybuilder at the gym",
+"a couple in a car",
+"a trailer park",
+"people lifting weights",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "T2-032",
+"v": "T2",
+"debut": 96.13,
+"fin": 97.67,
+"lum": 0.327,
+"tags": [
+"a crowd at the beach",
+"a pool party",
+"people dancing at a party",
+"a yacht",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "T2-033",
+"v": "T2",
+"debut": 98.47,
+"fin": 99.67,
+"lum": 0.235,
+"tags": [
+"handcuffs",
+"a couple",
+"a kiss",
+"a couple in a car",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "T2-034",
+"v": "T2",
+"debut": 99.67,
+"fin": 103.29,
+"lum": 0.129,
+"tags": [
+"a nightclub",
+"people dancing at a party",
+"a rap music video",
+"a selfie video on a phone",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "T2-035",
+"v": "T2",
+"debut": 103.29,
+"fin": 106.91,
+"lum": 0.126,
+"tags": [
+"a prison yard",
+"handcuffs",
+"police officers arresting someone",
+"a prison",
+"an inmate in a prison jumpsuit"
+],
+"texte": false
+},
+{
+"id": "T2-036",
+"v": "T2",
+"debut": 106.91,
+"fin": 110.53,
+"lum": 0.093,
+"tags": [
+"a police officer",
+"handcuffs",
+"police officers arresting someone",
+"an inmate in a prison jumpsuit",
+"a man"
+],
+"texte": false
+},
+{
+"id": "T2-037",
+"v": "T2",
+"debut": 111.3,
+"fin": 117.1,
+"lum": 0.098,
+"tags": [
+"a rap music video",
+"a fight",
+"people dancing at a party",
+"a trailer park",
+"a man"
+],
+"texte": false
+},
+{
+"id": "T2-038",
+"v": "T2",
+"debut": 117.1,
+"fin": 117.93,
+"lum": 0.224,
+"tags": [
+"a woman",
+"a woman on her phone",
+"a woman running",
+"a rap music video",
+"a selfie video on a phone"
+],
+"texte": false
+},
+{
+"id": "T2-039",
+"v": "T2",
+"debut": 117.93,
+"fin": 118.83,
+"lum": 0.415,
+"tags": [
+"a car on fire",
+"a car crash",
+"a police chase",
+"a fire truck",
+"an ambulance"
+],
+"texte": false
+},
+{
+"id": "T2-040",
+"v": "T2",
+"debut": 119.63,
+"fin": 122.7,
+"lum": 0.129,
+"tags": [
+"a pickup truck",
+"a fire truck",
+"a truck",
+"an ambulance",
+"a couple in a car"
+],
+"texte": false
+},
+{
+"id": "T2-041",
+"v": "T2",
+"debut": 122.7,
+"fin": 125.77,
+"lum": 0.116,
+"tags": [
+"a kiss",
+"a couple",
+"a couple in a car",
+"handcuffs",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "T2-042",
+"v": "T2",
+"debut": 125.77,
+"fin": 126.73,
+"lum": 0.348,
+"tags": [
+"a woman in a bikini",
+"a crowd at the beach",
+"a pool party",
+"a rap music video",
+"a social media video"
+],
+"texte": false
+},
+{
+"id": "T2-043",
+"v": "T2",
+"debut": 126.73,
+"fin": 129.37,
+"lum": 0.135,
+"tags": [
+"a nightclub",
+"people dancing at a party",
+"a rap music video",
+"a woman",
+"a kiss"
+],
+"texte": false
+},
+{
+"id": "T2-044",
+"v": "T2",
+"debut": 129.37,
+"fin": 134.4,
+"lum": 0.271,
+"tags": [
+"a bodybuilder at the gym",
+"people lifting weights",
+"a bar",
+"a gun store",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "T2-045",
+"v": "T2",
+"debut": 134.4,
+"fin": 138.13,
+"lum": 0.255,
+"tags": [
+"a woman",
+"a woman on her phone",
+"an inmate in a prison jumpsuit",
+"a woman running",
+"a trailer park"
+],
+"texte": false
+},
+{
+"id": "T2-046",
+"v": "T2",
+"debut": 138.13,
+"fin": 139.1,
+"lum": 0.352,
+"tags": [
+"a helicopter",
+"a police helicopter",
+"a hurricane",
+"a storm with rain",
+"a bridge"
+],
+"texte": false
+},
+{
+"id": "T2-047",
+"v": "T2",
+"debut": 139.1,
+"fin": 140.03,
+"lum": 0.187,
+"tags": [
+"a helicopter",
+"a speedboat",
+"a police helicopter",
+"an alligator",
+"a man driving a car"
+],
+"texte": false
+},
+{
+"id": "T2-048",
+"v": "T2",
+"debut": 140.03,
+"fin": 141.83,
+"lum": 0.547,
+"tags": [
+"a jet ski",
+"a speedboat",
+"a yacht",
+"a woman in a bikini",
+"a boat at sea"
+],
+"texte": false
+},
+{
+"id": "T2-049",
+"v": "T2",
+"debut": 141.83,
+"fin": 143.73,
+"lum": 0.251,
+"tags": [
+"a man holding a gun",
+"a man",
+"a rap music video",
+"a rifle",
+"a couple holding guns"
+],
+"texte": false
+},
+{
+"id": "T2-050",
+"v": "T2",
+"debut": 143.73,
+"fin": 147.3,
+"lum": 0.101,
+"tags": [
+"people dancing at a party",
+"a couple",
+"handcuffs",
+"a fight",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "T2-051",
+"v": "T2",
+"debut": 147.3,
+"fin": 148.23,
+"lum": 0.296,
+"tags": [
+"a speedboat",
+"a yacht",
+"a boat at sea",
+"a jet ski",
+"a dock with boats"
+],
+"texte": false
+},
+{
+"id": "T2-052",
+"v": "T2",
+"debut": 148.23,
+"fin": 152.34,
+"lum": 0.155,
+"tags": [
+"a couple in a car",
+"a man driving a car",
+"a woman driving a car",
+"a diner",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "T2-053",
+"v": "T2",
+"debut": 152.34,
+"fin": 156.45,
+"lum": 0.259,
+"tags": [
+"palm trees",
+"a sunrise",
+"a hurricane",
+"a sunset over the ocean",
+"a beach"
+],
+"texte": false
+},
+{
+"id": "T2-054",
+"v": "T2",
+"debut": 156.45,
+"fin": 160.56,
+"lum": 0.072,
+"tags": [
+"a video game logo",
+"neon lights at night",
+"fire",
+"a nightclub",
+"a selfie video on a phone"
+],
+"texte": true
+},
+{
+"id": "T2-055",
+"v": "T2",
+"debut": 160.56,
+"fin": 164.67,
+"lum": 0.321,
+"tags": [
+"a video game logo",
+"a car dealership",
+"a garage",
+"a gas station",
+"a car on fire"
+],
+"texte": true
+},
+{
+"id": "T2-056",
+"v": "T2",
+"debut": 164.67,
+"fin": 166.73,
+"lum": 0.014,
+"tags": [
+"a video game logo",
+"neon lights at night",
+"a rap music video",
+"a social media video",
+"white text on a black background"
+],
+"texte": true
+},
+{
+"id": "LT-000",
+"v": "LT",
+"debut": 0.0,
+"fin": 2.67,
+"lum": 0.012,
+"tags": [
+"a video game logo",
+"a rap music video",
+"white text on a black background",
+"a social media video",
+"a recording studio"
+],
+"texte": true
+},
+{
+"id": "LT-001",
+"v": "LT",
+"debut": 2.67,
+"fin": 6.97,
+"lum": 0.354,
+"tags": [
+"a flamingo",
+"a video game logo",
+"a swamp",
+"a restaurant",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "LT-002",
+"v": "LT",
+"debut": 6.97,
+"fin": 9.97,
+"lum": 0.29,
+"tags": [
+"a man driving a car",
+"handcuffs",
+"a couple in a car",
+"a woman driving a car",
+"a sports car"
+],
+"texte": false
+},
+{
+"id": "LT-003",
+"v": "LT",
+"debut": 9.97,
+"fin": 14.2,
+"lum": 0.346,
+"tags": [
+"a speedboat",
+"a yacht",
+"a dock with boats",
+"a jet ski",
+"a boat at sea"
+],
+"texte": false
+},
+{
+"id": "LT-004",
+"v": "LT",
+"debut": 14.2,
+"fin": 15.17,
+"lum": 0.508,
+"tags": [
+"a speedboat",
+"a dock with boats",
+"a small airplane",
+"a boat at sea",
+"a beach"
+],
+"texte": false
+},
+{
+"id": "LT-005",
+"v": "LT",
+"debut": 15.17,
+"fin": 18.17,
+"lum": 0.137,
+"tags": [
+"a rap music video",
+"a video game logo",
+"white text on a black background",
+"a social media video",
+"a jewelry store"
+],
+"texte": false
+},
+{
+"id": "LT-006",
+"v": "LT",
+"debut": 18.17,
+"fin": 21.17,
+"lum": 0.176,
+"tags": [
+"handcuffs",
+"a rap music video",
+"a couple in a car",
+"a woman holding a gun",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "LT-007",
+"v": "LT",
+"debut": 21.17,
+"fin": 26.37,
+"lum": 0.36,
+"tags": [
+"a video game logo",
+"a car dealership",
+"a garage",
+"a gas station",
+"a rap music video"
+],
+"texte": true
+},
+{
+"id": "LT-008",
+"v": "LT",
+"debut": 26.37,
+"fin": 27.83,
+"lum": 0.309,
+"tags": [
+"a couple in a car",
+"a couple",
+"a kiss",
+"a woman driving a car",
+"a couple holding guns"
+],
+"texte": false
+},
+{
+"id": "LT-009",
+"v": "LT",
+"debut": 27.83,
+"fin": 29.4,
+"lum": 0.34,
+"tags": [
+"a sunrise",
+"a sunset over the ocean",
+"a man",
+"a rap music video",
+"a city skyline at sunset"
+],
+"texte": false
+},
+{
+"id": "LT-010",
+"v": "LT",
+"debut": 29.4,
+"fin": 32.8,
+"lum": 0.047,
+"tags": [
+"a man on his phone",
+"a selfie video on a phone",
+"handcuffs",
+"a rap music video",
+"a robbery with masks"
+],
+"texte": false
+},
+{
+"id": "LT-011",
+"v": "LT",
+"debut": 32.8,
+"fin": 33.63,
+"lum": 0.375,
+"tags": [
+"a fight",
+"handcuffs",
+"a man holding a gun",
+"a woman holding a gun",
+"a couple in a car"
+],
+"texte": false
+},
+{
+"id": "LT-012",
+"v": "LT",
+"debut": 33.63,
+"fin": 35.07,
+"lum": 0.14,
+"tags": [
+"a rap music video",
+"a shootout",
+"a fight",
+"a man holding a gun",
+"a gun"
+],
+"texte": false
+},
+{
+"id": "LT-013",
+"v": "LT",
+"debut": 35.07,
+"fin": 36.47,
+"lum": 0.368,
+"tags": [
+"a woman",
+"a woman running",
+"a woman on her phone",
+"a woman holding a gun",
+"fire"
+],
+"texte": false
+},
+{
+"id": "LT-014",
+"v": "LT",
+"debut": 36.47,
+"fin": 38.0,
+"lum": 0.47,
+"tags": [
+"a sunrise",
+"a woman on her phone",
+"a woman",
+"a sunset over the ocean",
+"a kiss"
+],
+"texte": false
+},
+{
+"id": "LT-015",
+"v": "LT",
+"debut": 38.0,
+"fin": 39.0,
+"lum": 0.091,
+"tags": [
+"a nightclub",
+"a rap music video",
+"people dancing at a party",
+"a woman",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "LT-016",
+"v": "LT",
+"debut": 39.0,
+"fin": 42.33,
+"lum": 0.351,
+"tags": [
+"a woman driving a car",
+"a couple in a car",
+"a rap music video",
+"a woman on her phone",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "LT-017",
+"v": "LT",
+"debut": 42.33,
+"fin": 45.07,
+"lum": 0.123,
+"tags": [
+"handcuffs",
+"a tattooed man",
+"a man on his phone",
+"a selfie video on a phone",
+"a man"
+],
+"texte": false
+},
+{
+"id": "LT-018",
+"v": "LT",
+"debut": 45.07,
+"fin": 49.64,
+"lum": 0.329,
+"tags": [
+"a sports car",
+"a car crash",
+"a woman driving a car",
+"a man driving a car",
+"a couple in a car"
+],
+"texte": false
+},
+{
+"id": "LT-019",
+"v": "LT",
+"debut": 49.64,
+"fin": 54.2,
+"lum": 0.184,
+"tags": [
+"a woman",
+"a woman running",
+"a woman on her phone",
+"handcuffs",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "LT-020",
+"v": "LT",
+"debut": 54.2,
+"fin": 55.17,
+"lum": 0.273,
+"tags": [
+"a nightclub",
+"a fight",
+"a man",
+"a man running",
+"a kiss"
+],
+"texte": false
+},
+{
+"id": "LT-021",
+"v": "LT",
+"debut": 55.17,
+"fin": 59.9,
+"lum": 0.192,
+"tags": [
+"a bodybuilder at the gym",
+"a tattooed man",
+"an inmate in a prison jumpsuit",
+"a man",
+"a prison"
+],
+"texte": false
+},
+{
+"id": "LT-022",
+"v": "LT",
+"debut": 59.9,
+"fin": 63.17,
+"lum": 0.251,
+"tags": [
+"an explosion",
+"a man",
+"a woman",
+"a social media video",
+"a man holding a gun"
+],
+"texte": false
+},
+{
+"id": "LT-023",
+"v": "LT",
+"debut": 63.17,
+"fin": 64.03,
+"lum": 0.23,
+"tags": [
+"a woman in a bikini",
+"a woman",
+"a city skyline at sunset",
+"a woman on her phone",
+"a woman running"
+],
+"texte": false
+},
+{
+"id": "LT-024",
+"v": "LT",
+"debut": 64.03,
+"fin": 67.07,
+"lum": 0.266,
+"tags": [
+"a man",
+"a woman",
+"a man on his phone",
+"a rap music video",
+"a man running"
+],
+"texte": false
+},
+{
+"id": "LT-025",
+"v": "LT",
+"debut": 67.07,
+"fin": 68.53,
+"lum": 0.374,
+"tags": [
+"a couple",
+"a kiss",
+"a couple in a car",
+"a sunset over the ocean",
+"a sunrise"
+],
+"texte": false
+},
+{
+"id": "LT-026",
+"v": "LT",
+"debut": 68.53,
+"fin": 72.77,
+"lum": 0.141,
+"tags": [
+"a bridge",
+"police officers arresting someone",
+"a fight",
+"a kiss",
+"a man"
+],
+"texte": false
+},
+{
+"id": "LT-027",
+"v": "LT",
+"debut": 72.77,
+"fin": 73.8,
+"lum": 0.337,
+"tags": [
+"a woman holding a gun",
+"a woman",
+"an explosion",
+"fire",
+"a gun"
+],
+"texte": false
+},
+{
+"id": "LT-028",
+"v": "LT",
+"debut": 73.8,
+"fin": 77.64,
+"lum": 0.076,
+"tags": [
+"a rap music video",
+"a couple",
+"neon lights at night",
+"a police chase",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "LT-029",
+"v": "LT",
+"debut": 77.64,
+"fin": 81.48,
+"lum": 0.394,
+"tags": [
+"a video game logo",
+"a car dealership",
+"a garage",
+"a gas station",
+"a rap music video"
+],
+"texte": true
+},
+{
+"id": "LT-030",
+"v": "LT",
+"debut": 81.48,
+"fin": 85.33,
+"lum": 0.242,
+"tags": [
+"a rap music video",
+"a city skyline at sunset",
+"a city skyline at night",
+"a TV news broadcast",
+"aerial view of a city"
+],
+"texte": false
+},
+{
+"id": "LT-031",
+"v": "LT",
+"debut": 85.33,
+"fin": 89.17,
+"lum": 0.138,
+"tags": [
+"a video game logo",
+"neon lights at night",
+"a social media video",
+"a rap music video",
+"a nightclub"
+],
+"texte": true
+},
+{
+"id": "XL-000",
+"v": "XL",
+"debut": 0.0,
+"fin": 3.98,
+"lum": 0.315,
+"tags": [
+"white text on a black background",
+"a social media video",
+"a video game logo",
+"a rap music video",
+"a TV news broadcast"
+],
+"texte": true
+},
+{
+"id": "XL-001",
+"v": "XL",
+"debut": 3.98,
+"fin": 7.96,
+"lum": 0.002,
+"tags": [
+"white text on a black background",
+"a video game logo",
+"a rap music video",
+"a social media video",
+"a recording studio"
+],
+"texte": true
+},
+{
+"id": "XL-002",
+"v": "XL",
+"debut": 7.96,
+"fin": 11.94,
+"lum": 0.106,
+"tags": [
+"a man",
+"a man on his phone",
+"a city street at night",
+"handcuffs",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-003",
+"v": "XL",
+"debut": 11.94,
+"fin": 15.92,
+"lum": 0.088,
+"tags": [
+"an inmate in a prison jumpsuit",
+"a man",
+"a prison yard",
+"a man on his phone",
+"a prison"
+],
+"texte": false
+},
+{
+"id": "XL-004",
+"v": "XL",
+"debut": 15.92,
+"fin": 19.9,
+"lum": 0.21,
+"tags": [
+"a rap music video",
+"a robbery with masks",
+"a store robbery",
+"police officers arresting someone",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "XL-005",
+"v": "XL",
+"debut": 19.9,
+"fin": 23.88,
+"lum": 0.127,
+"tags": [
+"a rap music video",
+"an inmate in a prison jumpsuit",
+"a fight",
+"a prison",
+"a barber shop"
+],
+"texte": false
+},
+{
+"id": "XL-006",
+"v": "XL",
+"debut": 23.88,
+"fin": 27.86,
+"lum": 0.118,
+"tags": [
+"a rap music video",
+"an inmate in a prison jumpsuit",
+"a fight",
+"a pawn shop",
+"a barber shop"
+],
+"texte": false
+},
+{
+"id": "XL-007",
+"v": "XL",
+"debut": 27.86,
+"fin": 31.84,
+"lum": 0.119,
+"tags": [
+"a rap music video",
+"an inmate in a prison jumpsuit",
+"a store robbery",
+"a robbery with masks",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "XL-008",
+"v": "XL",
+"debut": 31.84,
+"fin": 35.82,
+"lum": 0.12,
+"tags": [
+"a rap music video",
+"a fight",
+"an inmate in a prison jumpsuit",
+"a bodybuilder at the gym",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-009",
+"v": "XL",
+"debut": 35.82,
+"fin": 39.8,
+"lum": 0.115,
+"tags": [
+"a rap music video",
+"a fight",
+"a pawn shop",
+"a store robbery",
+"a barber shop"
+],
+"texte": false
+},
+{
+"id": "XL-010",
+"v": "XL",
+"debut": 39.8,
+"fin": 43.78,
+"lum": 0.148,
+"tags": [
+"a rap music video",
+"a hospital",
+"a prison",
+"a store robbery",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-011",
+"v": "XL",
+"debut": 43.78,
+"fin": 47.76,
+"lum": 0.183,
+"tags": [
+"a couple",
+"a barber shop",
+"a man on his phone",
+"a man",
+"a bodybuilder at the gym"
+],
+"texte": false
+},
+{
+"id": "XL-012",
+"v": "XL",
+"debut": 47.76,
+"fin": 51.74,
+"lum": 0.148,
+"tags": [
+"a hospital",
+"a prison",
+"handcuffs",
+"police officers arresting someone",
+"an inmate in a prison jumpsuit"
+],
+"texte": false
+},
+{
+"id": "XL-013",
+"v": "XL",
+"debut": 51.74,
+"fin": 55.72,
+"lum": 0.189,
+"tags": [
+"a man on his phone",
+"a man",
+"a man running",
+"a tattooed man",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-014",
+"v": "XL",
+"debut": 55.72,
+"fin": 59.7,
+"lum": 0.133,
+"tags": [
+"a rap music video",
+"an inmate in a prison jumpsuit",
+"a trailer park",
+"police officers arresting someone",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-015",
+"v": "XL",
+"debut": 59.7,
+"fin": 63.68,
+"lum": 0.148,
+"tags": [
+"a rap music video",
+"people dancing at a party",
+"a woman on her phone",
+"a woman",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-016",
+"v": "XL",
+"debut": 63.68,
+"fin": 67.66,
+"lum": 0.148,
+"tags": [
+"a rap music video",
+"people dancing at a party",
+"a woman on her phone",
+"a store robbery",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "XL-017",
+"v": "XL",
+"debut": 67.66,
+"fin": 71.64,
+"lum": 0.131,
+"tags": [
+"a rap music video",
+"a tattooed man",
+"handcuffs",
+"an inmate in a prison jumpsuit",
+"a barber shop"
+],
+"texte": false
+},
+{
+"id": "XL-018",
+"v": "XL",
+"debut": 71.64,
+"fin": 75.62,
+"lum": 0.132,
+"tags": [
+"a rap music video",
+"a tattooed man",
+"handcuffs",
+"a couple",
+"an inmate in a prison jumpsuit"
+],
+"texte": false
+},
+{
+"id": "XL-019",
+"v": "XL",
+"debut": 75.62,
+"fin": 79.6,
+"lum": 0.121,
+"tags": [
+"a rap music video",
+"handcuffs",
+"an inmate in a prison jumpsuit",
+"a tattooed man",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-020",
+"v": "XL",
+"debut": 79.6,
+"fin": 83.58,
+"lum": 0.099,
+"tags": [
+"people dancing at a party",
+"a rap music video",
+"a nightclub",
+"a couple",
+"a woman in a bikini"
+],
+"texte": false
+},
+{
+"id": "XL-021",
+"v": "XL",
+"debut": 83.58,
+"fin": 87.57,
+"lum": 0.126,
+"tags": [
+"a rap music video",
+"a man on his phone",
+"a man",
+"an inmate in a prison jumpsuit",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "XL-022",
+"v": "XL",
+"debut": 87.57,
+"fin": 91.55,
+"lum": 0.154,
+"tags": [
+"handcuffs",
+"a rap music video",
+"a tattooed man",
+"police officers arresting someone",
+"a woman on her phone"
+],
+"texte": false
+},
+{
+"id": "XL-023",
+"v": "XL",
+"debut": 91.55,
+"fin": 95.53,
+"lum": 0.126,
+"tags": [
+"a tattooed man",
+"a rap music video",
+"a man on his phone",
+"a man counting money",
+"a barber shop"
+],
+"texte": false
+},
+{
+"id": "XL-024",
+"v": "XL",
+"debut": 95.53,
+"fin": 99.51,
+"lum": 0.122,
+"tags": [
+"a rap music video",
+"a tattooed man",
+"a man on his phone",
+"a man counting money",
+"a barber shop"
+],
+"texte": false
+},
+{
+"id": "XL-025",
+"v": "XL",
+"debut": 99.51,
+"fin": 103.49,
+"lum": 0.178,
+"tags": [
+"a tattooed man",
+"a rap music video",
+"a man counting money",
+"a man on his phone",
+"a barber shop"
+],
+"texte": false
+},
+{
+"id": "XL-026",
+"v": "XL",
+"debut": 103.49,
+"fin": 107.47,
+"lum": 0.181,
+"tags": [
+"a rap music video",
+"a tattooed man",
+"a man on his phone",
+"a man counting money",
+"a jewelry store"
+],
+"texte": false
+},
+{
+"id": "XL-027",
+"v": "XL",
+"debut": 107.47,
+"fin": 111.45,
+"lum": 0.196,
+"tags": [
+"a tattooed man",
+"a rap music video",
+"an inmate in a prison jumpsuit",
+"handcuffs",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "XL-028",
+"v": "XL",
+"debut": 111.45,
+"fin": 115.43,
+"lum": 0.115,
+"tags": [
+"an inmate in a prison jumpsuit",
+"a prison",
+"a man",
+"a prison yard",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-029",
+"v": "XL",
+"debut": 115.43,
+"fin": 119.41,
+"lum": 0.184,
+"tags": [
+"an inmate in a prison jumpsuit",
+"handcuffs",
+"a man on his phone",
+"a tattooed man",
+"a prison"
+],
+"texte": false
+},
+{
+"id": "XL-030",
+"v": "XL",
+"debut": 119.41,
+"fin": 123.39,
+"lum": 0.146,
+"tags": [
+"a dog",
+"an inmate in a prison jumpsuit",
+"police officers arresting someone",
+"handcuffs",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-031",
+"v": "XL",
+"debut": 123.39,
+"fin": 127.37,
+"lum": 0.184,
+"tags": [
+"a prison",
+"an inmate in a prison jumpsuit",
+"a man on his phone",
+"a man",
+"a motel"
+],
+"texte": false
+},
+{
+"id": "XL-032",
+"v": "XL",
+"debut": 127.37,
+"fin": 131.35,
+"lum": 0.151,
+"tags": [
+"an inmate in a prison jumpsuit",
+"a prison",
+"a man on his phone",
+"a man",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-033",
+"v": "XL",
+"debut": 131.35,
+"fin": 135.33,
+"lum": 0.148,
+"tags": [
+"handcuffs",
+"a man on his phone",
+"an inmate in a prison jumpsuit",
+"a rap music video",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "XL-034",
+"v": "XL",
+"debut": 135.33,
+"fin": 139.31,
+"lum": 0.107,
+"tags": [
+"a man on his phone",
+"an inmate in a prison jumpsuit",
+"handcuffs",
+"a man",
+"a prison"
+],
+"texte": false
+},
+{
+"id": "XL-035",
+"v": "XL",
+"debut": 139.31,
+"fin": 143.29,
+"lum": 0.086,
+"tags": [
+"handcuffs",
+"an inmate in a prison jumpsuit",
+"a prison",
+"a man",
+"a kiss"
+],
+"texte": false
+},
+{
+"id": "XL-036",
+"v": "XL",
+"debut": 143.29,
+"fin": 147.27,
+"lum": 0.048,
+"tags": [
+"handcuffs",
+"a man",
+"a man on his phone",
+"a selfie video on a phone",
+"a prison"
+],
+"texte": false
+},
+{
+"id": "XL-037",
+"v": "XL",
+"debut": 147.27,
+"fin": 151.25,
+"lum": 0.062,
+"tags": [
+"a selfie video on a phone",
+"a man on his phone",
+"a man",
+"a woman on her phone",
+"a prison"
+],
+"texte": false
+},
+{
+"id": "XL-038",
+"v": "XL",
+"debut": 151.25,
+"fin": 155.23,
+"lum": 0.059,
+"tags": [
+"a kiss",
+"handcuffs",
+"an inmate in a prison jumpsuit",
+"a woman",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-039",
+"v": "XL",
+"debut": 155.23,
+"fin": 159.21,
+"lum": 0.151,
+"tags": [
+"a man on his phone",
+"an inmate in a prison jumpsuit",
+"a tattooed man",
+"a man",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-040",
+"v": "XL",
+"debut": 159.21,
+"fin": 163.19,
+"lum": 0.239,
+"tags": [
+"a diner",
+"a garage",
+"a woman on her phone",
+"a woman",
+"a restaurant"
+],
+"texte": false
+},
+{
+"id": "XL-041",
+"v": "XL",
+"debut": 163.19,
+"fin": 167.17,
+"lum": 0.189,
+"tags": [
+"an inmate in a prison jumpsuit",
+"a couple",
+"handcuffs",
+"a man",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-042",
+"v": "XL",
+"debut": 167.17,
+"fin": 170.87,
+"lum": 0.157,
+"tags": [
+"a rap music video",
+"a tattooed man",
+"a man",
+"a nightclub",
+"a man counting money"
+],
+"texte": false
+},
+{
+"id": "XL-043",
+"v": "XL",
+"debut": 170.87,
+"fin": 174.57,
+"lum": 0.178,
+"tags": [
+"an inmate in a prison jumpsuit",
+"a man on his phone",
+"a man",
+"a rap music video",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "XL-044",
+"v": "XL",
+"debut": 174.57,
+"fin": 177.47,
+"lum": 0.455,
+"tags": [
+"an ambulance",
+"a hospital",
+"a storm with rain",
+"an explosion",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-045",
+"v": "XL",
+"debut": 177.47,
+"fin": 182.6,
+"lum": 0.19,
+"tags": [
+"a tattooed man",
+"a rap music video",
+"a man",
+"an inmate in a prison jumpsuit",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-046",
+"v": "XL",
+"debut": 182.6,
+"fin": 184.17,
+"lum": 0.248,
+"tags": [
+"a man on his phone",
+"a man",
+"a tattooed man",
+"a rap music video",
+"a selfie video on a phone"
+],
+"texte": false
+},
+{
+"id": "XL-047",
+"v": "XL",
+"debut": 184.17,
+"fin": 188.31,
+"lum": 0.241,
+"tags": [
+"a woman in a bikini",
+"a fight",
+"a rap music video",
+"people dancing at a party",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "XL-048",
+"v": "XL",
+"debut": 188.31,
+"fin": 192.46,
+"lum": 0.179,
+"tags": [
+"a rap music video",
+"a bodybuilder at the gym",
+"people dancing at a party",
+"a store robbery",
+"a nightclub"
+],
+"texte": false
+},
+{
+"id": "XL-049",
+"v": "XL",
+"debut": 192.46,
+"fin": 196.6,
+"lum": 0.092,
+"tags": [
+"a tattooed man",
+"an inmate in a prison jumpsuit",
+"a woman",
+"a man",
+"a kiss"
+],
+"texte": false
+},
+{
+"id": "XL-050",
+"v": "XL",
+"debut": 196.6,
+"fin": 200.74,
+"lum": 0.098,
+"tags": [
+"a tattooed man",
+"a rap music video",
+"a man",
+"an inmate in a prison jumpsuit",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-051",
+"v": "XL",
+"debut": 200.74,
+"fin": 204.89,
+"lum": 0.247,
+"tags": [
+"handcuffs",
+"a man on his phone",
+"a diner",
+"a man counting money",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-052",
+"v": "XL",
+"debut": 204.89,
+"fin": 209.03,
+"lum": 0.186,
+"tags": [
+"a rap music video",
+"a man on his phone",
+"a tattooed man",
+"handcuffs",
+"a prison"
+],
+"texte": false
+},
+{
+"id": "XL-053",
+"v": "XL",
+"debut": 209.03,
+"fin": 211.73,
+"lum": 0.132,
+"tags": [
+"a couple",
+"a man on his phone",
+"a man",
+"handcuffs",
+"a couple in a car"
+],
+"texte": false
+},
+{
+"id": "XL-054",
+"v": "XL",
+"debut": 211.73,
+"fin": 215.13,
+"lum": 0.206,
+"tags": [
+"a rap music video",
+"a tattooed man",
+"handcuffs",
+"a couple",
+"a couple holding guns"
+],
+"texte": false
+},
+{
+"id": "XL-055",
+"v": "XL",
+"debut": 215.13,
+"fin": 218.33,
+"lum": 0.491,
+"tags": [
+"a rap music video",
+"a fight",
+"a robbery with masks",
+"a barber shop",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-056",
+"v": "XL",
+"debut": 218.33,
+"fin": 222.67,
+"lum": 0.128,
+"tags": [
+"a rap music video",
+"a tattooed man",
+"a man",
+"a couple",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-057",
+"v": "XL",
+"debut": 222.67,
+"fin": 225.5,
+"lum": 0.293,
+"tags": [
+"a selfie video on a phone",
+"a woman on her phone",
+"a man on his phone",
+"a social media video",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-058",
+"v": "XL",
+"debut": 225.5,
+"fin": 229.05,
+"lum": 0.141,
+"tags": [
+"handcuffs",
+"a woman",
+"a rap music video",
+"a woman running",
+"people dancing at a party"
+],
+"texte": false
+},
+{
+"id": "XL-059",
+"v": "XL",
+"debut": 229.05,
+"fin": 232.6,
+"lum": 0.329,
+"tags": [
+"a store robbery",
+"a robbery with masks",
+"a cashier in a convenience store",
+"a gas station",
+"a garage"
+],
+"texte": false
+},
+{
+"id": "XL-060",
+"v": "XL",
+"debut": 232.6,
+"fin": 235.43,
+"lum": 0.13,
+"tags": [
+"handcuffs",
+"a man on his phone",
+"a tattooed man",
+"a fight",
+"a woman on her phone"
+],
+"texte": false
+},
+{
+"id": "XL-061",
+"v": "XL",
+"debut": 235.43,
+"fin": 236.97,
+"lum": 0.227,
+"tags": [
+"people dancing at a party",
+"a nightclub",
+"a rap music video",
+"a fight",
+"a crowd at the beach"
+],
+"texte": false
+},
+{
+"id": "XL-062",
+"v": "XL",
+"debut": 236.97,
+"fin": 242.43,
+"lum": 0.176,
+"tags": [
+"a tattooed man",
+"a rap music video",
+"an inmate in a prison jumpsuit",
+"a man",
+"a prison"
+],
+"texte": false
+},
+{
+"id": "XL-063",
+"v": "XL",
+"debut": 242.43,
+"fin": 246.17,
+"lum": 0.152,
+"tags": [
+"a rap music video",
+"a fight",
+"a robbery with masks",
+"a couple",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-064",
+"v": "XL",
+"debut": 246.17,
+"fin": 247.07,
+"lum": 0.221,
+"tags": [
+"a tattooed man",
+"a rap music video",
+"handcuffs",
+"a man",
+"a man running"
+],
+"texte": false
+},
+{
+"id": "XL-065",
+"v": "XL",
+"debut": 247.07,
+"fin": 251.1,
+"lum": 0.08,
+"tags": [
+"a fight",
+"a robbery with masks",
+"a rap music video",
+"handcuffs",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-066",
+"v": "XL",
+"debut": 251.1,
+"fin": 255.14,
+"lum": 0.164,
+"tags": [
+"police officers arresting someone",
+"a man on his phone",
+"a man",
+"a couple in a car",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-067",
+"v": "XL",
+"debut": 255.14,
+"fin": 259.17,
+"lum": 0.085,
+"tags": [
+"an explosion",
+"fireworks",
+"a garage",
+"an office",
+"fire"
+],
+"texte": false
+},
+{
+"id": "XL-068",
+"v": "XL",
+"debut": 259.17,
+"fin": 263.2,
+"lum": 0.093,
+"tags": [
+"a garage",
+"a diner",
+"a bar",
+"a restaurant",
+"an office"
+],
+"texte": false
+},
+{
+"id": "XL-069",
+"v": "XL",
+"debut": 263.2,
+"fin": 267.24,
+"lum": 0.073,
+"tags": [
+"a garage",
+"an office",
+"a man",
+"a store robbery",
+"a motel"
+],
+"texte": false
+},
+{
+"id": "XL-070",
+"v": "XL",
+"debut": 267.24,
+"fin": 271.27,
+"lum": 0.054,
+"tags": [
+"a diner",
+"a restaurant",
+"a man on his phone",
+"a bar",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-071",
+"v": "XL",
+"debut": 271.27,
+"fin": 275.3,
+"lum": 0.413,
+"tags": [
+"handcuffs",
+"a rap music video",
+"a police officer",
+"an inmate in a prison jumpsuit",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-072",
+"v": "XL",
+"debut": 275.3,
+"fin": 279.34,
+"lum": 0.166,
+"tags": [
+"an inmate in a prison jumpsuit",
+"a prison",
+"handcuffs",
+"a man",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-073",
+"v": "XL",
+"debut": 279.34,
+"fin": 283.37,
+"lum": 0.227,
+"tags": [
+"an inmate in a prison jumpsuit",
+"a prison",
+"a man",
+"a shootout",
+"a man holding a gun"
+],
+"texte": false
+},
+{
+"id": "XL-074",
+"v": "XL",
+"debut": 283.37,
+"fin": 287.4,
+"lum": 0.236,
+"tags": [
+"a shootout",
+"an inmate in a prison jumpsuit",
+"a man holding a gun",
+"a prison",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-075",
+"v": "XL",
+"debut": 287.4,
+"fin": 291.44,
+"lum": 0.127,
+"tags": [
+"an inmate in a prison jumpsuit",
+"a prison",
+"handcuffs",
+"a robbery with masks",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-076",
+"v": "XL",
+"debut": 291.44,
+"fin": 295.47,
+"lum": 0.128,
+"tags": [
+"a gun",
+"a car on fire",
+"handcuffs",
+"a rifle",
+"fire"
+],
+"texte": false
+},
+{
+"id": "XL-077",
+"v": "XL",
+"debut": 295.47,
+"fin": 296.83,
+"lum": 0.325,
+"tags": [
+"a man holding a gun",
+"a store robbery",
+"a gun store",
+"a man on his phone",
+"a robbery with masks"
+],
+"texte": false
+},
+{
+"id": "XL-078",
+"v": "XL",
+"debut": 296.83,
+"fin": 302.1,
+"lum": 0.133,
+"tags": [
+"people dancing at a party",
+"a nightclub",
+"a bodybuilder at the gym",
+"a rap music video",
+"people lifting weights"
+],
+"texte": false
+},
+{
+"id": "XL-079",
+"v": "XL",
+"debut": 302.1,
+"fin": 305.8,
+"lum": 0.153,
+"tags": [
+"a couple",
+"a bodybuilder at the gym",
+"handcuffs",
+"a couple holding guns",
+"people lifting weights"
+],
+"texte": false
+},
+{
+"id": "XL-080",
+"v": "XL",
+"debut": 305.8,
+"fin": 309.49,
+"lum": 0.177,
+"tags": [
+"a robbery with masks",
+"people dancing at a party",
+"police officers arresting someone",
+"a store robbery",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-081",
+"v": "XL",
+"debut": 309.49,
+"fin": 313.19,
+"lum": 0.174,
+"tags": [
+"a police officer",
+"handcuffs",
+"police officers arresting someone",
+"a motel",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-082",
+"v": "XL",
+"debut": 313.19,
+"fin": 316.88,
+"lum": 0.084,
+"tags": [
+"a couple",
+"a kiss",
+"handcuffs",
+"a couple in a car",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-083",
+"v": "XL",
+"debut": 316.88,
+"fin": 320.57,
+"lum": 0.085,
+"tags": [
+"a woman",
+"a rap music video",
+"a couple",
+"a kiss",
+"a woman on her phone"
+],
+"texte": false
+},
+{
+"id": "XL-084",
+"v": "XL",
+"debut": 320.57,
+"fin": 324.27,
+"lum": 0.016,
+"tags": [
+"a couple",
+"a couple in a car",
+"a kiss",
+"a man",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-085",
+"v": "XL",
+"debut": 324.27,
+"fin": 328.28,
+"lum": 0.45,
+"tags": [
+"a man holding a gun",
+"a robbery with masks",
+"a shootout",
+"an inmate in a prison jumpsuit",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-086",
+"v": "XL",
+"debut": 328.28,
+"fin": 332.29,
+"lum": 0.13,
+"tags": [
+"handcuffs",
+"a robbery with masks",
+"police officers arresting someone",
+"a store robbery",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-087",
+"v": "XL",
+"debut": 332.29,
+"fin": 336.3,
+"lum": 0.063,
+"tags": [
+"handcuffs",
+"an inmate in a prison jumpsuit",
+"a man",
+"a man on his phone",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "XL-088",
+"v": "XL",
+"debut": 336.3,
+"fin": 340.31,
+"lum": 0.077,
+"tags": [
+"handcuffs",
+"a couple",
+"a kiss",
+"a man on his phone",
+"a woman on her phone"
+],
+"texte": false
+},
+{
+"id": "XL-089",
+"v": "XL",
+"debut": 340.31,
+"fin": 344.33,
+"lum": 0.082,
+"tags": [
+"handcuffs",
+"a couple",
+"a bar",
+"a man on his phone",
+"a restaurant"
+],
+"texte": false
+},
+{
+"id": "XL-090",
+"v": "XL",
+"debut": 344.33,
+"fin": 348.34,
+"lum": 0.088,
+"tags": [
+"a couple",
+"handcuffs",
+"a woman on her phone",
+"a couple in a car",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "XL-091",
+"v": "XL",
+"debut": 348.34,
+"fin": 352.35,
+"lum": 0.072,
+"tags": [
+"a couple in a car",
+"a man driving a car",
+"a woman driving a car",
+"a car crash",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-092",
+"v": "XL",
+"debut": 352.35,
+"fin": 356.36,
+"lum": 0.046,
+"tags": [
+"a woman on her phone",
+"a trailer park",
+"a man on his phone",
+"handcuffs",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "XL-093",
+"v": "XL",
+"debut": 356.36,
+"fin": 360.37,
+"lum": 0.043,
+"tags": [
+"a woman",
+"a woman running",
+"handcuffs",
+"a woman in a bikini",
+"a woman on her phone"
+],
+"texte": false
+},
+{
+"id": "XL-094",
+"v": "XL",
+"debut": 360.37,
+"fin": 364.9,
+"lum": 0.151,
+"tags": [
+"a video game logo",
+"a rap music video",
+"white text on a black background",
+"a jewelry store",
+"a social media video"
+],
+"texte": true
+},
+{
+"id": "XL-095",
+"v": "XL",
+"debut": 364.9,
+"fin": 369.3,
+"lum": 0.348,
+"tags": [
+"a rap music video",
+"a man holding a gun",
+"a shootout",
+"a gun",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-096",
+"v": "XL",
+"debut": 369.3,
+"fin": 372.83,
+"lum": 0.336,
+"tags": [
+"a muscle car",
+"a man driving a car",
+"a couple in a car",
+"a woman driving a car",
+"a pickup truck"
+],
+"texte": false
+},
+{
+"id": "XL-097",
+"v": "XL",
+"debut": 372.83,
+"fin": 376.37,
+"lum": 0.153,
+"tags": [
+"a video game logo",
+"neon lights at night",
+"a nightclub",
+"a sunrise",
+"fire"
+],
+"texte": true
+},
+{
+"id": "XL-098",
+"v": "XL",
+"debut": 376.37,
+"fin": 379.9,
+"lum": 0.366,
+"tags": [
+"a video game logo",
+"a car dealership",
+"a garage",
+"a gas station",
+"a rap music video"
+],
+"texte": true
+},
+{
+"id": "XL-099",
+"v": "XL",
+"debut": 379.9,
+"fin": 382.63,
+"lum": 0.417,
+"tags": [
+"a woman driving a car",
+"a couple in a car",
+"a woman running",
+"a city street during the day",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "XL-100",
+"v": "XL",
+"debut": 382.63,
+"fin": 384.43,
+"lum": 0.359,
+"tags": [
+"a recording studio",
+"an office",
+"a store robbery",
+"a gun store",
+"a garage"
+],
+"texte": false
+},
+{
+"id": "XL-101",
+"v": "XL",
+"debut": 384.43,
+"fin": 386.93,
+"lum": 0.275,
+"tags": [
+"a dog",
+"a store robbery",
+"handcuffs",
+"a selfie video on a phone",
+"a shootout"
+],
+"texte": false
+},
+{
+"id": "XL-102",
+"v": "XL",
+"debut": 386.93,
+"fin": 390.82,
+"lum": 0.182,
+"tags": [
+"a couple",
+"handcuffs",
+"a barber shop",
+"a couple in a car",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-103",
+"v": "XL",
+"debut": 390.82,
+"fin": 394.7,
+"lum": 0.178,
+"tags": [
+"a woman in a bikini",
+"a woman on her phone",
+"a woman",
+"a woman running",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-104",
+"v": "XL",
+"debut": 394.7,
+"fin": 398.59,
+"lum": 0.172,
+"tags": [
+"a woman in a bikini",
+"handcuffs",
+"a woman",
+"a woman on her phone",
+"a kiss"
+],
+"texte": false
+},
+{
+"id": "XL-105",
+"v": "XL",
+"debut": 398.59,
+"fin": 402.48,
+"lum": 0.21,
+"tags": [
+"a woman in a bikini",
+"a woman",
+"a woman on her phone",
+"handcuffs",
+"a woman running"
+],
+"texte": false
+},
+{
+"id": "XL-106",
+"v": "XL",
+"debut": 402.48,
+"fin": 406.37,
+"lum": 0.104,
+"tags": [
+"people dancing at a party",
+"handcuffs",
+"a fight",
+"a kiss",
+"a woman in a bikini"
+],
+"texte": false
+},
+{
+"id": "XL-107",
+"v": "XL",
+"debut": 406.37,
+"fin": 410.25,
+"lum": 0.127,
+"tags": [
+"a woman",
+"a woman on her phone",
+"handcuffs",
+"a woman in a bikini",
+"a pawn shop"
+],
+"texte": false
+},
+{
+"id": "XL-108",
+"v": "XL",
+"debut": 410.25,
+"fin": 414.14,
+"lum": 0.211,
+"tags": [
+"a rap music video",
+"a nightclub",
+"a man on his phone",
+"people dancing at a party",
+"a selfie video on a phone"
+],
+"texte": false
+},
+{
+"id": "XL-109",
+"v": "XL",
+"debut": 414.14,
+"fin": 418.03,
+"lum": 0.323,
+"tags": [
+"a rap music video",
+"a man on his phone",
+"a selfie video on a phone",
+"a nightclub",
+"a barber shop"
+],
+"texte": false
+},
+{
+"id": "XL-110",
+"v": "XL",
+"debut": 418.03,
+"fin": 421.91,
+"lum": 0.079,
+"tags": [
+"a couple",
+"a barber shop",
+"a kiss",
+"a couple in a car",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-111",
+"v": "XL",
+"debut": 421.91,
+"fin": 425.78,
+"lum": 0.073,
+"tags": [
+"a kiss",
+"a couple",
+"a man on his phone",
+"a man",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "XL-112",
+"v": "XL",
+"debut": 425.78,
+"fin": 429.66,
+"lum": 0.089,
+"tags": [
+"a man on his phone",
+"a man",
+"handcuffs",
+"a woman on her phone",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-113",
+"v": "XL",
+"debut": 429.66,
+"fin": 433.54,
+"lum": 0.271,
+"tags": [
+"a flamingo",
+"a barber shop",
+"an office",
+"a man on his phone",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-114",
+"v": "XL",
+"debut": 433.54,
+"fin": 437.42,
+"lum": 0.2,
+"tags": [
+"a barber shop",
+"handcuffs",
+"a man",
+"a man on his phone",
+"an inmate in a prison jumpsuit"
+],
+"texte": false
+},
+{
+"id": "XL-115",
+"v": "XL",
+"debut": 437.42,
+"fin": 441.29,
+"lum": 0.241,
+"tags": [
+"a store robbery",
+"a bank",
+"a robbery with masks",
+"a cashier in a convenience store",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-116",
+"v": "XL",
+"debut": 441.29,
+"fin": 445.17,
+"lum": 0.276,
+"tags": [
+"a man on his phone",
+"a selfie video on a phone",
+"a rap music video",
+"a man",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-117",
+"v": "XL",
+"debut": 445.17,
+"fin": 450.13,
+"lum": 0.211,
+"tags": [
+"a rap music video",
+"a bank",
+"an explosion",
+"a video game logo",
+"a dog"
+],
+"texte": false
+},
+{
+"id": "XL-118",
+"v": "XL",
+"debut": 450.13,
+"fin": 452.6,
+"lum": 0.388,
+"tags": [
+"a beach",
+"a small airplane",
+"a flamingo",
+"a social media video",
+"the ocean"
+],
+"texte": false
+},
+{
+"id": "XL-119",
+"v": "XL",
+"debut": 452.6,
+"fin": 456.57,
+"lum": 0.28,
+"tags": [
+"a sunrise",
+"a map",
+"a rural town",
+"aerial view of islands",
+"aerial view of a city"
+],
+"texte": false
+},
+{
+"id": "XL-120",
+"v": "XL",
+"debut": 456.57,
+"fin": 460.53,
+"lum": 0.281,
+"tags": [
+"a sunrise",
+"a helicopter",
+"a small airplane",
+"a hurricane",
+"aerial view of islands"
+],
+"texte": false
+},
+{
+"id": "XL-121",
+"v": "XL",
+"debut": 460.53,
+"fin": 464.5,
+"lum": 0.274,
+"tags": [
+"wild animals",
+"a swamp",
+"an alligator",
+"a fight",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "XL-122",
+"v": "XL",
+"debut": 464.5,
+"fin": 467.57,
+"lum": 0.482,
+"tags": [
+"wild animals",
+"a dog",
+"a fight",
+"a swamp",
+"an alligator"
+],
+"texte": false
+},
+{
+"id": "XL-123",
+"v": "XL",
+"debut": 467.57,
+"fin": 470.7,
+"lum": 0.394,
+"tags": [
+"wild animals",
+"a dog",
+"a fight",
+"a rap music video",
+"a farm"
+],
+"texte": false
+},
+{
+"id": "XL-124",
+"v": "XL",
+"debut": 470.7,
+"fin": 474.69,
+"lum": 0.684,
+"tags": [
+"a stack of cash",
+"a flamingo",
+"a diner",
+"a restaurant",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "XL-125",
+"v": "XL",
+"debut": 474.69,
+"fin": 478.67,
+"lum": 0.598,
+"tags": [
+"a stack of cash",
+"a diner",
+"a restaurant",
+"a rap music video",
+"wild animals"
+],
+"texte": false
+},
+{
+"id": "XL-126",
+"v": "XL",
+"debut": 478.67,
+"fin": 481.53,
+"lum": 0.205,
+"tags": [
+"a rap music video",
+"an office",
+"a motel",
+"a couple",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-127",
+"v": "XL",
+"debut": 481.53,
+"fin": 483.57,
+"lum": 0.21,
+"tags": [
+"a woman in a bikini",
+"a woman",
+"a woman on her phone",
+"a woman running",
+"a nightclub"
+],
+"texte": false
+},
+{
+"id": "XL-128",
+"v": "XL",
+"debut": 483.57,
+"fin": 487.51,
+"lum": 0.376,
+"tags": [
+"a man driving a car",
+"a muscle car",
+"a couple in a car",
+"a woman driving a car",
+"a city street during the day"
+],
+"texte": false
+},
+{
+"id": "XL-129",
+"v": "XL",
+"debut": 487.51,
+"fin": 491.46,
+"lum": 0.239,
+"tags": [
+"a man holding a gun",
+"a man on his phone",
+"a man",
+"a shootout",
+"a woman holding a gun"
+],
+"texte": false
+},
+{
+"id": "XL-130",
+"v": "XL",
+"debut": 491.46,
+"fin": 495.4,
+"lum": 0.203,
+"tags": [
+"a couple in a car",
+"a man",
+"police officers arresting someone",
+"a man driving a car",
+"a police officer"
+],
+"texte": false
+},
+{
+"id": "XL-131",
+"v": "XL",
+"debut": 495.4,
+"fin": 499.35,
+"lum": 0.229,
+"tags": [
+"a couple in a car",
+"a man driving a car",
+"a muscle car",
+"a woman driving a car",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-132",
+"v": "XL",
+"debut": 499.35,
+"fin": 503.29,
+"lum": 0.357,
+"tags": [
+"a car dealership",
+"a gas station",
+"a parking lot",
+"a garage",
+"a strip mall"
+],
+"texte": false
+},
+{
+"id": "XL-133",
+"v": "XL",
+"debut": 503.29,
+"fin": 507.24,
+"lum": 0.179,
+"tags": [
+"a pickup truck",
+"a man driving a car",
+"a city street during the day",
+"a couple in a car",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-134",
+"v": "XL",
+"debut": 507.24,
+"fin": 511.18,
+"lum": 0.227,
+"tags": [
+"a muscle car",
+"a parking lot",
+"a car crash",
+"a sports car",
+"a car dealership"
+],
+"texte": false
+},
+{
+"id": "XL-135",
+"v": "XL",
+"debut": 511.18,
+"fin": 515.13,
+"lum": 0.335,
+"tags": [
+"a man driving a car",
+"a pickup truck",
+"a city street during the day",
+"a woman driving a car",
+"a couple in a car"
+],
+"texte": false
+},
+{
+"id": "XL-136",
+"v": "XL",
+"debut": 515.13,
+"fin": 519.07,
+"lum": 0.317,
+"tags": [
+"a pickup truck",
+"a woman driving a car",
+"a man driving a car",
+"a couple in a car",
+"a highway"
+],
+"texte": false
+},
+{
+"id": "XL-137",
+"v": "XL",
+"debut": 519.07,
+"fin": 523.02,
+"lum": 0.289,
+"tags": [
+"a city street during the day",
+"a man driving a car",
+"a woman driving a car",
+"a couple in a car",
+"a pickup truck"
+],
+"texte": false
+},
+{
+"id": "XL-138",
+"v": "XL",
+"debut": 523.02,
+"fin": 526.96,
+"lum": 0.364,
+"tags": [
+"a couple in a car",
+"a city street during the day",
+"a pickup truck",
+"a woman driving a car",
+"a man driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-139",
+"v": "XL",
+"debut": 526.96,
+"fin": 530.91,
+"lum": 0.291,
+"tags": [
+"a man driving a car",
+"a woman driving a car",
+"a city street during the day",
+"a couple in a car",
+"a police car"
+],
+"texte": false
+},
+{
+"id": "XL-140",
+"v": "XL",
+"debut": 530.91,
+"fin": 534.85,
+"lum": 0.28,
+"tags": [
+"a man driving a car",
+"a bus",
+"a woman driving a car",
+"a city street during the day",
+"a pickup truck"
+],
+"texte": false
+},
+{
+"id": "XL-141",
+"v": "XL",
+"debut": 534.85,
+"fin": 538.8,
+"lum": 0.375,
+"tags": [
+"a highway",
+"a bridge",
+"a pickup truck",
+"a man driving a car",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-142",
+"v": "XL",
+"debut": 538.8,
+"fin": 544.07,
+"lum": 0.26,
+"tags": [
+"a bridge",
+"handcuffs",
+"a flamingo",
+"a woman running",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "XL-143",
+"v": "XL",
+"debut": 544.07,
+"fin": 546.67,
+"lum": 0.31,
+"tags": [
+"a pawn shop",
+"a store robbery",
+"police officers arresting someone",
+"a rap music video",
+"a gas station"
+],
+"texte": false
+},
+{
+"id": "XL-144",
+"v": "XL",
+"debut": 546.67,
+"fin": 549.57,
+"lum": 0.163,
+"tags": [
+"a fight",
+"people dancing at a party",
+"people lifting weights",
+"handcuffs",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-145",
+"v": "XL",
+"debut": 549.57,
+"fin": 551.33,
+"lum": 0.38,
+"tags": [
+"a man holding a gun",
+"a man",
+"a rap music video",
+"a gun",
+"a rifle"
+],
+"texte": false
+},
+{
+"id": "XL-146",
+"v": "XL",
+"debut": 551.33,
+"fin": 554.3,
+"lum": 0.138,
+"tags": [
+"a car on fire",
+"a car crash",
+"a fight",
+"a fire truck",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-147",
+"v": "XL",
+"debut": 554.3,
+"fin": 557.55,
+"lum": 0.371,
+"tags": [
+"a muscle car",
+"a couple in a car",
+"a motel",
+"a garage",
+"a trailer park"
+],
+"texte": false
+},
+{
+"id": "XL-148",
+"v": "XL",
+"debut": 557.55,
+"fin": 560.8,
+"lum": 0.294,
+"tags": [
+"a couple in a car",
+"a muscle car",
+"a woman driving a car",
+"a pickup truck",
+"a city street during the day"
+],
+"texte": false
+},
+{
+"id": "XL-149",
+"v": "XL",
+"debut": 560.8,
+"fin": 564.8,
+"lum": 0.22,
+"tags": [
+"a fight",
+"a woman",
+"a man",
+"an inmate in a prison jumpsuit",
+"a woman on her phone"
+],
+"texte": false
+},
+{
+"id": "XL-150",
+"v": "XL",
+"debut": 564.8,
+"fin": 568.83,
+"lum": 0.421,
+"tags": [
+"a fight",
+"a bodybuilder at the gym",
+"a tattooed man",
+"a rap music video",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-151",
+"v": "XL",
+"debut": 568.83,
+"fin": 570.83,
+"lum": 0.246,
+"tags": [
+"police officers arresting someone",
+"a store robbery",
+"a fight",
+"a robbery with masks",
+"a bank"
+],
+"texte": false
+},
+{
+"id": "XL-152",
+"v": "XL",
+"debut": 570.83,
+"fin": 572.83,
+"lum": 0.417,
+"tags": [
+"a crowd at the beach",
+"a shopping mall",
+"an office",
+"a pool party",
+"aerial view of a city"
+],
+"texte": false
+},
+{
+"id": "XL-153",
+"v": "XL",
+"debut": 572.83,
+"fin": 574.83,
+"lum": 0.323,
+"tags": [
+"a rap music video",
+"a crowd at the beach",
+"a pool party",
+"people dancing at a party",
+"a diner"
+],
+"texte": false
+},
+{
+"id": "XL-154",
+"v": "XL",
+"debut": 574.83,
+"fin": 578.91,
+"lum": 0.178,
+"tags": [
+"a woman in a bikini",
+"a woman",
+"a luxury hotel",
+"a woman on her phone",
+"a bank"
+],
+"texte": false
+},
+{
+"id": "XL-155",
+"v": "XL",
+"debut": 578.91,
+"fin": 582.99,
+"lum": 0.232,
+"tags": [
+"a woman in a bikini",
+"a woman on her phone",
+"a woman",
+"a luxury hotel",
+"a bank"
+],
+"texte": false
+},
+{
+"id": "XL-156",
+"v": "XL",
+"debut": 582.99,
+"fin": 587.08,
+"lum": 0.318,
+"tags": [
+"a man on his phone",
+"an office",
+"a man",
+"a bank",
+"a hospital"
+],
+"texte": false
+},
+{
+"id": "XL-157",
+"v": "XL",
+"debut": 587.08,
+"fin": 591.16,
+"lum": 0.636,
+"tags": [
+"a rap music video",
+"a crowd at the beach",
+"police officers arresting someone",
+"a police officer",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-158",
+"v": "XL",
+"debut": 591.16,
+"fin": 595.24,
+"lum": 0.288,
+"tags": [
+"a couple",
+"police officers arresting someone",
+"a city street during the day",
+"handcuffs",
+"a couple holding guns"
+],
+"texte": false
+},
+{
+"id": "XL-159",
+"v": "XL",
+"debut": 595.24,
+"fin": 599.32,
+"lum": 0.264,
+"tags": [
+"a crowd at the beach",
+"people dancing at a party",
+"a pool party",
+"a trailer park",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-160",
+"v": "XL",
+"debut": 599.32,
+"fin": 603.4,
+"lum": 0.281,
+"tags": [
+"a crowd at the beach",
+"people dancing at a party",
+"a rap music video",
+"a nightclub",
+"a pool party"
+],
+"texte": false
+},
+{
+"id": "XL-161",
+"v": "XL",
+"debut": 603.4,
+"fin": 607.48,
+"lum": 0.239,
+"tags": [
+"a trailer park",
+"people dancing at a party",
+"a pool party",
+"a rap music video",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-162",
+"v": "XL",
+"debut": 607.48,
+"fin": 611.57,
+"lum": 0.277,
+"tags": [
+"a trailer park",
+"a rap music video",
+"a pool party",
+"a couple",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-163",
+"v": "XL",
+"debut": 611.57,
+"fin": 615.65,
+"lum": 0.294,
+"tags": [
+"a trailer park",
+"people dancing at a party",
+"a pool party",
+"a rap music video",
+"a crowd at the beach"
+],
+"texte": false
+},
+{
+"id": "XL-164",
+"v": "XL",
+"debut": 615.65,
+"fin": 619.73,
+"lum": 0.302,
+"tags": [
+"a pool party",
+"a trailer park",
+"people dancing at a party",
+"a couple",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-165",
+"v": "XL",
+"debut": 619.73,
+"fin": 623.51,
+"lum": 0.248,
+"tags": [
+"a tattooed man",
+"a couple",
+"a couple in a car",
+"handcuffs",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-166",
+"v": "XL",
+"debut": 623.51,
+"fin": 627.3,
+"lum": 0.031,
+"tags": [
+"a man on his phone",
+"a man",
+"handcuffs",
+"a man counting money",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "XL-167",
+"v": "XL",
+"debut": 627.3,
+"fin": 631.09,
+"lum": 0.106,
+"tags": [
+"handcuffs",
+"a woman on her phone",
+"a woman",
+"a man on his phone",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-168",
+"v": "XL",
+"debut": 631.09,
+"fin": 634.87,
+"lum": 0.189,
+"tags": [
+"a man on his phone",
+"a man",
+"a woman",
+"a woman on her phone",
+"a selfie video on a phone"
+],
+"texte": false
+},
+{
+"id": "XL-169",
+"v": "XL",
+"debut": 634.87,
+"fin": 639.3,
+"lum": 0.273,
+"tags": [
+"a woman",
+"a kiss",
+"a woman on her phone",
+"a woman in a bikini",
+"a woman running"
+],
+"texte": false
+},
+{
+"id": "XL-170",
+"v": "XL",
+"debut": 639.3,
+"fin": 642.2,
+"lum": 0.278,
+"tags": [
+"a restaurant",
+"a car dealership",
+"a diner",
+"a gas station",
+"a bar"
+],
+"texte": false
+},
+{
+"id": "XL-171",
+"v": "XL",
+"debut": 642.2,
+"fin": 645.07,
+"lum": 0.299,
+"tags": [
+"a restaurant",
+"a crowd at the beach",
+"a diner",
+"a luxury hotel",
+"a sunset over the ocean"
+],
+"texte": false
+},
+{
+"id": "XL-172",
+"v": "XL",
+"debut": 645.07,
+"fin": 650.6,
+"lum": 0.42,
+"tags": [
+"a diner",
+"a man on his phone",
+"a pool party",
+"a TV news broadcast",
+"a selfie video on a phone"
+],
+"texte": false
+},
+{
+"id": "XL-173",
+"v": "XL",
+"debut": 650.6,
+"fin": 653.53,
+"lum": 0.237,
+"tags": [
+"a trailer park",
+"a diner",
+"a pool party",
+"a man on his phone",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "XL-174",
+"v": "XL",
+"debut": 653.53,
+"fin": 656.55,
+"lum": 0.314,
+"tags": [
+"a diner",
+"a restaurant",
+"a couple",
+"a man on his phone",
+"a trailer park"
+],
+"texte": false
+},
+{
+"id": "XL-175",
+"v": "XL",
+"debut": 656.55,
+"fin": 659.57,
+"lum": 0.311,
+"tags": [
+"a diner",
+"a restaurant",
+"a couple",
+"a trailer park",
+"a pool party"
+],
+"texte": false
+},
+{
+"id": "XL-176",
+"v": "XL",
+"debut": 659.57,
+"fin": 663.23,
+"lum": 0.245,
+"tags": [
+"a trailer park",
+"a rap music video",
+"a pool party",
+"a man on his phone",
+"a diner"
+],
+"texte": false
+},
+{
+"id": "XL-177",
+"v": "XL",
+"debut": 663.23,
+"fin": 667.57,
+"lum": 0.31,
+"tags": [
+"a pool party",
+"a diner",
+"a restaurant",
+"people dancing at a party",
+"a crowd at the beach"
+],
+"texte": false
+},
+{
+"id": "XL-178",
+"v": "XL",
+"debut": 667.57,
+"fin": 671.9,
+"lum": 0.316,
+"tags": [
+"a diner",
+"a pool party",
+"a man on his phone",
+"a restaurant",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-179",
+"v": "XL",
+"debut": 671.9,
+"fin": 675.43,
+"lum": 0.35,
+"tags": [
+"a fight",
+"a rap music video",
+"a man holding a gun",
+"a couple holding guns",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-180",
+"v": "XL",
+"debut": 675.43,
+"fin": 678.96,
+"lum": 0.361,
+"tags": [
+"a rap music video",
+"a city skyline at sunset",
+"a fight",
+"a man",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-181",
+"v": "XL",
+"debut": 678.96,
+"fin": 682.5,
+"lum": 0.361,
+"tags": [
+"a rap music video",
+"a couple holding guns",
+"a fight",
+"a man holding a gun",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-182",
+"v": "XL",
+"debut": 682.5,
+"fin": 686.03,
+"lum": 0.346,
+"tags": [
+"a rap music video",
+"handcuffs",
+"a city skyline at sunset",
+"a fight",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "XL-183",
+"v": "XL",
+"debut": 686.03,
+"fin": 691.01,
+"lum": 0.237,
+"tags": [
+"a bodybuilder at the gym",
+"a bar",
+"a man on his phone",
+"a barber shop",
+"a diner"
+],
+"texte": false
+},
+{
+"id": "XL-184",
+"v": "XL",
+"debut": 691.01,
+"fin": 696.0,
+"lum": 0.242,
+"tags": [
+"a couple",
+"a couple in a car",
+"a couple holding guns",
+"a diner",
+"a kiss"
+],
+"texte": false
+},
+{
+"id": "XL-185",
+"v": "XL",
+"debut": 696.0,
+"fin": 699.97,
+"lum": 0.534,
+"tags": [
+"a man holding a gun",
+"a fight",
+"a couple holding guns",
+"a shootout",
+"a gun"
+],
+"texte": false
+},
+{
+"id": "XL-186",
+"v": "XL",
+"debut": 699.97,
+"fin": 701.83,
+"lum": 0.259,
+"tags": [
+"a couple in a car",
+"a man driving a car",
+"a woman driving a car",
+"a muscle car",
+"a police chase"
+],
+"texte": false
+},
+{
+"id": "XL-187",
+"v": "XL",
+"debut": 701.83,
+"fin": 705.7,
+"lum": 0.089,
+"tags": [
+"a store robbery",
+"a robbery with masks",
+"a rap music video",
+"an inmate in a prison jumpsuit",
+"a cashier in a convenience store"
+],
+"texte": false
+},
+{
+"id": "XL-188",
+"v": "XL",
+"debut": 705.7,
+"fin": 709.25,
+"lum": 0.535,
+"tags": [
+"a cashier in a convenience store",
+"a store robbery",
+"a barber shop",
+"a diner",
+"a pawn shop"
+],
+"texte": false
+},
+{
+"id": "XL-189",
+"v": "XL",
+"debut": 709.25,
+"fin": 712.8,
+"lum": 0.524,
+"tags": [
+"a diner",
+"a cashier in a convenience store",
+"a restaurant",
+"a store robbery",
+"a barber shop"
+],
+"texte": false
+},
+{
+"id": "XL-190",
+"v": "XL",
+"debut": 712.8,
+"fin": 715.85,
+"lum": 0.264,
+"tags": [
+"a barber shop",
+"a tattooed man",
+"a store robbery",
+"handcuffs",
+"a robbery with masks"
+],
+"texte": false
+},
+{
+"id": "XL-191",
+"v": "XL",
+"debut": 715.85,
+"fin": 718.9,
+"lum": 0.381,
+"tags": [
+"a robbery with masks",
+"a store robbery",
+"a rap music video",
+"a kiss",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "XL-192",
+"v": "XL",
+"debut": 718.9,
+"fin": 720.67,
+"lum": 0.328,
+"tags": [
+"a robbery with masks",
+"a rap music video",
+"a store robbery",
+"a fight",
+"a couple holding guns"
+],
+"texte": false
+},
+{
+"id": "XL-193",
+"v": "XL",
+"debut": 720.67,
+"fin": 724.9,
+"lum": 0.203,
+"tags": [
+"a rap music video",
+"handcuffs",
+"a rifle",
+"a selfie video on a phone",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-194",
+"v": "XL",
+"debut": 724.9,
+"fin": 729.13,
+"lum": 0.191,
+"tags": [
+"a barber shop",
+"a diner",
+"a bar",
+"a restaurant",
+"a pawn shop"
+],
+"texte": false
+},
+{
+"id": "XL-195",
+"v": "XL",
+"debut": 729.13,
+"fin": 733.77,
+"lum": 0.301,
+"tags": [
+"a woman",
+"a woman running",
+"handcuffs",
+"a woman in a bikini",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "XL-196",
+"v": "XL",
+"debut": 733.77,
+"fin": 735.13,
+"lum": 0.603,
+"tags": [
+"a muscle car",
+"a car crash",
+"a man driving a car",
+"a police chase",
+"a sports car"
+],
+"texte": false
+},
+{
+"id": "XL-197",
+"v": "XL",
+"debut": 735.13,
+"fin": 739.04,
+"lum": 0.313,
+"tags": [
+"a rap music video",
+"handcuffs",
+"a man",
+"a fight",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-198",
+"v": "XL",
+"debut": 739.04,
+"fin": 742.95,
+"lum": 0.319,
+"tags": [
+"a rap music video",
+"a couple",
+"a tattooed man",
+"a man",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "XL-199",
+"v": "XL",
+"debut": 742.95,
+"fin": 746.87,
+"lum": 0.323,
+"tags": [
+"a city skyline at sunset",
+"a city street during the day",
+"aerial view of a city",
+"a trailer park",
+"a city skyline at night"
+],
+"texte": false
+},
+{
+"id": "XL-200",
+"v": "XL",
+"debut": 746.87,
+"fin": 750.78,
+"lum": 0.362,
+"tags": [
+"a city skyline at sunset",
+"aerial view of a city",
+"a city street during the day",
+"a sunrise",
+"a city skyline at night"
+],
+"texte": false
+},
+{
+"id": "XL-201",
+"v": "XL",
+"debut": 750.78,
+"fin": 754.69,
+"lum": 0.41,
+"tags": [
+"a police chase",
+"a car crash",
+"a man driving a car",
+"a city street during the day",
+"a highway"
+],
+"texte": false
+},
+{
+"id": "XL-202",
+"v": "XL",
+"debut": 754.69,
+"fin": 758.6,
+"lum": 0.373,
+"tags": [
+"a police chase",
+"a highway",
+"a city street during the day",
+"a man driving a car",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-203",
+"v": "XL",
+"debut": 758.6,
+"fin": 762.51,
+"lum": 0.357,
+"tags": [
+"a police chase",
+"a city street during the day",
+"a car crash",
+"a man driving a car",
+"a police car"
+],
+"texte": false
+},
+{
+"id": "XL-204",
+"v": "XL",
+"debut": 762.51,
+"fin": 766.43,
+"lum": 0.441,
+"tags": [
+"a police chase",
+"a city street during the day",
+"a woman driving a car",
+"a man driving a car",
+"a highway"
+],
+"texte": false
+},
+{
+"id": "XL-205",
+"v": "XL",
+"debut": 766.43,
+"fin": 770.34,
+"lum": 0.384,
+"tags": [
+"a police chase",
+"a sports car",
+"a car crash",
+"a man driving a car",
+"a police car"
+],
+"texte": false
+},
+{
+"id": "XL-206",
+"v": "XL",
+"debut": 770.34,
+"fin": 774.25,
+"lum": 0.397,
+"tags": [
+"a man driving a car",
+"a woman driving a car",
+"a sports car",
+"a police chase",
+"a highway"
+],
+"texte": false
+},
+{
+"id": "XL-207",
+"v": "XL",
+"debut": 774.25,
+"fin": 778.16,
+"lum": 0.396,
+"tags": [
+"a police chase",
+"a highway",
+"a city street during the day",
+"a car crash",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-208",
+"v": "XL",
+"debut": 778.16,
+"fin": 782.08,
+"lum": 0.36,
+"tags": [
+"a police chase",
+"a highway",
+"a police car",
+"a muscle car",
+"a man driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-209",
+"v": "XL",
+"debut": 782.08,
+"fin": 785.99,
+"lum": 0.4,
+"tags": [
+"a car on fire",
+"a police chase",
+"a police helicopter",
+"a car crash",
+"an ambulance"
+],
+"texte": false
+},
+{
+"id": "XL-210",
+"v": "XL",
+"debut": 785.99,
+"fin": 789.9,
+"lum": 0.318,
+"tags": [
+"a car crash",
+"a highway",
+"a police chase",
+"a parking lot",
+"a muscle car"
+],
+"texte": false
+},
+{
+"id": "XL-211",
+"v": "XL",
+"debut": 789.9,
+"fin": 793.6,
+"lum": 0.141,
+"tags": [
+"a couple in a car",
+"a couple",
+"a woman driving a car",
+"a couple holding guns",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-212",
+"v": "XL",
+"debut": 793.6,
+"fin": 797.3,
+"lum": 0.115,
+"tags": [
+"a couple in a car",
+"a couple",
+"a rap music video",
+"a woman driving a car",
+"a man driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-213",
+"v": "XL",
+"debut": 797.3,
+"fin": 801.0,
+"lum": 0.121,
+"tags": [
+"a couple in a car",
+"a couple",
+"a man driving a car",
+"a woman driving a car",
+"a selfie video on a phone"
+],
+"texte": false
+},
+{
+"id": "XL-214",
+"v": "XL",
+"debut": 801.0,
+"fin": 804.7,
+"lum": 0.136,
+"tags": [
+"a couple in a car",
+"a couple",
+"a couple holding guns",
+"a woman driving a car",
+"a bus"
+],
+"texte": false
+},
+{
+"id": "XL-215",
+"v": "XL",
+"debut": 804.7,
+"fin": 808.4,
+"lum": 0.071,
+"tags": [
+"a man on his phone",
+"handcuffs",
+"a couple in a car",
+"a man",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-216",
+"v": "XL",
+"debut": 808.4,
+"fin": 812.1,
+"lum": 0.101,
+"tags": [
+"a man driving a car",
+"a rap music video",
+"a man",
+"a couple in a car",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-217",
+"v": "XL",
+"debut": 812.83,
+"fin": 814.43,
+"lum": 0.072,
+"tags": [
+"a woman driving a car",
+"a couple in a car",
+"a woman on her phone",
+"a woman",
+"a man driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-218",
+"v": "XL",
+"debut": 814.43,
+"fin": 820.13,
+"lum": 0.149,
+"tags": [
+"a woman driving a car",
+"a man driving a car",
+"a couple in a car",
+"a car dealership",
+"a sports car"
+],
+"texte": false
+},
+{
+"id": "XL-219",
+"v": "XL",
+"debut": 820.13,
+"fin": 824.12,
+"lum": 0.151,
+"tags": [
+"a man",
+"a man driving a car",
+"a man on his phone",
+"a bus",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-220",
+"v": "XL",
+"debut": 824.12,
+"fin": 828.11,
+"lum": 0.074,
+"tags": [
+"a man driving a car",
+"a couple in a car",
+"a man",
+"a man on his phone",
+"a pickup truck"
+],
+"texte": false
+},
+{
+"id": "XL-221",
+"v": "XL",
+"debut": 828.11,
+"fin": 832.09,
+"lum": 0.085,
+"tags": [
+"handcuffs",
+"a robbery with masks",
+"a store robbery",
+"a couple in a car",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "XL-222",
+"v": "XL",
+"debut": 832.09,
+"fin": 836.08,
+"lum": 0.115,
+"tags": [
+"a couple in a car",
+"a woman driving a car",
+"a man driving a car",
+"a sports car",
+"a muscle car"
+],
+"texte": false
+},
+{
+"id": "XL-223",
+"v": "XL",
+"debut": 836.08,
+"fin": 840.07,
+"lum": 0.051,
+"tags": [
+"a man holding a gun",
+"a gun",
+"a rifle",
+"a woman holding a gun",
+"a shootout"
+],
+"texte": false
+},
+{
+"id": "XL-224",
+"v": "XL",
+"debut": 840.07,
+"fin": 844.17,
+"lum": 0.525,
+"tags": [
+"a police helicopter",
+"a helicopter",
+"aerial view of a city",
+"a police chase",
+"a hurricane"
+],
+"texte": false
+},
+{
+"id": "XL-225",
+"v": "XL",
+"debut": 844.17,
+"fin": 848.27,
+"lum": 0.526,
+"tags": [
+"a helicopter",
+"a police helicopter",
+"a luxury hotel",
+"a hospital",
+"aerial view of a city"
+],
+"texte": false
+},
+{
+"id": "XL-226",
+"v": "XL",
+"debut": 848.27,
+"fin": 852.37,
+"lum": 0.403,
+"tags": [
+"a car crash",
+"a man driving a car",
+"a shootout",
+"a motorcycle",
+"a truck"
+],
+"texte": false
+},
+{
+"id": "XL-227",
+"v": "XL",
+"debut": 852.37,
+"fin": 856.47,
+"lum": 0.378,
+"tags": [
+"a police car",
+"a police chase",
+"a police officer",
+"police officers arresting someone",
+"a car on fire"
+],
+"texte": false
+},
+{
+"id": "XL-228",
+"v": "XL",
+"debut": 856.47,
+"fin": 860.57,
+"lum": 0.373,
+"tags": [
+"a city street during the day",
+"a police chase",
+"police officers arresting someone",
+"a car crash",
+"a parking lot"
+],
+"texte": false
+},
+{
+"id": "XL-229",
+"v": "XL",
+"debut": 860.57,
+"fin": 864.67,
+"lum": 0.283,
+"tags": [
+"a police chase",
+"a police car",
+"a car crash",
+"a police helicopter",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-230",
+"v": "XL",
+"debut": 864.67,
+"fin": 868.77,
+"lum": 0.36,
+"tags": [
+"a city street during the day",
+"a police officer",
+"police officers arresting someone",
+"a police chase",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-231",
+"v": "XL",
+"debut": 868.77,
+"fin": 872.87,
+"lum": 0.357,
+"tags": [
+"a police car",
+"police officers arresting someone",
+"a police chase",
+"a police officer",
+"a city street during the day"
+],
+"texte": false
+},
+{
+"id": "XL-232",
+"v": "XL",
+"debut": 872.87,
+"fin": 874.0,
+"lum": 0.176,
+"tags": [
+"a man driving a car",
+"a couple in a car",
+"a woman driving a car",
+"a police car",
+"a garage"
+],
+"texte": false
+},
+{
+"id": "XL-233",
+"v": "XL",
+"debut": 874.0,
+"fin": 877.82,
+"lum": 0.086,
+"tags": [
+"a couple in a car",
+"a woman driving a car",
+"a man driving a car",
+"a man on his phone",
+"a woman on her phone"
+],
+"texte": false
+},
+{
+"id": "XL-234",
+"v": "XL",
+"debut": 877.82,
+"fin": 881.63,
+"lum": 0.599,
+"tags": [
+"a bus",
+"a city street during the day",
+"a police chase",
+"a car crash",
+"an ambulance"
+],
+"texte": false
+},
+{
+"id": "XL-235",
+"v": "XL",
+"debut": 881.63,
+"fin": 885.89,
+"lum": 0.126,
+"tags": [
+"a couple in a car",
+"police officers arresting someone",
+"a man driving a car",
+"a rap music video",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-236",
+"v": "XL",
+"debut": 885.89,
+"fin": 890.14,
+"lum": 0.05,
+"tags": [
+"a couple in a car",
+"a woman driving a car",
+"a man driving a car",
+"a rap music video",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-237",
+"v": "XL",
+"debut": 890.14,
+"fin": 894.4,
+"lum": 0.079,
+"tags": [
+"a couple in a car",
+"a woman driving a car",
+"a woman",
+"a kiss",
+"a woman on her phone"
+],
+"texte": false
+},
+{
+"id": "XL-238",
+"v": "XL",
+"debut": 894.4,
+"fin": 898.03,
+"lum": 0.267,
+"tags": [
+"a couple in a car",
+"a bus",
+"a man driving a car",
+"an ambulance",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-239",
+"v": "XL",
+"debut": 898.03,
+"fin": 901.76,
+"lum": 0.089,
+"tags": [
+"a woman",
+"a couple in a car",
+"a woman on her phone",
+"a woman driving a car",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "XL-240",
+"v": "XL",
+"debut": 901.76,
+"fin": 905.49,
+"lum": 0.085,
+"tags": [
+"a couple in a car",
+"a couple",
+"a woman",
+"a kiss",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-241",
+"v": "XL",
+"debut": 905.49,
+"fin": 909.21,
+"lum": 0.116,
+"tags": [
+"a man",
+"a man on his phone",
+"a selfie video on a phone",
+"an inmate in a prison jumpsuit",
+"a tattooed man"
+],
+"texte": false
+},
+{
+"id": "XL-242",
+"v": "XL",
+"debut": 909.21,
+"fin": 912.94,
+"lum": 0.16,
+"tags": [
+"a couple in a car",
+"a woman driving a car",
+"a man driving a car",
+"an ambulance",
+"a garage"
+],
+"texte": false
+},
+{
+"id": "XL-243",
+"v": "XL",
+"debut": 912.94,
+"fin": 916.67,
+"lum": 0.074,
+"tags": [
+"a garage",
+"a couple in a car",
+"a police car",
+"a pickup truck",
+"a man driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-244",
+"v": "XL",
+"debut": 916.67,
+"fin": 920.67,
+"lum": 0.38,
+"tags": [
+"a parking lot",
+"a garage",
+"a gas station",
+"a car crash",
+"a muscle car"
+],
+"texte": false
+},
+{
+"id": "XL-245",
+"v": "XL",
+"debut": 920.67,
+"fin": 924.66,
+"lum": 0.326,
+"tags": [
+"a parking lot",
+"a city street during the day",
+"a pawn shop",
+"a store robbery",
+"a gas station"
+],
+"texte": false
+},
+{
+"id": "XL-246",
+"v": "XL",
+"debut": 924.66,
+"fin": 928.66,
+"lum": 0.385,
+"tags": [
+"a city street during the day",
+"a parking lot",
+"a man driving a car",
+"a woman driving a car",
+"a police chase"
+],
+"texte": false
+},
+{
+"id": "XL-247",
+"v": "XL",
+"debut": 928.66,
+"fin": 932.65,
+"lum": 0.257,
+"tags": [
+"a couple in a car",
+"a parking lot",
+"a garage",
+"police officers arresting someone",
+"a gas station"
+],
+"texte": false
+},
+{
+"id": "XL-248",
+"v": "XL",
+"debut": 932.65,
+"fin": 936.65,
+"lum": 0.176,
+"tags": [
+"a store robbery",
+"a police car",
+"a gas station",
+"a car dealership",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-249",
+"v": "XL",
+"debut": 936.65,
+"fin": 940.64,
+"lum": 0.256,
+"tags": [
+"a police chase",
+"a couple in a car",
+"a police car",
+"police officers arresting someone",
+"a man driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-250",
+"v": "XL",
+"debut": 940.64,
+"fin": 944.64,
+"lum": 0.284,
+"tags": [
+"a police chase",
+"a police car",
+"a police officer",
+"police officers arresting someone",
+"a pickup truck"
+],
+"texte": false
+},
+{
+"id": "XL-251",
+"v": "XL",
+"debut": 944.64,
+"fin": 948.63,
+"lum": 0.33,
+"tags": [
+"a city street during the day",
+"palm trees",
+"a police chase",
+"a police car",
+"an ambulance"
+],
+"texte": false
+},
+{
+"id": "XL-252",
+"v": "XL",
+"debut": 948.63,
+"fin": 952.63,
+"lum": 0.214,
+"tags": [
+"a police car",
+"a parking lot",
+"a man driving a car",
+"a car dealership",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-253",
+"v": "XL",
+"debut": 952.63,
+"fin": 956.62,
+"lum": 0.065,
+"tags": [
+"a garage",
+"a parking lot",
+"a muscle car",
+"a sports car",
+"a highway"
+],
+"texte": false
+},
+{
+"id": "XL-254",
+"v": "XL",
+"debut": 956.62,
+"fin": 960.62,
+"lum": 0.162,
+"tags": [
+"a rap music video",
+"a social media video",
+"white text on a black background",
+"handcuffs",
+"an explosion"
+],
+"texte": false
+},
+{
+"id": "XL-255",
+"v": "XL",
+"debut": 960.62,
+"fin": 964.61,
+"lum": 0.081,
+"tags": [
+"a parking lot",
+"a garage",
+"a car dealership",
+"a muscle car",
+"a sports car"
+],
+"texte": false
+},
+{
+"id": "XL-256",
+"v": "XL",
+"debut": 964.61,
+"fin": 968.61,
+"lum": 0.141,
+"tags": [
+"a car on fire",
+"a car crash",
+"fire",
+"a garage",
+"a sports car"
+],
+"texte": false
+},
+{
+"id": "XL-257",
+"v": "XL",
+"debut": 968.61,
+"fin": 972.6,
+"lum": 0.111,
+"tags": [
+"a bus",
+"an ambulance",
+"a parking lot",
+"a couple in a car",
+"a man driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-258",
+"v": "XL",
+"debut": 972.6,
+"fin": 976.6,
+"lum": 0.119,
+"tags": [
+"a pickup truck",
+"a couple in a car",
+"a man driving a car",
+"a truck",
+"a bus"
+],
+"texte": false
+},
+{
+"id": "XL-259",
+"v": "XL",
+"debut": 976.6,
+"fin": 980.47,
+"lum": 0.357,
+"tags": [
+"a city street during the day",
+"a parking lot",
+"a car crash",
+"a police chase",
+"a highway"
+],
+"texte": false
+},
+{
+"id": "XL-260",
+"v": "XL",
+"debut": 980.47,
+"fin": 984.34,
+"lum": 0.216,
+"tags": [
+"a parking lot",
+"a pickup truck",
+"a city street during the day",
+"a man driving a car",
+"a trailer park"
+],
+"texte": false
+},
+{
+"id": "XL-261",
+"v": "XL",
+"debut": 984.34,
+"fin": 988.2,
+"lum": 0.304,
+"tags": [
+"a city street during the day",
+"a pickup truck",
+"a truck",
+"a parking lot",
+"a bus"
+],
+"texte": false
+},
+{
+"id": "XL-262",
+"v": "XL",
+"debut": 988.2,
+"fin": 992.07,
+"lum": 0.309,
+"tags": [
+"a city street during the day",
+"a bridge",
+"a highway",
+"a bus",
+"a truck"
+],
+"texte": false
+},
+{
+"id": "XL-263",
+"v": "XL",
+"debut": 992.07,
+"fin": 995.74,
+"lum": 0.347,
+"tags": [
+"aerial view of a city",
+"palm trees",
+"a city street during the day",
+"a map",
+"a rural town"
+],
+"texte": false
+},
+{
+"id": "XL-264",
+"v": "XL",
+"debut": 995.74,
+"fin": 999.4,
+"lum": 0.382,
+"tags": [
+"aerial view of a city",
+"a city skyline at sunset",
+"a helicopter",
+"a map",
+"a hurricane"
+],
+"texte": false
+},
+{
+"id": "XL-265",
+"v": "XL",
+"debut": 999.4,
+"fin": 1003.73,
+"lum": 0.082,
+"tags": [
+"handcuffs",
+"police officers arresting someone",
+"a garage",
+"people lifting weights",
+"a bodybuilder at the gym"
+],
+"texte": false
+},
+{
+"id": "XL-266",
+"v": "XL",
+"debut": 1003.73,
+"fin": 1008.1,
+"lum": 0.288,
+"tags": [
+"a woman on her phone",
+"a woman",
+"a woman running",
+"a city street during the day",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-267",
+"v": "XL",
+"debut": 1008.1,
+"fin": 1013.2,
+"lum": 0.293,
+"tags": [
+"police officers arresting someone",
+"a rap music video",
+"a police officer",
+"a store robbery",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "XL-268",
+"v": "XL",
+"debut": 1013.2,
+"fin": 1017.2,
+"lum": 0.224,
+"tags": [
+"a couple",
+"a rap music video",
+"a couple in a car",
+"a woman",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-269",
+"v": "XL",
+"debut": 1017.2,
+"fin": 1019.67,
+"lum": 0.287,
+"tags": [
+"a fire truck",
+"an ambulance",
+"a motorcycle",
+"a police officer",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-270",
+"v": "XL",
+"debut": 1019.67,
+"fin": 1022.95,
+"lum": 0.233,
+"tags": [
+"a woman",
+"a woman on her phone",
+"a rap music video",
+"a kiss",
+"a barber shop"
+],
+"texte": false
+},
+{
+"id": "XL-271",
+"v": "XL",
+"debut": 1022.95,
+"fin": 1026.23,
+"lum": 0.149,
+"tags": [
+"a woman",
+"a woman on her phone",
+"a rap music video",
+"a cashier in a convenience store",
+"a woman running"
+],
+"texte": false
+},
+{
+"id": "XL-272",
+"v": "XL",
+"debut": 1026.23,
+"fin": 1029.87,
+"lum": 0.459,
+"tags": [
+"a rap music video",
+"a flamingo",
+"a woman in a bikini",
+"a city street during the day",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-273",
+"v": "XL",
+"debut": 1029.87,
+"fin": 1033.0,
+"lum": 0.403,
+"tags": [
+"a dock with boats",
+"a swamp",
+"a boat at sea",
+"an alligator",
+"a speedboat"
+],
+"texte": false
+},
+{
+"id": "XL-274",
+"v": "XL",
+"debut": 1033.0,
+"fin": 1036.03,
+"lum": 0.26,
+"tags": [
+"a basketball court",
+"a bridge",
+"a man on his phone",
+"a social media video",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-275",
+"v": "XL",
+"debut": 1036.03,
+"fin": 1038.7,
+"lum": 0.384,
+"tags": [
+"the ocean",
+"a woman",
+"an alligator",
+"a swamp",
+"a boat at sea"
+],
+"texte": false
+},
+{
+"id": "XL-276",
+"v": "XL",
+"debut": 1038.7,
+"fin": 1042.2,
+"lum": 0.147,
+"tags": [
+"a woman",
+"a woman on her phone",
+"people lifting weights",
+"a woman holding a gun",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-277",
+"v": "XL",
+"debut": 1042.2,
+"fin": 1045.0,
+"lum": 0.556,
+"tags": [
+"a speedboat",
+"the ocean",
+"a beach",
+"a boat at sea",
+"a crowd at the beach"
+],
+"texte": false
+},
+{
+"id": "XL-278",
+"v": "XL",
+"debut": 1045.0,
+"fin": 1046.9,
+"lum": 0.403,
+"tags": [
+"a speedboat",
+"a crowd at the beach",
+"a jet ski",
+"a dock with boats",
+"a boat at sea"
+],
+"texte": false
+},
+{
+"id": "XL-279",
+"v": "XL",
+"debut": 1046.9,
+"fin": 1048.93,
+"lum": 0.252,
+"tags": [
+"an inmate in a prison jumpsuit",
+"a bodybuilder at the gym",
+"a tattooed man",
+"a man",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-280",
+"v": "XL",
+"debut": 1048.93,
+"fin": 1051.03,
+"lum": 0.338,
+"tags": [
+"a woman in a bikini",
+"a jet ski",
+"a speedboat",
+"a woman",
+"a woman running"
+],
+"texte": false
+},
+{
+"id": "XL-281",
+"v": "XL",
+"debut": 1051.03,
+"fin": 1054.62,
+"lum": 0.068,
+"tags": [
+"a nightclub",
+"a bar",
+"a gas station",
+"a rap music video",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-282",
+"v": "XL",
+"debut": 1054.62,
+"fin": 1058.21,
+"lum": 0.058,
+"tags": [
+"a rap music video",
+"a store robbery",
+"people dancing at a party",
+"a nightclub",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-283",
+"v": "XL",
+"debut": 1058.21,
+"fin": 1061.8,
+"lum": 0.106,
+"tags": [
+"people dancing at a party",
+"a nightclub",
+"a selfie video on a phone",
+"a rap music video",
+"a bar"
+],
+"texte": false
+},
+{
+"id": "XL-284",
+"v": "XL",
+"debut": 1061.8,
+"fin": 1067.47,
+"lum": 0.421,
+"tags": [
+"a sports car",
+"a highway",
+"a car crash",
+"a muscle car",
+"a police chase"
+],
+"texte": false
+},
+{
+"id": "XL-285",
+"v": "XL",
+"debut": 1067.47,
+"fin": 1069.97,
+"lum": 0.376,
+"tags": [
+"a highway",
+"handcuffs",
+"a parking lot",
+"a police chase",
+"a gun"
+],
+"texte": false
+},
+{
+"id": "XL-286",
+"v": "XL",
+"debut": 1069.97,
+"fin": 1073.31,
+"lum": 0.268,
+"tags": [
+"a barber shop",
+"a car dealership",
+"a pawn shop",
+"a strip mall",
+"a garage"
+],
+"texte": false
+},
+{
+"id": "XL-287",
+"v": "XL",
+"debut": 1073.31,
+"fin": 1076.66,
+"lum": 0.351,
+"tags": [
+"a barber shop",
+"a pawn shop",
+"a store robbery",
+"a bank",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-288",
+"v": "XL",
+"debut": 1076.66,
+"fin": 1080.0,
+"lum": 0.387,
+"tags": [
+"a barber shop",
+"a woman on her phone",
+"a jewelry store",
+"a bank",
+"a pawn shop"
+],
+"texte": false
+},
+{
+"id": "XL-289",
+"v": "XL",
+"debut": 1080.0,
+"fin": 1083.33,
+"lum": 0.35,
+"tags": [
+"a store robbery",
+"a shopping mall",
+"people dancing at a party",
+"a fight",
+"a robbery with masks"
+],
+"texte": false
+},
+{
+"id": "XL-290",
+"v": "XL",
+"debut": 1083.37,
+"fin": 1087.65,
+"lum": 0.389,
+"tags": [
+"a motorcycle",
+"police officers arresting someone",
+"a couple in a car",
+"a man driving a car",
+"a gas station"
+],
+"texte": false
+},
+{
+"id": "XL-291",
+"v": "XL",
+"debut": 1087.65,
+"fin": 1091.93,
+"lum": 0.337,
+"tags": [
+"a couple in a car",
+"a city street during the day",
+"police officers arresting someone",
+"a couple",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "XL-292",
+"v": "XL",
+"debut": 1091.93,
+"fin": 1095.95,
+"lum": 0.245,
+"tags": [
+"a woman driving a car",
+"a woman on her phone",
+"a couple in a car",
+"a woman",
+"a man driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-293",
+"v": "XL",
+"debut": 1095.95,
+"fin": 1099.98,
+"lum": 0.198,
+"tags": [
+"a rap music video",
+"people dancing at a party",
+"police officers arresting someone",
+"a fight",
+"a store robbery"
+],
+"texte": false
+},
+{
+"id": "XL-294",
+"v": "XL",
+"debut": 1099.98,
+"fin": 1104.0,
+"lum": 0.21,
+"tags": [
+"a rap music video",
+"a woman on her phone",
+"palm trees",
+"a selfie video on a phone",
+"people dancing at a party"
+],
+"texte": false
+},
+{
+"id": "XL-295",
+"v": "XL",
+"debut": 1104.0,
+"fin": 1108.47,
+"lum": 0.259,
+"tags": [
+"a city street during the day",
+"a woman driving a car",
+"a man driving a car",
+"a couple in a car",
+"a police chase"
+],
+"texte": false
+},
+{
+"id": "XL-296",
+"v": "XL",
+"debut": 1108.47,
+"fin": 1111.3,
+"lum": 0.559,
+"tags": [
+"a crowd at the beach",
+"a beach",
+"a pool party",
+"a woman in a bikini",
+"a luxury hotel"
+],
+"texte": false
+},
+{
+"id": "XL-297",
+"v": "XL",
+"debut": 1111.3,
+"fin": 1114.8,
+"lum": 0.361,
+"tags": [
+"a rap music video",
+"a mansion",
+"a prison yard",
+"handcuffs",
+"a recording studio"
+],
+"texte": false
+},
+{
+"id": "XL-298",
+"v": "XL",
+"debut": 1114.8,
+"fin": 1119.2,
+"lum": 0.361,
+"tags": [
+"a motorcycle",
+"a woman running",
+"a woman",
+"a man",
+"a man running"
+],
+"texte": false
+},
+{
+"id": "XL-299",
+"v": "XL",
+"debut": 1119.2,
+"fin": 1122.4,
+"lum": 0.084,
+"tags": [
+"a city street at night",
+"a police car",
+"a man driving a car",
+"a pickup truck",
+"a city skyline at night"
+],
+"texte": false
+},
+{
+"id": "XL-300",
+"v": "XL",
+"debut": 1122.4,
+"fin": 1127.53,
+"lum": 0.068,
+"tags": [
+"a car crash",
+"a pickup truck",
+"a man driving a car",
+"a woman driving a car",
+"a police car"
+],
+"texte": false
+},
+{
+"id": "XL-301",
+"v": "XL",
+"debut": 1127.53,
+"fin": 1131.57,
+"lum": 0.393,
+"tags": [
+"a woman in a bikini",
+"a woman running",
+"a woman",
+"a rap music video",
+"a city skyline at sunset"
+],
+"texte": false
+},
+{
+"id": "XL-302",
+"v": "XL",
+"debut": 1131.57,
+"fin": 1135.62,
+"lum": 0.388,
+"tags": [
+"a woman in a bikini",
+"a woman",
+"a sunrise",
+"a bridge",
+"aerial view of a city"
+],
+"texte": false
+},
+{
+"id": "XL-303",
+"v": "XL",
+"debut": 1135.62,
+"fin": 1139.66,
+"lum": 0.278,
+"tags": [
+"a city skyline at sunset",
+"aerial view of a city",
+"a city skyline at night",
+"a sunrise",
+"a map"
+],
+"texte": false
+},
+{
+"id": "XL-304",
+"v": "XL",
+"debut": 1139.66,
+"fin": 1143.7,
+"lum": 0.645,
+"tags": [
+"aerial view of a city",
+"a map",
+"aerial view of islands",
+"a yacht",
+"a parking lot"
+],
+"texte": false
+},
+{
+"id": "XL-305",
+"v": "XL",
+"debut": 1143.7,
+"fin": 1147.33,
+"lum": 0.255,
+"tags": [
+"a rap music video",
+"a couple in a car",
+"handcuffs",
+"a couple",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-306",
+"v": "XL",
+"debut": 1147.33,
+"fin": 1151.17,
+"lum": 0.295,
+"tags": [
+"a couple",
+"a woman",
+"a woman in a bikini",
+"a woman on her phone",
+"a strip mall"
+],
+"texte": false
+},
+{
+"id": "XL-307",
+"v": "XL",
+"debut": 1151.17,
+"fin": 1156.03,
+"lum": 0.402,
+"tags": [
+"an office",
+"a woman running",
+"a couple",
+"a woman",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "XL-308",
+"v": "XL",
+"debut": 1156.03,
+"fin": 1160.93,
+"lum": 0.395,
+"tags": [
+"a woman in a bikini",
+"a woman",
+"a woman on her phone",
+"a woman running",
+"a trailer park"
+],
+"texte": false
+},
+{
+"id": "XL-309",
+"v": "XL",
+"debut": 1160.93,
+"fin": 1164.27,
+"lum": 0.256,
+"tags": [
+"a woman on her phone",
+"a woman",
+"handcuffs",
+"an office",
+"a TV news broadcast"
+],
+"texte": false
+},
+{
+"id": "XL-310",
+"v": "XL",
+"debut": 1164.27,
+"fin": 1170.23,
+"lum": 0.407,
+"tags": [
+"an office",
+"a couple",
+"a woman",
+"a woman in a bikini",
+"a woman on her phone"
+],
+"texte": false
+},
+{
+"id": "XL-311",
+"v": "XL",
+"debut": 1170.23,
+"fin": 1173.83,
+"lum": 0.382,
+"tags": [
+"a woman",
+"a woman on her phone",
+"a woman in a bikini",
+"a woman driving a car",
+"a selfie video on a phone"
+],
+"texte": false
+},
+{
+"id": "XL-312",
+"v": "XL",
+"debut": 1173.83,
+"fin": 1175.73,
+"lum": 0.288,
+"tags": [
+"a woman",
+"a woman on her phone",
+"handcuffs",
+"a woman in a bikini",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "XL-313",
+"v": "XL",
+"debut": 1175.73,
+"fin": 1179.8,
+"lum": 0.284,
+"tags": [
+"a rap music video",
+"a man running",
+"a man",
+"a police officer",
+"a woman running"
+],
+"texte": false
+},
+{
+"id": "XL-314",
+"v": "XL",
+"debut": 1179.8,
+"fin": 1183.88,
+"lum": 0.055,
+"tags": [
+"a kiss",
+"a couple in a car",
+"a couple",
+"police officers arresting someone",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-315",
+"v": "XL",
+"debut": 1183.88,
+"fin": 1187.95,
+"lum": 0.044,
+"tags": [
+"a couple in a car",
+"a couple",
+"a couple holding guns",
+"handcuffs",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-316",
+"v": "XL",
+"debut": 1187.95,
+"fin": 1192.03,
+"lum": 0.085,
+"tags": [
+"a man",
+"a man on his phone",
+"a man running",
+"a rap music video",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-317",
+"v": "XL",
+"debut": 1192.03,
+"fin": 1196.1,
+"lum": 0.113,
+"tags": [
+"a man",
+"a man on his phone",
+"a sunrise",
+"a police officer",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-318",
+"v": "XL",
+"debut": 1196.1,
+"fin": 1200.18,
+"lum": 0.096,
+"tags": [
+"a couple",
+"a kiss",
+"a couple in a car",
+"handcuffs",
+"people dancing at a party"
+],
+"texte": false
+},
+{
+"id": "XL-319",
+"v": "XL",
+"debut": 1200.18,
+"fin": 1204.25,
+"lum": 0.056,
+"tags": [
+"a man driving a car",
+"a couple in a car",
+"a rap music video",
+"a man on his phone",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-320",
+"v": "XL",
+"debut": 1204.25,
+"fin": 1208.32,
+"lum": 0.041,
+"tags": [
+"a couple in a car",
+"a woman driving a car",
+"a man driving a car",
+"a couple",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-321",
+"v": "XL",
+"debut": 1208.32,
+"fin": 1212.4,
+"lum": 0.118,
+"tags": [
+"a pickup truck",
+"a man driving a car",
+"a woman driving a car",
+"a police chase",
+"a city skyline at night"
+],
+"texte": false
+},
+{
+"id": "XL-322",
+"v": "XL",
+"debut": 1212.4,
+"fin": 1216.47,
+"lum": 0.134,
+"tags": [
+"a city skyline at night",
+"neon lights at night",
+"a bridge",
+"a city street at night",
+"a city skyline at sunset"
+],
+"texte": false
+},
+{
+"id": "XL-323",
+"v": "XL",
+"debut": 1216.47,
+"fin": 1220.55,
+"lum": 0.123,
+"tags": [
+"a pool party",
+"a woman in a bikini",
+"people dancing at a party",
+"a nightclub",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-324",
+"v": "XL",
+"debut": 1220.55,
+"fin": 1224.62,
+"lum": 0.354,
+"tags": [
+"a sports car",
+"a garage",
+"a police car",
+"a police chase",
+"a parking lot"
+],
+"texte": false
+},
+{
+"id": "XL-325",
+"v": "XL",
+"debut": 1224.62,
+"fin": 1228.7,
+"lum": 0.083,
+"tags": [
+"a nightclub",
+"people dancing at a party",
+"a rap music video",
+"neon lights at night",
+"a bar"
+],
+"texte": false
+},
+{
+"id": "XL-326",
+"v": "XL",
+"debut": 1228.7,
+"fin": 1232.77,
+"lum": 0.106,
+"tags": [
+"a nightclub",
+"people dancing at a party",
+"neon lights at night",
+"a bar",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-327",
+"v": "XL",
+"debut": 1232.77,
+"fin": 1236.75,
+"lum": 0.136,
+"tags": [
+"aerial view of a city",
+"a city street at night",
+"a city skyline at night",
+"neon lights at night",
+"an office"
+],
+"texte": false
+},
+{
+"id": "XL-328",
+"v": "XL",
+"debut": 1236.75,
+"fin": 1240.72,
+"lum": 0.061,
+"tags": [
+"a woman driving a car",
+"a couple in a car",
+"a police car",
+"a police chase",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-329",
+"v": "XL",
+"debut": 1240.72,
+"fin": 1244.7,
+"lum": 0.045,
+"tags": [
+"a couple in a car",
+"a man driving a car",
+"a woman driving a car",
+"a selfie video on a phone",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-330",
+"v": "XL",
+"debut": 1244.7,
+"fin": 1248.67,
+"lum": 0.097,
+"tags": [
+"people dancing at a party",
+"a nightclub",
+"a city street at night",
+"police officers arresting someone",
+"a diner"
+],
+"texte": false
+},
+{
+"id": "XL-331",
+"v": "XL",
+"debut": 1248.67,
+"fin": 1252.65,
+"lum": 0.099,
+"tags": [
+"people dancing at a party",
+"a nightclub",
+"police officers arresting someone",
+"a rap music video",
+"neon lights at night"
+],
+"texte": false
+},
+{
+"id": "XL-332",
+"v": "XL",
+"debut": 1252.65,
+"fin": 1256.62,
+"lum": 0.094,
+"tags": [
+"a nightclub",
+"people dancing at a party",
+"neon lights at night",
+"a couple",
+"a luxury hotel"
+],
+"texte": false
+},
+{
+"id": "XL-333",
+"v": "XL",
+"debut": 1256.62,
+"fin": 1260.6,
+"lum": 0.136,
+"tags": [
+"a nightclub",
+"neon lights at night",
+"a shopping mall",
+"people dancing at a party",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-334",
+"v": "XL",
+"debut": 1260.6,
+"fin": 1264.91,
+"lum": 0.12,
+"tags": [
+"a rap music video",
+"people dancing at a party",
+"a nightclub",
+"a recording studio",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-335",
+"v": "XL",
+"debut": 1264.91,
+"fin": 1269.22,
+"lum": 0.115,
+"tags": [
+"a rap music video",
+"people dancing at a party",
+"a nightclub",
+"handcuffs",
+"a robbery with masks"
+],
+"texte": false
+},
+{
+"id": "XL-336",
+"v": "XL",
+"debut": 1269.22,
+"fin": 1273.53,
+"lum": 0.114,
+"tags": [
+"a rap music video",
+"a man",
+"a man on his phone",
+"a man running",
+"a man counting money"
+],
+"texte": false
+},
+{
+"id": "XL-337",
+"v": "XL",
+"debut": 1273.53,
+"fin": 1277.13,
+"lum": 0.319,
+"tags": [
+"a couple in a car",
+"a TV news broadcast",
+"a couple",
+"a woman driving a car",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "XL-338",
+"v": "XL",
+"debut": 1277.13,
+"fin": 1280.73,
+"lum": 0.163,
+"tags": [
+"a nightclub",
+"people dancing at a party",
+"a couple",
+"a rap music video",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-339",
+"v": "XL",
+"debut": 1280.73,
+"fin": 1284.5,
+"lum": 0.205,
+"tags": [
+"a woman on her phone",
+"a woman",
+"a selfie video on a phone",
+"a TV news broadcast",
+"a woman driving a car"
+],
+"texte": false
+},
+{
+"id": "XL-340",
+"v": "XL",
+"debut": 1284.5,
+"fin": 1288.26,
+"lum": 0.126,
+"tags": [
+"people dancing at a party",
+"a nightclub",
+"a rap music video",
+"a man on his phone",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "XL-341",
+"v": "XL",
+"debut": 1288.26,
+"fin": 1292.03,
+"lum": 0.204,
+"tags": [
+"police officers arresting someone",
+"an inmate in a prison jumpsuit",
+"a rap music video",
+"a man",
+"an office"
+],
+"texte": false
+},
+{
+"id": "XL-342",
+"v": "XL",
+"debut": 1292.03,
+"fin": 1295.94,
+"lum": 0.118,
+"tags": [
+"people dancing at a party",
+"a woman",
+"a couple",
+"a woman on her phone",
+"a nightclub"
+],
+"texte": false
+},
+{
+"id": "XL-343",
+"v": "XL",
+"debut": 1295.94,
+"fin": 1299.84,
+"lum": 0.132,
+"tags": [
+"people dancing at a party",
+"an inmate in a prison jumpsuit",
+"a woman",
+"a couple",
+"a woman in a bikini"
+],
+"texte": false
+},
+{
+"id": "XL-344",
+"v": "XL",
+"debut": 1299.84,
+"fin": 1303.75,
+"lum": 0.126,
+"tags": [
+"police officers arresting someone",
+"people dancing at a party",
+"a store robbery",
+"a robbery with masks",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-345",
+"v": "XL",
+"debut": 1303.75,
+"fin": 1307.66,
+"lum": 0.14,
+"tags": [
+"a man",
+"a man on his phone",
+"a man holding a gun",
+"an inmate in a prison jumpsuit",
+"a man running"
+],
+"texte": false
+},
+{
+"id": "XL-346",
+"v": "XL",
+"debut": 1307.66,
+"fin": 1311.56,
+"lum": 0.139,
+"tags": [
+"a man on his phone",
+"a man",
+"a man holding a gun",
+"a bank",
+"an office"
+],
+"texte": false
+},
+{
+"id": "XL-347",
+"v": "XL",
+"debut": 1311.56,
+"fin": 1315.47,
+"lum": 0.091,
+"tags": [
+"a man",
+"a man on his phone",
+"an inmate in a prison jumpsuit",
+"a man running",
+"a police officer"
+],
+"texte": false
+},
+{
+"id": "XL-348",
+"v": "XL",
+"debut": 1315.47,
+"fin": 1319.38,
+"lum": 0.061,
+"tags": [
+"a hospital",
+"a man",
+"a man on his phone",
+"a nightclub",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-349",
+"v": "XL",
+"debut": 1319.38,
+"fin": 1323.28,
+"lum": 0.157,
+"tags": [
+"a man on his phone",
+"a man",
+"a rap music video",
+"an office",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-350",
+"v": "XL",
+"debut": 1323.28,
+"fin": 1327.19,
+"lum": 0.211,
+"tags": [
+"an office",
+"a man on his phone",
+"handcuffs",
+"a man",
+"a luxury hotel"
+],
+"texte": false
+},
+{
+"id": "XL-351",
+"v": "XL",
+"debut": 1327.19,
+"fin": 1331.1,
+"lum": 0.088,
+"tags": [
+"a man on his phone",
+"a man",
+"a man holding a gun",
+"handcuffs",
+"an office"
+],
+"texte": false
+},
+{
+"id": "XL-352",
+"v": "XL",
+"debut": 1331.1,
+"fin": 1335.0,
+"lum": 0.046,
+"tags": [
+"a rap music video",
+"a recording studio",
+"a nightclub",
+"people dancing at a party",
+"an office"
+],
+"texte": false
+},
+{
+"id": "XL-353",
+"v": "XL",
+"debut": 1335.0,
+"fin": 1338.91,
+"lum": 0.092,
+"tags": [
+"an office",
+"a luxury hotel",
+"a bank",
+"a rap music video",
+"a motel"
+],
+"texte": false
+},
+{
+"id": "XL-354",
+"v": "XL",
+"debut": 1338.91,
+"fin": 1342.82,
+"lum": 0.082,
+"tags": [
+"an office",
+"a bank",
+"a diner",
+"a pawn shop",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-355",
+"v": "XL",
+"debut": 1342.82,
+"fin": 1346.72,
+"lum": 0.069,
+"tags": [
+"an office",
+"a bank",
+"a jewelry store",
+"a recording studio",
+"a luxury hotel"
+],
+"texte": false
+},
+{
+"id": "XL-356",
+"v": "XL",
+"debut": 1346.72,
+"fin": 1350.63,
+"lum": 0.072,
+"tags": [
+"an office",
+"a luxury hotel",
+"a bank",
+"a jewelry store",
+"a diner"
+],
+"texte": false
+},
+{
+"id": "XL-357",
+"v": "XL",
+"debut": 1350.63,
+"fin": 1354.54,
+"lum": 0.067,
+"tags": [
+"an office",
+"a luxury hotel",
+"a bank",
+"a motel",
+"a rap music video"
+],
+"texte": false
+},
+{
+"id": "XL-358",
+"v": "XL",
+"debut": 1354.54,
+"fin": 1358.44,
+"lum": 0.069,
+"tags": [
+"an office",
+"a luxury hotel",
+"a bank",
+"a diner",
+"a motel"
+],
+"texte": false
+},
+{
+"id": "XL-359",
+"v": "XL",
+"debut": 1358.44,
+"fin": 1362.35,
+"lum": 0.068,
+"tags": [
+"an office",
+"a robbery with masks",
+"a bank",
+"a man on his phone",
+"a luxury hotel"
+],
+"texte": false
+},
+{
+"id": "XL-360",
+"v": "XL",
+"debut": 1362.35,
+"fin": 1366.26,
+"lum": 0.072,
+"tags": [
+"an office",
+"a luxury hotel",
+"a bank",
+"a man counting money",
+"a mansion"
+],
+"texte": false
+},
+{
+"id": "XL-361",
+"v": "XL",
+"debut": 1366.26,
+"fin": 1370.16,
+"lum": 0.068,
+"tags": [
+"an office",
+"a bank",
+"a diner",
+"a luxury hotel",
+"a man counting money"
+],
+"texte": false
+},
+{
+"id": "XL-362",
+"v": "XL",
+"debut": 1370.16,
+"fin": 1374.07,
+"lum": 0.077,
+"tags": [
+"an office",
+"a bank",
+"a recording studio",
+"a mansion",
+"a luxury hotel"
+],
+"texte": false
+},
+{
+"id": "XL-363",
+"v": "XL",
+"debut": 1374.07,
+"fin": 1377.74,
+"lum": 0.161,
+"tags": [
+"people dancing at a party",
+"a nightclub",
+"a rap music video",
+"police officers arresting someone",
+"an office"
+],
+"texte": false
+},
+{
+"id": "XL-364",
+"v": "XL",
+"debut": 1377.74,
+"fin": 1381.42,
+"lum": 0.057,
+"tags": [
+"a man on his phone",
+"a man",
+"a tattooed man",
+"a man holding a gun",
+"a police officer"
+],
+"texte": false
+},
+{
+"id": "XL-365",
+"v": "XL",
+"debut": 1381.42,
+"fin": 1385.1,
+"lum": 0.093,
+"tags": [
+"a rap music video",
+"people dancing at a party",
+"a man on his phone",
+"a nightclub",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "XL-366",
+"v": "XL",
+"debut": 1385.1,
+"fin": 1388.77,
+"lum": 0.063,
+"tags": [
+"a nightclub",
+"people dancing at a party",
+"a woman on her phone",
+"a couple",
+"a bar"
+],
+"texte": false
+},
+{
+"id": "XL-367",
+"v": "XL",
+"debut": 1388.77,
+"fin": 1390.6,
+"lum": 0.219,
+"tags": [
+"people dancing at a party",
+"a nightclub",
+"handcuffs",
+"a rap music video",
+"a pool party"
+],
+"texte": false
+},
+{
+"id": "XL-368",
+"v": "XL",
+"debut": 1390.6,
+"fin": 1394.27,
+"lum": 0.082,
+"tags": [
+"a man",
+"a man on his phone",
+"a rap music video",
+"a tattooed man",
+"a man holding a gun"
+],
+"texte": false
+},
+{
+"id": "XL-369",
+"v": "XL",
+"debut": 1394.27,
+"fin": 1395.17,
+"lum": 0.186,
+"tags": [
+"a robbery with masks",
+"a rap music video",
+"a man on his phone",
+"a selfie video on a phone",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-370",
+"v": "XL",
+"debut": 1395.17,
+"fin": 1399.11,
+"lum": 0.095,
+"tags": [
+"a robbery with masks",
+"a kiss",
+"a couple",
+"a man on his phone",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-371",
+"v": "XL",
+"debut": 1399.11,
+"fin": 1403.05,
+"lum": 0.023,
+"tags": [
+"a rap music video",
+"handcuffs",
+"a nightclub",
+"police officers arresting someone",
+"a robbery with masks"
+],
+"texte": false
+},
+{
+"id": "XL-372",
+"v": "XL",
+"debut": 1403.05,
+"fin": 1407.0,
+"lum": 0.215,
+"tags": [
+"a man on his phone",
+"a man",
+"a police officer",
+"an office",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-373",
+"v": "XL",
+"debut": 1407.0,
+"fin": 1410.94,
+"lum": 0.13,
+"tags": [
+"an inmate in a prison jumpsuit",
+"a prison",
+"handcuffs",
+"a man on his phone",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-374",
+"v": "XL",
+"debut": 1410.94,
+"fin": 1414.88,
+"lum": 0.104,
+"tags": [
+"a man on his phone",
+"a man",
+"a selfie video on a phone",
+"a man holding a gun",
+"a woman on her phone"
+],
+"texte": false
+},
+{
+"id": "XL-375",
+"v": "XL",
+"debut": 1414.88,
+"fin": 1418.82,
+"lum": 0.069,
+"tags": [
+"a man",
+"a fight",
+"an inmate in a prison jumpsuit",
+"a shootout",
+"an office"
+],
+"texte": false
+},
+{
+"id": "XL-376",
+"v": "XL",
+"debut": 1418.82,
+"fin": 1422.76,
+"lum": 0.122,
+"tags": [
+"a city skyline at night",
+"an office",
+"a bus",
+"a city skyline at sunset",
+"a couple in a car"
+],
+"texte": false
+},
+{
+"id": "XL-377",
+"v": "XL",
+"debut": 1422.76,
+"fin": 1426.7,
+"lum": 0.117,
+"tags": [
+"a man on his phone",
+"an office",
+"a man",
+"a couple",
+"a selfie video on a phone"
+],
+"texte": false
+},
+{
+"id": "XL-378",
+"v": "XL",
+"debut": 1426.7,
+"fin": 1430.65,
+"lum": 0.067,
+"tags": [
+"a man on his phone",
+"a man",
+"a tattooed man",
+"handcuffs",
+"a police officer"
+],
+"texte": false
+},
+{
+"id": "XL-379",
+"v": "XL",
+"debut": 1430.65,
+"fin": 1434.59,
+"lum": 0.688,
+"tags": [
+"a video game logo",
+"a sunrise",
+"neon lights at night",
+"a flamingo",
+"a selfie video on a phone"
+],
+"texte": true
+},
+{
+"id": "XL-380",
+"v": "XL",
+"debut": 1434.59,
+"fin": 1438.53,
+"lum": 0.149,
+"tags": [
+"a nightclub",
+"a social media video",
+"a woman on her phone",
+"a woman",
+"neon lights at night"
+],
+"texte": false
+},
+{
+"id": "XL-381",
+"v": "XL",
+"debut": 1438.53,
+"fin": 1442.11,
+"lum": 0.141,
+"tags": [
+"a rap music video",
+"an inmate in a prison jumpsuit",
+"a robbery with masks",
+"a man",
+"a man on his phone"
+],
+"texte": false
+},
+{
+"id": "XL-382",
+"v": "XL",
+"debut": 1442.11,
+"fin": 1445.69,
+"lum": 0.13,
+"tags": [
+"a robbery with masks",
+"a man holding a gun",
+"a rap music video",
+"a hospital",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-383",
+"v": "XL",
+"debut": 1445.69,
+"fin": 1449.27,
+"lum": 0.449,
+"tags": [
+"a kiss",
+"a luxury hotel",
+"a motel",
+"a couple",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "XL-384",
+"v": "XL",
+"debut": 1449.27,
+"fin": 1453.18,
+"lum": 0.064,
+"tags": [
+"a nightclub",
+"a man on his phone",
+"a woman on her phone",
+"a rap music video",
+"people dancing at a party"
+],
+"texte": false
+},
+{
+"id": "XL-385",
+"v": "XL",
+"debut": 1453.18,
+"fin": 1457.09,
+"lum": 0.069,
+"tags": [
+"a woman on her phone",
+"a woman",
+"a prison",
+"a man on his phone",
+"a police officer"
+],
+"texte": false
+},
+{
+"id": "XL-386",
+"v": "XL",
+"debut": 1457.09,
+"fin": 1460.99,
+"lum": 0.14,
+"tags": [
+"a woman on her phone",
+"a woman",
+"neon lights at night",
+"a nightclub",
+"a motel"
+],
+"texte": false
+},
+{
+"id": "XL-387",
+"v": "XL",
+"debut": 1460.99,
+"fin": 1464.9,
+"lum": 0.372,
+"tags": [
+"a couple",
+"a kiss",
+"a woman on her phone",
+"a woman",
+"a robbery with masks"
+],
+"texte": false
+},
+{
+"id": "XL-388",
+"v": "XL",
+"debut": 1464.9,
+"fin": 1468.63,
+"lum": 0.274,
+"tags": [
+"an inmate in a prison jumpsuit",
+"handcuffs",
+"a fight",
+"a prison",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-389",
+"v": "XL",
+"debut": 1468.63,
+"fin": 1472.37,
+"lum": 0.262,
+"tags": [
+"a woman on her phone",
+"a woman",
+"a dog",
+"a couple",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "XL-390",
+"v": "XL",
+"debut": 1472.37,
+"fin": 1476.43,
+"lum": 0.249,
+"tags": [
+"a bodybuilder at the gym",
+"a tattooed man",
+"a rap music video",
+"a store robbery",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-391",
+"v": "XL",
+"debut": 1476.43,
+"fin": 1480.48,
+"lum": 0.017,
+"tags": [
+"an office",
+"a city skyline at night",
+"a hospital",
+"a diner",
+"a bar"
+],
+"texte": false
+},
+{
+"id": "XL-392",
+"v": "XL",
+"debut": 1480.48,
+"fin": 1484.54,
+"lum": 0.26,
+"tags": [
+"a sunrise",
+"handcuffs",
+"a woman",
+"a flamingo",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-393",
+"v": "XL",
+"debut": 1484.54,
+"fin": 1488.59,
+"lum": 0.051,
+"tags": [
+"neon lights at night",
+"a selfie video on a phone",
+"an office",
+"a recording studio",
+"a motel"
+],
+"texte": false
+},
+{
+"id": "XL-394",
+"v": "XL",
+"debut": 1488.59,
+"fin": 1492.65,
+"lum": 0.131,
+"tags": [
+"an office",
+"a robbery with masks",
+"a store robbery",
+"a shootout",
+"a fight"
+],
+"texte": false
+},
+{
+"id": "XL-395",
+"v": "XL",
+"debut": 1492.65,
+"fin": 1496.71,
+"lum": 0.138,
+"tags": [
+"an office",
+"a recording studio",
+"neon lights at night",
+"a city skyline at night",
+"a sunrise"
+],
+"texte": false
+},
+{
+"id": "XL-396",
+"v": "XL",
+"debut": 1496.71,
+"fin": 1500.76,
+"lum": 0.11,
+"tags": [
+"an office",
+"a nightclub",
+"neon lights at night",
+"a recording studio",
+"a motel"
+],
+"texte": false
+},
+{
+"id": "XL-397",
+"v": "XL",
+"debut": 1500.76,
+"fin": 1504.82,
+"lum": 0.142,
+"tags": [
+"a city skyline at night",
+"neon lights at night",
+"an office",
+"a luxury hotel",
+"a motel"
+],
+"texte": false
+},
+{
+"id": "XL-398",
+"v": "XL",
+"debut": 1504.82,
+"fin": 1508.87,
+"lum": 0.096,
+"tags": [
+"an office",
+"neon lights at night",
+"a man on his phone",
+"a woman on her phone",
+"a sunrise"
+],
+"texte": false
+},
+{
+"id": "XL-399",
+"v": "XL",
+"debut": 1508.87,
+"fin": 1512.93,
+"lum": 0.129,
+"tags": [
+"a store robbery",
+"a robbery with masks",
+"an inmate in a prison jumpsuit",
+"a rap music video",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "XL-400",
+"v": "XL",
+"debut": 1512.93,
+"fin": 1517.22,
+"lum": 0.135,
+"tags": [
+"a robbery with masks",
+"police officers arresting someone",
+"a police officer",
+"a store robbery",
+"a shootout"
+],
+"texte": false
+},
+{
+"id": "XL-401",
+"v": "XL",
+"debut": 1517.22,
+"fin": 1521.51,
+"lum": 0.171,
+"tags": [
+"a robbery with masks",
+"a store robbery",
+"a rap music video",
+"an inmate in a prison jumpsuit",
+"an office"
+],
+"texte": false
+},
+{
+"id": "XL-402",
+"v": "XL",
+"debut": 1521.51,
+"fin": 1525.8,
+"lum": 0.392,
+"tags": [
+"a store robbery",
+"a robbery with masks",
+"an inmate in a prison jumpsuit",
+"an office",
+"a shootout"
+],
+"texte": false
+},
+{
+"id": "XL-403",
+"v": "XL",
+"debut": 1525.8,
+"fin": 1529.58,
+"lum": 0.263,
+"tags": [
+"handcuffs",
+"a couple",
+"a kiss",
+"police officers arresting someone",
+"a couple in a car"
+],
+"texte": false
+},
+{
+"id": "XL-404",
+"v": "XL",
+"debut": 1529.58,
+"fin": 1533.37,
+"lum": 0.21,
+"tags": [
+"handcuffs",
+"a selfie video on a phone",
+"a man",
+"a man on his phone",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "XL-405",
+"v": "XL",
+"debut": 1533.37,
+"fin": 1537.15,
+"lum": 0.223,
+"tags": [
+"an ambulance",
+"a garage",
+"a gas station",
+"a fire truck",
+"a parking lot"
+],
+"texte": false
+},
+{
+"id": "XL-406",
+"v": "XL",
+"debut": 1537.15,
+"fin": 1540.93,
+"lum": 0.175,
+"tags": [
+"handcuffs",
+"a woman running",
+"a woman",
+"a woman on her phone",
+"a woman in a bikini"
+],
+"texte": false
+},
+{
+"id": "XL-407",
+"v": "XL",
+"debut": 1540.93,
+"fin": 1544.72,
+"lum": 0.001,
+"tags": [
+"white text on a black background",
+"a video game logo",
+"an ambulance",
+"a highway",
+"a couple"
+],
+"texte": true
+},
+{
+"id": "XL-408",
+"v": "XL",
+"debut": 1544.72,
+"fin": 1548.5,
+"lum": 0.14,
+"tags": [
+"a city skyline at night",
+"neon lights at night",
+"a city skyline at sunset",
+"aerial view of a city",
+"a city street at night"
+],
+"texte": false
+},
+{
+"id": "XL-409",
+"v": "XL",
+"debut": 1548.5,
+"fin": 1550.73,
+"lum": 0.369,
+"tags": [
+"a luxury hotel",
+"a bridge",
+"aerial view of a city",
+"a map",
+"a bank"
+],
+"texte": false
+},
+{
+"id": "XL-410",
+"v": "XL",
+"debut": 1550.73,
+"fin": 1552.47,
+"lum": 0.481,
+"tags": [
+"a speedboat",
+"a yacht",
+"a boat at sea",
+"a dock with boats",
+"the ocean"
+],
+"texte": false
+},
+{
+"id": "XL-411",
+"v": "XL",
+"debut": 1552.47,
+"fin": 1556.4,
+"lum": 0.08,
+"tags": [
+"a rap music video",
+"a tattooed man",
+"a man on his phone",
+"an inmate in a prison jumpsuit",
+"a man"
+],
+"texte": false
+},
+{
+"id": "XL-412",
+"v": "XL",
+"debut": 1556.4,
+"fin": 1558.0,
+"lum": 0.312,
+"tags": [
+"people dancing at a party",
+"a shopping mall",
+"people lifting weights",
+"a strip mall",
+"a bank"
+],
+"texte": false
+},
+{
+"id": "XL-413",
+"v": "XL",
+"debut": 1558.0,
+"fin": 1560.27,
+"lum": 0.285,
+"tags": [
+"a pawn shop",
+"a garage",
+"a store robbery",
+"handcuffs",
+"a trailer park"
+],
+"texte": false
+},
+{
+"id": "XL-414",
+"v": "XL",
+"debut": 1560.27,
+"fin": 1565.93,
+"lum": 0.087,
+"tags": [
+"a parking lot",
+"a police car",
+"a police chase",
+"a couple in a car",
+"a pickup truck"
+],
+"texte": false
+},
+{
+"id": "XL-415",
+"v": "XL",
+"debut": 1565.93,
+"fin": 1567.23,
+"lum": 0.268,
+"tags": [
+"a car dealership",
+"a woman driving a car",
+"a couple in a car",
+"a parking lot",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "XL-416",
+"v": "XL",
+"debut": 1567.23,
+"fin": 1568.33,
+"lum": 0.362,
+"tags": [
+"a small airplane",
+"a speedboat",
+"a helicopter",
+"a hurricane",
+"a police helicopter"
+],
+"texte": false
+},
+{
+"id": "XL-417",
+"v": "XL",
+"debut": 1568.33,
+"fin": 1569.87,
+"lum": 0.273,
+"tags": [
+"a man running",
+"a man",
+"a tattooed man",
+"a man on his phone",
+"a man holding a gun"
+],
+"texte": false
+},
+{
+"id": "XL-418",
+"v": "XL",
+"debut": 1569.87,
+"fin": 1572.8,
+"lum": 0.341,
+"tags": [
+"a city skyline at sunset",
+"aerial view of a city",
+"a sunrise",
+"a helicopter",
+"a city skyline at night"
+],
+"texte": false
+},
+{
+"id": "XL-419",
+"v": "XL",
+"debut": 1572.8,
+"fin": 1576.23,
+"lum": 0.497,
+"tags": [
+"a couple in a car",
+"a speedboat",
+"a woman in a bikini",
+"a yacht",
+"a couple"
+],
+"texte": false
+},
+{
+"id": "XL-420",
+"v": "XL",
+"debut": 1576.23,
+"fin": 1580.21,
+"lum": 0.155,
+"tags": [
+"a video game logo",
+"neon lights at night",
+"fire",
+"a sunrise",
+"a nightclub"
+],
+"texte": true
+},
+{
+"id": "XL-421",
+"v": "XL",
+"debut": 1580.21,
+"fin": 1584.19,
+"lum": 0.366,
+"tags": [
+"a video game logo",
+"a car dealership",
+"a garage",
+"a gas station",
+"a rap music video"
+],
+"texte": true
+},
+{
+"id": "XL-422",
+"v": "XL",
+"debut": 1584.19,
+"fin": 1588.17,
+"lum": 0.366,
+"tags": [
+"a video game logo",
+"a car dealership",
+"a garage",
+"a gas station",
+"a rap music video"
+],
+"texte": true
+},
+{
+"id": "XL-423",
+"v": "XL",
+"debut": 1588.17,
+"fin": 1592.15,
+"lum": 0.14,
+"tags": [
+"white text on a black background",
+"a video game logo",
+"a social media video",
+"a flamingo",
+"a pickup truck"
+],
+"texte": true
+},
+{
+"id": "XL-424",
+"v": "XL",
+"debut": 1592.15,
+"fin": 1596.13,
+"lum": 0.157,
+"tags": [
+"white text on a black background",
+"a rap music video",
+"a jewelry store",
+"a store robbery",
+"a video game logo"
+],
+"texte": true
+},
+{
+"id": "XL-425",
+"v": "XL",
+"debut": 1596.13,
+"fin": 1600.11,
+"lum": 0.153,
+"tags": [
+"white text on a black background",
+"a rap music video",
+"a store robbery",
+"a barber shop",
+"a jewelry store"
+],
+"texte": true
+},
+{
+"id": "XL-426",
+"v": "XL",
+"debut": 1600.11,
+"fin": 1604.09,
+"lum": 0.153,
+"tags": [
+"white text on a black background",
+"a rap music video",
+"a store robbery",
+"a jewelry store",
+"a barber shop"
+],
+"texte": true
+},
+{
+"id": "XL-427",
+"v": "XL",
+"debut": 1604.09,
+"fin": 1608.07,
+"lum": 0.14,
+"tags": [
+"a video game logo",
+"a social media video",
+"a rap music video",
+"a recording studio",
+"neon lights at night"
+],
+"texte": true
+},
+{
+"id": "PL-000",
+"v": "PL",
+"debut": 0.0,
+"fin": 5.2,
+"lum": 0.001,
+"tags": [
+"white text on a black background",
+"a video game logo",
+"an ambulance",
+"a highway",
+"a couple"
+],
+"texte": true
+},
+{
+"id": "PL-001",
+"v": "PL",
+"debut": 5.2,
+"fin": 6.77,
+"lum": 0.308,
+"tags": [
+"a crowd at the beach",
+"a rap music video",
+"a pawn shop",
+"a trailer park",
+"a woman"
+],
+"texte": false
+},
+{
+"id": "PL-002",
+"v": "PL",
+"debut": 6.77,
+"fin": 9.03,
+"lum": 0.389,
+"tags": [
+"a video game logo",
+"a car dealership",
+"a garage",
+"a rap music video",
+"a gas station"
+],
+"texte": true
+},
+{
+"id": "PL-003",
+"v": "PL",
+"debut": 9.03,
+"fin": 11.2,
+"lum": 0.078,
+"tags": [
+"a tattooed man",
+"a man on his phone",
+"a woman on her phone",
+"a man",
+"a man counting money"
+],
+"texte": false
+},
+{
+"id": "PL-004",
+"v": "PL",
+"debut": 11.2,
+"fin": 14.38,
+"lum": 0.288,
+"tags": [
+"a rap music video",
+"people dancing at a party",
+"a nightclub",
+"a fight",
+"police officers arresting someone"
+],
+"texte": false
+},
+{
+"id": "PL-005",
+"v": "PL",
+"debut": 14.38,
+"fin": 17.57,
+"lum": 0.238,
+"tags": [
+"a woman in a bikini",
+"a nightclub",
+"a rap music video",
+"a woman",
+"a social media video"
+],
+"texte": false
+},
+{
+"id": "PL-006",
+"v": "PL",
+"debut": 17.57,
+"fin": 18.57,
+"lum": 0.468,
+"tags": [
+"a woman in a bikini",
+"a rap music video",
+"a woman",
+"a pool party",
+"a woman on her phone"
+],
+"texte": false
+},
+{
+"id": "PL-007",
+"v": "PL",
+"debut": 18.57,
+"fin": 22.09,
+"lum": 0.143,
+"tags": [
+"fireworks",
+"an explosion",
+"neon lights at night",
+"fire",
+"a nightclub"
+],
+"texte": false
+},
+{
+"id": "PL-008",
+"v": "PL",
+"debut": 22.09,
+"fin": 25.61,
+"lum": 0.37,
+"tags": [
+"a video game logo",
+"a car dealership",
+"a recording studio",
+"a rap music video",
+"a nightclub"
+],
+"texte": true
+},
+{
+"id": "PL-009",
+"v": "PL",
+"debut": 25.61,
+"fin": 29.13,
+"lum": 0.143,
+"tags": [
+"a video game logo",
+"neon lights at night",
+"a social media video",
+"a nightclub",
+"a rap music video"
+],
+"texte": true
+},
+{
+"id": "C-BoobieIke-000",
+"v": "C-BoobieIke",
+"debut": 0.0,
+"fin": 1.0,
+"lum": 0.111,
+"tags": [
+"a rap music video",
+"a man",
+"a man on his phone",
+"handcuffs",
+"a selfie video on a phone"
+],
+"texte": false
+},
+{
+"id": "C-BrianHeder-000",
+"v": "C-BrianHeder",
+"debut": 0.0,
+"fin": 1.0,
+"lum": 0.225,
+"tags": [
+"a tattooed man",
+"a man",
+"a man on his phone",
+"a couple",
+"a trailer park"
+],
+"texte": false
+},
+{
+"id": "C-CalHampton-000",
+"v": "C-CalHampton",
+"debut": 0.0,
+"fin": 1.0,
+"lum": 0.712,
+"tags": [
+"a tattooed man",
+"a man counting money",
+"a man",
+"a man on his phone",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "C-DreQuanPries-000",
+"v": "C-DreQuanPries",
+"debut": 0.0,
+"fin": 1.0,
+"lum": 0.055,
+"tags": [
+"a rap music video",
+"a nightclub",
+"a man on his phone",
+"a selfie video on a phone",
+"handcuffs"
+],
+"texte": false
+},
+{
+"id": "C-OfficialCove-000",
+"v": "C-OfficialCove",
+"debut": 0.0,
+"fin": 4.08,
+"lum": 0.247,
+"tags": [
+"white text on a black background",
+"a video game logo",
+"a social media video",
+"a TV news broadcast",
+"a rap music video"
+],
+"texte": true
+},
+{
+"id": "C-OfficialCove-001",
+"v": "C-OfficialCove",
+"debut": 4.08,
+"fin": 8.17,
+"lum": 0.001,
+"tags": [
+"white text on a black background",
+"a video game logo",
+"an ambulance",
+"a highway",
+"a couple"
+],
+"texte": true
+},
+{
+"id": "C-OfficialCove-002",
+"v": "C-OfficialCove",
+"debut": 8.17,
+"fin": 12.25,
+"lum": 0.186,
+"tags": [
+"a video game logo",
+"neon lights at night",
+"a nightclub",
+"a flamingo",
+"a selfie video on a phone"
+],
+"texte": true
+},
+{
+"id": "C-OfficialCove-003",
+"v": "C-OfficialCove",
+"debut": 12.25,
+"fin": 16.33,
+"lum": 0.211,
+"tags": [
+"a video game logo",
+"a rap music video",
+"a social media video",
+"a nightclub",
+"a car dealership"
+],
+"texte": true
+},
+{
+"id": "C-OfficialCove-004",
+"v": "C-OfficialCove",
+"debut": 16.33,
+"fin": 20.42,
+"lum": 0.424,
+"tags": [
+"a video game logo",
+"a car dealership",
+"a crowd at the beach",
+"a woman in a bikini",
+"a shopping mall"
+],
+"texte": true
+},
+{
+"id": "C-OfficialCove-005",
+"v": "C-OfficialCove",
+"debut": 20.42,
+"fin": 24.5,
+"lum": 0.201,
+"tags": [
+"a video game logo",
+"a rap music video",
+"a social media video",
+"a nightclub",
+"a car dealership"
+],
+"texte": true
+},
+{
+"id": "C-OfficialCove-006",
+"v": "C-OfficialCove",
+"debut": 24.5,
+"fin": 28.58,
+"lum": 0.149,
+"tags": [
+"white text on a black background",
+"a store robbery",
+"a rap music video",
+"a jewelry store",
+"a barber shop"
+],
+"texte": true
+},
+{
+"id": "C-OfficialCove-007",
+"v": "C-OfficialCove",
+"debut": 28.58,
+"fin": 32.67,
+"lum": 0.141,
+"tags": [
+"a video game logo",
+"a social media video",
+"neon lights at night",
+"a rap music video",
+"white text on a black background"
+],
+"texte": true
+},
+{
+"id": "C-JasonDuval-000",
+"v": "C-JasonDuval",
+"debut": 0.0,
+"fin": 1.0,
+"lum": 0.26,
+"tags": [
+"a bodybuilder at the gym",
+"a man",
+"a cashier in a convenience store",
+"a store robbery",
+"a man holding a gun"
+],
+"texte": false
+},
+{
+"id": "C-LuciaCaminos-000",
+"v": "C-LuciaCaminos",
+"debut": 0.0,
+"fin": 1.5,
+"lum": 0.181,
+"tags": [
+"a woman on her phone",
+"a woman in a bikini",
+"a woman",
+"a woman driving a car",
+"a nightclub"
+],
+"texte": false
+},
+{
+"id": "C-RaulBautista-000",
+"v": "C-RaulBautista",
+"debut": 0.0,
+"fin": 1.5,
+"lum": 0.245,
+"tags": [
+"a man holding a gun",
+"a gun",
+"a man",
+"a rifle",
+"a gun store"
+],
+"texte": false
+},
+{
+"id": "C-RealDimez-000",
+"v": "C-RealDimez",
+"debut": 0.0,
+"fin": 1.0,
+"lum": 0.048,
+"tags": [
+"a woman",
+"a rap music video",
+"a woman on her phone",
+"a nightclub",
+"fire"
+],
+"texte": false
+}
+]
+}
