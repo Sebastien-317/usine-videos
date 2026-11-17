@@ -1,10 +1,12 @@
 # Chaque matin : Claude (Claude Code, connecté à l'abonnement de Sébastien) produit les vidéos du jour,
 # les programme chez Upload-Post (12 h 30 et 19 h) et envoie les aperçus sur Telegram. Aucun serveur à payer.
 name: Production quotidienne
-# DÉSACTIVÉ depuis le 17/11/2026 : l'usine tourne sur le PC de Sébastien (voir pc/LISEZMOI.md),
-# pour ne plus consommer de minutes GitHub Actions. Plus de déclenchement automatique ici.
+# Dépôt public : les machines standard de GitHub Actions sont gratuites et ne touchent pas au quota des autres projets
+# (vérifié le 17/11/2026 : 0 minute facturée sur les productions de 36 à 53 min). Alternative sans GitHub : pc/LISEZMOI.md.
 on:
-  workflow_dispatch:          # lancement à la main seulement, en secours
+  schedule:
+    - cron: "12 6 * * *"     # 6 h 12 UTC = 7 h 12 à Paris en hiver (8 h 12 en été)
+  workflow_dispatch:          # bouton « Run workflow » pour lancer à la main
 permissions:
   contents: write
 concurrency: usine
