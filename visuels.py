@@ -3,6 +3,8 @@
 Chaque scène du storyboard liste ses visuels, dans l'ordre où ils doivent apparaître :
   "pixabay:hacker dark room"   -> recherche Pixabay (mots-clés en anglais), clip libre de droits
   "pixabay:#250395"            -> un clip Pixabay précis, choisi sur la planche candidats.jpg
+  "officiel:police chase night" -> un plan des vidéos officielles de GTA 6 (kit média Rockstar, voir officiel.py)
+  "officiel:#T2-014"           -> un plan officiel précis, choisi sur la planche candidats.jpg
   "3d:rue_neon"                -> plan 3D généré par le moteur
 Le moteur coupe toutes les ~1,7 s et alterne ces visuels. Chaque morceau est recadré en 1080×1920,
 étalonné (contraste, couleurs froides dans les ombres, vignette) et coupé à la bonne durée.
@@ -28,6 +30,7 @@ FPS = 30
 SEG = 1.7  # secondes par plan
 CACHE = ICI / "cache_visuels"
 UTILISES = ICI / "bibliotheque" / "pixabay_utilises.json"
+UTILISES_OFF = ICI / "bibliotheque" / "officiel_utilises.json"
 REPLI_3D = ["rue_neon", "poursuite_nuit", "helico_nuit", "autoroute_nuit", "vue_aerienne", "avenue_coucher"]
 ENTETES = {"User-Agent": "usine-videos/1.0 (generateur de videos courtes; contact via github.com/Sebastien-317)"}
 # Un étalonnage par thème (story["theme"]) : deux vidéos de thèmes différents n'ont pas la même couleur
@@ -162,6 +165,43 @@ class Pixabay:
             UTILISES.write_text(json.dumps(reg, indent=0))
 
 
+class Officiel:
+    """Plans des vidéos officielles de GTA 6 ; évite les plans déjà montrés dans les vidéos récentes."""
+    def __init__(self, graine, nom):
+        self.b = None
+        try:
+            from officiel import Bibliotheque
+            self.b = Bibliotheque()
+            if not self.b.ok:
+                journal("bibliothèque officielle vide (cache absent ?) : les visuels « officiel: » passeront à la 3D")
+        except Exception as e:
+            journal("bibliothèque officielle indisponible :", e)
+        self.rng = random.Random(graine)
+        self.nom = nom
+        self.registre = json.loads(UTILISES_OFF.read_text()) if UTILISES_OFF.exists() else {}
+        self.deja = {i for i, v in self.registre.items() if v != nom}
+        self.cette_video = set()
+
+    def pertinents(self, q, n=8):
+        return self.b.chercher(q, n) if self.b and self.b.ok else []
+
+    def plan(self, q):
+        if not (self.b and self.b.ok):
+            return None
+        hits = self.b.chercher(q, 12, exclure=() if q.startswith("#") else self.cette_video) or self.b.chercher(q, 12)
+        if not hits:
+            return None
+        p = max(hits, key=lambda x: x[1] + (0 if x[0]["id"] in self.deja else 0.03) + self.rng.random() * 0.01)[0]
+        self.cette_video.add(p["id"])
+        return p
+
+    def memoriser(self):
+        if self.cette_video:
+            reg = {i: v for i, v in self.registre.items() if v != self.nom}
+            reg.update({i: self.nom for i in self.cette_video})
+            UTILISES_OFF.write_text(json.dumps(dict(list(reg.items())[-400:]), indent=0))
+
+
 def candidats(story, px, out):
     """Pour chaque recherche du storyboard : les 8 meilleurs clips (vignette + identifiant), pour choisir « pixabay:#id »."""
     try:
@@ -206,6 +246,40 @@ def candidats(story, px, out):
             d.text((x + 3, y + 21), f"#{h['id']}{' V' if vert else ''}", fill=(255, 255, 255), font=police)
     pl.save(out / "candidats.jpg", quality=85)
     journal("candidats :", out / "candidats.jpg")
+
+
+def candidats_officiels(story, off, out):
+    """Pour chaque recherche « officiel: » : les 8 meilleurs plans officiels (vignette verticale + identifiant)."""
+    try:
+        from PIL import Image, ImageDraw
+        from officiel import vignette
+    except ImportError:
+        return
+    lignes = []
+    for i, sc in enumerate(story["scenes"]):
+        for v in dict.fromkeys(sc.get("visuels") or []):
+            typ, _, q = v.partition(":")
+            if typ == "officiel" and not q.startswith("#"):
+                lignes.append((i, q, off.pertinents(q, 8)))
+    if not lignes:
+        return
+    police = police_planche()
+    W, H = 144, 256
+    pl = Image.new("RGB", (8 * (W + 4) + 4, len(lignes) * (H + 26) + 4), (0, 0, 0))
+    d = ImageDraw.Draw(pl)
+    for li, (i, q, hits) in enumerate(lignes):
+        y = 4 + li * (H + 26)
+        d.text((6, y), f"SCÈNE {i + 1} · officiel:{q}", fill=(255, 210, 63), font=police)
+        for k, (p, _) in enumerate(hits):
+            x = 4 + k * (W + 4)
+            try:
+                pl.paste(Image.open(vignette(p)).convert("RGB").resize((W, H)), (x, y + 20))
+            except Exception:
+                pass
+            d.rectangle([x, y + 20, x + 84, y + 36], fill=(0, 0, 0))
+            d.text((x + 3, y + 21), f"#{p['id']}", fill=(255, 255, 255), font=police)
+    pl.save(out / "candidats_officiels.jpg", quality=85)
+    journal("candidats officiels :", out / "candidats_officiels.jpg")
 
 
 def police_planche():
@@ -267,6 +341,7 @@ def main():
     pub.mkdir(parents=True)
     graine = int(hashlib.md5(nom.encode()).hexdigest()[:8], 16)
     px = Pixabay(graine, nom)
+    off = Officiel(graine, nom)
     rng = random.Random(graine)
     debuts = [0] + [round(s["debut"] * FPS) for s in timing["scenes"][1:]]
     premier = None  # (fichier, début, id) du tout premier plan, pour boucler la fin dessus
@@ -290,10 +365,26 @@ def main():
                 dispo, _, _ = ffprobe(f0)
                 try:
                     recadrer(f0, dest, max(0.0, debut0 - d / FPS), d / FPS + 0.05, dispo, etal)
-                    segs.append({"type": "video", "src": f"clips/{nom}/{dest.name}", "duree": d, "source": f"pixabay {hid0} (raccord boucle)", "raccord": True})
+                    segs.append({"type": "video", "src": f"clips/{nom}/{dest.name}", "duree": d, "source": f"{hid0} (raccord boucle)", "raccord": True})
                     continue
                 except subprocess.CalledProcessError as e:
                     journal("raccord de boucle impossible", e)
+            if typ == "officiel":
+                p = off.plan(val)
+                if p:
+                    f = off.b.fichier(p)
+                    dispo, _, _ = ffprobe(f)
+                    longueur = p["fin"] - p["debut"]
+                    debut = p["debut"] + max(0.0, (longueur - d / FPS) / 2)
+                    if story.get("boucle") and i == 0 and k == 0:
+                        # marge dans le même plan avant le premier plan, pour le raccord de fin
+                        debut = p["debut"] + min(max(0.0, longueur - d / FPS - 0.05), d / FPS + 0.05)
+                        premier = (f, debut, f"officiel {p['id']}")
+                    try:
+                        recadrer(f, dest, debut, d / FPS + 0.05, dispo, etal)
+                        seg = {"type": "video", "src": f"clips/{nom}/{dest.name}", "duree": d, "source": f"officiel {p['id']}"}
+                    except subprocess.CalledProcessError as e:
+                        journal("recadrage impossible", f, e)
             if typ == "pixabay":
                 r = px.clip(val, d / FPS)
                 if r:
@@ -304,7 +395,7 @@ def main():
                         # on garde de la marge avant le premier plan pour le raccord de fin
                         reste = dispo - d / FPS - 0.3
                         debut = rng.uniform(min(2.5, max(0.0, reste)), max(0.0, reste))
-                        premier = (f, debut, hid)
+                        premier = (f, debut, f"pixabay {hid}")
                     try:
                         recadrer(f, dest, debut, d / FPS + 0.05, dispo, etal)
                         seg = {"type": "video", "src": f"clips/{nom}/{dest.name}", "duree": d, "source": f"pixabay {hid}"}
@@ -319,8 +410,10 @@ def main():
         sc["segments"] = segs
         journal(f"scène {i + 1} :", ", ".join(s.get("source", "3d " + s.get("plan", "")) for s in segs))
     px.memoriser()
+    off.memoriser()
     planche(story, pub, out)
     candidats(story, px, out)
+    candidats_officiels(story, off, out)
     story["clips"] = nom
     (out / "storyboard_rendu.json").write_text(json.dumps(story, ensure_ascii=False, indent=1))
     journal("prêt :", out / "storyboard_rendu.json")

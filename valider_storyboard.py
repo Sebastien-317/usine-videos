@@ -218,8 +218,10 @@ def valider(b, ch, sortie=None):
                 pb.append(f"Scène {i} : « visuels » doit lister 1 à 4 visuels (2 ou 3 conseillés).")
             for x in vis:
                 typ, _, val = str(x).partition(":")
-                if typ not in ("pixabay", "3d") or not val.strip():
-                    pb.append(f"Scène {i} : visuel « {x} » invalide (pixabay:mots anglais ou 3d:rue_neon).")
+                if typ not in ("pixabay", "officiel", "3d") or not val.strip():
+                    pb.append(f"Scène {i} : visuel « {x} » invalide (officiel:mots anglais, pixabay:mots anglais ou 3d:rue_neon).")
+                elif typ == "officiel" and val.startswith("#") and not re.match(r"^#[A-Za-z0-9-]+-\d{3}$", val.strip()):
+                    pb.append(f"Scène {i} : « {x} » : après # il faut l'identifiant d'un plan officiel (ex. officiel:#T2-014).")
                 elif typ == "3d" and val not in ch["plans_autorises"]:
                     pb.append(f"Scène {i} : plan 3D « {val} » inconnu.")
                 elif typ == "pixabay" and val.startswith("#") and not val[1:].split()[0].isdigit():

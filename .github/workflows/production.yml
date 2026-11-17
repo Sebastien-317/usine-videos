@@ -47,12 +47,19 @@ jobs:
           [ -d sherpa-onnx-whisper-small ] || { wget -q https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-small.tar.bz2 && tar xjf sherpa-onnx-whisper-small.tar.bz2 && rm sherpa-onnx-whisper-small.tar.bz2; }
           cd ../rendu && npm ci
           npm install -g @anthropic-ai/claude-code
+      - name: Cache des vidéos officielles GTA 6
+        uses: actions/cache@v4
+        with:
+          path: cache_officiel
+          key: officiel-v1
+      - name: Vidéos officielles GTA 6 (kit média Rockstar, voir officiel.py)
+        run: python3 officiel.py preparer || echo "bibliothèque officielle indisponible, visuels libres de droits seulement"
       - name: Production (pilote Claude)
         run: chmod +x produire.sh fabriquer.sh && ./produire.sh gta6-fr
       - name: Mémoire (sujets traités, file d'attente, journaux)
         if: always()
         run: |
           git config user.name "usine-bot" && git config user.email "usine-bot@users.noreply.github.com"
-          for f in historique.jsonl file_attente journaux brouillons bibliotheque/pixabay_utilises.json; do [ -e "$f" ] && git add "$f"; done
+          for f in historique.jsonl file_attente journaux brouillons bibliotheque/pixabay_utilises.json bibliotheque/officiel_utilises.json; do [ -e "$f" ] && git add "$f"; done
           git commit -m "Production du $(date +%F)" || echo "rien à enregistrer"
           git push
