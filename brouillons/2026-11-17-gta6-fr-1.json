@@ -1,0 +1,39 @@
+{
+  "titre": "GTA 6 a déjà 5 étoiles sans que personne y ait joué",
+  "format": "decryptage",
+  "theme": "terminal",
+  "apprend": [
+    "Sur le Xbox Store, il suffit de précommander pour noter un jeu avant sa sortie : GTA 6 a dépassé 2 000 avis américains dès juin.",
+    "Sur le PlayStation Store, des notes sont apparues avant la sortie : 12 au total, 92 % à cinq étoiles, sans un mot de texte, et un utilisateur est passé de 1 à 5 étoiles.",
+    "Aucun achat numérique ne demande de temps de jeu minimum pour noter, et personne ne sait encore qui a posté ces premières notes."
+  ],
+  "legende": "GTA 6 : comment le jeu a déjà des notes 5 étoiles avant même sa sortie ? Personne n'y a encore joué. #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {"fait": "Sur le Xbox Store, quiconque précommande un jeu peut le noter avant la sortie ; plus de 2 000 avis pour GTA 6 sur la boutique américaine environ cinq mois avant la sortie (Pure Xbox, 26 juin 2026)", "url": "https://purexbox.com/news/2026/06/gta-6-is-highlighting-a-flaw-with-the-review-system-on-xbox"},
+    {"fait": "PlayStation Store : 11 notes toutes à 5/5 repérées, puis 12 notes, moyenne 4,67, 92 % de cinq étoiles, un utilisateur passé de 1 à 5 étoiles, aucun texte écrit ; pas de statement de Rockstar ni Sony (Notebookcheck, 10 novembre 2026)", "url": "https://www.notebookcheck.net/GTA-6-PS5-reviews-already-live-on-PlayStation-Store-before-embargo-and-release-date.1447176.0.html"},
+    {"fait": "Notes sans texte, pas de temps de jeu minimum pour un achat numérique PSN ; explications non confirmées : codes envoyés à des sites ou préchargement (TBreak)", "url": "https://tbreak.com/gta-6-playstation-store-ratings-before-launch/"},
+    {"fait": "Mai 2026 : une note cinq étoiles sur la page Xbox Store de GTA VI, postée par quelqu'un qui n'y avait jamais joué (OpenCritic / Screen Rant)", "url": "https://opencritic.com/news/31478/gta-6-s-first-review-appears-online"}
+  ],
+  "scenes": [
+    {"voix": "Jamais touché à GTA 6, mais déjà 5 étoiles. Comment ?",
+     "voix_jeu": "[curious] Jamais touché à GTA 6, mais déjà 5 étoiles. [short pause] Comment ?",
+     "visuels": ["pixabay:#38084", "pixabay:#289001"], "gros": "5 ÉTOILES|SANS JOUER"},
+    {"voix": "Sur le Xbox Store, une précommande suffit pour noter.",
+     "visuels": ["pixabay:#180776", "pixabay:#4733"], "lieu": "XBOX STORE"},
+    {"voix": "Dès juin : plus de 2000 avis aux États-Unis.",
+     "visuels": ["pixabay:#169445", "pixabay:#202987"], "compteur": {"valeur": 2000, "suffixe": " avis", "label": "AVIS EN JUIN"}},
+    {"voix": "Sur PlayStation, 11 notes apparaissent, toutes à 5 sur 5.",
+     "voix_jeu": "[curious] Sur PlayStation, 11 notes apparaissent, toutes à 5 sur 5.",
+     "visuels": ["pixabay:#14900", "pixabay:#14906"], "document": {"entete": "PS STORE", "titre": "LES NOTES", "lignes": ["Notes trouvées : 11", "Moyenne : [[5 sur 5]]", "Texte écrit : aucun"], "tampon": "SUSPECT"}},
+    {"voix": "Au final, 12 notes, 92 % à cinq étoiles. Un utilisateur passe de 1 à 5.",
+     "visuels": ["pixabay:#47743", "pixabay:#10822"], "compteur": {"valeur": 92, "suffixe": " %", "label": "NOTES À 5 ÉTOILES"}},
+    {"voix": "Aucun temps de jeu minimum requis. Rien n'est confirmé.",
+     "voix_jeu": "[excited] Aucun temps de jeu minimum requis. [short pause] Rien n'est confirmé.",
+     "visuels": ["pixabay:#214855", "pixabay:#4733"], "tampon": "NON CONFIRMÉ", "tamponMot": "confirmé"},
+    {"voix": "Ces étoiles mesurent l'attente, pas le jeu.",
+     "visuels": ["pixabay:#152728", "pixabay:#2241"], "coupure": {"source": "Notebookcheck", "date": "10 NOV. 2026", "titre": "Des étoiles avant la sortie, sans texte"}},
+    {"voix": "Et la première note, en mai, venait de quelqu'un qui n'avait…",
+     "voix_jeu": "[dramatically] Et la première note, en mai, venait de quelqu'un qui n'avait…",
+     "visuels": ["pixabay:#26793", "pixabay:#40797"]}
+  ]
+}

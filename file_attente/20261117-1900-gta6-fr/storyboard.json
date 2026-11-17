@@ -1,0 +1,163 @@
+{
+  "composition": "Doc",
+  "boucle": true,
+  "chaine": {
+    "id": "gta6-fr",
+    "nom": "DOSSIER JEU",
+    "langue": "fr-fr",
+    "voix": "ff_siwis",
+    "vitesse": 1.12,
+    "prononciation": {
+      "GTA 6": "gé-té-a sisse",
+      "GTA 5": "gé-té-a cinq",
+      "GTA": "gé-té-a",
+      "Take-Two": "Tèk-Tou",
+      "Xbox": "Ixe-bosse",
+      "Series": "Siriz"
+    },
+    "prononciation_elevenlabs": {
+      "GTA": "Gé-Té-A"
+    },
+    "moteur_voix": "elevenlabs",
+    "voix_elevenlabs": "3Tp5mYhT9wrfnry9pzvV",
+    "modele_elevenlabs": "eleven_v4"
+  },
+  "titre": "5 jours de précommandes de GTA 6 ont secoué Take-Two",
+  "legende": "GTA 6 : 5 jours de précommandes, et le patron de Take-Two parle d'un niveau sans précédent. Mais il ne donne aucun chiffre. #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {
+      "fait": "Précommandes ouvertes le 25 juin, cinq jours avant la fin du trimestre ; Zelnick : « unprecedented and astonishing » (Shacknews)",
+      "url": "https://www.shacknews.com/article/150293/gta-6-pre-orders-high-demand-ttwo"
+    },
+    {
+      "fait": "Zelnick : « we just don't believe in claiming victory before it occurs » ; ignore comment les précommandes se traduiront en ventes ; 79,99 $ standard, 99,99 $ Ultimate (Shacknews)",
+      "url": "https://www.shacknews.com/article/150293/gta-6-pre-orders-high-demand-ttwo"
+    },
+    {
+      "fait": "Trimestre avril-juin : net bookings 1,39 milliard de dollars, en baisse d'environ 3 % contre 1,42 milliard ; pas de chiffre exact pour les précommandes (CGMagazine, 7 août 2026)",
+      "url": "https://www.cgmagonline.com/news/gta-6-pre-orders-take-two-financials-ceo/"
+    },
+    {
+      "fait": "9 novembre 2026 : chiffre d'affaires 1,60 milliard de dollars contre 1,66 attendu ; Zelnick : les précommandes dépassent les attentes (Shacknews)",
+      "url": "https://shacknews.com/article/151309/take-two-interactive-ttwo-q2-2027-earnings-results"
+    }
+  ],
+  "scenes": [
+    {
+      "voix": "5 jours de précommandes, un niveau sans précédent.",
+      "voix_jeu": "[surprised] 5 jours de pré-commandes, un niveau sans précédent.",
+      "visuels": [
+        "pixabay:#50622",
+        "pixabay:#349089"
+      ],
+      "gros": "5 JOURS|SUFFISENT",
+      "seed": 11
+    },
+    {
+      "voix": "Précommandes de GTA 6 ouvertes le 25 juin, 5 jours avant la fin du trimestre.",
+      "visuels": [
+        "pixabay:#16359",
+        "pixabay:#24136"
+      ],
+      "lieu": "TAKE-TWO · JUIN",
+      "compteur": {
+        "valeur": 5,
+        "suffixe": " jours",
+        "label": "DANS LE TRIMESTRE"
+      },
+      "seed": 24
+    },
+    {
+      "voix": "Le prix : 79,99 dollars, ou 99,99 pour l'Ultimate.",
+      "voix_jeu": "[excited] Le prix : 79,99 dollars, ou 99,99 pour l'Ultimate.",
+      "visuels": [
+        "pixabay:#50623",
+        "pixabay:#59138"
+      ],
+      "duel": {
+        "gauche": {
+          "label": "STANDARD",
+          "valeur": 79.99
+        },
+        "droite": {
+          "label": "ULTIMATE",
+          "valeur": 99.99
+        },
+        "suffixe": " $"
+      },
+      "seed": 37
+    },
+    {
+      "voix": "Zelnick ne donne aucun chiffre et refuse de crier victoire.",
+      "voix_jeu": "[curious] Zelnick ne donne aucun chiffre et refuse de crier victoire.",
+      "visuels": [
+        "pixabay:#137265",
+        "pixabay:#126558"
+      ],
+      "coupure": {
+        "source": "Shacknews",
+        "date": "AOÛT 2026",
+        "titre": "Précommandes record, mais pas de victoire"
+      },
+      "seed": 50
+    },
+    {
+      "voix": "Il ignore comment ça deviendra des ventes.",
+      "visuels": [
+        "pixabay:#137250"
+      ],
+      "tampon": "INCONNU",
+      "tamponMot": "ignore",
+      "seed": 63
+    },
+    {
+      "voix": "Avril à juin : 1,39 milliard de dollars. L'an dernier : 1,42.",
+      "voix_jeu": "[surprised] Avril à juin : 1,39 milliard de dollars. [short pause] L'an dernier : 1,42.",
+      "visuels": [
+        "pixabay:#349091",
+        "pixabay:#24136"
+      ],
+      "duel": {
+        "gauche": {
+          "label": "AVR.-JUIN 2026",
+          "valeur": 1.39
+        },
+        "droite": {
+          "label": "AVR.-JUIN 2025",
+          "valeur": 1.42
+        },
+        "suffixe": " Md$"
+      },
+      "seed": 76
+    },
+    {
+      "voix": "Le 9 novembre : 1,60 milliard de ventes, pour 1,66 attendus.",
+      "visuels": [
+        "pixabay:#202987",
+        "pixabay:#23258"
+      ],
+      "compteur": {
+        "valeur": 1.6,
+        "suffixe": " Md$",
+        "label": "VENTES, 9 NOVEMBRE"
+      },
+      "seed": 89
+    },
+    {
+      "voix": "Le vrai chiffre arrive le 19 novembre. Tout est parti de…",
+      "voix_jeu": "[dramatically] Le vrai chiffre arrive le 19 novembre. Tout est parti de…",
+      "visuels": [
+        "pixabay:#16359",
+        "pixabay:#20857"
+      ],
+      "seed": 102
+    }
+  ],
+  "format": "chiffre",
+  "theme": "data",
+  "apprend": [
+    "Les précommandes de GTA 6 n'ont pesé que 5 jours dans le trimestre d'avril à juin de Take-Two, ouvertes le 25 juin.",
+    "Take-Two a fait 1,39 milliard de dollars de réservations nettes sur ce trimestre, moins que les 1,42 milliard de l'an dernier : GTA 6 n'y était pas encore.",
+    "Le patron de Take-Two parle d'un niveau sans précédent mais refuse de donner un chiffre et dit ne pas savoir comment il se traduira en ventes."
+  ]
+}
