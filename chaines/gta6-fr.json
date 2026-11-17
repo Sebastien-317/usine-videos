@@ -39,11 +39,12 @@
     "#gaming"
   ],
   "mots_cles_recherche": [
-    "GTA",
-    "Rockstar",
-    "Vice City",
-    "Take-Two",
-    "Leonida"
+    "GTA 6",
+    "GTA VI",
+    "GTA6",
+    "Leonida",
+    "Lucia",
+    "Jason"
   ],
   "max_caracteres_voix": 480,
   "min_caracteres_voix": 250,
@@ -76,5 +77,11 @@
     "Aucun contenu issu d'une fuite (images, vidéos, code) : raconter l'histoire d'une fuite d'après la presse, oui ; montrer ce qui a fuité, non.",
     "Aucune rumeur ou fausse info présentée comme vraie, aucun chiffre sans source vérifiée dans la journée.",
     "Personnes réelles : seulement des faits publiés par des médias reconnus ; pas de nom de mineur, pas de détail de santé."
+  ],
+  "sujet_obligatoire": [
+    "gta 6",
+    "gta vi",
+    "gta six",
+    "gta6"
   ]
 }

@@ -332,6 +332,17 @@ def valider(b, ch, sortie=None):
             pb.append(f"Légende : les 80 premiers caractères doivent contenir un mot que les gens cherchent ({', '.join(ch['mots_cles_recherche'])}), pas seulement les hashtags.")
         if sc and not any(c in " ".join(x.get("voix", "") for x in sc[:2]).lower() for c in cles):
             pb.append(f"La voix des 2 premières scènes doit dire le sujet avec un mot cherché ({', '.join(ch['mots_cles_recherche'])}).")
+    # La chaîne parle de GTA 6, pas de l'histoire de la série : le sujet doit être nommé dans le titre, l'accroche et la légende
+    sujet = [c.lower() for c in ch.get("sujet_obligatoire", [])]
+    if sujet:
+        def parle_de(t):
+            return any(c in re.sub(r"\s+", " ", t.lower()) for c in sujet)
+        if not parle_de(b.get("titre", "")):
+            pb.append("Hors sujet : le titre doit parler de GTA 6 (« GTA 6 » ou « GTA VI »). Une histoire sur un ancien GTA ou sur Rockstar en général n'a pas sa place sur cette chaîne.")
+        if sc and not parle_de(" ".join(x.get("voix", "") for x in sc[:2])):
+            pb.append("Hors sujet : la voix doit dire « GTA 6 » dans les 2 premières scènes.")
+        if not parle_de(re.sub(r"#\w+", "", leg)[:80]):
+            pb.append("Hors sujet : la légende doit commencer par « GTA 6 : … ».")
     return pb, avert
 
 
