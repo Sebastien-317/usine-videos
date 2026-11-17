@@ -27,7 +27,10 @@ HABILLAGES_DOC = ("gros", "compteur", "document", "coupure", "liste", "duel", "f
 EN_PLUS_DOC = ("lieu", "tampon")
 # Six formats d'histoire et cinq thèmes visuels : deux vidéos qui se suivent ne partagent ni l'un ni l'autre
 FORMATS = {
-    "enquete": "une histoire vraie racontée comme un polar, l'accroche donne la fin choquante",
+    # Étude TikTok du 17/11/2026 : les guides à la 2e personne (« ton 1er argent dans GTA 6 ») font 30 à 300 fois
+    # les vues des anecdotes sur les mêmes comptes. Une vidéo par jour au moins est un guide.
+    "guide": "ce que le joueur doit savoir, faire ou éviter dans GTA 6, en 3 ou 4 points concrets (liste)",
+    "enquete":"une histoire vraie racontée comme un polar, l'accroche donne la fin choquante",
     "decryptage": "comment ou pourquoi c'est arrivé : le mécanisme expliqué pas à pas, l'accroche est une question",
     "top3": "trois faits classés du moins fort au plus fort (liste 3, 2, 1)",
     "mythe": "une croyance répandue confrontée aux faits, verdict au tampon",
@@ -87,6 +90,11 @@ def regles_doc(b, sc, ch, sortie):
     if th not in THEMES_DOC:
         pb.append(f"Champ « theme » obligatoire, parmi : {', '.join(THEMES_DOC)}.")
     v1 = sc[0].get("voix", "")
+    if fmt == "guide":
+        if sum(1 for s in sc if s.get("liste")) < 3:
+            pb.append("Format guide : au moins 3 scènes « liste » (un point concret chacune).")
+        if not re.search(r"(?i)\b(tu|ton|ta|tes|toi|te)\b|\bt'", v1):
+            pb.append("Format guide : l'accroche parle au joueur (« tu », « ton », « ta » : « Ton argent dans GTA 6… »).")
     if fmt == "top3":
         nums = [s["liste"].get("numero") for s in sc if s.get("liste")]
         if nums != [3, 2, 1]:
@@ -129,6 +137,8 @@ def regles_doc(b, sc, ch, sortie):
     # Variété : ni le même format ni le même thème que la vidéo précédente ou celle du même jour ; pas de redite
     hist, jour = precedentes(ch, sortie)
     vues = hist + jour
+    if jour and fmt != "guide" and not any(x.get("format") == "guide" for x in jour):
+        pb.append("Une des 2 vidéos du jour doit être au format « guide » (ce qui marche le mieux, étude du 17/11) : celle-ci, puisque l'autre n'en est pas un.")
     for x in jour + hist[-1:]:
         if fmt and x.get("format") == fmt:
             pb.append(f"Format « {fmt} » déjà utilisé par « {x.get('titre')} » (vidéo précédente ou du même jour) : choisis-en un autre.")
@@ -343,6 +353,9 @@ def valider(b, ch, sortie=None):
             pb.append("Hors sujet : la voix doit dire « GTA 6 » dans les 2 premières scènes.")
         if not parle_de(re.sub(r"#\w+", "", leg)[:80]):
             pb.append("Hors sujet : la légende doit commencer par « GTA 6 : … ».")
+        # Étude du 17/11 : nos spectateurs partent à 0:01 ; les vidéos qui marchent affichent « GTA 6 » en gros dès la 1re image
+        if doc and sc and sc[0].get("gros") and not parle_de(sc[0]["gros"].replace("|", " ")):
+            pb.append("Scène 1 : le texte « gros » doit contenir « GTA 6 » (ex. « TON ARGENT|DANS GTA 6 ») : le spectateur doit voir le sujet dès la 1re seconde.")
     return pb, avert
 
 

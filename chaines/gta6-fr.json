@@ -1,7 +1,7 @@
 {
   "id": "gta6-fr",
   "nom": "DOSSIER JEU",
-  "theme": "Histoires vraies, sombres ou intrigantes autour de GTA 6 (sortie le 19 novembre 2026) et de Rockstar : coulisses, procès, fuites, records, scandales, faits réels qui ont inspiré le jeu. Ton : conteur captivant, tension, phrases courtes, une histoire par vidéo.",
+  "theme": "Le guide de survie GTA 6 en français (sortie le 19 novembre 2026) : ce que le joueur doit savoir, faire, éviter ou débloquer, et l'actu du jour qui change quelque chose pour lui. Ton : direct, à la 2e personne, concret, comme un pote qui a lu tous les guides. Un sujet par vidéo.",
   "public": "Joueurs francophones 15-35 ans",
   "langue": "fr-fr",
   "composition": "Doc",
@@ -35,6 +35,7 @@
   "hashtags": [
     "#gta6",
     "#gtavi",
+    "#gta",
     "#jeuxvideo",
     "#gaming"
   ],
@@ -76,7 +77,8 @@
     "Aucune image officielle (trailers, captures, logos, personnages de Rockstar) et aucune image générée par IA imitant GTA : vraies vidéos libres de droits et 3D maison uniquement.",
     "Aucun contenu issu d'une fuite (images, vidéos, code) : raconter l'histoire d'une fuite d'après la presse, oui ; montrer ce qui a fuité, non.",
     "Aucune rumeur ou fausse info présentée comme vraie, aucun chiffre sans source vérifiée dans la journée.",
-    "Personnes réelles : seulement des faits publiés par des médias reconnus ; pas de nom de mineur, pas de détail de santé."
+    "Personnes réelles : seulement des faits publiés par des médias reconnus ; pas de nom de mineur, pas de détail de santé.",
+    "Aucun spoiler de l'histoire de GTA 6 (fin, révélations, missions de l'intrigue) : Rockstar fait retirer ces vidéos et les joueurs les fuient."
   ],
   "sujet_obligatoire": [
     "gta 6",
