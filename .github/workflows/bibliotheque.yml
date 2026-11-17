@@ -1,14 +1,20 @@
-# Construit la bibliothèque des plans officiels de GTA 6 (kit média Rockstar : rockstargames.com/VI/media).
-# À lancer à la main une fois, puis quand Rockstar publie de nouvelles vidéos (ajouter l'URL dans officiel.py).
-# Les vidéos verticales restent dans le cache GitHub (clé officiel-v1) ; plans.json et les vecteurs CLIP sont versionnés.
+# Bibliothèque des plans officiels de GTA 6 (kit média Rockstar : rockstargames.com/VI/media).
+#   construire : tout refaire (vidéos verticales, découpage en plans, CLIP) puis versionner plans.json et les vecteurs ;
+#                à relancer quand Rockstar publie de nouvelles vidéos (ajouter l'URL dans officiel.py).
+#   preparer   : refaire seulement les vidéos verticales absentes du cache (clé officiel-v1).
+# La production réutilise le cache ; s'il a disparu, elle refait elle-même les vidéos verticales (environ 35 min).
 name: Bibliothèque officielle GTA 6
 on:
   workflow_dispatch:
+    inputs:
+      etape:
+        description: "construire ou preparer"
+        default: preparer
 permissions:
   contents: write
 concurrency: usine
 jobs:
-  construire:
+  bibliotheque:
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:
@@ -18,20 +24,31 @@ jobs:
       - name: Outils
         run: |
           sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
-          pip install --index-url https://download.pytorch.org/whl/cpu torch torchvision
-          pip install open_clip_torch numpy pillow requests
+          pip install numpy pillow requests
+          if [ "${{ inputs.etape }}" = "construire" ]; then
+            pip install --index-url https://download.pytorch.org/whl/cpu torch torchvision && pip install open_clip_torch
+          fi
       - name: Cache des vidéos officielles verticales
-        uses: actions/cache@v4
+        id: cache
+        uses: actions/cache/restore@v4
         with:
           path: cache_officiel
           key: officiel-v1
-      - name: Construction (recadrage, plans, CLIP)
-        run: python3 officiel.py construire
-      - name: Contrôle (planches de recherche d'essai)
+      - name: Bibliothèque (${{ inputs.etape }})
+        run: |
+          python3 officiel.py ${{ inputs.etape }}
+          rm -rf cache_officiel/zip cache_officiel/GTAVI_Videos.zip
+          du -sh cache_officiel
+      - name: Sauvegarde du cache (avant tout le reste, pour ne pas le perdre)
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: cache_officiel
+          key: officiel-v1
+      - name: Contrôle (planche de recherches d'essai)
         run: |
           mkdir -p controle
           python3 - <<'EOF'
-          from pathlib import Path
           from PIL import Image, ImageDraw, ImageFont
           from officiel import Bibliotheque, vignette
           b = Bibliotheque()
@@ -44,18 +61,19 @@ jobs:
           for li, q in enumerate(qs):
               y = 4 + li * (H + 24)
               d.text((6, y), q, fill=(255, 210, 63), font=f)
-              for k, (p, s) in enumerate(b.chercher(q, 8)):
+              hits = b.chercher(q, 8)
+              for k, (p, s) in enumerate(hits):
                   x = 4 + k * (W + 4)
                   pl.paste(Image.open(vignette(p)).convert("RGB").resize((W, H)), (x, y + 20))
                   d.text((x + 2, y + 21), p["id"], fill=(255, 255, 255), font=f)
-              print(q, [p["id"] for p, _ in b.chercher(q, 8)])
+              print(q, [p["id"] for p, _ in hits])
           pl.save("controle/officiel_essai.jpg", quality=80)
           EOF
-          rm -rf cache_officiel/zip cache_officiel/GTAVI_Videos.zip
-          du -sh cache_officiel; ls -la cache_officiel bibliotheque/officiel
       - name: Enregistrement
         run: |
           git config user.name "usine-bot" && git config user.email "usine-bot@users.noreply.github.com"
-          git add bibliotheque/officiel && git commit -m "Bibliothèque officielle GTA 6 : plans et vecteurs CLIP" || echo "rien de neuf"
-          git pull --rebase && git push
-          git checkout --orphan officiel-controle && git rm -rq --cached . && git add -f controle && git commit -qm "Planche d'essai" && git push -f origin officiel-controle
+          if [ "${{ inputs.etape }}" = "construire" ]; then
+            git add bibliotheque/officiel && git commit -m "Bibliothèque officielle GTA 6 : plans et vecteurs CLIP" && { git pull --rebase && git push; } || echo "rien de neuf"
+          fi
+          git checkout --orphan officiel-controle && git rm -rq --cached . && git add -f controle && git commit -qm "Planche d'essai" \
+            && for i in 1 2 3; do git push -f origin officiel-controle && break || sleep 15; done || echo "planche non envoyée"
