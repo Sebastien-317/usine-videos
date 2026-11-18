@@ -1,2 +1,1 @@
-delphine : OK (eleven_v4, 282 caractères)
-hugo : OK (eleven_v4, 439 caractères)
+gta_hugo : OK (eleven_v4, 628 caractères)
