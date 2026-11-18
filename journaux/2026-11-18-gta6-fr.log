@@ -1,0 +1,10 @@
+Les 2 vidéos sont fabriquées et dans la file d'attente. Un problème d'horaire : la vidéo 2 est programmée le 18/11 à 19:00, donc la veille du jeudi 19.
+
+- **Vidéo 1, guide, thème `dossier`** : « La police de GTA 6 te reconnaît même à zéro étoile ». Publication le 19/11 à 12:30. Elle expose la mémoire de la police (visage, tenue, voiture) et la façon de la semer. Sources : Shacknews, GTA Intel, Games.gg, Insider Gaming.
+- **Vidéo 2, mythe, thème `presse`** : « Tout le monde a posé son jeudi pour GTA 6 ? » Verdict « à moitié vrai ». Publication le 18/11 à 19:00. Sources : Presse-citron (Remote), LeBigData (Lucca, BambooHR), Playday, GTA Boom.
+- **Horaire de la vidéo 2** : `file_attente.py` a pris le créneau du jour, car il restait plus de 20 minutes. Les mentions « jeudi » restent justes, mais la chute « si tu travaillais » sonnera un peu en avance. Tu peux la décaler à la main au 19/11 à 19:00.
+- **Images** : plans officiels disponibles. J'ai remplacé les plans trop sombres ou hors sujet (une relance de l'aperçu pour la vidéo 1, deux pour la vidéo 2). Sur la vidéo 2, les clips Pixabay restent génériques.
+- **Voix** : « Lucca » est entendu comme « Lucas » dans la vidéo 2. Je ne l'ai pas corrigé, car il ne me restait plus de relance d'aperçu.
+- **Fiabilité des détails de la vidéo 1** : certains détails de la police viennent d'aperçus d'août à septembre 2026 et peuvent encore avoir changé.
+vidéo envoyée pour publication manuelle : 20261118-1900-gta6-fr (38.3 Mo)
+vidéo envoyée pour publication manuelle : 20261119-1230-gta6-fr (32.6 Mo)

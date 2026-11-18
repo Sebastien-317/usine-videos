@@ -1,0 +1,40 @@
+{
+  "titre": "Tout le monde a posé son jeudi pour GTA 6 ?",
+  "format": "mythe",
+  "theme": "presse",
+  "apprend": [
+    "En France, les réservations de congé pour le 19 novembre grimpent d'environ 35 % par rapport au jeudi comparable de 2025 (Remote) : la France est 7e du classement mondial.",
+    "Seuls 17 % de ceux qui posent un congé ne prennent que le 19 ; près de 30 % ont pris jeudi et vendredi.",
+    "Un autre outil, Lucca, ne mesure que 8,4 % de hausse les 19 et 20 novembre : les méthodes diffèrent, donc les chiffres ne se comparent pas."
+  ],
+  "legende": "GTA 6 : tout le monde a-t-il vraiment posé son jeudi ? Les chiffres surprennent. #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {"fait": "Remote : réservations de congés en France +35 % pour le 19 novembre ; France 7e pays ; hausse mondiale +32 % ; près de 30 % ont posé jeudi et vendredi, 23 % toute la semaine, 17 % seulement le 19 ; profil type : Gen Z de la finance ou du marketing (Presse-citron, 13 novembre 2026)", "url": "https://www.presse-citron.net/un-bond-de-35-les-conges-poses-pour-la-sortie-de-gta-6-explosent/"},
+    {"fait": "Lucca (France) : demandes +8,4 % les 19 et 20 novembre, +16 % chez les moins de 35 ans ; écart avec Remote dû aux méthodes ; BambooHR : 1 530 salariés américains, 18 % prévoient un congé, 32 % chez la Gen Z (LeBigData, 16 novembre 2026)", "url": "https://www.lebigdata.fr/gta-6-de-nombreux-salaries-sont-prets-a-poser-conge-pour-jouer-les-chiffres-surprennent"},
+    {"fait": "Rockstar confirme un lancement à minuit heure locale le jeudi 19 novembre sur Xbox et PlayStation (Playday)", "url": "https://playday.one/2026/11/16/gta-6-release-times-confirmed-as-launch-day-finally-approaches/"},
+    {"fait": "Conseil d'opinion : prendre le 20 plutôt que le 19, serveurs et téléchargements encombrés (GTA Boom, 9 novembre 2026)", "url": "https://www.gtaboom.com/do-not-take-gta-6-launch-day-off-take-the-day-after-instead-d37e"}
+  ],
+  "scenes": [
+    {"voix": "Tout le monde a posé son jeudi pour GTA 6. Vraiment ?",
+     "voix_jeu": "[curious] Tout le monde a posé son jeudi pour GTA 6. [short pause] Vraiment ?",
+     "visuels": ["officiel:woman holding gun", "officiel:#XL-249"], "gros": "TOUS EN CONGÉ|POUR GTA 6"},
+    {"voix": "En France, les congés du 19 novembre bondissent de 35 %.",
+     "visuels": ["pixabay:man working computer office", "pixabay:calendar date wall"], "lieu": "FRANCE · 19 NOVEMBRE", "compteur": {"valeur": 35, "suffixe": " %", "label": "CONGÉS EN PLUS"}},
+    {"voix": "Selon Remote, la France est 7e du classement mondial.",
+     "visuels": ["pixabay:office night empty", "pixabay:laptop work desk"], "coupure": {"source": "Presse-citron", "date": "13 NOV. 2026", "titre": "Les congés de la sortie explosent"}},
+    {"voix": "Sauf que Lucca, contre 35 % chez Remote, ne voit que 8,4 % sur deux jours.",
+     "voix_jeu": "[curious] Sauf que Lucca, contre 35 % chez Remote, ne voit que 8,4 % sur deux jours.",
+     "visuels": ["pixabay:calendar pages turning", "pixabay:stock market screen"], "document": {"entete": "DEUX MESURES", "titre": "CONGÉS 19-20 NOV.", "lignes": ["Remote : [[+35 %]]", "Lucca : [[+8,4 %]]"]}},
+    {"voix": "Et seuls 17 % ne prennent que le 19. Près de 30 % ont pris jeudi et vendredi.",
+     "visuels": ["pixabay:playing video game controller", "officiel:#XL-140"], "duel": {"gauche": {"label": "SEULEMENT LE 19", "valeur": 17}, "droite": {"label": "JEUDI + VENDREDI", "valeur": 30}, "suffixe": " %"}},
+    {"voix": "Verdict : à moitié vrai.",
+     "voix_jeu": "[laughs] Verdict : [short pause] à moitié vrai.",
+     "visuels": ["officiel:sports car", "pixabay:newspaper printing"], "tampon": "À MOITIÉ VRAI", "tamponMot": "moitié"},
+    {"voix": "Le profil type : un Gen Z de la finance ou du marketing.",
+     "voix_jeu": "[dramatically] Le profil type : un Gen Z de la finance ou du marketing.",
+     "visuels": ["pixabay:young man laptop office", "officiel:#XL-279"]},
+    {"voix": "Alors rassure-toi, si tu travaillais : on raconte que…",
+     "voix_jeu": "[dramatically] Alors rassure-toi, si tu travaillais : on raconte que…",
+     "visuels": ["officiel:woman holding gun", "pixabay:miami skyline night"]}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "titre": "La police de GTA 6 te reconnaît même à zéro étoile",
+  "format": "guide",
+  "theme": "dossier",
+  "apprend": [
+    "Il n'y a plus de points de police sur la minimap : tu dois surveiller la rue, pas la carte.",
+    "Trois icônes sous tes étoiles (visage, tenue, voiture) montrent ce que la police a retenu, et elles restent actives même à zéro étoile.",
+    "Pour tout effacer : change de tenue et de voiture (repeinte ou abandonnée), ou sépare Jason et Lucia pour brouiller la description du duo."
+  ],
+  "legende": "GTA 6 : comment semer la police avec sa nouvelle mémoire. Même à zéro étoile, elle te reconnaît. #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {"fait": "GTA 6 revient à 6 étoiles ; à 1 étoile seuls les agents proches réagissent (Shacknews, 27 août 2026)", "url": "https://www.shacknews.com/article/150518/grand-theft-auto-6-wanted-level-system"},
+    {"fait": "Plus de points sur la minimap ; la police mémorise véhicule, apparence, vêtements ; trois icônes (cintre, visage, véhicule) ; pour la semer : changer de tenue, changer, abandonner ou repeindre sa voiture ; Jason et Lucia peuvent se séparer (GTA Intel, 27 août 2026)", "url": "https://gtaintel.com/news/gta-6-police-system-overhaul-explained"},
+    {"fait": "Dans GTA 5 on pouvait semer la police instantanément (Rob Nelson) ; en GTA 6 les icônes restent actives même quand les étoiles retombent à zéro ; un patrouilleur peut repérer la tenue d'un braquage (Games.gg, 15 septembre 2026)", "url": "https://games.gg/news/gta-6-police-smarter-memory-radar/"},
+    {"fait": "Criminal Profiles : description du joueur, de son véhicule, de ses vêtements, seul ou en couple ; changer de vêtements ou se séparer pour échapper à la police (Insider Gaming, 27 août 2026)", "url": "https://insider-gaming.com/gta-6-reactive-npcs-criminal-profiles-police/"}
+  ],
+  "scenes": [
+    {"voix": "Dans GTA 6, la police ne t'oublie plus.",
+     "voix_jeu": "[curious] Dans GTA 6, la police ne t'oublie plus.",
+     "visuels": ["officiel:#XL-227", "officiel:#XL-249"], "gros": "POLICE GTA 6|TU ES FICHÉ"},
+    {"voix": "6 étoiles maintenant, et surtout, de la mémoire.",
+     "visuels": ["officiel:#XL-140", "officiel:#T2-046"], "compteur": {"valeur": 6, "suffixe": " ★", "label": "ÉTOILES DE RECHERCHE"}},
+    {"voix": "Un : plus de points rouges sur la mini-carte. Regarde la rue.",
+     "voix_jeu": "[excited] Un : plus de points rouges sur la mini-carte. [short pause] Regarde la rue.",
+     "visuels": ["officiel:#XL-279", "officiel:#XL-230"], "liste": {"numero": 1, "texte": "PLUS DE POINTS|SUR LA CARTE"}},
+    {"voix": "Deux : sous tes étoiles, trois icônes. Visage, tenue, voiture.",
+     "visuels": ["officiel:woman holding gun", "officiel:sports car"], "liste": {"numero": 2, "texte": "VISAGE·TENUE|VOITURE"}},
+    {"voix": "À zéro étoile, un flic te reconnaît encore à ta tenue.",
+     "voix_jeu": "[curious] À zéro étoile, un flic te reconnaît encore à ta tenue.",
+     "visuels": ["officiel:police officer", "officiel:store robbery"], "document": {"entete": "DOSSIER", "titre": "CE QU'ELLE GARDE", "lignes": ["Visage : [[gardé]]", "Tenue : [[gardée]]", "Voiture : [[gardée]]"], "tampon": "ENCORE ACTIF"}, "tamponMot": "reconnaît"},
+    {"voix": "Trois : change de tenue et de voiture. Repeins-la.",
+     "visuels": ["officiel:#XL-218", "officiel:#XL-137"], "liste": {"numero": 3, "texte": "TENUE ET|VOITURE"}},
+    {"voix": "À deux, Jason et Lucia peuvent se séparer pour brouiller la description.",
+     "voix_jeu": "[excited] À deux, Jason et Lucia peuvent se séparer pour brouiller la description.",
+     "visuels": ["officiel:#LT-006", "officiel:#XL-276"], "lieu": "LEONIDA"},
+    {"voix": "Résultat : tant que tu n'as pas tout changé, dans…",
+     "voix_jeu": "[dramatically] Résultat : tant que tu n'as pas tout changé, dans…",
+     "visuels": ["officiel:police chase night", "officiel:sports car"]}
+  ]
+}
