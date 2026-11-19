@@ -1,0 +1,45 @@
+{
+  "titre": "GTA 6 pèse 212 Go : ta console tient-elle ?",
+  "format": "chiffre",
+  "theme": "data",
+  "apprend": [
+    "GTA 6 prend jusqu'à 212 Go, plus du double de GTA 5 sur PS5 (environ 95 Go).",
+    "Sur une Series S, il reste environ 364 Go libres : le jeu en prend plus de la moitié ; sur PS5, environ 667 Go libres.",
+    "Une clé USB ne suffit pas pour jouer : il faut un SSD NVMe sur PS5 ou la carte officielle sur Xbox.",
+    "À 30 mégabits, le téléchargement dure environ 16 heures ; un patch PS5 de 1,07 Go est marqué obligatoire."
+  ],
+  "legende": "GTA 6 : 212 Go, ta console a-t-elle la place ? Une clé USB ne suffit pas pour y jouer. #gta6 #gtavi #gta #jeuxvideo #gaming",
+  "sources": [
+    {"fait": "Rockstar confirme jusqu'à 212 Go selon l'appareil, avant les mises à jour", "url": "https://gamewave.fr/gta-6/gta-6-quel-est-le-poids-du-jeu-sur-ps5-et-xbox-series/"},
+    {"fait": "Jusqu'à 212 Go ; GTA V sur PS5 environ 95 Go ; PS5 environ 667 Go libres, Series X environ 802, Series S environ 364 ; une clé USB stocke mais ne lance pas GTA 6 (SSD NVMe PCIe 4.0 sur PS5, carte officielle sur Xbox) ; 16 h à 30 Mb/s", "url": "https://www.actugaming.net/?p=832977"},
+    {"fait": "Prévoir 230 à 250 Go libres sur le SSD interne pour la décompression", "url": "https://www.gamingdeputy.com/france/gta-6-prechargement-date-taille-espace/"},
+    {"fait": "Patch 01.002.000 du 13 novembre : environ 1,07 Go sur PS5, marqué obligatoire (Red Bull, mis à jour le 18 novembre 2026)", "url": "https://www.redbull.com/de-de/gta-6-patch-notes"}
+  ],
+  "scenes": [
+    {"voix": "212 Go. Voilà ce que prend GTA 6 sur ta console.",
+     "voix_jeu": "[surprised] 212 Go. Voilà ce que prend GTA 6 sur ta console.",
+     "visuels": ["officiel:#XL-136", "officiel:#XL-207"], "gros": "212 GO|POUR GTA 6"},
+    {"voix": "Rockstar annonce jusqu'à 212 Go, avant les mises à jour.",
+     "visuels": ["officiel:#XL-250", "officiel:#XL-218"],
+     "compteur": {"valeur": 212, "suffixe": " Go", "label": "GTA 6 · TAILLE MAX"}},
+    {"voix": "GTA 5 sur PS5 pèse environ 95 Go. GTA 6, 212 : plus du double.",
+     "voix_jeu": "[excited] GTA 5 sur PS5 pèse environ 95 Go. GTA 6, 212 : plus du double.",
+     "visuels": ["officiel:helicopter", "pixabay:#14900"],
+     "duel": {"gauche": {"label": "GTA 5 (PS5)", "valeur": 95}, "droite": {"label": "GTA 6", "valeur": 212}, "suffixe": " Go"}},
+    {"voix": "Espace libre : PS5, 667 Go. Series X, 802. Series S, seulement 364.",
+     "visuels": ["officiel:nightclub party", "officiel:#XL-224"],
+     "document": {"entete": "ESPACE LIBRE", "titre": "TA CONSOLE", "lignes": ["PS5 : 667 Go", "Series X : 802 Go", "Series S : [[364 Go]]"]}},
+    {"voix": "Un guide conseille 230 à 250 Go libres.",
+     "voix_jeu": "[curious] Un guide conseille 230 à 250 Go libres.",
+     "visuels": ["pixabay:#14906", "officiel:#LT-027"]},
+    {"voix": "Une clé USB ne suffit pas : GTA 6 ne se lance pas depuis un disque externe.",
+     "visuels": ["officiel:#XL-131", "officiel:#XL-157"],
+     "document": {"entete": "STOCKAGE", "titre": "POUR JOUER", "lignes": ["Clé USB : [[stockage seul]]", "Sony : SSD NVMe rapide", "Xbox : carte officielle"]}},
+    {"voix": "Téléchargement à 30 mégabits : 16 heures.",
+     "visuels": ["pixabay:#202987", "officiel:#XL-300"],
+     "compteur": {"valeur": 16, "suffixe": " h", "label": "À 30 MB/S"}},
+    {"voix": "Un patch PS5 de 1,07 Go est obligatoire. Regarde la place qu'il te reste après…",
+     "voix_jeu": "[short pause] Un patch PS5 de 1,07 Go est obligatoire. Regarde la place qu'il te reste après…",
+     "visuels": ["officiel:#XL-277", "officiel:#XL-278"]}
+  ]
+}

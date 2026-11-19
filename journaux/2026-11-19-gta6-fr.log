@@ -1,0 +1,14 @@
+Les deux vidéos sont validées, rendues et dans la file d'attente.
+
+- **Vidéo 1**, « Ton argent dans GTA 6 : ne le garde pas en poche » : format `guide`, thème `neon`, prévue le 20/11 à 12:30. Elle explique les trois formes d'argent, le liquide perdu à la mort ou à l'arrestation, le receleur pour le butin et l'histoire qui se bloque quand on est fauché.
+- **Vidéo 2**, « GTA 6 pèse 212 Go : ta console tient-elle ? » : format `chiffre`, thème `data`, prévue le 19/11 à 19:00. Elle donne les 212 Go, les 95 Go de GTA 5, les 364 Go libres sur une Series S, la clé USB qui ne suffit pas et le patch PS5.
+- **Sources principales :** TweakTown, GTABase, Gamewave et Games.gg pour l'argent. Gamewave, Actugaming, Gamingdeputy et Red Bull pour la taille.
+- **Horaire à vérifier :** la vidéo 1 est tombée sur le créneau de 12:30 du 20/11, car le créneau du 19/11 à 12:30 est déjà pris par la vidéo d'hier. Je n'ai pas vérifié cette règle dans `file_attente.py`.
+
+Problèmes et choix :
+- **Faits écartés :** j'ai laissé de côté l'astuce « Nouvelle-Zélande » et l'heure de déblocage, car les sources se contredisent. Je n'ai trouvé aucune info de lancement postérieure à la sortie.
+- **Voix :** la vidéo 2 dure 39,6 s à la voix, contre 30 s pour la vidéo 1. Le contrôle de la voix de la vidéo 1 a compris « BuckMe » comme « Buckney » et « receleur » comme « rossoleur ». Je n'ai pas corrigé cette prononciation. Je n'ai pas lu le contrôle de voix de la vidéo 2.
+- **Images :** j'ai remplacé les plans faibles dans les deux vidéos par des identifiants choisis sur les planches, puis relancé l'aperçu. Je n'ai pas rouvert les planches après ce remplacement, donc le résultat n'est pas revu à l'œil.
+- **Échecs :** aucune vidéo n'a échoué.
+vidéo envoyée pour publication manuelle : 20261119-1900-gta6-fr (46.1 Mo)
+vidéo envoyée pour publication manuelle : 20261120-1230-gta6-fr (35.0 Mo)

@@ -1,0 +1,154 @@
+{
+  "composition": "Doc",
+  "boucle": true,
+  "chaine": {
+    "id": "gta6-fr",
+    "nom": "DOSSIER JEU",
+    "langue": "fr-fr",
+    "voix": "ff_siwis",
+    "vitesse": 1.12,
+    "prononciation": {
+      "GTA 6": "gé-té-a sisse",
+      "GTA 5": "gé-té-a cinq",
+      "GTA": "gé-té-a",
+      "Take-Two": "Tèk-Tou",
+      "Xbox": "Ixe-bosse",
+      "Series": "Siriz"
+    },
+    "prononciation_elevenlabs": {
+      "GTA": "Gé-Té-A"
+    },
+    "moteur_voix": "elevenlabs",
+    "voix_elevenlabs": "3Tp5mYhT9wrfnry9pzvV",
+    "modele_elevenlabs": "eleven_v4"
+  },
+  "titre": "Ton argent dans GTA 6 : ne le garde pas en poche",
+  "legende": "GTA 6 : comment protéger ton argent dès les premières heures. Fauché, l'histoire se bloque. #gta6 #gtavi #gta #jeuxvideo #gaming",
+  "sources": [
+    {
+      "fait": "Trois façons d'interagir avec l'argent : liquide sur soi (qu'on peut déposer ou perdre), carte ATM, solde BuckMe ; l'argent gagné en monde ouvert influence la progression, certaines missions exigent une somme ; butin dans un sac, chaque type de butin a son receleur ; petits commerces : en général quelques milliers de dollars",
+      "url": "https://www.tweaktown.com/news/113368/gta-6s-illicit-criminal-economy-robberies-and-money-explained-by-rockstar/index.html"
+    },
+    {
+      "fait": "L'argent en banque est en sécurité ; arrêté ou ivre mort, on perd l'argent de poche et on paie des frais BuckMe ; déposer le liquide à un ATM ; le receleur transforme le butin en cash",
+      "url": "https://www.gtabase.com/fr/articles/gta-6/comment-gagner-de-largent-dans-gta-6-guide-complet"
+    },
+    {
+      "fait": "Quand le joueur est fauché, l'histoire s'arrête et il doit revenir en monde ouvert pour trouver des revenus (Gamewave, 4 septembre 2026)",
+      "url": "https://gamewave.fr/gta-6/etre-fauche-dans-gta-6-vous-empechera-litteralement-de-jouer-l-histoire-principale/"
+    },
+    {
+      "fait": "Garder une réserve avant d'acheter du luxe ; la banque limite les pertes en cas de mort ou d'arrestation (Games.gg, mis à jour le 18 novembre 2026)",
+      "url": "https://games.gg/grand-theft-auto-vi/guides/grand-theft-auto-6-beginner-tips-what-to-do-first/"
+    }
+  ],
+  "scenes": [
+    {
+      "voix": "À la banque, ton argent est en sécurité dans GTA 6. En poche, non.",
+      "voix_jeu": "[curious] À la banque, ton argent est en sécurité dans GTA 6. [short pause] En poche, non.",
+      "visuels": [
+        "officiel:#LT-027",
+        "officiel:#XL-022"
+      ],
+      "gros": "TON ARGENT|DANS GTA 6",
+      "seed": 11
+    },
+    {
+      "voix": "Trois argents : ton liquide, ta carte, ton solde BuckMe.",
+      "voix_jeu": "[excited] Trois argents : ton liquide, ta carte, ton solde BuckMe.",
+      "visuels": [
+        "officiel:#XL-189",
+        "pixabay:#172894"
+      ],
+      "document": {
+        "entete": "TON ARGENT",
+        "titre": "LES 3 FORMES",
+        "lignes": [
+          "Liquide : perdu si tu es arrêté",
+          "Carte : retrait au distributeur",
+          "Solde BuckMe : en sécurité"
+        ]
+      },
+      "seed": 24
+    },
+    {
+      "voix": "Un. Mort ou arrêté, tu perds ton liquide. Dépose-le au distributeur.",
+      "visuels": [
+        "officiel:#XL-250",
+        "officiel:#XL-229",
+        "pixabay:#20857"
+      ],
+      "liste": {
+        "numero": 1,
+        "texte": "DÉPOSE|TON LIQUIDE"
+      },
+      "seed": 37
+    },
+    {
+      "voix": "Deux. Le butin devient du cash chez un receleur.",
+      "visuels": [
+        "officiel:#XL-401",
+        "pixabay:#59138"
+      ],
+      "liste": {
+        "numero": 2,
+        "texte": "VENDS|TON BUTIN"
+      },
+      "seed": 50
+    },
+    {
+      "voix": "Sauf que chaque butin a le sien : bijoux, drogue, voitures.",
+      "voix_jeu": "[curious] Sauf que chaque butin a le sien : bijoux, drogue, voitures.",
+      "visuels": [
+        "officiel:#XL-191",
+        "pixabay:#120177",
+        "officiel:#XL-143"
+      ],
+      "seed": 63
+    },
+    {
+      "voix": "Trois. Un petit commerce : quelques milliers de dollars.",
+      "visuels": [
+        "officiel:#XL-189",
+        "officiel:#XL-287",
+        "pixabay:#63973"
+      ],
+      "liste": {
+        "numero": 3,
+        "texte": "VISE LES|PETITS COUPS"
+      },
+      "seed": 76
+    },
+    {
+      "voix": "Fauché, l'histoire s'arrête : des missions exigent une somme.",
+      "voix_jeu": "[dramatically] Fauché, l'histoire s'arrête : des missions exigent une somme.",
+      "visuels": [
+        "officiel:#XL-029",
+        "pixabay:#50628"
+      ],
+      "coupure": {
+        "source": "GAMEWAVE",
+        "date": "4 SEPT. 2026",
+        "titre": "Fauché ? Ton histoire se met en pause"
+      },
+      "seed": 89
+    },
+    {
+      "voix": "Ton argent n'est vraiment à toi que quand il est…",
+      "voix_jeu": "[short pause] Ton argent n'est vraiment à toi que quand il est…",
+      "visuels": [
+        "officiel:#XL-277",
+        "officiel:#T2-053"
+      ],
+      "seed": 102
+    }
+  ],
+  "format": "guide",
+  "theme": "neon",
+  "apprend": [
+    "Dans GTA 6, l'argent a trois formes : le liquide dans ta poche, la carte de retrait et le solde BuckMe ; seul le solde en banque est à l'abri.",
+    "Si tu meurs ou te fais arrêter, tu perds ton liquide ; il faut le déposer à un distributeur avant de prendre des risques.",
+    "Le butin d'un braquage se transforme en cash chez un receleur, et chaque type de butin (bijoux, drogue, voitures) a le sien.",
+    "Fauché, l'histoire peut se bloquer : certaines missions exigent une somme, il faut retourner gagner de l'argent en monde ouvert."
+  ]
+}
