@@ -1,11 +1,11 @@
 {
- "projet": "The First Door – Il a posé sa journée (GTA 6)",
+ "projet": "The First Door – Traduction sans filtre",
  "voix": [
   {
-   "nom": "gta_hugo",
+   "nom": "dico_hugo",
    "voice_id": "3Tp5mYhT9wrfnry9pzvV",
    "modele": "eleven_v4",
-   "texte": "[shouting] ARRÊTE DE JOUER À GTA 6 ET VA CHERCHER TON ALTERNANCE OU TON STAGE !\n[dramatically] Jeudi, neuf heures. Deux potes ont posé leur journée.\n[excited] Le premier lance GTA 6. Écran de chargement.\n[curious] Le deuxième ouvre The First Door. Il tape : « alternance marketing, Lyon ».\n[surprised] Des offres publiées directement chez les entreprises. Celles qu'il voyait jamais.\n[excited] Midi : le premier a volé sa troisième voiture. Le deuxième a envoyé trois candidatures.\n[laughs] Le soir, ils jouent tous les deux à GTA. Sauf qu'un des deux a un entretien lundi.\n[whispers] Envoie ça à ton pote… il sait lequel c'est."
+   "texte": "[shouting] ENVOIE ÇA À TON POTE QUI A PAS TROUVÉ DE STAGE OU D'ALTERNANCE !\n[shouting] [excited] Offres d'alternance. Traduction sans filtre !\n[shouting] « Esprit start-up » : on a des valeurs. On a pas de budget !\n[shouting] « Ambiance familiale » : comme un repas de Noël. Tendu, et impossible de partir !\n[shouting] [angry] « Rémunération selon profil » : selon ton âge. Et t'es jeune !\n[shouting] [surprised] « Trois ans d'expérience exigés » pour une alternance ?! T'as vingt ans ! Il fallait commencer au lycée !\n[shouting] « On revient vers toi »… [short pause] Ton ex aussi avait dit ça !\n[shouting] Les vraies offres ? Directement chez l'entreprise. The First Door !"
   }
  ]
 }
