@@ -1,11 +1,11 @@
 {
- "projet": "The First Door – Traduction sans filtre",
+ "projet": "The First Door – Lettre de motivation, version honnête",
  "voix": [
   {
-   "nom": "dico_hugo",
+   "nom": "lettre_hugo",
    "voice_id": "3Tp5mYhT9wrfnry9pzvV",
    "modele": "eleven_v4",
-   "texte": "[shouting] ENVOIE ÇA À TON POTE QUI A PAS TROUVÉ DE STAGE OU D'ALTERNANCE !\n[shouting] [excited] Offres d'alternance. Traduction sans filtre !\n[shouting] « Esprit start-up » : on a des valeurs. On a pas de budget !\n[shouting] « Ambiance familiale » : comme un repas de Noël. Tendu, et impossible de partir !\n[shouting] [angry] « Rémunération selon profil » : selon ton âge. Et t'es jeune !\n[shouting] [surprised] « Trois ans d'expérience exigés » pour une alternance ?! T'as vingt ans ! Il fallait commencer au lycée !\n[shouting] « On revient vers toi »… [short pause] Ton ex aussi avait dit ça !\n[shouting] Les vraies offres ? Directement chez l'entreprise. The First Door !"
+   "texte": "[shouting] ENVOIE ÇA À TON POTE QUI A PAS TROUVÉ DE STAGE OU D'ALTERNANCE !\n[shouting] [excited] La lettre de motivation, version honnête !\n[shouting] Madame, Monsieur. Je vous écris parce que les quarante-six autres ont pas répondu !\n[shouting] Votre entreprise m'a toujours fait rêver. [short pause] Depuis mardi !\n[shouting] Je maîtrise Excel. Enfin… je sais l'ouvrir !\n[shouting] Je suis disponible immédiatement. Comme depuis six mois !\n[shouting] [angry] Dans l'attente de votre ghosting, je vous prie d'agréer mes salutations désespérées !\n[shouting] PS : votre offre, je l'ai trouvée directement sur votre site. Elle, au moins, elle existe ! The First Door !"
   }
  ]
 }
