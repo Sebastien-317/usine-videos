@@ -1,0 +1,47 @@
+{
+  "titre": "Voler une voiture dans GTA 6 : scanne avant",
+  "format": "guide",
+  "theme": "terminal",
+  "apprend": [
+    "Dans GTA 6, l'application WAINK scanne une voiture avant le vol : verrou, alarme, traceur GPS et prix de revente.",
+    "Une vieille voiture se force, mais une voiture sans clé demande un cloneur de clés, que l'histoire te donne plus tard.",
+    "Une voiture avec traceur ne peut pas être modifiée tant qu'elle n'est pas immatriculée à ton nom.",
+    "En poursuite, une voiture banale et ouverte vaut souvent mieux qu'une voiture de luxe."
+  ],
+  "legende": "GTA 6 : comment voler une voiture sans te faire repérer. Le scanner change tout. #gta6 #gtavi #gta #jeuxvideo",
+  "sources": [
+    {"fait": "Rob Nelson (IGN) : toutes les voitures ne sont pas volables au départ ; certaines exigent des outils obtenus en avançant dans l'histoire ; traceur GPS, alarme et verrou numérique ; une application scanne la voiture : verrouillée, alarme, traceur, prix de revente ; clés clonées et outils pour forcer les portes (Gameblog, 28 août 2026)", "url": "https://www.gameblog.fr/jeu-video/ed/news/gta-6-vol-voiture-fonctionnalite-chagements-721821"},
+    {"fait": "L'application Waink montre l'équipement requis, du crochet au cloneur de clés électronique, obtenu en progressant dans l'histoire ; traceurs GPS sur les voitures haut de gamme pouvant alerter la police ; éjecter un conducteur augmente le risque d'être fiché (Gamewave, 28 août 2026)", "url": "https://gamewave.fr/gta-6/voler-une-voiture-dans-gta-6-sera-beaucoup-plus-risque-qu-avant/"},
+    {"fait": "Scan : haut puis R1/RB ; vitre brisée ou contact avec les deux sticks ; voitures sans clé : cloneur obligatoire ; traceur : voiture non modifiable tant qu'elle n'est pas immatriculée (Pay 'n' Spray)", "url": "https://www.gtabase.com/fr/articles/gta-6/guide-de-vol-de-voitures-dans-gta-6-comment-voler-vendre-et-garder-des-vehicules"},
+    {"fait": "En poursuite, une voiture banale ouverte est souvent meilleure qu'une voiture de luxe ; si la police reconnaît la voiture, en changer ou la repeindre (GTA Base, mis à jour le 20 novembre 2026)", "url": "https://www.gtabase.com/fr/articles/gta-6/guide-de-vol-de-voitures-dans-gta-6-comment-voler-vendre-et-garder-des-vehicules"}
+  ],
+  "scenes": [
+    {"voix": "Ton prochain vol de voiture dans GTA 6 commence par un scan.",
+     "voix_jeu": "[curious] Ton prochain vol de voiture dans GTA 6 commence par un scan.",
+     "visuels": ["officiel:#XL-131", "officiel:#XL-247"], "gros": "VOLER UNE AUTO|DANS GTA 6"},
+    {"voix": "Certaines ont un traceur qui alerte la police.",
+     "voix_jeu": "[excited] Certaines ont un traceur qui alerte la police.",
+     "visuels": ["officiel:#XL-227", "officiel:#XL-140"],
+     "coupure": {"source": "GAMEWAVE", "date": "28 AOÛT 2026", "titre": "Les voitures de luxe peuvent prévenir la police"}},
+    {"voix": "Un. Scanne : verrou, alarme, traceur, prix de revente.",
+     "visuels": ["pixabay:man using smartphone night", "officiel:#XL-218"],
+     "liste": {"numero": 1, "texte": "SCANNE|AVANT"}},
+    {"voix": "Deux. Vieille voiture : on la force. Sans clé : cloneur.",
+     "visuels": ["officiel:#XL-247", "pixabay:car door lock close"],
+     "liste": {"numero": 2, "texte": "FORCE|LA PORTE"}},
+    {"voix": "Sauf que le cloneur, c'est l'histoire qui te le donne.",
+     "voix_jeu": "[curious] Sauf que le cloneur, c'est l'histoire qui te le donne.",
+     "visuels": ["officiel:#XL-130", "officiel:#XL-140"],
+     "document": {"entete": "OUTILS", "titre": "AU DÉPART", "lignes": ["Voitures de luxe : [[bloquées]]", "Cloneur de clés : [[plus tard]]"]}},
+    {"voix": "Trois. Un traceur bloque toute modification avant l'immatriculation.",
+     "visuels": ["officiel:#XL-137", "pixabay:car repair garage", "officiel:#XL-207"],
+     "liste": {"numero": 3, "texte": "IMMATRICULE|LA VOITURE"}},
+    {"voix": "En poursuite, une voiture banale bat une voiture de luxe.",
+     "voix_jeu": "[short pause] En poursuite, une voiture banale bat une voiture de luxe.",
+     "visuels": ["officiel:#XL-227", "officiel:#XL-136"],
+     "document": {"entete": "POURSUITE", "titre": "LE BON CHOIX", "lignes": ["Banale : [[souvent mieux]]", "Reconnue ? [[change d'auto]]"]}},
+    {"voix": "Le conseil qui t'évite la prison, c'est :…",
+     "voix_jeu": "[short pause] Le conseil qui t'évite la prison, c'est :…",
+     "visuels": ["officiel:#XL-130", "officiel:#XL-131"]}
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "titre": "GTA 6 Online : pas ce week-end",
+  "format": "mythe",
+  "theme": "presse",
+  "apprend": [
+    "En août, Rockstar n'avait annoncé ni date, ni modèle économique, ni contenu pour le prochain mode en ligne de GTA 6.",
+    "Précédent : GTA 5 sort le 17 septembre 2013, GTA Online le 1er octobre, deux semaines plus tard.",
+    "Dans un entretien à Bloomberg, le patron de Twitch laisse entendre un multijoueur en 2027 : rien d'officiel.",
+    "Take-Two compte continuer à soutenir le GTA Online actuel après la sortie de GTA 6, sans changer le rythme des mises à jour."
+  ],
+  "legende": "GTA 6 Online : peut-on y jouer en ligne dès ce week-end ? Rien d'officiel pour l'instant. #gta6 #gtavi #gta #jeuxvideo",
+  "sources": [
+    {"fait": "Rockstar et Take-Two n'ont annoncé ni date, ni modèle économique, ni détail pour un multijoueur lié à GTA 6 ; Schreier (Bloomberg) : Rockstar ne compte pas en parler de sitôt ; GTA V sorti le 17 septembre 2013, GTA Online le 1er octobre (Outlook Respawn, 11 août 2026)", "url": "https://respawn.outlookindia.com/gaming/gaming-news/gta-6-online-plans-remain-under-wraps-ahead-of-november-release"},
+    {"fait": "Zelnick : Take-Two compte continuer à soutenir l'actuel GTA Online après la sortie de GTA 6 et ne prévoit pas de changer sensiblement la cadence des mises à jour (Outlook Respawn, 11 août 2026)", "url": "https://respawn.outlookindia.com/gaming/gaming-news/gta-6-online-plans-remain-under-wraps-ahead-of-november-release"},
+    {"fait": "Bloomberg, 17 septembre 2026 : entretien avec Dan Clancy, patron de Twitch ; GTA 6 le 19 novembre et multijoueur plus tard en 2027 selon l'article ; aucun détail de contenu ; GTA V le 17 septembre 2013, GTA Online le 1er octobre (Journal du Geek, 18 septembre 2026)", "url": "https://www.journaldugeek.com/2026/09/18/gta-6-la-sortie-du-online-tres-attendu-se-precise-pour-2027/"},
+    {"fait": "Pas clair si le Online arrive au premier ou au second semestre 2027 ; Red Dead Online est arrivé environ un mois après Red Dead Redemption II (Journal du Geek, 18 septembre 2026)", "url": "https://www.journaldugeek.com/2026/09/18/gta-6-la-sortie-du-online-tres-attendu-se-precise-pour-2027/"}
+  ],
+  "scenes": [
+    {"voix": "Tu joues à GTA 6 en ligne dès ce week-end. Vraiment ?",
+     "voix_jeu": "[curious] Tu joues à GTA 6 en ligne dès ce week-end. [short pause] Vraiment ?",
+     "visuels": ["officiel:#XL-334", "officiel:#XL-159"], "gros": "GTA 6 ONLINE|VRAIMENT ?"},
+    {"voix": "Ce qu'on raconte : le multi arrive en même temps que le solo.",
+     "visuels": ["officiel:#XL-367", "pixabay:#10024"], "lieu": "LA RUMEUR"},
+    {"voix": "En août, Rockstar n'avait annoncé ni date, ni contenu.",
+     "visuels": ["pixabay:#152728", "pixabay:#63970"],
+     "coupure": {"source": "OUTLOOK RESPAWN", "date": "11 AOÛT 2026", "titre": "Aucune date pour le mode en ligne"}},
+    {"voix": "Sauf qu'en 2013, GTA 5 sort le 17 septembre, son Online le 1er octobre.",
+     "voix_jeu": "[curious] Sauf qu'en 2013, GTA 5 sort le 17 septembre, son Online le 1er octobre.",
+     "visuels": ["pixabay:#143683", "pixabay:#19600"],
+     "frise": {"etapes": [{"date": "17 SEPT. 2013", "texte": "GTA 5"}, {"date": "1ER OCT. 2013", "texte": "GTA Online"}]}},
+    {"voix": "Le patron de Twitch laisse entendre 2027, dans un entretien à Bloomberg.",
+     "visuels": ["pixabay:#349091", "officiel:#XL-137"],
+     "coupure": {"source": "JOURNAL DU GEEK", "date": "18 SEPT. 2026", "titre": "Le multijoueur viserait 2027"}},
+    {"voix": "Verdict : rien d'officiel.",
+     "voix_jeu": "[laughs] Verdict : [short pause] rien d'officiel.",
+     "visuels": ["officiel:#XL-140", "pixabay:#99856"], "tampon": "PAS CONFIRMÉ", "tamponMot": "officiel"},
+    {"voix": "En attendant, Take-Two prévoit de continuer à soutenir l'actuel GTA Online.",
+     "voix_jeu": "[dramatically] En attendant, Take-Two prévoit de continuer à soutenir l'actuel GTA Online.",
+     "visuels": ["officiel:#XL-207", "officiel:#T2-046"],
+     "document": {"entete": "TAKE-TWO", "titre": "GTA ONLINE ACTUEL", "lignes": ["Soutien : [[maintenu]]", "Mises à jour : [[même rythme]]"]}},
+    {"voix": "Rockstar n'a rien promis, mais tout le monde répète que…",
+     "voix_jeu": "[short pause] Rockstar n'a rien promis, mais tout le monde répète que…",
+     "visuels": ["officiel:#XL-334", "officiel:#XL-159"]}
+  ]
+}
