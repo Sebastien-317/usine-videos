@@ -1,1 +1,1 @@
-dico_hugo : OK (eleven_v4, 675 caractères)
+lettre_hugo : OK (eleven_v4, 666 caractères)
