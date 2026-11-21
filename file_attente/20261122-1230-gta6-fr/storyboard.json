@@ -1,0 +1,150 @@
+{
+  "composition": "Doc",
+  "boucle": true,
+  "chaine": {
+    "id": "gta6-fr",
+    "nom": "DOSSIER JEU",
+    "langue": "fr-fr",
+    "voix": "ff_siwis",
+    "vitesse": 1.12,
+    "prononciation": {
+      "GTA 6": "gé-té-a sisse",
+      "GTA 5": "gé-té-a cinq",
+      "GTA": "gé-té-a",
+      "Take-Two": "Tèk-Tou",
+      "Xbox": "Ixe-bosse",
+      "Series": "Siriz"
+    },
+    "prononciation_elevenlabs": {
+      "GTA": "Gé-Té-A"
+    },
+    "moteur_voix": "elevenlabs",
+    "voix_elevenlabs": "3Tp5mYhT9wrfnry9pzvV",
+    "modele_elevenlabs": "eleven_v4"
+  },
+  "titre": "Ta première heure de GTA 6 ne pardonne pas",
+  "legende": "GTA 6 : les erreurs à éviter dans ta première heure. La voiture qui disparaît surprend tout le monde. #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {
+      "fait": "GTA Base, 19 nov. 2026 : pas de médailles d'or ni de rejeu des missions, sauvegarde manuelle avant les missions importantes ; voitures volées pas toujours pleines ; voiture non immatriculée peut disparaître, immatriculer après l'avoir garée dans un garage",
+      "url": "https://www.gtabase.com/fr/gta-6/articles/day-one-in-leonida-what-to-do-in-your-first-hour-in-gta-6"
+    },
+    {
+      "fait": "ActuGaming, 19 nov. 2026 : alterner entre Jason et Lucia pour gagner du temps sur les longs trajets, par exemple pour rentrer après une plongée",
+      "url": "https://www.actugaming.net/?p=834089"
+    },
+    {
+      "fait": "Games.gg, mis à jour le 18 nov. 2026 : vérifier les options de sauvegarde avant un long détour ; confirmer que la progression est enregistrée avant de quitter",
+      "url": "https://games.gg/grand-theft-auto-vi/guides/grand-theft-auto-6-beginner-tips-what-to-do-first/"
+    },
+    {
+      "fait": "ActuGaming : Scooterbros remorque ou livre un véhicule presque partout, inaccessible si on est recherché ; scanner les véhicules avec WAiNK",
+      "url": "https://www.actugaming.net/?p=834089"
+    }
+  ],
+  "scenes": [
+    {
+      "voix": "Ta première heure de GTA 6 ne pardonne pas.",
+      "voix_jeu": "[curious] Ta première heure de GTA 6 ne pardonne pas.",
+      "visuels": [
+        "officiel:#XL-131",
+        "officiel:#LT-027"
+      ],
+      "gros": "PREMIÈRE HEURE|DANS GTA 6",
+      "seed": 11
+    },
+    {
+      "voix": "Aucune mission ne se rejoue, et il n'y a pas de médaille d'or.",
+      "visuels": [
+        "officiel:#XL-250",
+        "officiel:#XL-227"
+      ],
+      "coupure": {
+        "source": "GTA BASE",
+        "date": "19 NOV. 2026",
+        "titre": "Une mission, une seule tentative"
+      },
+      "seed": 24
+    },
+    {
+      "voix": "Un. Sauvegarde à la main avant chaque mission importante.",
+      "voix_jeu": "[excited] Un. Sauvegarde à la main avant chaque mission importante.",
+      "visuels": [
+        "officiel:#LT-006",
+        "officiel:#XL-276"
+      ],
+      "liste": {
+        "numero": 1,
+        "texte": "SAUVEGARDE|À LA MAIN"
+      },
+      "seed": 37
+    },
+    {
+      "voix": "Deux. Une voiture volée n'a pas toujours le plein : vérifie.",
+      "visuels": [
+        "officiel:#XL-140",
+        "officiel:#XL-218"
+      ],
+      "liste": {
+        "numero": 2,
+        "texte": "FAIS|LE PLEIN"
+      },
+      "seed": 50
+    },
+    {
+      "voix": "Sauf qu'une voiture non immatriculée peut carrément disparaître.",
+      "voix_jeu": "[surprised] Sauf qu'une voiture non immatriculée peut carrément disparaître.",
+      "visuels": [
+        "officiel:#XL-207",
+        "pixabay:empty parking garage night"
+      ],
+      "document": {
+        "entete": "GARAGE",
+        "titre": "VOITURE VOLÉE",
+        "lignes": [
+          "Immatriculée : [[non]]",
+          "Résultat : [[peut disparaître]]"
+        ]
+      },
+      "seed": 63
+    },
+    {
+      "voix": "Trois. Gare-la au garage et immatricule celles que tu gardes.",
+      "visuels": [
+        "officiel:#XL-137",
+        "officiel:#XL-247"
+      ],
+      "liste": {
+        "numero": 3,
+        "texte": "GARE ET|IMMATRICULE"
+      },
+      "seed": 76
+    },
+    {
+      "voix": "Trop loin de chez toi ? Bascule sur l'autre personnage pour éviter le trajet.",
+      "voix_jeu": "[short pause] Trop loin de chez toi ? Bascule sur l'autre personnage pour éviter le trajet.",
+      "visuels": [
+        "officiel:#XL-277",
+        "officiel:#XL-263"
+      ],
+      "seed": 89
+    },
+    {
+      "voix": "Retiens bien ça, parce que…",
+      "voix_jeu": "[short pause] Retiens bien ça, parce que…",
+      "visuels": [
+        "officiel:#XL-131",
+        "officiel:#LT-027"
+      ],
+      "seed": 102
+    }
+  ],
+  "format": "guide",
+  "theme": "neon",
+  "apprend": [
+    "Dans GTA 6, aucune mission ne se rejoue et il n'y a pas de médaille d'or : sauvegarde à la main avant les missions importantes.",
+    "Une voiture volée n'a pas toujours le plein : fais-le avant un long trajet.",
+    "Une voiture non immatriculée peut disparaître : gare-la au garage et immatricule celles que tu gardes.",
+    "Trop loin de chez toi, bascule sur l'autre personnage pour éviter le trajet."
+  ]
+}
