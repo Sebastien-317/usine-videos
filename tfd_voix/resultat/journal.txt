@@ -1,1 +1,1 @@
-lettre_hugo : OK (eleven_v4, 666 caractères)
+suivi_hugo : OK (eleven_v4, 687 caractères)
