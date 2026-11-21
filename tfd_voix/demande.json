@@ -1,11 +1,11 @@
 {
- "projet": "The First Door – Lettre de motivation, version honnête",
+ "projet": "The First Door – Suivi de ta candidature",
  "voix": [
   {
-   "nom": "lettre_hugo",
+   "nom": "suivi_hugo",
    "voice_id": "3Tp5mYhT9wrfnry9pzvV",
    "modele": "eleven_v4",
-   "texte": "[shouting] ENVOIE ÇA À TON POTE QUI A PAS TROUVÉ DE STAGE OU D'ALTERNANCE !\n[shouting] [excited] La lettre de motivation, version honnête !\n[shouting] Madame, Monsieur. Je vous écris parce que les quarante-six autres ont pas répondu !\n[shouting] Votre entreprise m'a toujours fait rêver. [short pause] Depuis mardi !\n[shouting] Je maîtrise Excel. Enfin… je sais l'ouvrir !\n[shouting] Je suis disponible immédiatement. Comme depuis six mois !\n[shouting] [angry] Dans l'attente de votre ghosting, je vous prie d'agréer mes salutations désespérées !\n[shouting] PS : votre offre, je l'ai trouvée directement sur votre site. Elle, au moins, elle existe ! The First Door !"
+   "texte": "[shouting] ENVOIE ÇA À TON POTE QUI A PAS TROUVÉ DE STAGE OU D'ALTERNANCE !\n[excited] Suivi de ta candidature.\nTrois mars, neuf heures deux : envoyée.\nNeuf heures deux et une seconde : « Nous avons bien reçu votre candidature. » [short pause] Un robot. Le seul qui répondra.\nVingt-huit avril : en cours d'analyse. Une analyse très approfondie.\nDeux juin : l'offre est toujours en ligne. Ils cherchent toujours. [short pause] Juste pas toi.\n[excited] Quatorze septembre : « Votre profil a retenu toute notre attention. » [short pause] Pas assez pour répondre en mars.\n[shouting] Statut final : destinataire absent. Ton CV a été déposé en point relais. [short pause] [sarcastic] Le vivier."
   }
  ]
 }
