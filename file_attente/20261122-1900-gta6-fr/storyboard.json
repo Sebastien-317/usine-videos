@@ -1,0 +1,147 @@
+{
+  "composition": "Doc",
+  "boucle": true,
+  "chaine": {
+    "id": "gta6-fr",
+    "nom": "DOSSIER JEU",
+    "langue": "fr-fr",
+    "voix": "ff_siwis",
+    "vitesse": 1.12,
+    "prononciation": {
+      "GTA 6": "gé-té-a sisse",
+      "GTA 5": "gé-té-a cinq",
+      "GTA": "gé-té-a",
+      "Take-Two": "Tèk-Tou",
+      "Xbox": "Ixe-bosse",
+      "Series": "Siriz"
+    },
+    "prononciation_elevenlabs": {
+      "GTA": "Gé-Té-A"
+    },
+    "moteur_voix": "elevenlabs",
+    "voix_elevenlabs": "3Tp5mYhT9wrfnry9pzvV",
+    "modele_elevenlabs": "eleven_v4"
+  },
+  "titre": "Ta boîte de GTA 6 n'a pas de disque : 3 pièges",
+  "legende": "GTA 6 : ta boîte sans disque peut te bloquer. Un code refusé, déjà utilisé ou absent, voilà quoi faire. #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {
+      "fait": "Kami Labs, 19 nov. 2026 : pas de disque dans la boîte, 212 Go à télécharger ; code absent (case blanche et grise) ou déjà utilisé ; historique des commandes PlayStation ; code saisi sur un autre compte : voir « Mauvais compte » ; code absent ou endommagé : contacter le revendeur ; la lampe torche sur la boîte n'est pas prouvée, un rédacteur de Kotaku n'a pas réussi à reproduire",
+      "url": "https://kami-labs.fr/grand-theft-auto-6/gta-6-edition-physique-code-absent/"
+    },
+    {
+      "fait": "Dexerto, 15 nov. 2026 : acheteurs signalent boîtes sans code ou avec code déjà utilisé ; page d'aide PlayStation : contacter le revendeur ; Kotaku n'a pas pu reproduire l'astuce de la lampe",
+      "url": "https://www.dexerto.com/gaming/gta-6-players-furious-as-physical-copies-reportedly-arrive-with-missing-or-already-used-codes-3428334/"
+    },
+    {
+      "fait": "Games.gg, 28 juil. 2026 : codes PS5 zonés par région, un code acheté au Royaume-Uni ou en Amérique du Nord refusé dans le groupe de la France ; Xbox sans zonage",
+      "url": "https://games.gg/fr/news/les-codes-de-téléchargement-gta-6-sont-zonés-sur-ps5-mais-pas-sur-xbox/"
+    },
+    {
+      "fait": "MP1st, 24 juil. 2026 : codes PlayStation répartis par région, Royaume-Uni et Amérique du Nord groupes distincts du groupe EMEA incluant la France",
+      "url": "https://mp1st.com/news/gta-6-ps5-digital-codes-in-japan-expire-just-170-days-after-launch"
+    }
+  ],
+  "scenes": [
+    {
+      "voix": "Ta boîte de GTA 6 n'a pas de disque : 3 pièges.",
+      "voix_jeu": "[surprised] Ta boîte de GTA 6 n'a pas de disque : 3 pièges.",
+      "visuels": [
+        "officiel:#LT-027",
+        "officiel:#XL-276"
+      ],
+      "gros": "3 PIÈGES|BOÎTE GTA 6",
+      "seed": 11
+    },
+    {
+      "voix": "Dedans : un code, et 212 gigas à télécharger.",
+      "visuels": [
+        "officiel:#XL-189",
+        "officiel:#XL-287"
+      ],
+      "compteur": {
+        "valeur": 212,
+        "prefixe": "",
+        "suffixe": " Go",
+        "label": "À TÉLÉCHARGER"
+      },
+      "seed": 24
+    },
+    {
+      "voix": "Trois. Sur PS5, le code est zoné : un code britannique est refusé.",
+      "voix_jeu": "[excited] Trois. Sur PS5, le code est zoné : un code britannique est refusé.",
+      "visuels": [
+        "officiel:#LT-006",
+        "officiel:#XL-022"
+      ],
+      "liste": {
+        "numero": 3,
+        "texte": "CODE|ZONÉ PS5"
+      },
+      "seed": 37
+    },
+    {
+      "voix": "Deux. Code déjà utilisé ? Regarde l'historique de commandes PlayStation.",
+      "visuels": [
+        "officiel:#XL-276",
+        "officiel:#XL-400"
+      ],
+      "liste": {
+        "numero": 2,
+        "texte": "CODE|DÉJÀ UTILISÉ"
+      },
+      "seed": 50
+    },
+    {
+      "voix": "Sauf qu'un autre compte l'a peut-être saisi : Sony ne transfère pas le jeu.",
+      "voix_jeu": "[short pause] Sauf qu'un autre compte l'a peut-être saisi : Sony ne transfère pas le jeu.",
+      "visuels": [
+        "officiel:#XL-287",
+        "officiel:#XL-085"
+      ],
+      "seed": 63
+    },
+    {
+      "voix": "Un. Code absent ? Photographie la boîte et va voir le magasin, pas Sony.",
+      "visuels": [
+        "officiel:#XL-189",
+        "officiel:#XL-143"
+      ],
+      "liste": {
+        "numero": 1,
+        "texte": "CODE|ABSENT"
+      },
+      "seed": 76
+    },
+    {
+      "voix": "La lampe torche qui lirait ton code ? Non prouvée.",
+      "visuels": [
+        "officiel:#XL-191",
+        "officiel:#XL-022"
+      ],
+      "coupure": {
+        "source": "KOTAKU",
+        "date": "NOV. 2026",
+        "titre": "Impossible de lire le code avec une lampe"
+      },
+      "seed": 89
+    },
+    {
+      "voix": "Avant de jeter l'emballage, souviens-toi :…",
+      "voix_jeu": "[short pause] Avant de jeter l'emballage, souviens-toi :…",
+      "visuels": [
+        "officiel:#LT-027",
+        "officiel:#XL-276"
+      ],
+      "seed": 102
+    }
+  ],
+  "format": "top3",
+  "theme": "data",
+  "apprend": [
+    "La boîte de GTA 6 ne contient aucun disque, seulement un code pour télécharger 212 Go.",
+    "Sur PS5, le code est zoné par région : un code britannique ou américain est refusé en France.",
+    "Un code « déjà utilisé » : vérifie l'historique des commandes de chaque compte PlayStation, car Sony ne transfère pas le jeu d'un compte à l'autre.",
+    "Un code absent se règle avec le magasin, pas avec Sony, preuves à l'appui."
+  ]
+}

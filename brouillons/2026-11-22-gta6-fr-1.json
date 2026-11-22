@@ -1,0 +1,46 @@
+{
+  "titre": "Tes armes dans GTA 6 : le coffre fait la différence",
+  "format": "guide",
+  "theme": "dossier",
+  "apprend": [
+    "Sur toi : 2 pistolets et un seul fusil dans le dos ; au volant, seuls les pistolets sont utilisables.",
+    "Un fusil tenu en main peut faire fuir les civils, pas celui qui est dans ton dos.",
+    "Ton coffre garde tes armes longues et des tenues de rechange, utiles contre la police qui retient tes vêtements.",
+    "Le cocktail Molotov ne se vend dans aucune armurerie."
+  ],
+  "legende": "GTA 6 : ce que tu peux porter comme armes, et ce que ton coffre change. Le Molotov, lui, ne s'achète nulle part. #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {"fait": "GTA Base, 15 sept. 2026 : 2 armes de poing dissimulées, 2 armes longues dont une seule dans le dos ; l'autre tenue en main ; armes longues rangées dans le coffre ; une arme longue dans le dos ne panique pas forcément les civils, en main elle peut les faire s'éloigner", "url": "https://www.gtabase.com/fr/articles/gta-6/gta-6-ajoute-une-gestion-realiste-de-linventaire-pour-les-armes"},
+    {"fait": "Gameblog : jusqu'à 2 armes de poing sur soi, seules armes utilisables en conduisant ; armes à épaule conseillées dans le coffre ; cocktails Molotov vendus nulle part", "url": "https://www.gameblog.fr/jeu-video/ed/astuces/gta-6-listes-armes-trouver-726988-726988"},
+    {"fait": "ActuGaming, 19 nov. 2026 : le coffre de la voiture personnelle stocke les armes lourdes et permet de changer de tenue ; enregistrer plusieurs tenues dans le coffre, changer de vêtements aide à rester discret avec le nouveau système de recherche de la police", "url": "https://www.actugaming.net/?p=834089"},
+    {"fait": "GTA Intel, 27 août 2026 : la police mémorise véhicule, apparence, vêtements ; changer de tenue pour la semer", "url": "https://www.gtabase.com/fr/articles/gta-6/gta-6-ajoute-une-gestion-realiste-de-linventaire-pour-les-armes"}
+  ],
+  "scenes": [
+    {"voix": "Ton arsenal dans GTA 6 a des limites.",
+     "voix_jeu": "[curious] Ton arsenal dans GTA 6 a des limites.",
+     "visuels": ["officiel:#LT-006", "officiel:#LT-027"], "gros": "TON ARSENAL|DANS GTA 6"},
+    {"voix": "Sur toi : deux pistolets, un seul fusil dans le dos.",
+     "visuels": ["officiel:#XL-276", "officiel:#XL-287"],
+     "document": {"entete": "SUR TOI", "titre": "TON ÉQUIPEMENT", "lignes": ["Pistolets : [[deux]]", "Fusil dans le dos : [[un]]"]}},
+    {"voix": "Un. Au volant, seuls les pistolets sont utilisables.",
+     "voix_jeu": "[excited] Un. Au volant, seuls les pistolets sont utilisables.",
+     "visuels": ["officiel:#XL-207", "officiel:#XL-140"],
+     "liste": {"numero": 1, "texte": "AU VOLANT|PISTOLET"}},
+    {"voix": "Deux. Un fusil en main peut faire fuir les civils. Dans le dos, pas forcément.",
+     "visuels": ["officiel:#LT-006", "officiel:#XL-230", "officiel:#XL-295"],
+     "liste": {"numero": 2, "texte": "FUSIL|DANS LE DOS"}},
+    {"voix": "Sauf que ton coffre change tout : tes fusils et tes tenues y restent.",
+     "voix_jeu": "[short pause] Sauf que ton coffre change tout : tes fusils et tes tenues y restent.",
+     "visuels": ["officiel:#XL-196", "officiel:#XL-137"]},
+    {"voix": "Trois. Mets dedans une tenue de rechange : la police retient tes vêtements.",
+     "visuels": ["officiel:#XL-250", "officiel:#XL-248"],
+     "liste": {"numero": 3, "texte": "TENUE|DE RECHANGE"}},
+    {"voix": "Et le cocktail Molotov ? Aucune armurerie ne le vend.",
+     "voix_jeu": "[surprised] Et le cocktail Molotov ? Aucune armurerie ne le vend.",
+     "visuels": ["officiel:#XL-189", "officiel:#T2-046"],
+     "coupure": {"source": "GAMEBLOG", "date": "NOV. 2026", "titre": "Le Molotov : introuvable en armurerie"}},
+    {"voix": "Au fond, une seule règle compte :…",
+     "voix_jeu": "[short pause] Au fond, une seule règle compte :…",
+     "visuels": ["officiel:#LT-006", "officiel:#LT-027"]}
+  ]
+}
