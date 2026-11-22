@@ -21,9 +21,8 @@
     "Xbox": "Ixe-bosse",
     "Series": "Siriz"
   },
-  "videos_par_jour": 2,
+  "videos_par_jour": 1,
   "horaires": [
-    "12:30",
     "19:00"
   ],
   "fuseau": "Europe/Paris",

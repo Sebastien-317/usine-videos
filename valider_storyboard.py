@@ -28,7 +28,7 @@ EN_PLUS_DOC = ("lieu", "tampon")
 # Six formats d'histoire et cinq thèmes visuels : deux vidéos qui se suivent ne partagent ni l'un ni l'autre
 FORMATS = {
     # Étude TikTok du 17/11/2026 : les guides à la 2e personne (« ton 1er argent dans GTA 6 ») font 30 à 300 fois
-    # les vues des anecdotes sur les mêmes comptes. Une vidéo par jour au moins est un guide.
+    # les vues des anecdotes sur les mêmes comptes. Au moins une vidéo sur deux est un guide.
     "guide": "ce que le joueur doit savoir, faire ou éviter dans GTA 6, en 3 ou 4 points concrets (liste)",
     "enquete":"une histoire vraie racontée comme un polar, l'accroche donne la fin choquante",
     "decryptage": "comment ou pourquoi c'est arrivé : le mécanisme expliqué pas à pas, l'accroche est une question",
@@ -137,8 +137,9 @@ def regles_doc(b, sc, ch, sortie):
     # Variété : ni le même format ni le même thème que la vidéo précédente ou celle du même jour ; pas de redite
     hist, jour = precedentes(ch, sortie)
     vues = hist + jour
-    if jour and fmt != "guide" and not any(x.get("format") == "guide" for x in jour):
-        pb.append("Une des 2 vidéos du jour doit être au format « guide » (ce qui marche le mieux, étude du 17/11) : celle-ci, puisque l'autre n'en est pas un.")
+    precedente = jour[-1] if jour else next((x for x in reversed(hist) if x.get("format")), None)
+    if fmt != "guide" and precedente and precedente.get("format") != "guide":
+        pb.append("Au moins 1 vidéo sur 2 est au format « guide » (ce qui marche le mieux, étude du 17/11) : la précédente n'en est pas un, celle-ci doit l'être.")
     for x in jour + hist[-1:]:
         if fmt and x.get("format") == fmt:
             pb.append(f"Format « {fmt} » déjà utilisé par « {x.get('titre')} » (vidéo précédente ou du même jour) : choisis-en un autre.")
