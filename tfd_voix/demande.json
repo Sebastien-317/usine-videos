@@ -1,11 +1,11 @@
 {
- "projet": "The First Door – GTA 6, c'est bon",
+ "projet": "The First Door – Offres mortes",
  "voix": [
   {
-   "nom": "gtabon_hugo",
+   "nom": "mortes_hugo",
    "voice_id": "3Tp5mYhT9wrfnry9pzvV",
    "modele": "eleven_v4",
-   "texte": "[shouting] ENVOIE ÇA À TON POTE QUI A PAS TROUVÉ DE STAGE OU D'ALTERNANCE !\nGTA 6 est sorti. Tu y as joué. C'est bon.\nLes recruteurs, eux, n'ont pas fait de pause.\nPendant ta semaine de jeu, des offres d'alternance ont été pourvues. [short pause] Sans toi.\nCe soir, tu fais simple : trois candidatures. Après, tu joues.\n[shouting] GTA 6 sera encore là en septembre. [short pause] Les offres d'alternance, non."
+   "texte": "[shouting] Aucune réponse à tes candidatures ? Ce n'est peut-être pas ton CV.\nBeaucoup d'offres restent en ligne après avoir été pourvues.\nPersonne n'a pensé à les retirer.\nToi, tu postules. Et tu attends une réponse pour un poste qui n'existe plus.\n[short pause] On ne t'ignore pas. [short pause] L'offre est morte.\nAvant de postuler, vérifie qu'elle est encore sur le site de l'entreprise."
   }
  ]
 }
