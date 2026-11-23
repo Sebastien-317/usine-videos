@@ -1,11 +1,11 @@
 {
- "projet": "The First Door – Suivi de ta candidature",
+ "projet": "The First Door – GTA 6, c'est bon",
  "voix": [
   {
-   "nom": "suivi_hugo",
+   "nom": "gtabon_hugo",
    "voice_id": "3Tp5mYhT9wrfnry9pzvV",
    "modele": "eleven_v4",
-   "texte": "[shouting] ENVOIE ÇA À TON POTE QUI A PAS TROUVÉ DE STAGE OU D'ALTERNANCE !\n[excited] Suivi de ta candidature.\nTrois mars, neuf heures deux : envoyée.\nNeuf heures deux et une seconde : « Nous avons bien reçu votre candidature. » [short pause] Un robot. Le seul qui répondra.\nVingt-huit avril : en cours d'analyse. Une analyse très approfondie.\nDeux juin : l'offre est toujours en ligne. Ils cherchent toujours. [short pause] Juste pas toi.\n[excited] Quatorze septembre : « Votre profil a retenu toute notre attention. » [short pause] Pas assez pour répondre en mars.\n[shouting] Statut final : destinataire absent. Ton CV a été déposé en point relais. [short pause] [sarcastic] Le vivier."
+   "texte": "[shouting] ENVOIE ÇA À TON POTE QUI A PAS TROUVÉ DE STAGE OU D'ALTERNANCE !\nGTA 6 est sorti. Tu y as joué. C'est bon.\nLes recruteurs, eux, n'ont pas fait de pause.\nPendant ta semaine de jeu, des offres d'alternance ont été pourvues. [short pause] Sans toi.\nCe soir, tu fais simple : trois candidatures. Après, tu joues.\n[shouting] GTA 6 sera encore là en septembre. [short pause] Les offres d'alternance, non."
   }
  ]
 }
