@@ -1,0 +1,46 @@
+{
+  "titre": "Voyage rapide GTA 6 : 100 $ et 3 pièges",
+  "format": "guide",
+  "theme": "presse",
+  "apprend": [
+    "Il n'y a pas de menu de voyage rapide : on passe par RydeMe, sur le téléphone.",
+    "Passer le trajet : L2 puis Triangle, 100 dollars en plus de la course.",
+    "RydeMe est bloqué pendant une poursuite, et sortir une arme annule la course."
+  ],
+  "legende": "GTA 6 : le voyage rapide coûte 100 $ et peut te lâcher en pleine rue. Poursuite, arme sortie, pas de route : le chauffeur annule. #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {"fait": "Journal du Geek, 19 nov. 2026 : pas de menu de voyage rapide, on passe par l'appli RydeMe ; passer le trajet : L2 puis Triangle, 100 $ ; impossible de commander RydeMe en poursuite policière ; sortir une arme annule la course et le personnage descend", "url": "https://www.journaldugeek.com/2026/11/19/gta-6-le-voyage-rapide-coute-100-et-la-police-peut-vous-le-bloquer/"},
+    {"fait": "GamerFuzion : passer le trajet coûte 100 $ (Kotaku, PowerPyx), en plus de la course (VGC) ; si l'on appelle depuis un endroit inaccessible aux voitures, la course est annulée (VGC)", "url": "https://www.gamerfuzion.com/gta-6-fast-travel-rydeme-taxi-how-to/"},
+    {"fait": "Games.gg, 19 nov. 2026 (mis à jour le 21) : RydeMe, chauffeur à la demande ; attendre le trajet coûte moins que le passer", "url": "https://games.gg/grand-theft-auto-vi/guides/how-to-use-the-phone-gta-6/"},
+    {"fait": "Beebom, 19 nov. 2026 : ouvrir le téléphone avec haut sur la croix, appli de taxi : placer un point sur la carte et payer la course", "url": "https://beebom.com/gta-6-phone-guide/"}
+  ],
+  "scenes": [
+    {"voix": "Dans GTA 6, ton voyage rapide coûte 100 dollars.",
+     "voix_jeu": "[curious] Dans GTA 6, ton voyage rapide coûte 100 dollars.",
+     "visuels": ["officiel:#XL-276", "officiel:#XL-207"], "gros": "TON TAXI|DANS GTA 6"},
+    {"voix": "Pas de menu de téléportation : tu ouvres RydeMe sur ton téléphone.",
+     "voix_jeu": "Pas de menu de téléportation : tu ouvres Raïde-mi sur ton téléphone.",
+     "visuels": ["officiel:#XL-262", "officiel:#XL-199"],
+     "document": {"entete": "TÉLÉPHONE", "titre": "VOYAGE RAPIDE", "lignes": ["Menu de téléportation : [[aucun]]", "Appli : RydeMe"]}},
+    {"voix": "Un. Passer le trajet : L2 puis Triangle, 100 dollars en plus de la course.",
+     "voix_jeu": "[excited] Un. Passer le trajet : L2 puis Triangle, 100 dollars en plus de la course.",
+     "visuels": ["officiel:#XL-140", "officiel:#XL-189"],
+     "liste": {"numero": 1, "texte": "PASSER|LE TRAJET"}},
+    {"voix": "Sauf que ce raccourci te lâche parfois en pleine rue.",
+     "voix_jeu": "[short pause] Sauf que ce raccourci te lâche parfois en pleine rue.",
+     "visuels": ["officiel:#XL-227", "officiel:#XL-249"]},
+    {"voix": "Deux. En poursuite, impossible d'appeler RydeMe. Sème d'abord les flics.",
+     "voix_jeu": "Deux. En poursuite, impossible d'appeler Raïde-mi. Sème d'abord les flics.",
+     "visuels": ["officiel:#XL-248", "officiel:#XL-230"],
+     "liste": {"numero": 2, "texte": "EN POURSUITE|PAS DE TAXI"}},
+    {"voix": "Trois. Sors une arme : la course est annulée et tu descends.",
+     "visuels": ["officiel:#LT-027", "officiel:#LT-006"],
+     "liste": {"numero": 3, "texte": "ARME SORTIE|COURSE ANNULÉE"}},
+    {"voix": "Et sans route jusqu'à toi, le chauffeur annule aussi.",
+     "visuels": ["officiel:beach palm trees", "officiel:alligator swamp"],
+     "coupure": {"source": "GAMERFUZION", "date": "NOV. 2026", "titre": "Pas de route, pas de course : le taxi annule"}},
+    {"voix": "Pour éviter de rester bloqué, sache que…",
+     "voix_jeu": "[short pause] Pour éviter de rester bloqué, sache que…",
+     "visuels": ["officiel:#XL-276", "officiel:#XL-196"]}
+  ]
+}
