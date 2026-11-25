@@ -1,0 +1,148 @@
+{
+  "composition": "Doc",
+  "boucle": true,
+  "chaine": {
+    "id": "gta6-fr",
+    "nom": "DOSSIER JEU",
+    "langue": "fr-fr",
+    "voix": "ff_siwis",
+    "vitesse": 1.12,
+    "prononciation": {
+      "GTA 6": "gé-té-a sisse",
+      "GTA 5": "gé-té-a cinq",
+      "GTA": "gé-té-a",
+      "Take-Two": "Tèk-Tou",
+      "Xbox": "Ixe-bosse",
+      "Series": "Siriz"
+    },
+    "prononciation_elevenlabs": {
+      "GTA": "Gé-Té-A"
+    },
+    "moteur_voix": "elevenlabs",
+    "voix_elevenlabs": "3Tp5mYhT9wrfnry9pzvV",
+    "modele_elevenlabs": "eleven_v4"
+  },
+  "titre": "Ta santé dans GTA 6 : 3 erreurs qui te couchent",
+  "legende": "GTA 6 : ta santé ne remonte pas comme tu crois. Zombix, endurance, cœur orange : 3 erreurs à éviter avant ta prochaine fusillade. #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {
+      "fait": "Games.gg, 18 nov. 2026 (mis à jour le 19) : Zombix restaure la santé ; cœur rose = maximum normal, cœur orange = bonus temporaire au-delà du maximum ; prises répétées = efficacité réduite, se mettre à couvert ; endurance basse = régénération lente, surtout au début ; une balle interrompt la régénération ; course, vélo, kayak, salle améliorent l'endurance",
+      "url": "https://games.gg/grand-theft-auto-vi/guides/gta-6-how-to-heal/"
+    },
+    {
+      "fait": "Insider Gaming, 18 nov. 2026 : Zombix accessible depuis l'écran de loadout, moyen le plus rapide de regagner de la santé ; cardio : tapis, vélo, kayak, natation, course, sac de frappe ; si le minuteur des fenêtres d'entraînement expire sans exercice, la progression est perdue",
+      "url": "https://insider-gaming.com/how-fitness-works-gta-6-strength-cardio-focus/"
+    },
+    {
+      "fait": "Playday, 19 nov. 2026 : la force s'améliore en salle de sport, séances complètes, protéines et repos ; le cardio détermine l'endurance globale",
+      "url": "https://playday.one/2026/11/19/gta-6-fitness-guide/"
+    },
+    {
+      "fait": "Beebom, mis à jour le 2 nov. 2026 : icônes santé (cœur) et endurance (éclair) en haut à gauche ; endurance diminue pendant le sprint, le vélo et d'autres activités physiques",
+      "url": "https://beebom.com/gta-6-icons-meters-meanings-explained/"
+    }
+  ],
+  "scenes": [
+    {
+      "voix": "Dans GTA 6, ta santé dépend d'une autre jauge.",
+      "voix_jeu": "[curious] Dans GTA 6, ta santé dépend d'une autre jauge.",
+      "visuels": [
+        "officiel:#LT-027",
+        "officiel:#XL-276"
+      ],
+      "gros": "TA SANTÉ|DANS GTA 6",
+      "seed": 11
+    },
+    {
+      "voix": "Trois erreurs te couchent en fusillade.",
+      "voix_jeu": "[short pause] Trois erreurs te couchent en fusillade.",
+      "visuels": [
+        "officiel:#XL-227",
+        "officiel:#XL-250"
+      ],
+      "seed": 24
+    },
+    {
+      "voix": "Un : tu enchaînes les Zombix. Chaque pilule marche moins bien.",
+      "voix_jeu": "[excited] Un : tu enchaînes les Zombiks. Chaque pilule marche moins bien.",
+      "visuels": [
+        "officiel:#XL-279",
+        "officiel:#XL-071"
+      ],
+      "liste": {
+        "numero": 1,
+        "texte": "ZOMBIX|EN BOUCLE"
+      },
+      "seed": 37
+    },
+    {
+      "voix": "Deux : tu attends. Endurance faible au début, santé au ralenti, et une balle coupe tout.",
+      "visuels": [
+        "officiel:#XL-002",
+        "officiel:#XL-228"
+      ],
+      "liste": {
+        "numero": 2,
+        "texte": "TU ATTENDS|SANTÉ LENTE"
+      },
+      "seed": 50
+    },
+    {
+      "voix": "Trois : tu ignores le cœur orange. Il donne un bonus avant le combat.",
+      "visuels": [
+        "officiel:#XL-143",
+        "officiel:#XL-187"
+      ],
+      "liste": {
+        "numero": 3,
+        "texte": "CŒUR ORANGE|BONUS AU-DELÀ"
+      },
+      "seed": 63
+    },
+    {
+      "voix": "Le correctif : le cardio. Course, vélo, sac de frappe.",
+      "voix_jeu": "[curious] Le correctif : le cardio. Course, vélo, sac de frappe.",
+      "visuels": [
+        "pixabay:#148208",
+        "pixabay:#320311"
+      ],
+      "document": {
+        "entete": "ENDURANCE",
+        "titre": "CE QUI LA FAIT MONTER",
+        "lignes": [
+          "Course",
+          "Vélo",
+          "Sac de frappe"
+        ]
+      },
+      "seed": 76
+    },
+    {
+      "voix": "La force monte ta santé maximum, mais une fenêtre ratée efface la progression.",
+      "voix_jeu": "[dramatically] La force monte ta santé maximum, mais une fenêtre ratée efface la progression.",
+      "visuels": [
+        "pixabay:#148204",
+        "pixabay:#148196"
+      ],
+      "tampon": "PERDUE",
+      "tamponMot": "efface",
+      "seed": 89
+    },
+    {
+      "voix": "Si ta santé ne remonte pas, c'est que…",
+      "voix_jeu": "[short pause] Si ta santé ne remonte pas, c'est que…",
+      "visuels": [
+        "officiel:#XL-276",
+        "officiel:#LT-006"
+      ],
+      "seed": 102
+    }
+  ],
+  "format": "guide",
+  "theme": "dossier",
+  "apprend": [
+    "Enchaîner les Zombix est une erreur : chaque prise réduit l'efficacité de la suivante, mieux vaut se mettre à couvert.",
+    "Au début du jeu, l'endurance est faible, donc la santé remonte au ralenti, et une balle interrompt la régénération.",
+    "Le cœur orange donne un bonus de santé au-delà du maximum, et le cardio (course, vélo, sac de frappe) améliore l'endurance."
+  ]
+}
