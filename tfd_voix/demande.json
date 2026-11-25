@@ -1,11 +1,11 @@
 {
- "projet": "The First Door – Relance",
+ "projet": "The First Door – Même endroit que tout le monde",
  "voix": [
   {
-   "nom": "relance_hugo",
+   "nom": "endroit_hugo",
    "voice_id": "3Tp5mYhT9wrfnry9pzvV",
    "modele": "eleven_v4",
-   "texte": "[shouting] Tu as postulé il y a dix jours. Toujours rien ? Relance.\nPeu de candidats le font. C'est pour ça que ça marche.\nPas besoin d'un long mail. Trois lignes.\n« Bonjour, j'ai postulé le douze pour l'alternance en marketing. Toujours très motivé. Avez-vous un retour ? »\nLe recruteur n'est pas agacé. [short pause] Il a juste oublié.\n[short pause] Relancer, ce n'est pas insister. C'est rappeler que tu existes."
+   "texte": "[shouting] Tu cherches ton alternance sur les mêmes sites que tout le monde ?\nAlors tu postules contre tout le monde.\nLes entreprises publient aussi leurs offres sur leur propre site.\nOnglet « Carrières », « Nous rejoindre », « On recrute ». Souvent tout en bas de la page.\nFais la liste des vingt entreprises où tu veux vraiment bosser. Et va voir directement chez elles.\n[short pause] Postuler là où personne ne regarde, c'est pas tricher. [short pause] C'est malin."
   }
  ]
 }
