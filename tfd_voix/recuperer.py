@@ -12,6 +12,22 @@ def get(url, accept="application/json"):
 demande = json.loads(Path(sys.argv[1]).read_text())
 out = Path(sys.argv[2]); out.mkdir(parents=True, exist_ok=True)
 journal = []
+
+# Liens directs (prise déjà générée, lien signé ElevenLabs encore valide) : liens.json à côté de demande.json.
+# S'il existe, on télécharge ces prises telles quelles (aucun crédit) et on s'arrête là.
+liens = Path(sys.argv[1]).with_name("liens.json")
+if liens.exists():
+    for l in json.loads(liens.read_text())["voix"]:
+        try:
+            with urllib.request.urlopen(urllib.request.Request(l["url"], headers={"User-Agent": "usine-videos"}), timeout=120) as r:
+                data = r.read()
+            (out / f"{l['nom']}.mp3").write_bytes(data)
+            journal.append(f"{l['nom']} : récupéré par lien ({len(data)} octets)")
+        except Exception as e:
+            journal.append(f"{l['nom']} : lien refusé : {type(e).__name__} {e}")
+    (out / "journal_recuperation.txt").write_text("\n".join(journal) + "\n")
+    print("\n".join(journal))
+    sys.exit(0)
 try:
     hist = json.loads(get("https://api.elevenlabs.io/v1/history?page_size=50"))["history"]
 except urllib.error.HTTPError as e:
