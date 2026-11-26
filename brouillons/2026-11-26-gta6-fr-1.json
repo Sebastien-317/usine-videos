@@ -1,0 +1,28 @@
+{
+  "titre": "Le platine de GTA 6 te prendra 200 heures",
+  "format": "chiffre",
+  "theme": "data",
+  "apprend": [
+    "Le platine de GTA 6 demande environ 200 heures, dont une centaine rien que pour le 100 %",
+    "Les trophées les plus longs : 250 cascades sur 397 et 100 véhicules découverts, tout en solo, sans trophée en ligne",
+    "Un code de triche désactive les trophées, et la méditation du chapitre 1 est possiblement ratable"
+  ],
+  "legende": "GTA 6 : le platine te prendra environ 200 heures, et un code de triche peut tout bloquer. #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {"fait": "55 trophées PS5 (1 platine, 2 or, 6 argent, 46 bronze) ou 55 succès Xbox ; platine = 100 % de complétion ; aucun trophée en ligne (GGRecon, 19 nov. 2026)", "url": "https://www.ggrecon.com/articles/gta-6-trophies-achievements-list-platinum/"},
+    {"fait": "28 trophées cachés sur 55 ; 250 cascades pour Cunning Stunts ; médaille d'or à tous les stands de tir (Insider Gaming, 18 nov. 2026)", "url": "https://insider-gaming.com/complete-gta-6-trophy-list-how-to-get-all-trophies-achievements/"},
+    {"fait": "Platine environ 200 heures, dont environ 100 pour le 100 % ; 250 cascades sur 397 ; les codes de triche désactivent les trophées (GTABase)", "url": "https://www.gtabase.com/gta-6/achievements"},
+    {"fait": "Seul trophée possiblement ratable : Positive Mental Attitude, première méditation du chapitre 1, non confirmé (GTABase)", "url": "https://www.gtabase.com/gta-6/achievements"}
+  ],
+  "scenes": [
+    {"voix": "200 heures. Voilà ce que coûte le platine de GTA 6.", "voix_jeu": "[surprised] 200 heures. Voilà ce que coûte le platine de GTA 6.",
+     "visuels": ["officiel:woman holding gun", "officiel:#XL-131"], "gros": "200 HEURES|POUR GTA 6"},
+    {"voix": "55 trophées sur PS5, tous en solo. Aucun en ligne.", "visuels": ["officiel:police chase night", "officiel:#XL-227"], "compteur": {"valeur": 55, "suffixe": "", "label": "TROPHÉES SUR PS5"}},
+    {"voix": "Le platine exige le 100 % du jeu, avec 28 trophées cachés.", "visuels": ["officiel:beach palm trees", "officiel:#XL-277"], "document": {"entete": "TROPHÉES", "titre": "LE PLATINE", "lignes": ["Condition : [[100 %]] du jeu", "Trophées cachés : [[28]]"]}},
+    {"voix": "L'histoire n'est que la moitié. Compte 100 heures de plus.", "voix_jeu": "[curious] L'histoire n'est que la moitié. Compte 100 heures de plus.", "visuels": ["officiel:#XL-189", "officiel:helicopter"], "compteur": {"valeur": 100, "suffixe": " h", "label": "POUR LE 100 %"}},
+    {"voix": "Le plus long : 250 cascades, sur 397 dans tout Leonida.", "visuels": ["officiel:sports car", "officiel:nightclub party"], "duel": {"gauche": {"label": "CASCADES À RÉUSSIR", "valeur": 250}, "droite": {"label": "CASCADES DANS LE JEU", "valeur": 397}, "suffixe": ""}},
+    {"voix": "Un code de triche, et les trophées se bloquent.", "visuels": ["officiel:#XL-039", "officiel:#XL-071"], "document": {"entete": "ATTENTION", "titre": "CODES DE TRICHE", "lignes": ["Trophées : [[désactivés]]"]}, "tampon": "BLOQUÉ", "tamponMot": "bloquent"},
+    {"voix": "Seul risque : la première méditation de Lucia, possiblement ratable.", "voix_jeu": "[short pause] Seul risque : la première méditation de Lucia, possiblement ratable.", "visuels": ["officiel:woman sitting", "officiel:beach palm trees"], "coupure": {"source": "GTABase", "date": "26 NOV. 2026", "titre": "Une méditation peut te coûter un trophée"}},
+    {"voix": "Alors avant de chasser, retiens que le vrai prix du platine, c'est…", "voix_jeu": "[dramatically] Alors avant de chasser, retiens que le vrai prix du platine, c'est…", "visuels": ["officiel:woman holding gun"]}
+  ]
+}
