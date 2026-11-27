@@ -1,3 +1,13 @@
-{"projet": "Ce jour a changé le monde – épisode 6 : Howard Carter et Toutânkhamon (prise 1, voix TEst 1)",
- "voix": [{"nom": "carter_test1_prise1",
-           "url": "https://elevenlabsusercontent.com/database/workspace/6b27ca36eff749be9649f19279fcb56b/content_generation/6LIgL82KlpiquOvTXdh0/Rwnx048uqRlH5Mp976QQ/content.mp3?Expires=1795788000&KeyName=assets-cdn-key-1&Signature=Vijj6I8imYn5018UscJcAlRhmNY="}]}
+{
+ "projet": "Ce jour a changé le monde – épisode 7 : Stanislav Petrov (prises 1 et 2, voix TEst 1)",
+ "voix": [
+  {
+   "nom": "petrov_test1_prise1",
+   "url": "https://elevenlabsusercontent.com/database/workspace/6b27ca36eff749be9649f19279fcb56b/content_generation/cVdT9DDeoVD7M9081Qyp/xxzs4yq5PJ0U0O64DPzE/content.mp3?Expires=1795816800&KeyName=assets-cdn-key-1&Signature=QFzcqd7j2tdWPgtZvrtyc_yAz1k="
+  },
+  {
+   "nom": "petrov_test1_prise2",
+   "url": "https://elevenlabsusercontent.com/database/workspace/6b27ca36eff749be9649f19279fcb56b/content_generation/3Gy9eEJSmEBTCIIILdx2/2BK9ORAil0skb3Cn3P8z/content.mp3?Expires=1795816800&KeyName=assets-cdn-key-1&Signature=jNcIaNRPMVSoVF2Em4av6_64GwM="
+  }
+ ]
+}
