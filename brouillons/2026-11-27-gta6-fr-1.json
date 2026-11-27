@@ -1,0 +1,37 @@
+{
+  "titre": "Ta jauge de couple dans GTA 6 : ne la ruine pas",
+  "format": "guide",
+  "theme": "neon",
+  "apprend": [
+    "Jason et Lucia ont une jauge de couple à 4 niveaux, visible en maintenant droite sur la croix directionnelle",
+    "Ignorer ses messages, jouer un seul des deux, la renverser en voiture ou la laisser aux flics fait chuter la jauge",
+    "Il n'y a pas de rupture définitive : un message et une sortie à deux suffisent pour remonter"
+  ],
+  "legende": "GTA 6 : ton couple Jason et Lucia a une jauge, et 3 erreurs la font chuter. Il n'y a pas de rupture, mais le piège est ailleurs. #gta6 #gtavi #jeuxvideo #gaming",
+  "sources": [
+    {"fait": "4 niveaux de Hot Together à Running on Empty ; niveau visible en maintenant droite sur la croix ; pas de rupture définitive, relation réparable par de petits gestes (VGC, 19 nov. 2026)", "url": "https://www.videogameschronicle.com/guide/gta-6-jason-lucia-relationship-levels-explained-how-to-improve-jason-and-lucias-relationship/"},
+    {"fait": "Ignorer appels et messages, longues périodes séparés, abandonner sa partenaire : forte baisse ; la blesser ou la laisser poursuivie par la police : dégradation rapide ; maintenir droite puis RB/R1 pour agir avec l'autre personnage (Insider Gaming, 18 nov. 2026)", "url": "https://insider-gaming.com/how-relationship-works-gta-6-explained/"},
+    {"fait": "Percuter sa partenaire en voiture, missions communes ratées : baisse ; pas de rupture possible ; reconstruire : reprendre les messages, activités à deux (mini-golf, billard, kayak), braquages réussis ; jouer les deux protagonistes (Games.gg, mis à jour le 25 nov. 2026)", "url": "https://games.gg/grand-theft-auto-vi/guides/how-to-build-jason-and-lucia-bond-in-gta-6/"},
+    {"fait": "Braquages réussis, sports et activités comme le billard font monter la relation ; envoyer un message rapide en maintenant droite (VGC)", "url": "https://www.videogameschronicle.com/guide/gta-6-jason-lucia-relationship-levels-explained-how-to-improve-jason-and-lucias-relationship/"}
+  ],
+  "scenes": [
+    {"voix": "Dans GTA 6, ton couple a une jauge. Tu peux la ruiner.", "voix_jeu": "[curious] Dans GTA 6, ton couple a une jauge. Tu peux la ruiner.",
+     "visuels": ["officiel:#LT-027", "officiel:#T1-035", "officiel:#XL-140"], "gros": "TON COUPLE|DANS GTA 6"},
+    {"voix": "Quatre niveaux, de Running on Empty à Hot Together. Maintiens droite pour la voir.",
+     "voix_jeu": "Quatre niveaux, de Reunine onne Èmpti à Hot Together. Maintiens droite pour la voir.",
+     "visuels": ["officiel:#T2-024", "officiel:#XL-184", "officiel:#XL-130"],
+     "document": {"entete": "JASON + LUCIA", "titre": "LA JAUGE", "lignes": ["Le plus bas : [[Running on Empty]]", "Le plus haut : Hot Together", "Voir : maintenir droite"], "tampon": "LA JAUGE"}},
+    {"voix": "Première erreur : ignorer ses messages.",
+     "visuels": ["pixabay:#183448", "officiel:#XL-287"], "liste": {"numero": 1, "texte": "IGNORER|SES SMS"}},
+    {"voix": "Deuxième erreur : ne jouer que Jason. Maintiens droite, puis R1 pour agir comme Lucia.",
+     "voix_jeu": "[short pause] Deuxième erreur : ne jouer que Jason. Maintiens droite, puis R1 pour agir comme Lucia.",
+     "visuels": ["officiel:#LT-023", "officiel:#T1-029", "officiel:#XL-247"], "liste": {"numero": 2, "texte": "JOUER|SEUL JASON"}},
+    {"voix": "Troisième erreur : la percuter en voiture, ou la laisser à la police.",
+     "visuels": ["officiel:#XL-250", "officiel:#XL-227"], "liste": {"numero": 3, "texte": "LA LAISSER|AUX FLICS"}},
+    {"voix": "Mais aucune rupture n'est possible. Un message et une sortie réparent tout.",
+     "voix_jeu": "[excited] Mais aucune rupture n'est possible. Un message et une sortie réparent tout.",
+     "visuels": ["officiel:#XL-184", "pixabay:#45301"], "tampon": "PAS DE RUPTURE", "tamponMot": "rupture"},
+    {"voix": "Remonte avec un braquage à deux. Tout repose sur un fait…",
+     "visuels": ["officiel:#XL-143", "officiel:#XL-191"]}
+  ]
+}
