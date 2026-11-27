@@ -1,11 +1,11 @@
 {
- "projet": "The First Door – 3 conseils entretien (chaussettes)",
+ "projet": "The First Door – Tu as le droit de mentir (visio)",
  "voix": [
   {
-   "nom": "conseils_test1",
+   "nom": "mentir_test1",
    "voice_id": "btrOWVw4HnFUW2uauFAv",
    "modele": "eleven_v4",
-   "texte": "[excited] Trois conseils pour réussir ton entretien d'alternance. [shouting] Surtout le troisième !\nUn. « Où en êtes-vous dans vos recherches ? » Ne réponds jamais « nulle part ».\nUn candidat dont personne ne veut, ça inquiète.\nDis : « J'ai d'autres candidatures en cours, mais c'est votre poste que je veux. » Et dis pourquoi.\nDeux. Bannis les adjectifs.\n[shouting] Rigoureux, motivé, curieux : il les a entendus toute la journée. Il pourrait les réciter à ta place.\nRemplace-les par une preuve : la situation, ton action, un chiffre.\nTrois. Prépare deux ou trois questions pour la fin.\n[shouting] « Non, je n'ai pas de questions » ? Le recruteur range déjà ses affaires.\nDemande : « Qu'attendez-vous de l'alternant qui rejoindra l'équipe ? » Ou : « Quels sont les sujets prioritaires de l'équipe ? »\n[shouting] Là, tu ne passes plus un entretien. Tu prépares ton arrivée."
+   "texte": "[shouting] En entretien, tu as le droit de mentir.\nPas sur ton CV. Seulement aux questions interdites.\nEt ce n'est pas rare : selon le Défenseur des droits, [shouting] un actif sur deux dit en avoir déjà reçu une.\n« Vous comptez avoir des enfants ? » « Vous êtes en couple ? » « Vous venez de quel quartier ? »\nLa loi est claire : une question doit avoir un lien direct avec le poste. Sinon, tu peux mentir. Il ne pourra pas te le reprocher.\nPas besoin de lui réciter le Code du travail. Réponds court, comme à une question normale, et reviens au poste :\n« Pas pour l'instant. Ma priorité, c'est cette alternance. »\n[shouting] Et s'il insiste ? C'est lui qui enfreint la loi. Pas toi."
   }
  ]
 }
