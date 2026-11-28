@@ -1,11 +1,11 @@
 {
- "projet": "The First Door – Le test des 7 secondes",
+ "projet": "The First Door – Le robot qui jette ton CV",
  "voix": [
   {
-   "nom": "7sec_test1",
+   "nom": "robot_test1",
    "voice_id": "btrOWVw4HnFUW2uauFAv",
    "modele": "eleven_v4",
-   "texte": "[shouting] Ton CV a 7 secondes pour survivre.\nEn 2018, le site américain Ladders a suivi le regard de recruteurs avec un eye-tracker : 7,4 secondes en moyenne pour le premier tri.\nEn 7 secondes, on ne lit pas. On scanne : le poste, l'entreprise, les dates, puis le diplôme.\n[shouting] Ton paragraphe « dynamique et passionné » ? Il n'a pas le temps de le lire.\nCe qui marche : une seule colonne, des titres clairs, les postes en gras, des puces.\nCe qui coule : plusieurs colonnes, des phrases longues, aucun blanc.\nLe test : regarde ton CV 7 secondes, puis retourne-le. Si tu ne te souviens ni de ton dernier poste ni de ton diplôme… [shouting] lui non plus."
+   "texte": "[shouting] « 75 % des CV sont jetés par un robot avant d'être lus. » Tu l'as déjà vu passer ? C'est faux.\nCe chiffre circule depuis 2012. Il vient d'une entreprise qui vendait… des logiciels pour passer les robots. Aucune étude publiée derrière.\nLes logiciels de recrutement trient, classent, stockent. Jeter un CV tout seuls ? Rarement.\nLe vrai filtre automatique, ce sont les questions éliminatoires : permis, diplôme, lieu de travail. Tu réponds non, tu sors.\n[shouting] Le reste, c'est un humain. Avec des centaines de CV, qui lit souvent les premiers arrivés.\nAlors oublie les astuces pour battre le robot. Postule tôt, et réponds juste aux questions."
   }
  ]
 }
