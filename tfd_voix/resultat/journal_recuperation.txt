@@ -1,2 +1,2 @@
-petrov_test1_prise1 : récupéré par lien (601893 octets)
-petrov_test1_prise2 : récupéré par lien (598132 octets)
+jenner_test1_prise1 : récupéré par lien (644107 octets)
+jenner_test1_prise2 : récupéré par lien (639092 octets)
